@@ -1,0 +1,148 @@
+% Define new convenient shortcut commands and include packages
+
+% *******************************************
+% include extrapackages
+% *******************************************
+\usepackage{soul}				% yellow highlighting \hl{}
+\usepackage{textgreek}			%greek upright letters in text mode
+\usepackage{xifthen}			%if statements, optional arguments in newcommand
+\usepackage[export]{adjustbox}  %align images withing figure environment (left,right)
+%\usepackage{endnotes}			%doesn't really work
+\usepackage{placeins}			% prevent floats from floating behind the chapter end 	
+%\usepackage{booktabs}			% nicer tables
+\usepackage{tabu}				% thick lines in tables
+\usepackage{colortbl}			% colored cells in tables
+\usepackage{bm}					% bold math symbols
+\usepackage{mdwlist}			% compact (itemize) lists: itemize*
+\usepackage{float}				% enforce float-figure position, e.g. [H]
+\usepackage{xfrac}				% small (inline) fractions (\sfrac)
+
+% *******************************************
+% Layout
+% *******************************************
+\renewcommand{\footnotesize}{\small}	% change footnotesize (increase to "small")
+\newcommand{\defaultlinesep}{\tabulinesep = 0.8mm} % define a height separation for tables (tabu package)
+\newcommand{\cellgray}{\cellcolor[rgb]{0.85 0.85 0.85}} % background color in tables
+\newcommand{\cellbright}{\cellcolor[rgb]{0.92 0.92 0.92}} % background color in tables
+
+
+
+% *******************************************
+% Correction
+% *******************************************
+% red text
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+% red text in brackets
+\newcommand{\bred}[1]{\textcolor{red}{(#1)}}
+% red text with "ToDo:"
+\newcommand{\todo}[1]{\textcolor{red}{ToDo: #1}}
+% red text
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+% missing reference. set argument to empty if ref. not known
+\newcommand{\missref}[1]{\ifthenelse{\equal{#1}{}}{\hl{[ref?]}}{\hl{[ref: #1 ]}}}
+
+% Alternative: \missref and \missref[text]
+%\newcommand{\missref}[1][]{%
+%	\ifthenelse{\equal{#1}{}}{\hl{[ref?]}}{\hl{[ref: #1 ]}}%
+%	}
+
+
+
+% *******************************************
+% Frequently used expression
+% *******************************************
+% Ecoli
+\newcommand{\ecoli}{\textit{E. coli }}
+% P_lac
+\newcommand{\plac}{\ensuremath{\text{P}_{\text{lac}}\text{ }}}
+% P_N25
+\newcommand{\pntwofive}{\ensuremath{\text{P}_{\text{N25}}\text{ }}}
+% P_lambda
+\newcommand{\plambda}{\ensuremath{\text{P}_{\lambda}\text{ }}}
+% P_rrn
+\newcommand{\prrn}{\ensuremath{\text{P}_{\text{rrn}}\text{ }}}
+% P_rrn-GFP
+\newcommand{\prrnGFP}{\ensuremath{\text{P}_{\text{rrn}}\text{-GFP }}}
+% lac in italics
+\newcommand{\lac}{\textit{lac }}
+% crosscorr: R_pmu(tau) 
+\newcommand{\Rpmut}{\ensuremath{R_{p\mu}(\tau)} }
+% crosscorr: R_pmu
+\newcommand{\Rpmu}{\ensuremath{R_{p\mu}} }
+% crosscorr: R_Emu(tau) 
+\newcommand{\REmut}{\ensuremath{R_{E\mu}(\tau)} }
+% crosscorr: R_Emu
+\newcommand{\REmu}{\ensuremath{R_{E\mu}} }
+% . [point] with hspace before (for equations)
+\newcommand{\spacepoint}{\hspace{5px} .}
+% , [comma] with hspace before (for equations)
+\newcommand{\spacecomma}{\hspace{5px} ,}
+ 
+
+% (A) etc for subfigures
+\newcommand{\figA}{(\textbf{A}) }
+\newcommand{\figB}{(\textbf{B}) }
+\newcommand{\figC}{(\textbf{C}) }
+\newcommand{\figD}{(\textbf{D}) }
+\newcommand{\figE}{(\textbf{E}) }
+\newcommand{\figF}{(\textbf{F}) }
+\newcommand{\figG}{(\textbf{G}) }
+\newcommand{\figH}{(\textbf{H}) }
+\newcommand{\figI}{(\textbf{I}) }
+\newcommand{\figJ}{(\textbf{J}) }
+
+% --------
+% Chapter6: Growth Noise
+% --------
+% short cut for "Extended Data" -> leaves option to change this section name/reference later on
+\newcommand{\ED}{Extended Data }
+\renewcommand{\NG}{\ensuremath{N_G} } % noise sources in model [this specific command already existsed for some symbol]
+\newcommand{\NE}{\ensuremath{N_E} }
+\newcommand{\Nmu}{\ensuremath{N_{\mu}} }
+\newcommand{\NX}{\ensuremath{N_X} }
+\newcommand{\TEE}{\ensuremath{T_{EE}} }	% transmission coefficients in model
+\newcommand{\TmuE}{\ensuremath{T_{\mu E}} }
+\newcommand{\TEmu}{\ensuremath{T_{E\mu}} }
+\newcommand{\TEG}{\ensuremath{T_{EG}} }
+\newcommand{\TmuG}{\ensuremath{T_{\mu G}} }
+
+
+% --------
+% Chapter4: Extrinsic Noise
+% --------
+% corr: R(Y,mu)
+\newcommand{\corrYmu}{\ensuremath{R(Y,\mu)} }
+% corr: R(C,mu)
+\newcommand{\corrCmu}{\ensuremath{R(C,\mu)} }
+% corr: R(Y,C)
+\newcommand{\corrYC}{\ensuremath{R(Y,C)} }
+% noise: n(Y)^2 (maybe modify to underscript Y or brackets, or even P)
+\newcommand{\noiseY}{\ensuremath{\eta_Y^2} }
+% noise: n(C)^2 (maybe modify to underscript C or brackets, or even P)
+\newcommand{\noiseC}{\ensuremath{\eta_C^2} }
+% noise: n(mu)^2 (maybe modify to underscript mu or brackets)
+\newcommand{\noisemu}{\ensuremath{\eta_{\mu}^2} }
+% <mu>
+\newcommand{\mumean}{\ensuremath{\langle \mu \rangle} }
+% standard deviation: sigma_Y (could still be modified to sigma(Y))
+\newcommand{\sigmaY}{\ensuremath{\sigma_Y} }
+% standard deviation: sigma_C (could still be modified to sigma(C))
+\newcommand{\sigmaC}{\ensuremath{\sigma_C} }
+% standard deviation: sigma_mu (could still be modified to sigma(mu))
+\newcommand{\sigmamu}{\ensuremath{\sigma_{\mu}} }
+% extrinsic noise (squared)
+\newcommand{\noiseextr}{\ensuremath{\eta_{extr}^{2}} }
+% intrinsic noise (squared)
+\newcommand{\noiseintr}{\ensuremath{\eta_{intr}^{2}} }
+% noise n(E)^2 (general expression noise -> meybe use Y directly)
+\newcommand{\noiseE}{\ensuremath{\eta_{E}^{2}} }
+% global noise intensity <N_G^2>
+\newcommand{\VarNG}{\ensuremath{\langle N_G^2\rangle} } 
+% protein specific noise intensity <N_P^2>
+\newcommand{\VarNP}{\ensuremath{\langle N_P^2\rangle} } 
+% mu in covariance decomposition (allows to switch between mu and mu^H)
+\newcommand{\mucond}{\ensuremath{\mu}}%{\ensuremath{\mu^H}}
+% F_extr,E (extrinsic explained fraction) (the E could be removed)
+\newcommand{\Fextr}{\ensuremath{F_{extr,E}} }
+% Expression noise - vs - Growth
+\newcommand{\noiseEvsMu}{\ensuremath{\eta_{E}^2 \text{ vs. }\mu} }

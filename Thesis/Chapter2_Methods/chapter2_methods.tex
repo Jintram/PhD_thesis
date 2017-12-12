@@ -1,0 +1,488 @@
+
+
+
+
+% Some convenient references:
+% 
+% (Dunlop2008) elowitz lab on cross-corrs to measure regulatory interactions
+% (Young2012) single cell tracking from the elowitz lab
+
+\hyphenation{mi-cro-col-o-nies}
+
+\chapter{Methods}
+
+
+\section{Introduction}
+
+A substantial part of the methods used for experiments performed in this thesis were already discussed in detail, either in publications from other labs \cite{Dunlop2008,Young2012} or in previous work from the Tans lab at AMOLF \cite{Kiviet2010, Walker2016t, Gude2016}. An additional independent method section can be found in chapter \ref{chapter:filarecovery} of this thesis as that chapter has been published in a scientific journal. % fingers crossed
+
+In this chapter, I will focus on how I further developed these existing experimental protocols and analyses. %, often building on what has previously been developed. 
+Importantly, we have recently employed an adapted "mother machine", a microfluidic device that allows growing and observing bacterial microcolonies for very long time as superfluous cells are washed away, and also allows for quick exchange of growth media.
+
+\section{Single cell experiments}
+
+Observing growing single cells under the microscope provides a novel perspective compared to measuring bacterial behavior in bulk.
+It can quantify single cell deviations from the mean behavior (see e.g. \cite{Elowitz2002, Kiviet2014} and chapters \ref{chapter:CRP}, \ref{chapter:ribosomes}), and it provides insights in single cell morphologic changes over time (of which the filamentation and division processes are good examples, see chapter \ref{chapter:filarecovery}).
+%
+One straightforward way to visualize growing microcolonies of cells under the microscope is by using gel pads \cite{Elowitz2002, Dunlop2008, Dong2010, Kiviet2010, Young2012, Kiviet2014} (Figure \ref{fig:devices}.A).
+Pads can be produced by adding agarose to the desired growth medium, solidifying the medium into a gel.
+Since it was found cells can also consume agarose, we employ polyacrylamide gel pads in our experiments \cite{Kiviet2010}. The gel pads are soaked in the desired medium, and then transfered to a glass slide. An airtight chamber is created by using a second glass slide with a hole in the middle, a cover slip, silicon grease and a metal scaffold (Figure \ref{fig:devices}.A); for a detailed protocol see \cite{Walker2016t} and \cite{Young2012}.
+
+The disadvantage of growing cells on gel pads is that only a limited number of generations of cells can be recorded.
+At some point either (a) cells grow to such high densities that they form multilayers and single cells cannot be distinguished or (b) nutrients provided by the pad run out and cell growth stops.
+
+\subsection{Microfluidic devices}
+
+This advantage can be overcome by using a microfluidic device.
+In a microfluidic device, fresh medium is typically pumped through the sample, such that bacteria have continuous access to fresh medium. Additionally, most designs allow for superfluous cells to be washed out of the sample, such that microcolonies can be observed for very long times (hundreds of generations, see e.g. \cite{Wang2010}).
+%
+Many microfluidic devices have been developed and employed recently \cite{Locke2009, Hammar2014, Hansen2015, Bennett2010, Nanatani2015, Hashimoto2016, Lambert2014, Ullman2013, Young2013, Ferry2011, Wang2010}.
+
+Some experiments described in this thesis (see e.g. chapter \ref{chapter:filarecovery}) were performed with a microfluidic device as depicted in Figure \ref{fig:devices}.B.
+This device has a flow channel on its bottom. Bacteria are pipetted on a microscope cover slide, and covered by a very thin membrane. The microfluidic device is placed on top, such that fresh medium flowing through the channel can reach the bacteria under the thin membrane.
+The advantage of this device is that all bacteria have equal and close access to the fresh medium. Disadvantages of this device are that continuous growth eventually leads to multilayered colonies that cannot be analyzed (i.e. superfluous cells are not removed).
+Additionally, in practice, this device is prone to leakage.
+A more detailed description of this device can be found in \cite{Boulineau2013}.
+
+\subsection{The microfluidic device used in this work}
+
+% More info on the microfluidic device by Daan:
+% ===
+% 
+% I've created a pair of new wafers, of which one seems to be working well for E coli in our lab. It's a bit lower than 0.9um (~0.77um) but we are having better experiences with that (a little harder to get cells in, but then no flush-outs). I am in the process of making an epoxy mold of this wafer (essentially a copy of this silicon wafer in epoxy, which works the same as the silicon wafer). I'll make a test flowcell from it early next week, and if that's successful will send both of them immediately to AMOLF. 
+% !!!!!!!!!!!!!
+% The design on the wafer contains 4 replicate flow channels. Each of them contains a 200um wide main flow channel, splitting into 2 100um flow channels. Perpendicular on these are 5 times repeated blocks with width: 1x 80um, 1x 60um, 2x 40um, 3x 20um, 3x 10um + 3x 5um, and depths of 60um, 30um, 50um and 40um.
+% !!!!!!!!!!!!!
+
+Most work with microfluidics in this thesis was however done with a more recent microfluidic design.
+This device was developed by Daan J. Kiviet (unpublished), it is similar to the "mother machine" described in ref. \cite{Taheri-Araghi2014} but it has wider microcolony wells. As shown in Figure \ref{fig:devices}.C, this design contains 4 replicate flow channels.
+Specifically, each flow channel contains a 200um wide main flow channel, splitting into 2 100um flow channels. 
+Perpendicular on these are 5 times repeated blocks with width: 1x 80um, 1x 60um, 2x 40um, 3x 20um, 3x 10um + 3x 5um, and depths of 60um, 30um, 50um and 40um (Daan Kiviet, personal communications).
+These blocks forms chambers that are .77 $\upmu$m high, also referred to as "wells", in which bacterial microcolonies can grow.
+
+
+To produce the polydimethylsiloxane (PDMS) device, polymer and curing agent (Sylgard 184 elastomer, Dow Corning Corp.) were mixed in a 50mL Falcon tube using a polystyrene dinner fork (product nr. 888223, Bright Packaging) and a vortex mixer, using 1 mL of curing agent for each 7.7 g of polymer (i.e. not the recommended 1:10 ratio).
+Then, this mixture was cast into an epoxy mold \red{\cite{Koerner2005}} (made by Daan J. Kiviet) that \blue{is a positive copy of the original SU-8 master mold} (sometimes dust was removed from the mold by pressured Nitrogen gas).
+Air bubbles were removed from the mixture either by putting the mold and casting in a dessicator for 30 minutes, or by leaving the mixture for several hours before casting.
+The mold and casting were then put in a 80 C oven for 1-12 hours. 
+Subsequently, the casting was removed from the device, and holes were punched for the liquid in- and outlets.
+The device was cut into a smaller size using a scalpel to remove rough, raised or uneven edges.
+Then the PDMS device was covalently bound to a clean glass cover slip by treating the PDMS and glass surface with a portable corona device \cite{Haubert2006} (5-10 sweeps of approx. 5 seconds for each surface from approx. 5-10mm distance).
+The device was gently tapped using a gloved finger to improve contact between the PDMS and glass surfaces.
+(During this procedure the PDMS was only handled with clean metal pincers, a scalpel, or gloved hands.)
+Consecutively, the device was baked for another 1-12 hrs. We noticed bonding continued to improve during storage at RT for 1-2 weeks after completion of this protocol .
+
+
+To inoculate bacteria into the device, 2ml culture of \textit{Escherichia coli} is grown to high OD ($>$1) in a 10 ml Falcon culture tube on a rotator, either at 37C or 30C (O/N). 
+The concentration of bacteria is further increased by spinning down 1ml of the sample in an eppendorf tube at 2300-16100 RCF, and removing supernatent such that the concentration is increased by a factor of approximately 30. The sample is then resuspended.
+%
+First, 1 $\upmu$m of sterile 0.01\% Tween ($\text{H}_2\text{O}$) solution is slowly pipetted (the plunger is pressed down in approximately 5-10 seconds) into the PDMS device trough one of the holes.
+Similarly, 1 $\upmu$m of the concentrated culture is then introduced in the device.
+%
+Alternatively, a syringe attached to a piece of polyethylene tubing (Fine Bore Polyethyline Tubing, 0.55mm inner diameter, 0.96mm outer diameter, Smiths Medical), attached to a small metal tube (outer diameter approx. \red{0.65mm}), which is then inserted into the device at one of the holes can be used to very slowly introduce first Tween solution and then the condensed bacterial culture into the device.
+
+
+Once the device is inoculated with bacteria, it can be placed under the microscope (usually placed in the same metal scaffold as used for the gel pad experiments, Figure \ref{fig:devices}.A). 
+Two small metal tubes (outer diameter approx. \red{0.65mm}) are then inserted in the holes of the PDMS device, and used as connectors to connect polyethylene tubing (Fine Bore Polyethyline Tubing, 0.55mm inner diameter, 0.96mm outer diameter, Smiths medical International Ltd.).
+One of the tubes is in turn connected to a syringe (either 10ml or 50ml) placed in a microfluidic pumps (ProSense NE-1000 and NE-300) containing the desired growth medium.
+The other end of the other tube is placed in a waste collection erlenmeyer flask.
+When desired, instead of one pump with a medium syringe, two pumps each containing a syringe with different medium and an automated valve (Modular valve positioner, RS232, Hamilton) can be used to quickly switch between two media.
+Typical flow rates are between 0.5 and 1.0 mL/hr.
+
+%gel pad
+%===
+%Dunlop et al. 2008; 
+%Elowitz, Levine and Siggia 2002; 
+%Dong et al. 2010; 
+%Young et al. 2012; 
+%Kiviet et al. 2014; 
+%>>> Elowitz2002, Dunlop2008, Dong2010, Young2012, Kiviet2014
+%
+%
+%microfluidic
+%===
+%Locke and Elowitz 2009; 
+%Hammar et al. 2014; 
+%Hansen et al. 2015; 
+%Bennett and Hasty 2010; 
+%Nanatani et al. 2015; 
+%Hashimoto et al. 2016; 
+%Lambert and Kussel 2014;
+%Ullman et al. 2013; 
+%Young et al. 2013; 
+%Ferry et al. 2011; 
+%Wang et al. 2010;
+% >>> Locke2009, Hammar2014, Hansen2015, Bennet2010, Nanatani2015, Hashimoto20126, Lambert2014, Ullman2013, Young2013, Ferry2011, Wang2010
+
+% note that this was developed by Daan Kiviet
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{devices.pdf}
+	\caption{ 
+		(A) Schematic view of a sample that employs a gel pad to grow cells. Two metal parts (grey) hold the glass slides together using screws. Bacteria are pipetted onto a gel pad (red arrow) which is placed in a chamber build from a glass microscope slide, a glass slide with a hole, and a cover slip. The image is placed upside down in the microscope, the eye indicate the direction from which the microscope will image the sample. Image by Noreen Walker.
+		(B) Cartoon (not on scale) of a microfluidic device used in some experiments in this thesis. 
+		The asterisk indicates bacteria are grown in between a cover slip (shown at the bottom) and a thin polyacrylamide membrane (shown in the middle).
+		On top a PDMS slab is placed, which has a flow chamber on its bottom (blue square and zoom), through which medium is flown using two holes (red arrows) that are connected to tubing. 
+		This fresh medium can access the bacteria by diffusion through the thin membrane. 
+		The 30 by 3 mm chamber contains pillars placed on a 0.6mm grid (here only a few are shown for illustration purposes) to keep the thin polyacrylamide membrane in place. 
+		(C) A more advanced microfluidic device employed in this work was designed by Daan J. Kiviet. 
+		The mask shown here at the top is used to produce PDMS slabs with four identical growth medium channels, which each also fork into two main channels. 
+		These channels (which are \red{XX} $\upmu$m high) have protrusions on the side that are less high (0.77 $\upmu$m), which we refer to as wells.
+		The PDMS slab is covalently bound to a glass cover slip, and after the inoculation procedure (see main text) single layered microcolonies can grow in the wells.
+		Medium is flown through the main channels such that cells receive fresh medium. 
+		When the colonies grows and divides, superfluous cells are washed away at the side of the well that faces the main channel.		
+		(D) A picture of a microfluidic PDMS device as described in panel C.
+	}
+	\label{fig:devices}
+\end{figure}
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{microscope_setup.pdf}
+	\caption{ 
+	(A) Microscopy setup. One syringe pump (see label 1) pumps culture medium into the sample on the microscope stage in the temperature chamber and then to a waste collection Erlenmeyer flask (2), the other pump pumps medium directly to a waste Erlenmeyer. The two pumps in combination with an automated valve (3) that controls which medium goes to the sample and which directly goes to the waste flask allow for quick switching between the two media.
+	(B) The microfluidic device under the microscope. 
+	Medium is supplied to the sample (1) through a polyethylene tube (2) and a metal connecting tube (3). Waste medium is disposed through another polyethylene tube (4).
+	}
+	\label{fig:microscope_setup}
+\end{figure}
+
+\section{Data collection}
+As also described in chapter \ref{chapter:filarecovery} and previously \cite{Boulineau2013, Kiviet2014}, 
+% verbatim copied
+cells were imaged with an inverted microscope (Nikon, TE2000), equipped with 100X oil objective (Nikon, Plan Fluor NA 1.3), 
+cooled CMOS camera (Hamamatsu, Orca Flash4.0), xenon lamp with liquid light guide (Sutter, Lambda LS), GFP, mCherry, CFP and YFP filter set (Chroma, 41017, 49008, 49001 and 49003), 
+computer controlled shutters (Sutter, Lambda 10-3 with SmartShutter), automated stage (Marzhauzer, SCAN IM 120 x 100) and an incubation chamber (Solent) allowing precise 37 C temperature control. 
+% end verbatim copied
+An additional 1.5X lens was used, resulting in images with pixel size of 0.0438 $\upmu$m. The microscope was controlled by MetaMorph software (Molecular Devices). 
+% Note:
+% The microns per pixel are hard coded in the DJK_initschnitz function. The
+% values are also listed below for reference:
+% hamamatsu camera, setup 1 (new camera, installed in 2014-11)
+% p.micronsPerPixel = 0.0438;
+% CoolSnap camera, setup 1 (old camera)
+% p.micronsPerPixel = 0.04065;
+% camera hamamatsu, setup 2 (always same camera)
+% p.micronsPerPixel = 0.04312;
+
+\section{Updates to the analysis}
+To extract quantitative data from the time lapse movies, further analyses are performed.
+Briefly: Cells are first segmented to identify areas that constitute cells in the microscopy images. Then, after individual cells have been identified, the lineages of the cells are tracked over the frames of the time lapse. In subsequent analyses cellular parameters are characterized. Examples of important parameters are length, growth rate and the concentration of fluorescent reporter.
+
+Many algorithms have been developed that can segment microcolony data, track individual cells from one frame to the next, and quantify cellular parameters to a greater or lesser extent. Examples include Schnitzcells \cite{Young2012, Kiviet2014}, Supersegger \cite{Stylianidou2016}, Oufti \cite{Paintdakhi2016}, MoMA \cite{Kaiser2016}, Sachs et al. \cite{Sachs2016}, Nobs et al. \cite{Nobs2014}, MicrobeTracker \cite{Sliusarenko2011, Ullman2013}, CBA \cite{Sadanandan2016} and MAMLE \cite{Chowdhury2013}. 
+The employed segmentation procedures range from simple image thresholding to more advanced combinations of image transformations. 
+A recent development is the usage of machine learning to effectively segment microcolony data \cite{VanValen2016}.
+
+Throughout this work, we use a custom set of scripts based on the schnitzcells framework, which was developed in the Elowitz lab \cite{Young2012}. 
+These custom scripts are a mostly written by Daan J. Kiviet \cite{Kiviet2010}, Philippe Nghe and Noreen Walker \cite{Walker2016t}.
+Updates and novel functions are also introduced in this work.
+These improvements are described in the sections below.
+Additionally, we introduced a script called
+\begin{verbatim}
+Schnitzcells_masterscript.m,
+\end{verbatim}
+from which the whole analysis can be run. 
+This script interacts with a custom made Microsoft Excel configuration file that holds important analysis parameters (directories, segmentation parameters, fluorescence parameters, etc).
+This script also provides a graphical user interface to increase the efficiency of the analysis (Figure \ref{fig:GUI}).
+More detailed information about how this "master script" can be run can be found in the comments of the script.
+The scripts are available in a git repository at 
+\begin{verbatim}
+https://bitbucket.org/microscopeguerrillas/schnitzcells_tans.git,
+\end{verbatim}
+which holds the main files, 
+and a git repository at
+\begin{verbatim}
+https://bitbucket.org/microscopeguerrillas/
+schnitzcells_tans_extensions.git
+\end{verbatim}
+that holds additional files required to run the full analysis.
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{guiSchnitzcells.pdf}
+	\caption{ 
+		(A) Screenshot of the GUI introduced to increase the efficiency of the analysis.
+		(B) Screenshot of the Matlab figure with which the user can interact to manually correct the analysis. The segmentation is shown by the colors, and the circles show (corrected and uncorrected) centers of cells from the previous frame.
+		% G:\EXPERIMENTAL_DATA_2016\2016-12-08_CRP_asc990_lac\Schnitzcells_Analysis_Config_2016_12_08_pos2.xlsx
+	}
+	\label{fig:GUI}
+\end{figure}
+
+\section{Segmentation}
+
+Throughout this work, we use a segmentation algorithm developed by Philippe Nghe \cite{Walker2016t}. Additionally, all frames are manually checked for segmentation mistakes.
+However, the Nghe script was developed for data from gel pad time lapse experiments.
+Thus, some minor modifications were introduced to handle data from the microfluidic device were cells also disappear from the experimental observations.
+%
+Importantly, cells are flushed away once they reach the main channel, and thus cells that touch the edge of the image (see Figure \ref{fig:segmentation} for an example of the segmentation output) need to be ignored from the analysis.
+The original algorithm could not deal with cells touching the edge of the image. 
+As a simple fix, we introduced a gradient at the edge of the image (Figure \ref{fig:segmentation}.A) that goes from transparent to white, see the script 
+\begin{verbatim}
+MW_preprocessimagefadeedge, 
+\end{verbatim}
+%\url{},
+such that cells touching that edge are considered to have their cell edge at the edge of the image with some margin by the algorithm (Figure \ref{fig:segmentation}.C-D).
+This procedure allows processing steps of the algorithm to function as if the data came from a gel pad experiment.
+Consecutively, cells to which this was applied are removed from the analysis.
+
+More adjustments were made during the tracking of cells, see next section.
+
+% Original text from literature review manuscript (perhaps an earlier version)
+% The fact that single cells can show different behaviour despite being genetically identical and experiencing the same environment has been recognized in studies done long ago (Spudich and Jr. 1976; Powell 1956). Since the days of these early studies, the tools to track single cells over time have vastly improved, it is now possible to trace thousands of cells through hundreds of generations using microfluidic chemostats (Locke and Elowitz 2009; Dunlop et al. 2008; Elowitz, Levine and Siggia 2002; Hammar et al. 2014; Hansen et al. 2015; Bennett and Hasty 2010; Nanatani et al. 2015; Dong et al. 2010; Kiviet et al. 2014; Hashimoto et al. 2016; Lambert and Kussel 2014; Ullman et al. 2013; Young et al. 2013; Ferry et al. 2011; Young et al. 2012; Wang et al. 2010). The modern devices generally consist of PDMS, which is cast into shapes using a silicon wafer and covalently bound to glass cover slip allowing observation of cells under the microscope. Devices can also be cloned cheaply using epoxy molds (Kamande et al. 2015). Most chips designs have a main channel where growth medium flows through, from which chambers with low ceilings extrude. Bacteria are trapped in the chambers, and as they grow, the ones near the exit of the chambers are washed away by the main flow into waste. Different well designs exists where cell are growing either as a single file in thin chambers or as a monolayer in wide chambers (Fig 1). Temperature control, a constant supply of media and  the removal of cells ensure a constant environment in which growing single cells can be observed for up to multiple days. Different designs allow for fast switching of medium and medium gradients. Using time lapse microscopy, single cells can be tracked and analysed.
+% Different scripts were developed that recognize cells in the microscopy images (segmentation), and  track individuals from one frame to the next, for example Schnitzcells (Young et al. 2012; Kiviet et al. 2014), Supersegger (Stylianidou et al. 2016), Oufti (Paintdakhi et al. 2016), MoMA (Kaiser et al. 2016), Sachs et al. (Sachs et al. 2016)., Nobs et al. (Nobs and Maerkl 2014), MicrobeTracker (Sliusarenko et al. 2011; Ullman et al. 2013), CBA (Sadanandan et al. 2016) and MAMLE (Chowdhury et al. 2013). Segmentation procedures range from simple image thresholding to more advanced combinations of image transformations. It was recently shown that also machine learning can be used very effectively to segment this type of data (Van Valen et al. 2016). Also sophistication of tracking and data analysis varies from one analysis package to the next. Concluding, it transpires that culturing and computer-aided analysis of single cells is an active field of research, where "golden standards" have yet to crystalize out but many tools are currently available to obtain large quantities of single cell data.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{analyses1.pdf}
+	\caption{ 
+		 (A) The result of the segmentation algorithm, outlines of determined cell areas are shown in color.  (A frame the nucleoid labeled cells time lapse data from chapter \ref{chapter:filarecovery} is shown.) Images are cropped to increase computational efficiency, and also to remove the main channel structure. Note that cells are generally flushed out when they reach the main channel. Growth results in cells moving towards the well exit at the main channel, or towards the edge of the picture labeled top here. Cells that are partially outside the cropped image are ignored in the analysis.
+		 (B) The image in panel A is cropped, this panel shows the full image taken by the microscope. The asterisk indicates the well which is also displayed in other panels.
+		 (C-D) Image at the top of the cropped image are artificially considered to have a cell edge that is aligned with the image edge. These cells are later removed from the analysis (here indicated with asterisks). Shown are processing steps early (C) and late (D) in the algorithm. (Note that the artifact shown in red in panel D will also be removed later in the analysis, either automatically or manually.)
+		% H:\EXPERIMENTAL_DATA_2017\2017-11-08_FilaRecovery_asc1106_hupA-mCherry\Schnitzcells_Analysis_Config_2017-10-12_hupA-mRuby2_pos1d.xlsx
+	}
+	\label{fig:segmentation}
+\end{figure}
+
+\section{Tracking}
+
+Calculating the lineage of cells using the segmented images is an essential part of the desired analysis.
+Two tracking functions already existed, and we have introduced a third simple tracker matlab script to these.
+%
+This was done because both the other trackers relied to methods that represented the location of cells as a point in one way or another (Figure \ref{fig:tracking}.A-B).
+In one method, cells from both frames to be connected are represented by three points along their skeleton.
+In the second method, the centers of cells from one frame are compared with the cell areas from the other frame \cite{Walker2016t}.
+%
+In specific cases this leads to issues. For example, if cells have atypical shapes (e.g. due to filamentation), the centers characterize their placement less well.
+Therefor the introduced method, see
+\begin{verbatim}
+MW_tracker.m, MW_linkframes, 
+\end{verbatim}
+tracks cells by looking at overlap between cell areas.
+The cell from frame n+1 is considered to be lineage-connected to that cell from the previous frame n that has most overlap with it (Figure \ref{fig:tracking}.C).
+
+Additionally, during image acquisition the sample can shift tiny amounts (usually less than a micrometer), which is corrected by the Nghe script by aligning the centers of the microcolonies for consecutive frames.
+This procedure leads to issues when cells disappear from the analysis, as is the case with the microfluidic device.
+(When cells disappear, the centroids do not represent the same set of cells any more, and the procedure can misalign the microcolonies.)
+Thus, an additional adjustment was introduced in the tracking script, which aims to shift the joined areas that are recognized as cells from the two frames on top of each other, and maximizes the overlap between these two areas (Figure \ref{fig:tracking}.D).
+%RESIZING OF THE FRAMES TO FIT THEM IS ONLY DONE FOR NON-MOTHERMACHINE DATA
+Specifically, a binary representation of the image (cells detected or no cells detected for that pixel) is integrated along one axis, such that both the n-th frame and the n+1 frame are represented by a line along the other axis. Then, these lines are shifted until the difference between the lines is minimized along that axis. This is done both for the x and y directions (i.e. both axes).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{tracking1.pdf}
+	\caption{ 
+		(A) Default Schnitzcells tracking algorithm, which characterizes cells by three points along its skeleton. Cells are connected between frames by minimizing the distance between these characteristic points. See \cite{Walker2016t} for more information.
+		(B) The algorithm introduced by Noreen Walker, which links cells between frames by minimizing the distances of centroids in the n+1 frame and areas of cells in the n-th frame.
+		See \cite{Walker2016t} for more information.
+		(C) Algorithm introduced in this work, which links every cell in the n+1 frame to that cell in the n-th frame that has most overlap with the projection of the n+1 frame cell onto the n-th frame.
+		In this example, the area of the orange cell in the n+1 frame overlaps with the blue, dark blue, orange, green and purple cells in the n-th frame, but shows most overlap with the orange cell. Thus, the two orange cells in these two consecutive frames are connected.
+		(D) An example of the overlapping colony areas from two consecutive frames from a microfluidic device dataset. Overlap between the colonies is indicated in white, non-overlap in gray. Alignment using centroids would fail in this case, since the microcolony centers (shown as circles) do not represent the same subset of cells. For this reason the overlap of these two areas is maximized to align subsequent frames in data from microfluidic devices. (The microcolony shown is the same as shown in Figure \ref{fig:segmentation}.)
+		% fr 709, 710 from
+		%	H:\EXPERIMENTAL_DATA_2017\2017-11-08_FilaRecovery_asc1106_hupA-mCherry\pos1cropd\
+		Images (A) and (B) are made by Noreen Walker.
+	}
+	\label{fig:tracking}
+\end{figure}
+
+\section{Skeleton length and straightening of skeleton}
+
+Previously \cite{Kiviet2010}, the length of the cells during the analysis was determined using a third order polynomial fit through the cell area. 
+In some cases, e.g. in involving filamentation of cells, a 7-th order polynomial was used.
+An alternative way of determining length is using the skeleton of the cell area.
+The cellular skeletons are determined in the scripts
+\begin{verbatim}
+NDL_addToSchnitzes_skeletonLengthMW, NDL_lengthforfillamentedcellsMW,
+\end{verbatim}
+which were developed by Nick de Lange.
+The skeleton is determined using Matlab's 
+\begin{verbatim}
+bwmorph
+\end{verbatim}
+function, and after removal of branches, it is extrapolated to the edge of the cell's areas using 0.95 $\upmu$m long windows at both ends of the skeleton (Figure \ref{fig:skeletonstraightening}.A-B). 
+Lengths of the skeleton and the extrapolated parts are determined using Matlab's 
+\begin{verbatim}
+bwdistgeodesic
+\end{verbatim}
+function (using the quasi-euclidean method).
+Additionally, an algorithm was developed to produce straightened representations of the cells using the cellular skeletons. This is useful when for example the localization or intensity of the fluorescence signal along the cellular axis needs to be quantified (this is for example done in chapter \ref{chapter:filarecovery} for fluorescently labeled division rings and nucleoids).
+This is done in the script 
+\begin{verbatim}
+MW_straightenbacteria
+\end{verbatim}
+by placing lines of equal length tangential to the skeleton, and subsequently placing the image pixels corresponding to each line into the columns of a rectangular matrix (Figure \ref{fig:skeletonstraightening}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{skeleton_and_straightening.pdf}
+	\caption{ 
+		(A) Skeleton of an example cell area (gray) calculated by Matlab's \texttt{bwmorph} function, after removal of side branches. 
+		(B) The skeleton is extrapolated towards cell poles (black circles) using the ends of the skeleton (purple and yellow dots). The total cell length is calculated by summation of the lengths of the extrapolated and original skeleton parts.
+		(C-G) Example of cellular straightening. Based on segmentation (see main text and Figure \ref{fig:segmentation}) both for the phase image (C) and the fluorescence image (D) cells can be straightened to produce a fluorescence intensity profile along the cellular axis. This is done by using a series of lines that are placed tangential to the skeleton (E), as shown here for the cell indicated by the blue arrow in panel (C). The pixels closest to this line (represented by colored dots here) are used to generate the straightened bacteria, both for the phase image (F) and the fluorescence image (G).
+		The images shown here are part of the dataset with nucleoid labeled  cells described in chapter \ref{chapter:filarecovery}.
+	}
+	\label{fig:skeletonstraightening}
+\end{figure}
+
+\section{Correlation functions, scatter plots, weighing and controls}
+
+An important tool to gain insights into the dynamics and interactions between different cellular parameters (such as expression of different proteins and growth rate) is the correlation function.
+%
+As this function is also central in this thesis, 
+I'll discuss some basic definitions regarding this quantity here.
+%
+Simply put, the aim here is to gain insight in to what extent the value of one signal expected to affect the value of another signal, considering there might be a delay in the effect.
+%
+The cross-correlation function $R(\tau)$ quantifies to what extent the deviation from the mean value in one parameter $f(t)$ at time $t$ is correlated with the deviation from the mean value in another parameter $g(t+\tau)$, at a delay $\tau$ later (or earlier).
+%
+Mathematically, this is expressed as \cite[see lemma "Cross-Correlation"]{Weisstein2018}
+\begin{align}
+	\label{eq:CC}
+		S_{f,g}(\tau) = f \star g = \int_{\tau=\infty}^{\infty} {\bar {f}(t) \bar{g}(t+\tau) \delta \tau}
+\end{align}
+or for a discrete signal the cross-correlation can be defined as \cite{Dunlop2008}:
+\begin{align}
+	\label{eq:CCdiscrete}
+	S_{f,g}(\tau) = \frac{1}{N-|\tau|} 
+		\sum_{n=0}^{N-|\tau|-1} {\tilde{f}(n) \tilde{g}(n+\tau)},
+\end{align}
+where $f$ and $g$ are either continuous and mean-subtracted (indicated by the bar) or discrete and mean-subtracted (indicated by the tilde). 
+%
+When this is normalized by 
+\begin{align*}
+\sqrt{S_{f,f}(0)S_{g,g}(0)}
+\end{align*}
+the result is also often referred to as the cross-correlation \cite{Munsky2012}:
+%
+\begin{align}
+	\label{eq:R}
+R_{f,g}(\tau) 
+ 	& = \frac{1}{\sqrt{S_{f,f}(0)S_{g,g}(0)}} \frac{1}{N-|\tau|} 
+	\sum_{n=0}^{N-|\tau|-1} {\tilde{f}(n) \tilde{g}(n+\tau)} 
+	\nonumber \\
+	& =	\frac{S_{f,g}(\tau)}{\sqrt{S_{f,f}(0)S_{g,g}(0)}} 
+\end{align}
+%
+$R(f,g)$ defined in equation \ref{eq:R} is also the function that we call the cross-correlation and use throughout chapters {\ref{chapter:CRP} and \ref{chapter:ribosomes} to quantify relationships between different biological quantities.
+%
+Note that $S_{f,f}$ also equals the variance in f, $\sigma^2_f$. 
+%
+When $\tau=0$, the cross-covariance simply becomes the correlation coefficient $\rho_{f,g}$ (also known as the Pearson's correlation) between two parameters:
+%
+%
+\begin{align}
+	\label{correlationCoefficient}
+	\rho_{f,g}=		
+	\frac{1}{\sigma_f \sigma_g \cdot N} 
+	\sum_{n=0}^{N-1} {\tilde{f}(n) \tilde{g}(n)}
+	=
+	\frac{\sigma^2_{f,g}}{\sigma_f \sigma_g}
+	=
+	\frac{cov(f,g)}{\sqrt{var(f)var(g)}},
+\end{align}
+where $\sigma^2_f$ indicates the variance of $f$, which can be equivalently written as $var(f)$. ($\sigma_f$ indicates the standard deviation, the square root of the variance.) The covariance is indicated by $\sigma_{f,g}$ or $cov(f,g)$.
+%
+% Mathworld says ss^2_xy/ss_xx*ss_yy
+% Note that  
+%
+% The correlation coefficient $\rho_{x,y}$ is also known as the Pearson's correlation.
+%WHAT ABOUT NORMALIZATION
+%
+These quantities are tightly related to the least squares fitting of b in $g=a+bf$ \cite[see lemma "Correlation Coefficient"]{Weisstein2018}:
+\begin{align}
+b = \frac{cov(f,g)}{var(f)}
+\end{align}
+this also shows that $\rho_{f,g} = \sqrt { b \cdot b' }$ (defining $f=a'+b'g$ additionally to $g=a+bf$).
+
+Note that there is some ambiguity between the terms cross-covariance and cross-correlations when talking about time series data. 
+While Munsky et al. \cite{Munsky2012} also define the cross-correlation $R(f,g)$ as we do in equation \ref{eq:R}, Dunlop et al. \cite{Dunlop2008} call the quantity $R(f,g)$ defined in equation \ref{eq:R} the cross-covariance, and call $S(f,g)$ in equations \ref{eq:CC} and \ref{eq:CCdiscrete} the cross-correlation (as also defined in \cite[see lemma "Cross-Correlation"]{Weisstein2018}). To be consistent with the definitions of the Pearson's correlation coefficient and the covariance, we follow the definition as given by Munsky et al. \cite{Munsky2012}, as also employed by Kiviet et al. \cite{Kiviet2010, Kiviet2014}.
+
+
+% convenient:
+% http://mathworld.wolfram.com/CorrelationCoefficient.html
+% https://en.wikipedia.org/wiki/Covariance
+% https://en.wikipedia.org/wiki/Correlation_and_dependence
+% script: general_playingwithcorrelations.m
+% furthermore
+% http://stats.stackexchange.com/questions/22718/what-is-the-difference-between-linear-regression-on-y-with-x-and-x-with-y/22721#22721
+% http://stats.stackexchange.com/questions/32464/how-does-the-correlation-coefficient-differ-from-regression-slope
+
+
+\subsection{Weighing}
+
+In a typical experiment, we measure biological quantities over time in growing and dividing bacteria. 
+%
+Since we are interested in processes that have time scales longer than one bacterial life cycle, we measure over multiple generations of bacteria (depending on experimental conditions, the generation time is typically 20 minutes to 5 hours).
+%
+This means data time series contain multiple division events.
+%
+For colonies 
+% 
+Typical data thus spans 
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{cc_weighing3.pdf}
+	\caption{ 
+		(A)
+		(B)
+	}
+	\label{fig:weighingCCs}
+\end{figure}
+
+%%%%
+
+\clearpage
+
+\section{Appendix}
+
+\begin{sloppypar}
+Below a list of some useful scripts, they can be found in the \url{schnitzcells_tans_extensions} repository.
+Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. Lore ipsum. 
+\end{sloppypar}
+
+\begin{itemize}
+	\item[\url{
+	general_CC_littletest_noiseandbranchesunequallength.m
+	}]
+	A script that illustrates how branches of unequal length are normalized.
+		\item[\url{
+		general_weighingCCs_setup.m	
+		}]
+		This script calculates and plots cross-correlations for example branches of unequal length.
+%		\item[\url{
+%		SCRIPTNAME
+%		}]
+%		DESCRIPTION
+\end{itemize}
+
+
+
+\section{Acknowledgements}
+Thanks to Noreen E. Walker for helpful discussions regarding the cross-correlation function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
