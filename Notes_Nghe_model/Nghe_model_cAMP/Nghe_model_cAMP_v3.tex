@@ -430,7 +430,30 @@ As Dunlop et al. point out, we are now looking at the expectation values of the 
 \left< \mathcal{F}^{-1} \left[ \overline{\mathcal{F} (X)} \mathcal{F}(Y) \right] \right>
 \end{align}
 
+\section{Towbin model}
 
+\begin{align}
+\text{F}(\text{x})\text{=}\frac{\text{K1}}{\text{K1}+x}
+\end{align}
+
+\begin{align}
+\frac{\partial x(t)}{\partial t}=\beta  C(t) \text{F}(x)-\frac{\gamma  x \left(1-C(t)\right)}{\text{K2}+x}
+\end{align}
+Set to zero to find steady state concentration.
+
+Here, in the first term on rhs, $\beta$ is the efficiency at which the carbon sector (C) converts sugars into metabolites (x). F(x) describes immediate feedback by x. External sugar concentration is assumed constant, and import + conversion directly dependent C, and thus there is no term "s" in this formulae.
+The 2nd time rhs describes the consumption of x, which results in growth. $(1-C[t]) = R$, or the ribosomal sector. $\Gamma$ is some efficiency factor, $x/(x+K2)$ describes reaction kinetics of conversion of x to growth (Michaelis-Menten kinetics aka Hill). 
+We propose x can actually be regarded as in steady state, as the time scales of this reaction are much faster than any other, hence $dX(t),t = 0$. 
+
+\begin{align}
+\frac{\partial C(t)}{\partial t}=f(x) \mu (t)-C \mu =\mu (t) \left(f(x)-C(t)\right);
+\end{align}
+
+Here, 1st term rhs describes that how many proteins are produced depends on the growth rate of the cell (Hwa - but generalized from constant). The 2nd term simply describes dilution.
+
+\begin{align}
+\mu (t)=\frac{\alpha  \left(\gamma  x \left(1-c_t\right)\right)}{\text{K2}+x}
+\end{align}
 
 \section{Notes}
 
