@@ -1,30 +1,26 @@
-\BOOKMARK [0][-]{chapter.1}{Stochasticity in cellular metabolism and growth: approaches and consequences}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Methods}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Single cell experiments}{chapter.2}% 4
-\BOOKMARK [1][-]{section.2.3}{Data collection}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Updates to the analysis}{chapter.2}% 6
-\BOOKMARK [1][-]{section.2.5}{Segmentation}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.6}{Tracking}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.7}{Skeleton length and straightening of skeleton}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.8}{Correlation functions, scatter plots, weighing and controls}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.9}{Appendix}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.10}{Acknowledgements}{chapter.2}% 12
-\BOOKMARK [0][-]{chapter.3}{Size laws and septal ring dynamics in filamentous Escherichia coli cells}{}% 13
-\BOOKMARK [0][-]{chapter.4}{Modeling the noise transmission}{}% 14
-\BOOKMARK [1][-]{section.4.1}{Ornstein-Uhlenbeck fluctuations model}{chapter.4}% 15
-\BOOKMARK [1][-]{section.4.2}{Separate noise equations}{chapter.4}% 16
-\BOOKMARK [1][-]{section.4.3}{Nghe model}{chapter.4}% 17
-\BOOKMARK [1][-]{section.4.4}{Obtaining the cross correlations}{chapter.4}% 18
-\BOOKMARK [1][-]{section.4.5}{Towbin model}{chapter.4}% 19
-\BOOKMARK [1][-]{section.4.6}{Notes}{chapter.4}% 20
-\BOOKMARK [0][-]{chapter.5}{CRP pro}{}% 21
-\BOOKMARK [0][-]{chapter.6}{The Ribosomal City}{}% 22
-\BOOKMARK [1][-]{section.6.1}{Misc. todo's etc}{chapter.6}% 23
-\BOOKMARK [1][-]{section.6.2}{Introduction}{chapter.6}% 24
-\BOOKMARK [1][-]{section.6.3}{Structure of the ribosome}{chapter.6}% 25
-\BOOKMARK [1][-]{section.6.4}{The Ribosome}{chapter.6}% 26
-\BOOKMARK [1][-]{section.6.5}{Labeling proteins of the ribosome}{chapter.6}% 27
-\BOOKMARK [1][-]{section.6.6}{Some refs that might be convenient}{chapter.6}% 28
-\BOOKMARK [0][-]{appendix.A}{Protocols}{}% 29
-\BOOKMARK [0][-]{appendix*.14}{Bibliography}{}% 30
+\BOOKMARK [1][-]{section.0.1}{Martijn's great introduction, first section}{}% 1
+\BOOKMARK [1][-]{section.0.2}{Random notes}{}% 2
+\BOOKMARK [0][-]{chapter.1}{Stochasticity in cellular metabolism and growth: approaches and consequences}{}% 3
+\BOOKMARK [0][-]{chapter.2}{Methods}{}% 4
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 5
+\BOOKMARK [1][-]{section.2.2}{Single cell experiments}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Data collection}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.4}{Updates to the analysis}{chapter.2}% 8
+\BOOKMARK [0][-]{chapter.3}{Size laws and septal ring dynamics in filamentous Escherichia coli cells}{}% 9
+\BOOKMARK [0][-]{chapter.4}{Modeling the noise transmission}{}% 10
+\BOOKMARK [1][-]{section.4.1}{Ornstein-Uhlenbeck fluctuations model}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.2}{Separate noise equations}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.3}{Nghe model}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.4}{Obtaining the cross correlations}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.5}{Towbin model}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.6}{Notes}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{CRP pro}{}% 17
+\BOOKMARK [0][-]{chapter.6}{The Ribosomal City}{}% 18
+\BOOKMARK [1][-]{section.6.1}{Misc. todo's etc}{chapter.6}% 19
+\BOOKMARK [1][-]{section.6.2}{Introduction}{chapter.6}% 20
+\BOOKMARK [1][-]{section.6.3}{Structure of the ribosome}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.4}{The Ribosome}{chapter.6}% 22
+\BOOKMARK [1][-]{section.6.5}{Labeling proteins of the ribosome}{chapter.6}% 23
+\BOOKMARK [1][-]{section.6.6}{Some refs that might be convenient}{chapter.6}% 24
+\BOOKMARK [0][-]{appendix.A}{Protocols}{}% 25
+\BOOKMARK [0][-]{appendix*.18}{Bibliography}{}% 26

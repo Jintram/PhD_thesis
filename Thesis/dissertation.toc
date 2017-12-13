@@ -1,44 +1,46 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Stochasticity in cellular metabolism and growth: approaches and consequences}{3}{chapter.1}
-\contentsline {chapter}{\numberline {2}Methods}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introduction}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Single cell experiments}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Microfluidic devices}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}The microfluidic device used in this work}{6}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Data collection}{7}{section.2.3}
-\contentsline {section}{\numberline {2.4}Updates to the analysis}{9}{section.2.4}
-\contentsline {section}{\numberline {2.5}Segmentation}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}Tracking}{11}{section.2.6}
-\contentsline {section}{\numberline {2.7}Skeleton length and straightening of skeleton}{11}{section.2.7}
-\contentsline {section}{\numberline {2.8}Correlation functions, scatter plots, weighing and controls}{14}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Weighing}{16}{subsection.2.8.1}
-\contentsline {section}{\numberline {2.9}Appendix}{18}{section.2.9}
-\contentsline {section}{\numberline {2.10}Acknowledgements}{18}{section.2.10}
-\contentsline {chapter}{\numberline {3}Size laws and septal ring dynamics in filamentous Escherichia coli cells}{19}{chapter.3}
-\contentsline {chapter}{\numberline {4}Modeling the noise transmission}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Ornstein-Uhlenbeck fluctuations model}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}The model}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Implicit noise equations}{21}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Separate noise equations}{23}{section.4.2}
-\contentsline {section}{\numberline {4.3}Nghe model}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}Obtaining the cross correlations}{24}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Obtaining solutions in Fourier space}{25}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Actually getting the cross-correlations}{26}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Towbin model}{26}{section.4.5}
-\contentsline {section}{\numberline {4.6}Notes}{27}{section.4.6}
-\contentsline {chapter}{\numberline {5}CRP pro}{29}{chapter.5}
-\contentsline {chapter}{\numberline {6}The Ribosomal City}{31}{chapter.6}
-\contentsline {section}{\numberline {6.1}Misc. todo's etc}{31}{section.6.1}
-\contentsline {section}{\numberline {6.2}Introduction}{32}{section.6.2}
-\contentsline {section}{\numberline {6.3}Structure of the ribosome}{32}{section.6.3}
-\contentsline {section}{\numberline {6.4}The Ribosome}{32}{section.6.4}
-\contentsline {section}{\numberline {6.5}Labeling proteins of the ribosome}{33}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}rpmE (L31)}{33}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}rplS (L19)}{33}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3}rplI (L9)}{33}{subsection.6.5.3}
-\contentsline {subsection}{\numberline {6.5.4}rpsB (S2)}{33}{subsection.6.5.4}
-\contentsline {subsection}{\numberline {6.5.5}Acknowledgements}{33}{subsection.6.5.5}
-\contentsline {section}{\numberline {6.6}Some refs that might be convenient}{35}{section.6.6}
-\contentsline {chapter}{\numberline {A}Protocols}{37}{appendix.A}
-\contentsline {chapter}{Bibliography}{43}{appendix*.14}
+\contentsline {section}{\numberline {0.1}Martijn's great introduction, first section}{3}{section.0.1}
+\contentsline {section}{\numberline {0.2}Random notes}{3}{section.0.2}
+\contentsline {chapter}{\numberline {1}Stochasticity in cellular metabolism and growth: approaches and consequences}{5}{chapter.1}
+\contentsline {chapter}{\numberline {2}Methods}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{7}{section.2.1}
+\contentsline {section}{\numberline {2.2}Single cell experiments}{7}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Microfluidic devices}{8}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}The microfluidic device used in this work}{8}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Data collection}{9}{section.2.3}
+\contentsline {section}{\numberline {2.4}Updates to the analysis}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Segmentation}{12}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Tracking}{13}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Skeleton length and straightening of skeleton}{13}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Correlation functions, scatter plots, weighing and controls}{16}{subsection.2.4.4}
+\contentsline {subsubsection}{The cross-correlation function}{16}{subsection.2.4.4}
+\contentsline {subsubsection}{Delayed Scatter plots}{18}{equation.2.4.5}
+\contentsline {subsubsection}{Weighing}{19}{figure.caption.11}
+\contentsline {chapter}{\numberline {3}Size laws and septal ring dynamics in filamentous Escherichia coli cells}{23}{chapter.3}
+\contentsline {chapter}{\numberline {4}Modeling the noise transmission}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Ornstein-Uhlenbeck fluctuations model}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The model}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Implicit noise equations}{25}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Separate noise equations}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Nghe model}{27}{section.4.3}
+\contentsline {section}{\numberline {4.4}Obtaining the cross correlations}{28}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Obtaining solutions in Fourier space}{29}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Actually getting the cross-correlations}{30}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Towbin model}{30}{section.4.5}
+\contentsline {section}{\numberline {4.6}Notes}{31}{section.4.6}
+\contentsline {chapter}{\numberline {5}CRP pro}{33}{chapter.5}
+\contentsline {chapter}{\numberline {6}The Ribosomal City}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Misc. todo's etc}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Introduction}{36}{section.6.2}
+\contentsline {section}{\numberline {6.3}Structure of the ribosome}{36}{section.6.3}
+\contentsline {section}{\numberline {6.4}The Ribosome}{36}{section.6.4}
+\contentsline {section}{\numberline {6.5}Labeling proteins of the ribosome}{37}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}rpmE (L31)}{37}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}rplS (L19)}{37}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}rplI (L9)}{37}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.4}rpsB (S2)}{37}{subsection.6.5.4}
+\contentsline {subsection}{\numberline {6.5.5}Acknowledgements}{37}{subsection.6.5.5}
+\contentsline {section}{\numberline {6.6}Some refs that might be convenient}{39}{section.6.6}
+\contentsline {chapter}{\numberline {A}Protocols}{43}{appendix.A}
+\contentsline {chapter}{Bibliography}{49}{appendix*.18}
 \contentsfinish 

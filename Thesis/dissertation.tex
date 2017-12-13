@@ -25,8 +25,9 @@
 
 \usepackage{upgreek} % for the upright µ symbol
 
-
-\usepackage{breakurl} % in combination with sloppy and fussy commands this should allow breackage of urls, but it didn't
+\usepackage{verbatim}
+\usepackage{breakurl} % in combination with sloppy and fussy commands this should allow breackage of urls, but it didn't; also \url will produce links
+\usepackage{hyperref}
 
 % Some attempts to corretly break urls (and e.g. also script names).
 % \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
@@ -73,7 +74,7 @@
 \thumbtrue
 
 \include{Chapter0_Preface_etc/preface_etc}
-%\include{Chapter1_Introduction/chapter1_introduction}
+\include{Chapter1_Introduction/chapter1_introduction}
 \include{ChapterX_Literaturereview/ChapterX_Literaturereview}
 \include{Chapter2_Methods/chapter2_methods}
 \include{ChapterX_Filarecovery/ChapterX_Filarecovery}
@@ -81,6 +82,7 @@
 \include{ChapterX_CRP/CRP_main}
 \include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 \include{ChapterX_Notes/ChapterX_Notes}
+\include{ChapterX_Conclusion/ChapterX_Conclusion}
 
 
 %% Use letters for the chapter numbers of the appendices.
