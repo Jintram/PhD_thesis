@@ -53,16 +53,34 @@ A more detailed description of this device can be found in \cite{Boulineau2013}.
 % !!!!!!!!!!!!!
 % The design on the wafer contains 4 replicate flow channels. Each of them contains a 200um wide main flow channel, splitting into 2 100um flow channels. Perpendicular on these are 5 times repeated blocks with width: 1x 80um, 1x 60um, 2x 40um, 3x 20um, 3x 10um + 3x 5um, and depths of 60um, 30um, 50um and 40um.
 % !!!!!!!!!!!!!
+%
+% ===
+%
+%I looked up the measurements of the wafer: main flowchannel was 23.5 um and growth channels 0.75um (the 0.77um I sent earlier was from a different part of the wafer). I believe that dimensions can change slightly during transfer to epoxy.
+%
+%I made the epoxy using the attached protocol (with epoxy R614 and R123).
+
 
 Most work with microfluidics in this thesis was however done with a more recent microfluidic design.
 This device was developed by Daan J. Kiviet (unpublished), it is similar to the "mother machine" described in ref. \cite{Taheri-Araghi2014} but it has wider microcolony wells. As shown in Figure \ref{fig:mm:devices}.C, this design contains 4 replicate flow channels.
 Specifically, each flow channel contains a 200um wide main flow channel, splitting into 2 100um flow channels. 
 Perpendicular on these are 5 times repeated blocks with width: 1x 80um, 1x 60um, 2x 40um, 3x 20um, 3x 10um + 3x 5um, and depths of 60um, 30um, 50um and 40um (Daan Kiviet, personal communications).
-These blocks forms chambers that are .77 $\upmu$m high, also referred to as "wells", in which bacterial microcolonies can grow.
+These blocks forms chambers that are .75 $\upmu$m high, also referred to as "wells", in which bacterial microcolonies can grow. The main channel is 23.5 $\upmu$ high (heights reported here refer to the original wafer).
 
+\subsubsection{Epoxy mold fabrication}
+
+The PDMS devices were made by casting them into an epoxy mold, which was a gift from Daan J. Kiviet and the Ackermann lab. 
+The production of the epoxy mold was performed following an online protocol \cite{EstevezTorres2009}. 
+Briefly, this protocol involved creating a copy of the original mold using R123 epoxy resin and R614 hardener. 
+The epoxy mixture was prepared as described by the manufacturer, and bubbles were removed by vacuum pumping (ultrasonification is an alternative technique).
+The original PDMS cast from the wafer mold was placed in a container, and the epoxy mixture was poured on top (approximately 5mm thick).
+The cast was left overnight at room temperature, the PDMS was then removed (using scalpel and tweezers), after which the mould was baked at 70 C for one day, and it was then left for another day at room temperature to harden.
+It was then cleaned with plasma and silanized using a trichloromethylsilane-saturated atmosphere for 5 min.
+
+\subsubsection{PDMS device fabrication}
 
 To produce the polydimethylsiloxane (PDMS) device, polymer and curing agent (Sylgard 184 elastomer, Dow Corning Corp.) were mixed in a 50mL Falcon tube using a polystyrene dinner fork (product nr. 888223, Bright Packaging) and a vortex mixer, using 1 mL of curing agent for each 7.7 g of polymer (i.e. not the recommended 1:10 ratio).
-Then, this mixture was cast into an epoxy mold \red{\cite{Koerner2005}} (made by Daan J. Kiviet) that \blue{is a positive copy of the original SU-8 master mold} (sometimes dust was removed from the mold by pressured Nitrogen gas).
+Then, this mixture was cast into an epoxy mold (made by Daan J. Kiviet) that is a positive copy of the original wafer mold (sometimes dust was removed from the mold by pressured Nitrogen gas).
 Air bubbles were removed from the mixture either by putting the mold and casting in a dessicator for 30 minutes, or by leaving the mixture for several hours before casting.
 The mold and casting were then put in a 80 C oven for 1-12 hours. 
 Subsequently, the casting was removed from the device, and holes were punched for the liquid in- and outlets.
@@ -72,7 +90,7 @@ The device was gently tapped using a gloved finger to improve contact between th
 (During this procedure the PDMS was only handled with clean metal pincers, a scalpel, or gloved hands.)
 Consecutively, the device was baked for another 1-12 hrs. We noticed bonding continued to improve during storage at RT for 1-2 weeks after completion of this protocol .
 
-
+\subsubsection{Inoculation of bacteria into the device}
 To inoculate bacteria into the device, 2ml culture of \textit{Escherichia coli} is grown to high OD ($>$1) in a 10 ml Falcon culture tube on a rotator, either at 37C or 30C (O/N). 
 The concentration of bacteria is further increased by spinning down 1ml of the sample in an eppendorf tube at 2300-16100 RCF, and removing supernatent such that the concentration is increased by a factor of approximately 30. The sample is then resuspended.
 %
@@ -81,7 +99,7 @@ Similarly, 1 $\upmu$m of the concentrated culture is then introduced in the devi
 %
 Alternatively, a syringe attached to a piece of polyethylene tubing (Fine Bore Polyethyline Tubing, 0.55mm inner diameter, 0.96mm outer diameter, Smiths Medical), attached to a small metal tube (outer diameter approx. \red{0.65mm}), which is then inserted into the device at one of the holes can be used to very slowly introduce first Tween solution and then the condensed bacterial culture into the device.
 
-
+\subsubsection{Setting up the experiment}
 Once the device is inoculated with bacteria, it can be placed under the microscope (usually placed in the same metal scaffold as used for the gel pad experiments, Figure \ref{fig:mm:devices}.A). 
 Two small metal tubes (outer diameter approx. \red{0.65mm}) are then inserted in the holes of the PDMS device, and used as connectors to connect polyethylene tubing (Fine Bore Polyethyline Tubing, 0.55mm inner diameter, 0.96mm outer diameter, Smiths medical International Ltd.).
 One of the tubes is in turn connected to a syringe (either 10ml or 50ml) placed in a microfluidic pumps (ProSense NE-1000 and NE-300) containing the desired growth medium.
@@ -350,6 +368,7 @@ or for a discrete signal the cross-correlation can be defined as \cite{Dunlop200
 		\sum_{n=0}^{N-|\tau|-1} {\tilde{f}(n) \tilde{g}(n+\tau)},
 \end{align}
 where $f$ and $g$ are either continuous and mean-subtracted (indicated by the bar) or discrete and mean-subtracted (indicated by the tilde). 
+$N$ is the number of time points in the data series.
 %
 When this is normalized by 
 \begin{align*}
@@ -411,6 +430,7 @@ While Munsky et al. \cite{Munsky2012} also define the cross-correlation $R(f,g)$
 % http://stats.stackexchange.com/questions/22718/what-is-the-difference-between-linear-regression-on-y-with-x-and-x-with-y/22721#22721
 % http://stats.stackexchange.com/questions/32464/how-does-the-correlation-coefficient-differ-from-regression-slope
 
+
 \subsubsection{Delayed Scatter plots}
 
 Cross-correlations are particularly good at detecting linear relationships.
@@ -418,15 +438,17 @@ As an addition to the analysis using cross-correlations,
 it can therefor be instructive to analyze time traces of measured cellular parameters by using scatter plots (Figure \ref{fig:mm:scatter}), 
 which might show non-linear relationships between the parameters of interest. 
 %
-However, cellular parameters are shown to sometimes correlate with delays \cite{Kiviet2014}; it has for example been shown that the production rates of some enzymes have an effect on growth rate at some later point in time.
-Thus, simply plotting $f(n)$ and $g(n)$ (which could for example be enzyme production and growth rate, respectively) against each other for all $n$ values might not give insight in the relationships between the two quantities $x$ and $y$.
+However, cellular parameters are shown to sometimes correlate with delays; it has for example been shown that the production rates of some enzymes have an effect on growth rate at some later point in time \cite{Kiviet2014}.
+Thus, simply plotting $f(n)$ and $g(n)$ (which could for example be enzyme production and growth rate, respectively) against each other for all $n$ values might not give the maximum insight in the relationships between the two quantities $x$ and $y$.
 Therefor, in the scripts
 \begin{verbatim}
 MW_delayedScatter, MW_getdelayedscatter
 \end{verbatim}
 $f(n)$ is plotted against $g(n+\tau)$ in multiple plots, each plot corresponding to one of $(N-1)$ values of $\tau$.
 This procedure is illustrated in Figure \ref{fig:mm:delayedscatter}, which shows that the delayed relationship between two parameters becomes clearer when plotting a scatter plot for that specific delay.
-
+% 
+Note that we can also determine the correlation coefficient $R(\tau)$ for each of the scatter plots corresponding to a particular $\tau$.
+Thus, the scatter plots also provide a way to generate a cross-correlation function.
 
 \begin{figure}
 	\centering
@@ -453,14 +475,30 @@ This procedure is illustrated in Figure \ref{fig:mm:delayedscatter}, which shows
 \end{figure}
 
 
-\subsection{Another characterization: Mutual information}
+\subsubsection{Mutual information}
 
-The cross-correlation analyses described above quantify the linear dependence of two parameters. 
+%The cross-correlation analyses described above quantify the linear dependence of two parameters. 
 %
-As relationships between quantities might also be non-linear, it might be interesting to in the future also look into other measures that quantify 
+%As relationships between quantities might also be non-linear, it might be interesting to in the future also look into other measures that quantify 
 
-Given non-linear relationships, perhaps better to define distance of point cloud to simple multiplication of the marginal probability distributions of the two separate parameters $f$ and $g$ of interest.
-A measure that quantifies this distance is the mutual information \cite{Shannon1948, Bishop2006, WikipediaMutual2017}. This is defined as follows:
+Though not applied in this work, it might be interesting to provide an outlook on
+how one could quantify the extent to which parameters are related (in non-linear ways) beyond the visual inspection of scatter plots, or the determination of the correlation coefficient $R(\tau)$.
+%whether one parameter affects the other,
+%even if that is in a non-linear manner.
+%
+%Given non-linear relationships, p
+One way to investigate this is to look at the independence of two parameters.
+If the biological quantity $x$ does not affect another quantity $y$, 
+the probability to find a certain value of $y$ should not depend on the value of $x$, and vice versa.
+%
+In other words, when the two parameters are independent of each other
+$p(x,y)=p(x)p(y)$.
+%
+To what extent values of $x$ are constrained by values of $y$ (either by a relationship between the two, or because of an indirect link) and vice versa, is quantified by the mutual information \cite{Shannon1948, Bishop2006, WikipediaMutual2017}.
+% to define distance of point cloud to simple multiplication of the marginal probability distributions of the two separate parameters $f$ and $g$ of interest.
+%A measure that quantifies this distance is the mutual information \cite{Shannon1948, Bishop2006, WikipediaMutual2017}. 
+For two random variables $X$ and $Y$, this defines a distance measure between the product of the two marginal probability densities $p(x)$ and $p(y)$ and the joint probability $p(x,y)$.
+%This is defined as follows:
 %
 \begin{align}
 	I(X;Y) = 
@@ -473,82 +511,235 @@ or equivalently in continuous form:
 			\,dx\,dy}}
 	.
 \end{align}
-where $p(x)$, $p(y)$ are the marginal probability distributions of two random variables $X$ and $Y$, and $p(x,y)$ is the joint probability distribution. (Note that the probability densities are always normalized to one.)
+%where $p(x)$, $p(y)$ are the marginal probability distributions of two random variables $X$ and $Y$, and $p(x,y)$ is the joint probability distribution. 
+(Note that the probability densities are always normalized to one.)
+It has also been shown that the mutual information can be found by 
+\begin{align}
+	I(X;Y)=H(X)+H(Y)-H(X, Y)
+	,
+\end{align}
+with $H(X)$ being the entropy of a random variable $X$ and $H(X,Y)$ the joint entropy\footnote{See also \url{http://mathworld.wolfram.com/MutualInformation.html}.}.
 %
 % A note on X and x as stochastic variables:
 % https://math.stackexchange.com/questions/435846/notation-of-random-variables
 % Basically, X and Y refer to the outcome, 
 % whereas x and y refer to the probability distribution
 %
-When $X$ and $Y$ are independent, the mutual information will be zero, as $p(x,y)=p(x)p(y)$. Conversely, the more $X$ and $Y$ depend on each other, the higher the mutual information.
+When $X$ and $Y$ are independent, the mutual information will be zero, since 
+\begin{align*}
+	p(x,y)=p(x)p(y)
+	.
+\end{align*}
+%
+Conversely, the more $X$ and $Y$ depend on each other, the higher the mutual information.
+Figure \ref{fig:mm:scatter} illustrates that this offers a way to quantify to what extent two parameters are related.
+%
+For our (fake) example data, we have used the 
+\begin{verbatim}
+kde2d
+\end{verbatim}
+function written by Zdravko Botev \cite{Botev2010}, a kernel density method, 
+to estimate the underlying distributions (i.e. the marginal distributions and the joint distribution).
+%However, for experimental datasets, one would need to be certain that enough data is available 
+However, to apply this analysis to experimental data, one would need to statistically quantify the validity of the estimated probability distributions, 
+or use a statistical method
+that provides an estimate of the mutual information directly.
+%However, to correctly estimate the underlying probability distribution function, and/or to correctly estimate the mutual information for an experimental dataset, one would need an approach that 
+%be sure that enough experimental data is available to correctly further develop
 
 
-\red{
-	Note that the KDE function I use in Matlab, kde2d, quotes this reference:
-	Reference: Z. I. Botev, J. F. Grotowski and D. P. Kroese
-	"KERNEL DENSITY ESTIMATION VIA DIFFUSION" ,Submitted to the
-	Annals of Statistics, 2009
-}
+\subsection{Obtaining cross-correlations from experimental data}
 
+The experimental nature of the data that we gather presents us with specific challenges regarding the cross-correlation analysis.
+%
+In this section, we will discuss how we obtain cross-correlations and scatter plots from the experimental data.
 
-\subsubsection{Weighing and controls}
-
+\subsubsection{Experiments lead to a branched lineage tree}
 In a typical experiment, we measure biological quantities over time in growing and dividing bacteria. 
 %
 Since we are interested in processes that have time scales similar to or longer than one bacterial life cycle, we measure over multiple generations of bacteria (depending on experimental conditions, the generation time of bacteria is typically 20 minutes to 5 hours).
 %
-For microcolonies growing on gel pads, this leads to a branched data structure, as was previously described \cite{Kiviet2010,Walker2016t}, see also Figure \ref{fig:mm:weighingCCs}. 
+For microcolonies growing on gel pads, this leads to a branched data structure, as was previously described \cite{Kiviet2010,Walker2016t}, see also Figure \ref{fig:mm:weighingCCs}.A. 
 % 
-For microcolonies growing the microfluidic device as described above (see also Figure \ref{fig:mm:segmentation}.B), cells disappear from the analysis when they exit the well. This means that the datastructure will also contain lineages that end before the end of the experiment (Fig \ref{fig:mm:weighingCCs}.A).
+For microcolonies growing in the microfluidic device as described above (see also Figure \ref{fig:mm:segmentation}.B), cells disappear from the analysis when they exit the well. This means that the datastructure will also contain lineages that end before the end of the experiment (Fig \ref{fig:mm:weighingCCs}.A, branch 4).
 %
-To deal with the branched data structure, weighing schemes to calculate a composite cross-correlation were already developed and implemented in our analyses scripts.
+
+\subsubsection{Dealing with redundancy in the branched lineage trees}
+
+The first challenge is to use the time series from each branch of the lineage tree
+to
+create a composite cross-correlation or scatter plot that represents all data.
 %
-Specifically, the cross-correlations are determined by taking into account all pairs of points with a specific delay in between them, within each branch of the total lineage structure.
+For each branch, cross-correlations and scatter plots can be determined by taking into account all pairs of points with a specific delay in between them.
+However, this would result in pairs of points being used more than once, 
+since they appear in multiple branches.
+For example, the point pair labeled [1] in Figure \ref{fig:mm:weighingCCs}.A appears in all branches, and would thus be overrepresented if no correction is applied.
 %
-\begin{align}
-	\label{eq:Sbranch}
-	S_{f,g,branch}(\tau) 
-	& = \frac{1}{\sqrt{S_{f,f}(0)S_{g,g}(0)}} \frac{1}{N-|\tau|} 
-	\sum_{n=0}^{N-|\tau|-1} {\tilde{f}(n) \tilde{g}(n+\tau)} 
-\end{align}
-
-W = 1 ./ branches(br).count(1+abs(r):end); 
-W = 1 ./ branches(br).count(1+abs(r):end); 
-
-
-A similar weighing scheme was also applied to determine the Pearson correlation coefficients for the delayed scatter plots;
-\red{xxxxxxxx}.
-
-
-Specifically, the cross-correlation as defined in Equation \ref{eq:R} is adjusted to obtain a composite cross-correlation with contributions of points from multiple branches:
+This can be addressed by only taking into account point pairs that are unique \cite{Dunlop2008}.
+%
+For the scatter plots, 
+when we plot point pairs
+$f_i(n)$, $g_i(n+\tau)$ for all time points $n$ and all branches $i$, 
+we simply omit point pairs that are duplicates.
+%
+For the cross-correlation, we follow a similar procedure.
+To determine the final composite cross-correlation, we 
+employ a weighing scheme that grants less weight to point pairs that are redundant in the dataset.
+(This was also described earlier \cite{Kiviet2010,Walker2016t,Dunlop2008}).
+% 
+Specifically, %we compute
+ the cross-correlation as defined in Equation \ref{eq:R} is adjusted to obtain a composite cross-correlation with contributions of points from multiple branches $i$:
 \begin{align}
 	\label{eq:Rcomposite}
-	R_{f,g}(\tau) 
-	& = \frac{1}{\sqrt{S_{f,f}(0)S_{g,g}(0)}} \frac{1}{N-|\tau|} 
-	\sum_{n=0}^{N-|\tau|-1} {\tilde{f}(n) \tilde{g}(n+\tau)} 
+	S_\text{composite,f,g}(\tau) = 
+	\frac{1}{  W_{\text{total},\tau}  } 
+	\sum_i{
+		\frac{1}{  N_i-|\tau|  } 
+		\sum_{n=0}^{N_i-|\tau|}{ 
+			w_{n,i,\tau} \tilde{f}_i(n) \tilde{g}_i(n+\tau)
+		}
+	},
 \end{align}
-
-To deal with time series of data that end before the experiment end, a
-
+with $w_{n,i,\tau}$ a weighing factor that corrects for the redundancy of the specific point pair $\tilde{f}_i(n) \tilde{g}_i(n+\tau)$ (see below for a more detailed discussion of the value of $w_{n,i,\tau}$).
+Furthermore, 
+%
+\begin{align*}
+W_{\text{total},\tau} = \sum_{n,i} {w_{n,i,\tau}}
+\end{align*}
+%
+is the sum of all weights for a specific $\tau$ value.
+(Because any branch $i$ has $N_i-\tau$ pairs of points, the total weight changes per $\tau$ value.)
+$R_\text{composite}(\tau)$ is then again determined by normalizing with
+\begin{align*}
+\sqrt{S_{\text{composite},f,f}(0)S_{\text{composite},g,g}(0)}
+.
+\end{align*}
+% THE FOLLOWING IS FALSE:
+%This normalization factor also includes $w_{n,i,\tau}$ terms, and thus also corrects the normalized composite function for the scaling introduced by the weight terms.
+% BECAUSE --> every tau value has its own set of weights, so the total needs to be computed.
+%Note that Equation \ref{eq:Rcomposite} does not contain a normalization factor to account for the introduction of the weight term $w_{n,i,\tau}$, since this is accounted for by the normalization.
+% 
+Also, in this formula, $\tilde{f}_i(n)$ is defined as 
+\begin{align*}
+\tilde{f}_i(n) = f_i(n)-\left<f_i\right>_n
+, 
+\end{align*}
+i.e. the mean of the value of $f(n)$ for all cells in the colony at that point in time ($n$) is determined and subtracted from the value of $f_i(n)$ to obtain the mean-subtracted value $\tilde{f}_i(n)$ for branch $i$.
+%
+In the rest of this thesis, we refer to $R(\tau)_\text{composite}$ also simply as
+the cross-correlation, $R(\tau)$.
+%
+The most straight-forward weighing simply aims to achieve what was also done for the scatter plots, i.e. make sure that duplicate point pairs are counted only once.
+%
+Thus, the most straight-forward choice of $w_{n,i,\tau}$ is 
+\begin{align}
+\label{eq:weightscomposite}
+w_{n,i,\tau} = 1/\lambda_{n,i,\tau}
+\end{align}
+with $\lambda_{n,i,\tau}$ being the number of times this specific point pair was used.
+This method still leaves some redundancy in the data, as there might be point pairs that in which one point of the pair was already used, but the other point is unique (this is illustrated at the label [2] in Figure \ref{fig:mm:weighingCCs}).
+Note that the uniqueness of a point pair is determined completely by the point in the pair that was measured at the latest time point in the dataset.
+This issue is not straightforward to solve, but
+other choices of weights $w_{n,i,\tau}$ 
+that try to address this issue
+are described in \cite{Kiviet2010} and \cite{Walker2016t}. 
+Additionally, one can consider additional weighing schemes, e.g. 
+\begin{align*}
+	w_{n,i,\tau} = 1/ \left( \lambda_{n,i} \cdot \lambda_{n+\tau,i} \right),
+\end{align*}
+where $\lambda_{n,i}$ and $\lambda_{n+\tau,i}$ are to the number of times the specific points making up the pair are considered for the composite cross-correlation.
+%
+Nevertheless, it is hard to choose the perfect weighing scheme, since the nature of the cross-correlation 
+requires using pairs of points that are separated by a time delay, 
+and ergo pairs might consist of two points that have a different degree of uniqueness.
+One could choose to throw away any pair that contains a redundant point, but then one would also throw away (valuable) information.
+%
+In this work, to be consistent with the scatter plots, we use the weights as described in Equation \ref{eq:weightscomposite}, this is also consistent with \cite{Dunlop2008}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.9\textwidth]{cc_weighing.pdf}
 	\caption{ 
-		As cells divide, the data from microcolony experiments will show a branched structure (A). 
+		(A) As cells divide, the data from microcolony experiments will show a branched structure. 
 		This leads to redundancy in the data. 
 		For example, data recorded from the cell on the left will show up in all branches (1-4) of the lineage structure in this cartoon.
 		Additionally, in the microfluidic device described in this chapter, cells are washed away from the growth well, and thus from the experimental observations. 
-		This is shown in branch 4 in this cartoon and in panel (B).
+		This is shown in branch 4 in this cartoon.
 		(Note that in a growth well, the number of cells will remain approximately constant, 
 		and lineages originate from a few cells that remain at the bottom of the well; not shown here).
-		To determine cross-correlation for these cell branches that are not present during the whole experiment, a weighing scheme is used that does not simply average the cross-correlation of the two separate branches (C), but instead goes over each pair of points in the branch structure, and weighs the contribution of these two points to the composite cross-correlation based on the redundancy. 
-		For example, the combination of points labeled [1] in panel (A) will receive less weight than the combination of points indicated by [2]; the aim is to compensate for the fact that points [1] will appear four times in this particular scenario.
-		This is complicated by the fact that for some pairs of point, one point is more redundant than the other (this is the case for points [2] in panel (A)). See main text for a more detailed description of the weighing procedure.
+		(B) Cartoon representation of two signals that might come from branches 1 and 4. A block function would produce a saw-tooth correlation function (see panel C).
+		(C) To determine cross-correlation for these cell branches that are not present during the whole experiment, a weighing scheme is used that does not simply average the cross-correlation of the two separate branches, but instead goes over each pair of points in the branch structure, and weighs the contribution of these two points to the composite cross-correlation based on the redundancy. 
+		For example, the combination of points labeled [1] in panel (A) will receive less weight than the combination of points indicated by [2]; the aim is to compensate for the fact that points [1] will appear in the time series of all 4 branches and will thus be considered four times.
+		This weighing is complicated by the fact that for some pairs of point, one point is more redundant than the other (this is the case for points [2] in panel (A)). See main text for a more detailed description of the weighing procedure.
 	}
 	\label{fig:mm:weighingCCs}
 	% D:\Local_Software\Martijn_extensions\Martijn_custom\general_weighingCCs_setup.m
 \end{figure}
+
+\subsubsection{Dealing with impartial time series}
+
+As mentioned, the experimental data of the microfluidic device also contains lineages that end before the end of the experiment (branch 4 in Figure \ref{fig:mm:weighingCCs}.A illustrate this).
+%
+Such lineages of course also produce time series that end before the experiment ends (Figure \ref{fig:mm:weighingCCs}.B, bottom panel).
+%
+The fact that branches are of unequal length can be dealt with in a straightforward manner when computing the composite cross-correlation function.
+%
+Equation \ref{eq:Rcomposite} allows for the fact that branch lengths $N_i$ are different for each branch $i$. 
+%
+The weighing terms do not need to be adjusted, as 
+$w_{n,i,\tau}$ and $W_{\text{total},\tau}$
+can be simply calculated for impartial data series.
+%
+Figure panels \ref{fig:mm:weighingCCs}.B-C illustrate this procedure.
+
+\subsubsection{Controls}
+
+Now that we have a way to determine cross-correlations for experimental data,
+an important question that remains is "is the signal that we observe real"?
+%
+We are aware of two scenarios that might lead to a false positive signals.
+%
+One scenario is an under-sampled dataset. 
+Particularly when timescales of fluctuations are long, e.g. multiple generations of cells, and the size of fluctuations is high, 
+a particular real temporal dynamic might dominate the dynamics of the dataset,
+and lead to a particular cross-corerelation.
+%
+This cross-corerelation might then however not 
+characterize
+the entire dynamics of the parameters of interest.
+% 
+Another scenario could result from a fluctuating mean signal.
+%
+In principle, the aim is to measure in steady state, but experimental conditions might not be perfect and lead to a fluctuating mean signal, 
+that transpires to the cross-correlation despite the subtraction of the colony mean.
+%
+(Potentially, there might also be real colony-wide dynamics.)
+%
+The latter scenario underlines the importance of also visually inspecting the signals of all lineages (Figure \ref{fig:mm:exampleCC}.A-C).
+%
+Both these scenarios underline the importance of replicate experiments.
+%
+Nevertheless, also for data from one microcolony, one can quantify parameters that help determine the validity of the calculated cross-correlation.
+%
+To provide a control 
+%for both these scenarios
+based on the data of one microcolony, we determine the cross-correlation for time series $f_i$ and $g_j$, where $f_i$ comes from an arbitrary branch $i$ and $g_j$ from an arbitrary branch $j$; 
+in other words, we combine time series from two different lineages, which should not correlate, and ergo cross-correlations should be 0.
+%
+Specifically, for gel pad data all branches are of equal size, and whole time series $f$ are combined with arbitrary time series $g$ from another branch.
+%
+For microfluidic data from the device described in this chapter, branches are not of equal length, and thus randomization of branch data $f_i(n)$ and $g_j(n)$ is performed for each point in time $n$; this might be slightly less rigorous as this further decorrelates the data.
+%
+In both cases, we repeat this procedure 50 times, and determine the minimum and the maximum value of $R(\tau)$ resulting from these 50 repeats. 
+%
+This provides an estimated region of $R(\tau)$ where a non-zero signal might be observed that is likely false-positive.
+
+Additionally, error bars can be estimated by dividing the data from one colony in multiple groups, and analyzing these groups independently.
+%
+Lastly, as a sanity check, the cross-correlation determined from the scatter plots determined for all different delays $\tau$ can also be determined.
+%
+The result of these procedures is shown in Figure \ref{fig:mm:exampleCC}.D.
+
 
 \begin{figure}
 	\centering
@@ -558,9 +749,9 @@ To deal with time series of data that end before the experiment end, a
 		% F:\EXPERIMENTAL_DATA_2014-2015_m1\2015-06-12_CRP_asc852-853_plasmids\pos1crop\configFileMadeLater_2015-06-12_pos1.xlsx
 		(B) Distribution of growth rates in the microcolony, the black line shows a fitted normal distribution, the dotted line shows values located at 2 standard deviations ($\sigma$) from the mean.
 		(C) Fluorescent concentrations over time for all lineages from the microcolony shown in panel (A). Values over the lineages are shown on top of each other (lineages that are plotted behind others are given thicker lines). Note that values overlap at the beginning due to the branched structure of the data (see Figure \ref{fig:mm:weighingCCs}). The dotted lines indicate values that are at a distance of 2 and 5 standard deviations ($\sigma$) from the mean, as determined by fitting a normal distribution.
-		(D) The composite cross-correlation as determined between the instantaneous growth rate ($\mu$) and fluorescence concentration ($C$) values over the lineages in this microcolony (black line). The data was subdivided in 4 groups, which allowed for the determination of standard deviations. For each delay $\tau$ also a scatter plot was made from which the correlation coefficient was determined, which is shown here in red. Additionally, as a control, growth rate data from the lineages was combined with fluorescence data from random other lineages, and by repeating this procedure 50 times correlation values were determined that should not be interpreted as meaningful deviations from zero.
+		(D) The composite cross-correlation as determined between the instantaneous growth rate ($\mu$) and fluorescence concentration ($C$) values over the lineages in this microcolony (black line). The data was subdivided in 4 groups, which allowed for the determination of standard errors. For each delay $\tau$ also a scatter plot was made from which the correlation coefficient was determined, which is shown here in red. (Note that this might deviate slightly depending on the used weighing procedure and the averaging over different sub-groups of data.) Additionally, as a control, growth rate data from the lineages was combined with fluorescence data from random other lineages, and by repeating this procedure 50 times correlation values were determined that should not be interpreted as meaningful deviations from zero.
 	}
-	\label{fig:mm:weighingCCs}
+	\label{fig:mm:exampleCC}
 	% D:\Local_Software\Martijn_extensions\Martijn_custom\general_weighingCCs_setup.m
 \end{figure}
 
@@ -570,7 +761,7 @@ To deal with time series of data that end before the experiment end, a
 
 
 \section*{Acknowledgements}
-Thanks to Noreen E. Walker for helpful discussions regarding the cross-correlation function.
+Thanks to Noreen Walker for helpful discussions regarding the cross-correlation function.
 
 \clearpage
 \section*{Appendix}
