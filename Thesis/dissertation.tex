@@ -48,9 +48,20 @@
 
 %\usepackage{array}
 
+% Needed for floating caption
+\usepackage{graphicx} 
+\usepackage{caption}
+
+% Needed to use svg graphics
+%\usepackage{svg} % does not seem to work --> use pdfs.
+
+% Needed for eps??
+\usepackage{epstopdf}
+
+\graphicspath{{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
+	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}}
 
 
-\graphicspath{{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}}
 
 \include{Commands/additional_custom_commands}
 
@@ -77,16 +88,16 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-\include{Chapter0_Preface_etc/preface_etc}
-\include{Chapter1_Introduction/chapter1_introduction}
-\include{ChapterX_Literaturereview/ChapterX_Literaturereview}
-\include{Chapter2_Methods/chapter2_methods}
-\include{ChapterX_Filarecovery/ChapterX_Filarecovery}
-\include{ChapterX_Modeling/Nghe_model_cAMP_v5}
+%\include{Chapter0_Preface_etc/preface_etc}
+%\include{Chapter1_Introduction/chapter1_introduction}
+%\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
+%\include{Chapter2_Methods/chapter2_methods}
+%\include{ChapterX_Filarecovery/ChapterX_Filarecovery}
 \include{ChapterX_CRP/CRP_main}
-\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
-\include{ChapterX_Notes/ChapterX_Notes}
-\include{ChapterX_Conclusion/ChapterX_Conclusion}
+\include{ChapterX_Modeling/Nghe_model_cAMP_v5}
+%\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
+%\include{ChapterX_Notes/ChapterX_Notes}
+%\include{ChapterX_Conclusion/ChapterX_Conclusion}
 
 
 %% Use letters for the chapter numbers of the appendices.

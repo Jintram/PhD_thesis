@@ -1,7 +1,278 @@
 
 
-\chapter{CRP pro}
+
+
+% Notes
+% 
+% For format of Scientific Reports, see:
+% https://www.nature.com/srep/publish/guidelines#format-manuscripts
+% - Title length 20 words
+% - Main text 4500 words ("guide")
+% - Abstract: 200 words (no refs)
+% 	> "General introduction to the topic and as a brief, non-technical summary of the main results and their implications"
+% - Note that figure captions cannot be more than 350 words
+% - Preferably, method section limited to 1500 words
+% - results may have subheadings
+%
+% For format of PLOS ONE, see:
+% http://journals.plos.org/plosone/s/submission-guidelines
+% - 2 titles, long and short: 250 characters, short title: 100 characters
+% - abstract 300 words
+% - ..?
+% 
+% Art of presenting science
+
+% Notes on literature:
+% Also check CRP page on ecocyc: https://biocyc.org/gene?orgid=ECOLI&id=CPLX0-226.
+
+
+%\chapter{Negative metabolic feedback suppresses cell wide fluctuations}
+\chapter{CRP responds dynamically to internal noise}
 \label{chapter:CRP}
+
+\textit{Martijn Wehrens, Laurens H.J. Krah, Benjamin D. Towbin, Rutger Hermsen, Sander J. Tans}
+
+% Chapter clear first page
+\thispagestyle{empty}
+\clearpage
+
+
+\section{Abstract}
+
+\section{Introduction}
+
+% IDEA: FIRST GENERAL QUESTION, THEN LATER GO INTO DETAILS
+
+A straightforward view of cells growing in a constant environment might be 
+that of an expanding collection of individual cells that are each perfectly adapted to the environment.
+%
+Each cell senses the environment, 
+conveys this information using intracellular signaling molecules, 
+and adjusts its gene expression accordingly to 
+% This adaptation occurs by biochemical networks, 
+% which make sure that the cell 
+express the right amount of proteins that fit the situation \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%
+This might imply that the cellular behavior solely depends on the environment of the cell.
+%
+However, as discussed in chapter {chapter:literaturereview}, cellular populations are very heterogeneous \cite{Kiviet2014, Hashimoto2016}.
+%
+Since intracellular signaling molecules are not isolated from intracellular fluctuations, 
+this might also have an effect on gene regulation.
+%
+Indeed, it has been found that the input-output relationship between a gene's activator and its expression can be different from one cell to the next \cite{Rosenfeld2005, Keegstra2017}.
+
+% SOME CONVENIENT ARTICLES
+\cite{Brandman2008}
+\cite{Rosenfeld2007}
+\cite{Zambrano2015}
+\cite{Howell2012}
+\cite{Nevozhay2009}
+\cite{Hornung2008}
+\cite{Dublanche2006}
+\cite{Becskei2000}
+\cite{Swain2004}
+\cite{Bowsher2013}
+\cite{Avery2006}
+\cite{Maheshri2007}
+\cite{Levine2007a}
+\cite{Bennett2008a}
+\cite{Smits2006}
+\cite{Balazsi2011}
+\cite{Raj2008}
+\cite{Davidson2008}
+\cite{Elowitz2002}
+\cite{Bruggeman2009}
+\cite{Kitano2004a}
+
+
+<Feedback is known to regulate stuff \cite{Goyal2010}>
+
+Both single cell growth rates and protein concentrations can 
+which can influence GRF
+
+Maybe put Rosenfeld here?
+SOMETHING THAT EXPLAINS WHY THE FOLLOWING IS RELEVANT:
+assumes fixed cellular state
+[Intracellular messenger molecules might (i) measure fluctuating intracellular concentrations, (ii) fluctuate themselves, 
+%
+When we pick two cells within a population, their individual growth rates can easily differ by a factor of two, 
+as shown by single cell experiments that measured coefficients of variation (CV, standard deviation divided by the mean).
+%
+Both the CV of instantaneous growth rates (single cell mass doubling rate) and cellular generation time (time between divisions) has been determined to lay between $0.2$-$0.4$ \cite{Kiviet2014, Hashimoto2016}.
+%
+Also gene expression is known to vary for a long time \cite{Elowitz2002}, 
+the CV of gene expression from any promoter lies above 0.1 \cite{Keren2015}.
+
+
+This has been suggested to influence gene regulation \cite{Rosenfeld2005}.
+Groups of genes fluctuate together \cite{Stewart-Ornstein2012}
+Johannes' receptor stuff
+
+
+Also gene expression noise is thought to ELOWITZ
+and transmit KIVIET
+INTRACELL. ENVIRONMENT / IMPLICATIONS FOR MESSENGERS 
+
+>> FOR EXAMPLE, CAMP
+
+%
+This means cellular growth rates within a population can vary a factor of two from one cell to the next.
+
+Also in this work, we find 
+
+
+% >>> Note: there should not be (too much of) a contrast, because in the end we will find these two views should exist together..
+
+Each of the individual cells tries to maintain homeostasis 
+
+
+A straightforward view of cells growing in a constant environment is that of 
+
+Cells that grow in a constant environment 
+A population of cells in steady state is often though of as an exponential mass of growing cells in homeostasis.
+%
+
+% 
+However, 
+
+\section{Introduction}
+
+%Cellular survival critically depends on cellular decision making.
+%Biochemical networks allow cells to express the right genes at the right time \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+
+Cellular survival strongly depends on expressing the right genes at the right time.
+Biochemical networks control when a gene is expressed \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%
+Often, biochemical networks are studied in the context of a changing environment.
+%
+
+
+
+
+
+
+
+In \textit{Escherichia coli}
+
+\section{Results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig0.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig0}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig1_.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:fig1-2}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Bulk response to metabolic perturbations.}
+	A.
+	B.
+	C.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig4.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:fig1-2}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{A simple model explains how feedback filters out noise transmission.}
+	A simple model predicts correlation inversion.
+	A.
+	B.
+	C.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Discussion}
+
+
+For example, how cellular composition changes in response to different food sources has been a topic of study for a long time \cite{Schaechter1958}.
+%
+Regulation of metabolism has recently been shown to fit into a larger picture, in which the cell co-regulates large groups of genes together.
+Each of these groups (also called sectors), relate to a major 
+%
+% Recently, it has been shown that large groups of genes are co-regulated, these groups are also called sectors, each of which relate to a major category of cellular activity such as 
+category of cellular activity such as 
+metabolism, anabolism, protein synthesis, replication, etc 
+%catabolism, metabolism, anabolism, , protein synthesis, replication, etc. 
+\cite{Klumpp2009, You2013, Scott2014, Hui2015, Hermsen2015, Erickson2017}.
+%
+% Note that Erickson is not really growth laws itself, but more about how a switch between two environments occurs
+%
+An important player in regulating the size of the metabolic sector is the cAMP receptor protein (CRP) \cite{Keseler2017, Grainger2005, Robinson1998, Zheng2004, Gorke2008, Fic2009, Green2014}.
+%
+CRP is activated by cyclic adenosine monophosphate (cAMP) and it controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+%
+The CRP.cAMP regulation 
+%
+Recently, it has been shown that the CRP.cAMP regulation 
+
+%So-called growth laws describe how the ratio between these sectors is controlled by the cells to adapt to different environments.
+%
+%For some sectors, it is known that their expression level can be controlled by a single molecule or protein.
+%For example, guanosine tetraphosphate (ppGpp) controls ribosomal expression \cite{Cashel1969, Potrykus2008, Ross2013, Hui2015}, and the 
+%cAMP receptor protein (CRP) controls expression of metabolic enzymes.
+% 
+
+\section{Methods}
+
+% For promoter sequences, see: M_2016_06_26_CRP_s70_promoter_sequences.docx
+
+\section{Acknowledgements}
+
+\section{Author contributions}
+
+\section*{Things to keep in mind}
+
+See notes sent to me by Pieter Rein!
+
+***
 
 \cite{You2013}
 You, C., Okano, H., Hui, S., Zhang, Z., Kim, M., Gunderson, C.W., Wang, Y.-P., Lenz, P., Yan, D., and Hwa, T. (2013). Coordination of bacterial proteome with metabolism by cyclic AMP signalling. Nature 500, 301–6. Available at: http://www.ncbi.nlm.nih.gov/pubmed/23925119 [Accessed January 20, 2014].
@@ -33,3 +304,320 @@ Stewart-Ornstein 2017 \cite{Stewart-Ornstein2017} was sent by Sander, mentions C
 **
 
 Perhaps it is interesting to check out the network topology validation by Michael Stumpf (see Heidelberg Quant conference 2017). 
+
+**
+
+
+Check also:
+\cite{VanHeerden2017}
+and
+\cite{Nordholt2017}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Supplementary figures}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pulsing dynamics
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_4.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_2.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_5.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% pdf_scattersoftraces_1
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_1.pdf}
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_2.pdf}	
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell13.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell49.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell144.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Dynamic behavior against itself.
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case1.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case2.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case3.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case4.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case5.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case6.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_overview_means.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRP CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dY5_cycCor_muP9_fitNew_atdY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Consti CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_C6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dC5_cycCor_muP9_fitNew_atdC5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches mu
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches Y (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_Y6_mean_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches dY (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_dY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_plasmids2_overview_correlations_CmuPmu_G.pdf}
+	\caption{ 
+		\textbf{Without feedback, metabolic fluctuations transmit to growth.}
+		The interaction of metabolic and growth fluctuations was measured by plasmid constructs.
+		(A) 
+	}
+	\label{fig:CRP:plasmidCCs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
