@@ -41,7 +41,9 @@
 
 \section{Introduction}
 
-
+%%% ------------------------
+% Let's first define the problem (or knowledge gap)
+%%% ------------------------
 
 The world is unpredictable. To survive bacteria need to respond to unforeseen situations and express the right gene at the right time. 
 % Expressing the right gene at the right time is vital for bacterial survival. 
@@ -53,9 +55,45 @@ These interactions, also referred to as "biochemical networks",
 %
 %Biochemical networks 
 %allow cells to deal with changes that can come both from the extracellular and the intracellular environment.
-allow cells to deal with changes % TWO TYPES OF CHANGES
-both in the extracellular and the intracellular environment.
-%both in the extracellular and the intracellular environment.
+allow cells to deal with 
+two types of unpredictable situations.
+%dynamics.
+%
+On one hand, the extracellular environment might change, and a different gene expression profile is required.
+On the other hand,  even without environmental changes, the stochastic nature of chemical reactions can lead to fluctuations of proteins and metabolites over time within the cell \cite{Elowitz2002,Kiviet2014}.
+The architecture of the biochemical network might enable the cell to deal with these fluctuations, or even use them to its advantage (see also chapter \ref{chapter:literaturereview}).
+%
+%Studies often focus on how the biochemical network is designed to deal with either one or the other of these two types of dynamics.
+%Studies often investigate network architecture in only one of these contexts.
+Studies often investigate network architecture in only an "environmental" context or only in a "stochastic fluctuation" context.
+%
+However, any regulatory interaction in the cell is faced with both these contexts.
+%However, any regulatory interaction in the cell is faced with both an environmental and  contexts.
+%
+%It is unclear to what extend regulatory interactions that are known to help the cell deal with a changing environment are affected by stochastic concentration fluctuations
+This might have implications for the optimal network architecture.
+%
+In this work, we address the open question that connects the two:
+%
+are regulatory interactions that are known for their role in adaptation to environmental changes also affected by concentration fluctuations in the intracellular environment due to noise?
+
+%%% ------------------------
+% Now illustrate the setting a bit more
+%%% ------------------------
+
+To investigate this question, we take a closer look to the dynamics of the cAMP receptor protein (CRP).
+
+
+\section{More content}
+
+Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
+%
+In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
+
+
+Studies often focus on how biochemical networks either one of these dynamics
+
+
 %
 An example of biochemical networks responding to extracellular change is the adjustment of enzymatic concentrations to changes in extracellular sugar sources \cite{Towbin2017}.
 %For example, when extracellular food source changes, enzymatic concentrations are adjusted accordingly \cite{Towbin2017}.
