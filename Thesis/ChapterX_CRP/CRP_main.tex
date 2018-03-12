@@ -37,19 +37,31 @@
 \clearpage
 
 
-\section{Abstract}
+\section*{Abstract}
+
+Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
+%
+In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
 
 \section{Introduction}
+
 
 %%% ------------------------
 % Let's first define the problem (or knowledge gap)
 %%% ------------------------
 
-The world is unpredictable. To survive bacteria need to respond to unforeseen situations and express the right gene at the right time. 
+The world is unpredictable.
+%
+A bacterial cell observes both its extracellular environment and its intracellular environment,
+and adjusts its gene expression to 
+optimize its chances of survival.
+%
+To survive bacteria need to respond to unforeseen situations and express the right gene at the right time. 
 % Expressing the right gene at the right time is vital for bacterial survival. 
 %Cells rely on biochemical networks to control gene expression.
 %(Biochemical network is a general term that refers to the chemical interactions between proteins and small molecular mechanisms.)
-A bacterium, like any other cell, relies on chemical interactions between proteins and small molecules to control gene expression \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+To control gene expression a bacterium --- like any other cell --- relies on chemical interactions between proteins and small molecules \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%A bacterium, like any other cell, relies on chemical interactions between proteins and small molecules to control gene expression \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
 %These interactions are also referred to as "biochemical networks".
 These interactions, also referred to as "biochemical networks", 
 %
@@ -65,15 +77,16 @@ The architecture of the biochemical network might enable the cell to deal with t
 %
 %Studies often focus on how the biochemical network is designed to deal with either one or the other of these two types of dynamics.
 %Studies often investigate network architecture in only one of these contexts.
-Studies often investigate network architecture in only an "environmental" context or only in a "stochastic fluctuation" context.
+%Studies often investigate network architecture in only an "environmental" context or only in a "stochastic fluctuation" context.
+Studies often investigate network architecture only in the context of "environmental" inputs, or only in the context of "stochastic fluctuation" inputs.
 %
-However, any regulatory interaction in the cell is faced with both these contexts.
+However, any regulatory interaction in the cell is faced with both these inputs.
 %However, any regulatory interaction in the cell is faced with both an environmental and  contexts.
 %
 %It is unclear to what extend regulatory interactions that are known to help the cell deal with a changing environment are affected by stochastic concentration fluctuations
 This might have implications for the optimal network architecture.
 %
-In this work, we address the open question that connects the two:
+In this work, we address the open question that connects these two contexts:
 %
 are regulatory interactions that are known for their role in adaptation to environmental changes also affected by concentration fluctuations in the intracellular environment due to noise?
 
@@ -81,14 +94,15 @@ are regulatory interactions that are known for their role in adaptation to envir
 % Now illustrate the setting a bit more
 %%% ------------------------
 
-To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP). 
-%
-CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
 %
 It is thought that CRP controls the expression level of all catabolic genes in concert \cite{You2013}.
 %
 Catabolic genes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
 %
+CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+% 
+
 
 MULTIPLE METABOLITES CONTROL THE ACTIVITY OF ADENYLYL CYCLASE, WHICH PRODUCES CAMP
 GLUCOSE (EIIA ENZYMES) {SEE REF IN TOWBIN}
@@ -103,87 +117,15 @@ $\upalpha$-KG promotes the conversion of ADP to ATP
 Specifically, we focus on the role of the negative feedback in this regulatory architecture.
 
 
-
-
-by the metabolite alpha-ketoglutarate ($\upalpha$-KG) on metabolic enzyme production through the cyclic adenosine monophosphate (cAMP) and CRP \footnote{Previously CRP was also called catabolite gene activator protein (CAP).}.
+by the metabolite alpha-ketoglutarate ($\upalpha$-KG) on metabolic enzyme production through the cyclic adenosine monophosphate (cAMP) and CRP 
+%\footnote{Previously CRP was also called catabolite gene activator protein (CAP).}.
 This negative feedback interaction is responsible for adjusting metabolic enzyme concentrations to different sugar sources in bacterial growth medium \cite{Towbin2017, Doucette2011, You2013}.
 
 % and ask (a) whether this regulatory interaction is affected by stochastic concentration fluctuations in its input and (b) whether CRP 
 
 
-\section{More content}
-
-Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
-%
-In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
 
 
-Studies often focus on how biochemical networks either one of these dynamics
-
-
-%
-An example of biochemical networks responding to extracellular change is the adjustment of enzymatic concentrations to changes in extracellular sugar sources \cite{Towbin2017}.
-%For example, when extracellular food source changes, enzymatic concentrations are adjusted accordingly \cite{Towbin2017}.
-But even in a constant environment, the stochastic nature of chemical reactions can lead to variations in concentrations of cellular components  \cite{Elowitz2002,Kiviet2014}, 
-%Intracellular changes can result from the stochastic nature of chemical reactions \cite{Elowitz2002,Kiviet2014}, 
-and a myriad of examples exist of how the biochemical network is designed to both deal with and take advantage of this noise (see also chapter \ref{chapter:literaturereview}).
-One example is the suppression of spontaneous fluctuations of concentrations of proteins and metabolites by negative feedback \cite{Brandman2008, Lestas2010, Bowsher2013}.
-%
-These two functions --- responding to intracellular on one hand and responding to extracellular changes on the other --- are usually considered separately.
-
-In this chapter, we investigate how these two functions --- responding to intracellular on one hand and responding to extracellular changes on the other --- that are usually considered separately, are related to each other.
-
-
-%
-
-
-% WHAT'S THE GAP?!!!!
-
-\section{Introduction}
-
-% IDEA: FIRST GENERAL QUESTION, THEN LATER GO INTO DETAILS
-
-A straightforward view of cells growing in a constant environment might be 
-that of an expanding collection of individual cells that are each perfectly adapted to the environment.
-%
-Each cell senses the environment, 
-conveys this information using intracellular signaling molecules, 
-and adjusts its gene expression accordingly to 
-% This adaptation occurs by biochemical networks, 
-% which make sure that the cell 
-express the right amount of proteins that fit the situation \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
-%
-This might imply that the cellular behavior solely depends on the environment of the cell.
-%
-However, as discussed in chapter {chapter:literaturereview}, cellular populations are very heterogeneous \cite{Kiviet2014, Hashimoto2016}.
-%
-Since intracellular signaling molecules are not isolated from intracellular fluctuations, 
-this might also have an effect on gene regulation.
-%
-Indeed, it has been found that the input-output relationship between a gene's activator and its expression can be different from one cell to the next \cite{Rosenfeld2005, Keegstra2017}.
-
-% SOME CONVENIENT ARTICLES
-\cite{Brandman2008}
-\cite{Rosenfeld2007}
-\cite{Zambrano2015}
-\cite{Howell2012}
-\cite{Nevozhay2009}
-\cite{Hornung2008}
-\cite{Dublanche2006}
-\cite{Becskei2000}
-\cite{Swain2004}
-\cite{Bowsher2013}
-\cite{Avery2006}
-\cite{Maheshri2007}
-\cite{Levine2007a}
-\cite{Bennett2008a}
-\cite{Smits2006}
-\cite{Balazsi2011}
-\cite{Raj2008}
-\cite{Davidson2008}
-\cite{Elowitz2002}
-\cite{Bruggeman2009}
-\cite{Kitano2004a}
 
 
 <Feedback is known to regulate stuff \cite{Goyal2010}>
@@ -236,24 +178,12 @@ A population of cells in steady state is often though of as an exponential mass 
 % 
 However, 
 
-\section{Introduction}
-
-%Cellular survival critically depends on cellular decision making.
-%Biochemical networks allow cells to express the right genes at the right time \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
-
-Cellular survival strongly depends on expressing the right genes at the right time.
-Biochemical networks control when a gene is expressed \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-Often, biochemical networks are studied in the context of a changing environment.
-%
+% See file "CRP_literalgraveyard.tex" for more previous versions and ideas.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-
-
-
-
-In \textit{Escherichia coli}
 
 \section{Results}
 
