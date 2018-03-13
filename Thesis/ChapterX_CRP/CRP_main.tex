@@ -88,36 +88,76 @@ However, any regulatory interaction in the cell is faced with both these inputs.
 %However, any regulatory interaction in the cell is faced with both an environmental and  contexts.
 %
 %It is unclear to what extend regulatory interactions that are known to help the cell deal with a changing environment are affected by stochastic concentration fluctuations
-This might have implications for the optimal network architecture.
+This might have large implications for the optimal network architecture.
 %
-In this work, we address the open question that connects these two contexts:
+%In this work, we address the open question that connects these two contexts:
+In this work, we investigate the link between environmental and stochastic regulation for the first time. % by asking
 %
-are regulatory interactions that are known for their role in adaptation to environmental changes also affected by concentration fluctuations in the intracellular environment due to noise?
+%are 
+Specifically, we ask:
+are regulatory interactions that are known for their role in adaptation to environmental changes also 
+%affected 
+activated 
+by concentration fluctuations in the intracellular environment due to noise?
+
 
 %%% ------------------------
-% Now illustrate the setting a bit more
+% Explaining what is known about the CRP system
 %%% ------------------------
 
-To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+%To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+To investigate this question we need a model system.
 %
-It is thought that CRP controls the expression level of all catabolic genes in concert \cite{You2013}.
+Here, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+%
+CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+%
+It has been suggested that CRP controls the expression level of all catabolic genes in concert \cite{You2013, Hui2015};
+%
+among its targets are all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
 %
 Catabolic genes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
 %
-CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
-% 
-
-
-MULTIPLE METABOLITES CONTROL THE ACTIVITY OF ADENYLYL CYCLASE, WHICH PRODUCES CAMP
-GLUCOSE (EIIA ENZYMES) {SEE REF IN TOWBIN}
-ALPHA KETO-ACIDS SUCH AS A-KG AND OAA {SEE YOU2013 ACCORDING TO TOWBIN}
-ECOCYC SAYS:
-\cite{Hermsen2015}
-
-One of these metabolites is alpha-ketoglutarate ($\upalpha$-KG).
+CRP is activated by cyclic adenosine monophosphate (cAMP), 
+which is produced from ATP by the enzyme adenylate cyclase (CyaA).
+Adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
+(Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
 %
-$\upalpha$-KG promotes the conversion of ADP to ATP
+Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression.
+It is thought that this negative feedback in the CRP regulatory system
+is responsible for adjusting the concentration of metabolic enzymes in the cell to the carbohydrate nutrient source available to the cell \cite{Towbin2017}. 
 %
+More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
+The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
+and set enzyme expression accordingly \cite{Towbin2017}.
+%
+However, when the cell is growing steadily on a single carbon source for an extended period of time, 
+there is still a large heterogeneity observed in growth rates and enzyme expression levels \cite{Kiviet2014} (see also chapter \ref{chapter:literaturereview}).
+%
+%Observations by Kiviet et al. suggest that single cell stochastic fluctuations in enzyme levels result in changes in metabolite fluxes, and eventually fluctuations in growth rate \cite{Kiviet2014}.
+Observations by Kiviet et al. suggest that single cell enzyme concentrations fluctuate stochastically over time, which in turn results in fluctuations in metabolite fluxes and eventually in growth rate \cite{Kiviet2014}.
+%
+Thus, single cell metabolite concentrations might fluctuate over time.
+%This observation also implies that there might be large fluctuations in the pool of metabolites available to the cell.
+That would imply that also the CRP system receives a variety of inputs due to stochastic fluctuations in single cells, even though there are no changes in the extracellular environment.
+%
+To investigate whether the CRP system responds to these stochastic input signals, 
+% DECOUPLING STORY LINE IS NONSENSE SINCE WE KILL BOTH EXTERNAL AND INTERNAL INPUT AND INSTEAD HAVE cAMP
+%we need a way to decouple 
+%the response to the external fluctuations
+%the two types of input provided to the CRP system:
+%the external 
+%
+
+%
+we employ an adenylate cyclase null mutant that we provide with an external source of cAMP
+This annihilitates the feedback and allows us to XXX
+%
+In this manuscript, we show that indeed 
+
+ 
+
+
 Specifically, we focus on the role of the negative feedback in this regulatory architecture.
 
 
@@ -349,14 +389,44 @@ Perhaps it is interesting to check out the network topology validation by Michae
 
 
 Check also:
-\cite{VanHeerden2017}
+Van Heerden et al. \cite{VanHeerden2017}
 and
-\cite{Nordholt2017}.
+Nordholt et al. \cite{Nordholt2017}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Supplementary figures}
+
+
+
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-figXsup_overviewRegulationTCA.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:figOverviewTCARegulation}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Regulation of the TCA cycle and ED pathway.} 
+	Some regulatory proteins control the expression of many tricarboxylic acid (TCA) cycle and/or enzymes glycolysis pathway simultaneously.
+	This diagram shows the regulatory effects of CRP, but also of the Catabolite repressor activator (Cra) and the Anoxic redox control A (ArcA) protein.
+	Cra controls the direction of the metabolite flux through metabolic pathways \cite{Keseler2017, Ramseier1995}. Cra is activated by the metabolite fructose-1,6-bisphosphate \cite{Kochanowski2013a}.
+	ArcA is part of a two component system (ArcAB) which controls gene expression in response to aerobic versus anaerobic conditions \cite{Keseler2017, Alvarez2010}.
+	Metabolites are displayed in larger font, enzymes that catalyze reactions in smaller fonts.
+	In the colored boxes, regulation by CRP is displayed by an oval symbol marked "CRP".
+	Similarly, when an enzyme is regulated by Cra or ArcA this is displayed next to the boxes; a plus or minus symbol indicates positive or negative regulation.
+	Additionaly, in the boxes this diagram displays the concentration of particular enzymes in ppm, as annotated in PaxDb (retrieved in 2015) \cite{Wang2015}.
+	The boxes are also color-coded according to abundance of the enzymes.
+	The diagram is based on EcoCyc \cite{Keseler2017}. 
+	From top to bottom, clockwise, enzymes abbreviations stand for glucose 6-phosphate, fructose 6-phosphate, fructose 1,6-biphosphate, glyceraldehyde 3-phosphate, 1,3-biphospho-D-glycerate, 3-phospho-glycerate, 2-phospho-glycerate, phosphoenolpyruvate, pyruvate, acetyl coenzyme A, citrate, cis-aconitate, d-threo-isocitrate, (succinate, glyoxalate, acetyl-CoA), 2-oxo-glutarate, succinyl-CoA, succinate, fumarate, malate, oxaloacetate.
+	% See also: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=TCA
+	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pulsing dynamics
