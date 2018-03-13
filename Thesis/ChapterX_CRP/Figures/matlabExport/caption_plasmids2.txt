@@ -1,0 +1,7 @@
+===
+FIGURE LEGEND
+A: WT_plasmids_pCRP-GFP_asc842, G6_mean_cycCor_at_dG_dG5_cycCor
+B: WT_plasmids_ps70-GFP_asc841, G6_mean_cycCor_at_dG_dG5_cycCor
+C: dcAMP_plasmids-extracell800-pCRP-GFP_asc893dcAMP-extracell800-pCRP-GFP_asc894, G6_mean_cycCor_at_dG_dG5_cycCor
+D: dcAMP_plasmids-extracell800-ps70-GFP_asc941, G6_mean_cycCor_at_dG_dG5_cycCor
+===

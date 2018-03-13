@@ -1,0 +1,5 @@
+===
+FIGURE LEGEND
+A: CRP_s70_chromosomal_galactose_asc990, dY5_cycCor_muP9_fitNew_atdY5_cycCor
+B: CRP_s70_chromosomal_aKG_asc990, dY5_cycCor_muP9_fitNew_atdY5_cycCor
+===
