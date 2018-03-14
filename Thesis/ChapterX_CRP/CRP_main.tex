@@ -32,23 +32,24 @@
 
 \textit{Martijn Wehrens, Laurens H.J. Krah, Benjamin D. Towbin, Rutger Hermsen, Sander J. Tans}
 
-% Chapter clear first page
-\thispagestyle{empty}
-\clearpage
-
-
 \section*{Abstract}
 
 Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
 %
 In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
 
-\section{Introduction}
+% Chapter clear first page
+\thispagestyle{empty}
+\clearpage
+
+\section*{Introduction}
 
 
 %%% ------------------------
 % Let's first define the problem (or knowledge gap)
 %%% ------------------------
+
+\subsection*{Environmental and stochastic input to regulatory networks}
 
 The world is unpredictable.
 %
@@ -105,122 +106,86 @@ by concentration fluctuations in the intracellular environment due to noise?
 % Explaining what is known about the CRP system
 %%% ------------------------
 
+%\subsection*{The metabolic regulator CRP recieves both stochastic and environmental input}
+\subsection*{Stochastic and environmental input in a model system: CRP}
+
 %To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
-To investigate this question we need a model system.
+To investigate this question we looked at a master regulator of metabolic enzyme expression in \textit{Escherichia coli}.
 %
-Here, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+Metabolic enzymes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
+%
+It has been suggested that the cAMP receptor protein (CRP)\footnote{CRP was previously called catabolite gene activator protein, or CAP} 
+controls the expression level of all catabolic genes in concert \cite{You2013, Hui2015};
 %
 CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
 %
-It has been suggested that CRP controls the expression level of all catabolic genes in concert \cite{You2013, Hui2015};
-%
-among its targets are all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
-%
-Catabolic genes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
+Amidst these targets are also all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
 %
 CRP is activated by cyclic adenosine monophosphate (cAMP), 
 which is produced from ATP by the enzyme adenylate cyclase (CyaA).
 Adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
 (Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
 %
-Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression.
+Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression, see also figure \ref{fig:CRP:fig0}.A. 
 It is thought that this negative feedback in the CRP regulatory system
-is responsible for adjusting the concentration of metabolic enzymes in the cell to the carbohydrate nutrient source available to the cell \cite{Towbin2017}. 
+is responsible for adjusting the concentration of metabolic enzymes in the cell to handle the carbohydrate nutrient source available to the cell appropriately \cite{Towbin2017}.
 %
-More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
-The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
-and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
+%More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
+%The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
+%and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
 %
 However, when the cell is growing steadily on a single carbon source for an extended period of time, 
-there is still a large heterogeneity observed in growth rates and enzyme expression levels \cite{Kiviet2014} (see also chapter \ref{chapter:literaturereview}).
+there is still a large heterogeneity observed in growth rates and metabolic enzyme expression levels \cite{Kiviet2014} (see also chapter \ref{chapter:literaturereview}).
 %
 %Observations by Kiviet et al. suggest that single cell stochastic fluctuations in enzyme levels result in changes in metabolite fluxes, and eventually fluctuations in growth rate \cite{Kiviet2014}.
 Observations by Kiviet et al. suggest that single cell enzyme concentrations fluctuate stochastically over time, which in turn results in fluctuations in metabolite fluxes and eventually in growth rate \cite{Kiviet2014}.
 %
-Thus, single cell metabolite concentrations might fluctuate over time.
+Thus, single cell metabolite concentrations might fluctuate over time due to stochastic fluctuations .
 %This observation also implies that there might be large fluctuations in the pool of metabolites available to the cell.
-That would imply that also the CRP system receives a variety of inputs due to stochastic fluctuations in single cells, even though there are no changes in the extracellular environment.
+That would imply that also the CRP system receives a large variation of inputs in single cells, even when there are no changes in the extracellular environment.
 %
-To investigate whether the CRP system responds to these stochastic input signals, 
-% DECOUPLING STORY LINE IS NONSENSE SINCE WE KILL BOTH EXTERNAL AND INTERNAL INPUT AND INSTEAD HAVE cAMP
-%we need a way to decouple 
-%the response to the external fluctuations
-%the two types of input provided to the CRP system:
-%the external 
+%In other words: though the mean CRP activity might be set by the external environment, single cells might have wholly different CRP activities due to stochastic fluctuations.
 %
+We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.
 
+\subsection*{With and without processing stochastic input}
+
+To find out whether the CRP system responds to stochastic inpout we need to decouple the responses to stochastic and environmental inputs.
+%To address this question we need to be able to decouple the responses to these two different inputs.
 %
-we employ an adenylate cyclase null mutant that we provide with an external source of cAMP
-This annihilitates the feedback and allows us to XXX
+To this end, we employed two strains that have the appropriate mean CRP activity for the sugar source they're grown on, 
+but where in one strain the feedback loop cannot respond to stochastic input it might receive.
 %
-In this manuscript, we show that indeed 
-
- 
-
-
-Specifically, we focus on the role of the negative feedback in this regulatory architecture.
-
-
-by the metabolite alpha-ketoglutarate ($\upalpha$-KG) on metabolic enzyme production through the cyclic adenosine monophosphate (cAMP) and CRP 
-%\footnote{Previously CRP was also called catabolite gene activator protein (CAP).}.
-This negative feedback interaction is responsible for adjusting metabolic enzyme concentrations to different sugar sources in bacterial growth medium \cite{Towbin2017, Doucette2011, You2013}.
-
-% and ask (a) whether this regulatory interaction is affected by stochastic concentration fluctuations in its input and (b) whether CRP 
-
-
-
-
-
-
-<Feedback is known to regulate stuff \cite{Goyal2010}>
-
-Both single cell growth rates and protein concentrations can 
-which can influence GRF
-
-Maybe put Rosenfeld here?
-SOMETHING THAT EXPLAINS WHY THE FOLLOWING IS RELEVANT:
-assumes fixed cellular state
-[Intracellular messenger molecules might (i) measure fluctuating intracellular concentrations, (ii) fluctuate themselves, 
+The two strains we used are a wild type MG1655, and a \textit{cyaA}, \textit{cpda} null mutant \cite{Towbin2017}.
+% note $\Delta$ is upright by default
 %
-When we pick two cells within a population, their individual growth rates can easily differ by a factor of two, 
-as shown by single cell experiments that measured coefficients of variation (CV, standard deviation divided by the mean).
+The latter strain is unable to modify its cAMP levels, and thus has a crippled feedback loop that cannot respond to both environmental and stochastic input signals.
 %
-Both the CV of instantaneous growth rates (single cell mass doubling rate) and cellular generation time (time between divisions) has been determined to lay between $0.2$-$0.4$ \cite{Kiviet2014, Hashimoto2016}.
+%This means these cells cannot use their feedback regulation to determine the correct mean CRP activity they should have in their environment. 
 %
-Also gene expression is known to vary for a long time \cite{Elowitz2002}, 
-the CV of gene expression from any promoter lies above 0.1 \cite{Keren2015}.
-
-
-This has been suggested to influence gene regulation \cite{Rosenfeld2005}.
-Groups of genes fluctuate together \cite{Stewart-Ornstein2012}
-Johannes' receptor stuff
-
-
-Also gene expression noise is thought to ELOWITZ
-and transmit KIVIET
-INTRACELL. ENVIRONMENT / IMPLICATIONS FOR MESSENGERS 
-
->> FOR EXAMPLE, CAMP
-
+To repair this strain's ability to express the right amount of metabolic enzymes with regard to their environment, 
+we provide cAMP extracellularly in the cells' growth medium.
 %
-This means cellular growth rates within a population can vary a factor of two from one cell to the next.
-
-Also in this work, we find 
-
-
-% >>> Note: there should not be (too much of) a contrast, because in the end we will find these two views should exist together..
-
-Each of the individual cells tries to maintain homeostasis 
-
-
-A straightforward view of cells growing in a constant environment is that of 
-
-Cells that grow in a constant environment 
-A population of cells in steady state is often though of as an exponential mass of growing cells in homeostasis.
+This bypasses the feedback loop and directly sets the correct CRP activity for the sugar they are growing on \cite{Towbin2017},
+but leaves the feedback loop unable to respond to stochastic input signals.
 %
+This experimental design allows us to compare a cell that has the correct mean CRP activity and \textit{can} respond to stochastic input signals, 
+with a cell that has the correct mean CRP activity but \textit{cannot} respond to stochastic input signals.
+%
+We then use single cell time lapse microscopy and fluorescent labeling to determine single cell growth and CRP dynamics. 
+%
+We first use these single cell technique to see whether the CRP system can respond on timescales at which the stochastic fluctuations take place.
+%
+Secondly, we use cross-correlation analyses to quantify the dynamical growth and CRP behavior of the two strains described above.
+%
+This shows that the CRP system can indeed operate on timescales that are comparable to time scales of stochastic fluctuations, and moreover that
+the dynamics of metabolism and growth change remarkably when its regulation is not able to respond to stochastic inputs.
+%
+These observations suggest that regulatory interactions also respond to stochastic inputs.
+%
+This implies in turn that are notion of steady state behavior should be updated, 
+as the cellular state might be constantly changing in a way that is facilitated by regulatory interactions.
 
-% 
-However, 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -228,8 +193,26 @@ However,
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section*{Results}
 
-\section{Results}
+Our hypothesis is that fluctuations in metabolic enzyme concentration result in metabolite concentration changes.
+%
+However, the time scales at which stochastic fluctuations in enzyme concentrations happen might be too fast 
+for the CRP regulatory system to respond.
+%
+To see whether this is the case, we 
+
+
+
+
+
+To assess whether the CRP regulatory network can respond to stochastic influences from within the cell, 
+we first wanted to see if the regulatory network can respond at time scales at which the stochastic fluctuations occur.
+%
+To assess this we subjected the CRP regulatory network to pulses of medium with high and low cAMP concentrations.
+%
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -303,10 +286,13 @@ However,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Discussion}
+\section*{Discussion}
 
 \textbf{Talking points.} Evolution doesn't separate dynamic and steady state functionality, and can potentially optimize both.
 
+
+> Also mention Chalancon2012, which talks specifically about interaction between regulation fucntion and noise in a network.
+> Mention Rosenfeld2005, idem.
 
 For example, how cellular composition changes in response to different food sources has been a topic of study for a long time \cite{Schaechter1958}.
 %
@@ -338,7 +324,9 @@ Recently, it has been shown that the CRP.cAMP regulation
 
 
 
-\section{Methods}
+\section*{Methods}
+
+\textit{E. coli} (CGSC8003)
 
 % For promoter sequences, see: M_2016_06_26_CRP_s70_promoter_sequences.docx
 
