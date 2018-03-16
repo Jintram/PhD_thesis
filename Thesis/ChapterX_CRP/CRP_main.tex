@@ -1,0 +1,756 @@
+
+
+
+
+% Notes
+% 
+% For format of Scientific Reports, see:
+% https://www.nature.com/srep/publish/guidelines#format-manuscripts
+% - Title length 20 words
+% - Main text 4500 words ("guide")
+% - Abstract: 200 words (no refs)
+% 	> "General introduction to the topic and as a brief, non-technical summary of the main results and their implications"
+% - Note that figure captions cannot be more than 350 words
+% - Preferably, method section limited to 1500 words
+% - results may have subheadings
+%
+% For format of PLOS ONE, see:
+% http://journals.plos.org/plosone/s/submission-guidelines
+% - 2 titles, long and short: 250 characters, short title: 100 characters
+% - abstract 300 words
+% - ..?
+% 
+% Art of presenting science
+
+% Notes on literature:
+% Also check CRP page on ecocyc: https://biocyc.org/gene?orgid=ECOLI&id=CPLX0-226.
+
+
+%\chapter{Negative metabolic feedback suppresses cell wide fluctuations}
+\chapter{CRP responds dynamically to internal noise}
+\label{chapter:CRP}
+
+\textit{Martijn Wehrens, Laurens H.J. Krah, Benjamin D. Towbin, Rutger Hermsen, Sander J. Tans}
+
+\section*{Abstract}
+
+Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
+%
+In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
+
+% Chapter clear first page
+\thispagestyle{empty}
+\clearpage
+
+\section*{Introduction}
+
+
+%%% ------------------------
+% Let's first define the problem (or knowledge gap)
+%%% ------------------------
+
+\subsection*{Environmental and stochastic input to regulatory networks}
+
+The world is unpredictable.
+%
+A bacterial cell observes both its extracellular environment and its intracellular environment,
+and adjusts its gene expression to 
+optimize its chances of survival in this world.
+%
+%To survive bacteria need to respond to unforeseen situations and express the right gene at the right time. 
+% Expressing the right gene at the right time is vital for bacterial survival. 
+%Cells rely on biochemical networks to control gene expression.
+%(Biochemical network is a general term that refers to the chemical interactions between proteins and small molecular mechanisms.)
+To control gene expression a bacterium --- like any other cell --- relies on chemical interactions between proteins and small molecules \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%A bacterium, like any other cell, relies on chemical interactions between proteins and small molecules to control gene expression \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%These interactions are also referred to as "biochemical networks".
+These interactions, also referred to as "biochemical networks", 
+%
+%Biochemical networks 
+%allow cells to deal with changes that can come both from the extracellular and the intracellular environment.
+allow cells to deal with 
+% two types of 
+unpredictable situations
+both in the intracellular and extracellular environment.
+%dynamics.
+%
+%On one hand, the extracellular environment might change, and a different gene expression profile is required.
+Changes in the extracellular environment might require the cell to adjust gene expression accordingly.
+%
+On the other hand,  even without environmental changes, the stochastic nature of chemical reactions can lead to fluctuations of proteins and metabolites over time within the cell \cite{Elowitz2002,Kiviet2014}.
+The architecture of the biochemical network might enable the cell to deal with these fluctuations, or even use them to its advantage (see also chapter \ref{chapter:literaturereview}).
+%
+%Studies often focus on how the biochemical network is designed to deal with either one or the other of these two types of dynamics.
+%Studies often investigate network architecture in only one of these contexts.
+%Studies often investigate network architecture in only an "environmental" context or only in a "stochastic fluctuation" context.
+Studies often investigate network architecture only in the context of "environmental" inputs, or only in the context of "stochastic fluctuation" inputs.
+%
+However, any regulatory interaction in the cell is faced with both these inputs.
+%However, any regulatory interaction in the cell is faced with both an environmental and  contexts.
+%
+%It is unclear to what extend regulatory interactions that are known to help the cell deal with a changing environment are affected by stochastic concentration fluctuations
+This might have large implications for the optimal network architecture.
+%
+%In this work, we address the open question that connects these two contexts:
+In this work, we investigate the link between environmental and stochastic regulation for the first time. % by asking
+%
+%are 
+Specifically, we ask:
+are regulatory interactions that are known for their role in adaptation to environmental changes also 
+%affected 
+activated 
+by concentration fluctuations in the intracellular environment due to noise?
+
+
+%%% ------------------------
+% Explaining what is known about the CRP system
+%%% ------------------------
+
+%\subsection*{The metabolic regulator CRP recieves both stochastic and environmental input}
+\subsection*{Stochastic and environmental input in a model system: CRP}
+
+%To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+To investigate this question we looked at a master regulator of metabolic enzyme expression in \textit{Escherichia coli}.
+%
+Metabolic enzymes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
+%
+It has been suggested that the cAMP receptor protein (CRP)\footnote{CRP was previously called catabolite gene activator protein, or CAP} 
+controls the expression level of all catabolic genes in concert \cite{You2013, Hui2015};
+%
+CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+%
+Amidst these targets are also all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
+%
+CRP is activated by cyclic adenosine monophosphate (cAMP), 
+which is produced from ATP by the enzyme adenylate cyclase (CyaA).
+Adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
+(Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
+%
+Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression, see also figure \ref{fig:CRP:fig0}.A. 
+It is thought that this negative feedback in the CRP regulatory system
+is responsible for adjusting the concentration of metabolic enzymes in the cell to handle the carbohydrate nutrient source available to the cell appropriately \cite{Towbin2017}.
+%
+%More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
+%The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
+%and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
+%
+However, when the cell is growing steadily on a single carbon source for an extended period of time, 
+there is still a large heterogeneity observed in growth rates and metabolic enzyme expression levels \cite{Kiviet2014} (see also chapter \ref{chapter:literaturereview}).
+%
+%Observations by Kiviet et al. suggest that single cell stochastic fluctuations in enzyme levels result in changes in metabolite fluxes, and eventually fluctuations in growth rate \cite{Kiviet2014}.
+Observations by Kiviet et al. suggest that single cell enzyme concentrations fluctuate stochastically over time, which in turn results in fluctuations in metabolite fluxes and eventually in growth rate \cite{Kiviet2014}.
+%
+Thus, single cell metabolite concentrations might fluctuate over time due to stochastic fluctuations .
+%This observation also implies that there might be large fluctuations in the pool of metabolites available to the cell.
+That would imply that also the CRP system receives a large variation of inputs in single cells, even when there are no changes in the extracellular environment.
+%
+%In other words: though the mean CRP activity might be set by the external environment, single cells might have wholly different CRP activities due to stochastic fluctuations.
+%
+We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.
+
+\subsection*{With and without processing stochastic input}
+
+To find out whether the CRP system responds to stochastic inpout we need to decouple the responses to stochastic and environmental inputs.
+%To address this question we need to be able to decouple the responses to these two different inputs.
+%
+To this end, we employed two strains that have the appropriate mean CRP activity for the sugar source they're grown on, 
+but where in one strain the feedback loop cannot respond to stochastic input it might receive.
+%
+The two strains we used are a wild type MG1655, and a \textit{cyaA}, \textit{cpda} null mutant \cite{Towbin2017}.
+% note $\Delta$ is upright by default
+%
+The latter strain is unable to modify its cAMP levels, and thus has a crippled feedback loop that cannot respond to both environmental and stochastic input signals.
+%
+%This means these cells cannot use their feedback regulation to determine the correct mean CRP activity they should have in their environment. 
+%
+To repair this strain's ability to express the right amount of metabolic enzymes with regard to their environment, 
+we provide cAMP extracellularly in the cells' growth medium.
+%
+This bypasses the feedback loop and directly sets the correct CRP activity for the sugar they are growing on \cite{Towbin2017},
+but leaves the feedback loop unable to respond to stochastic input signals.
+%
+This experimental design allows us to compare a cell that has the correct mean CRP activity and \textit{can} respond to stochastic input signals, 
+with a cell that has the correct mean CRP activity but \textit{cannot} respond to stochastic input signals.
+%
+We then use single cell time lapse microscopy and fluorescent labeling to determine single cell growth and CRP dynamics. 
+%
+We first use these single cell technique to see whether the CRP system can respond on timescales at which the stochastic fluctuations take place.
+%
+Secondly, we use cross-correlation analyses to quantify the dynamical growth and CRP behavior of the two strains described above.
+%
+This shows that the CRP system can indeed operate on timescales that are comparable to time scales of stochastic fluctuations, and moreover that
+the dynamics of metabolism and growth change remarkably when its regulation is not able to respond to stochastic inputs.
+%
+These observations suggest that regulatory interactions also respond to stochastic inputs.
+%
+This implies in turn that are notion of steady state behavior should be updated, 
+as the cellular state might be constantly changing in a way that is facilitated by regulatory interactions.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% See file "CRP_literalgraveyard.tex" for more previous versions and ideas.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Results}
+
+\subsection*{The CRP system is able to respond to dynamic signals}
+
+Our hypothesis is that stochastic fluctuations in metabolic enzyme concentration result in metabolite concentration changes, which in turn lead to a response by the CRP system.
+%
+To test this hypothesis, we first subject the CRP system to artificial fluctuations in the cAMP system to see whether it can respond to such quick fluctuations.
+%
+%However, the time scales at which these stochastic fluctuations occur might be too fast 
+%for the CRP regulatory system to respond.
+%To test the response time of the CRP system, we subjected cells to quickly alternating low and high cAMP concentrations in our flow cell.
+%
+We find that the CRP system indeed responds considerably at rapid timescales to changes in the cAMP signal it receives.
+
+
+To be able to assess the response of the CRP system, we firstly wanted to be able to measure its output.
+%
+To be able to do this, we used a reporter construct that reads out the expression level of metabolic enzymes \cite{Towbin2017}.
+%
+This reporter construct uses a promoter of the lac operon from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0}.\red{X} and materials and methods for details.
+This promoter is fused to a fluorescent reporter protein (either gfpmut2 or mVenus, depending on the experiment) to allow us to 
+%estimate 
+assess
+the expression level of metabolic enzymes as induced by CRP.
+% 
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig0.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig0}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig1_.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:fig1-2}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Bulk response to metabolic perturbations.}
+	A.
+	B.
+	C.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig4.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:fig1-2}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{A simple model explains how feedback filters out noise transmission.}
+	A simple model predicts correlation inversion.
+	A.
+	B.
+	C.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Discussion}
+
+\textbf{Talking points.} Evolution doesn't separate dynamic and steady state functionality, and can potentially optimize both.
+
+
+> Also mention Chalancon2012, which talks specifically about interaction between regulation fucntion and noise in a network.
+> Mention Rosenfeld2005, idem.
+
+For example, how cellular composition changes in response to different food sources has been a topic of study for a long time \cite{Schaechter1958}.
+%
+Regulation of metabolism has recently been shown to fit into a larger picture, in which the cell co-regulates large groups of genes together.
+Each of these groups (also called sectors), relate to a major 
+%
+% Recently, it has been shown that large groups of genes are co-regulated, these groups are also called sectors, each of which relate to a major category of cellular activity such as 
+category of cellular activity such as 
+metabolism, anabolism, protein synthesis, replication, etc 
+%catabolism, metabolism, anabolism, , protein synthesis, replication, etc. 
+\cite{Klumpp2009, You2013, Scott2014, Hui2015, Hermsen2015, Erickson2017}.
+%
+% Note that Erickson is not really growth laws itself, but more about how a switch between two environments occurs
+%
+An important player in regulating the size of the metabolic sector is the cAMP receptor protein (CRP) \cite{Keseler2017, Grainger2005, Robinson1998, Zheng2004, Gorke2008, Fic2009, Green2014}.
+%
+CRP is activated by cyclic adenosine monophosphate (cAMP) and it controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011}.
+%
+The CRP.cAMP regulation 
+%
+Recently, it has been shown that the CRP.cAMP regulation 
+
+%So-called growth laws describe how the ratio between these sectors is controlled by the cells to adapt to different environments.
+%
+%For some sectors, it is known that their expression level can be controlled by a single molecule or protein.
+%For example, guanosine tetraphosphate (ppGpp) controls ribosomal expression \cite{Cashel1969, Potrykus2008, Ross2013, Hui2015}, and the 
+%cAMP receptor protein (CRP) controls expression of metabolic enzymes.
+% 
+
+
+
+\section*{Methods}
+
+\textit{E. coli} (CGSC8003)
+
+\begin{itemize}
+	\item Add description of the lac reporter construct made by benjamin.
+	\item Check maternal strain that Vanda used for the double reporter constructs.
+\end{itemize}
+
+% For promoter sequences, see: M_2016_06_26_CRP_s70_promoter_sequences.docx
+
+\section*{Acknowledgements}
+
+I thank Pieter Rein ten Wolde and Harmen Wierenga for useful discussions.
+
+%\section{Author contributions}
+
+\section*{Things to keep in mind}
+
+See notes sent to me by Pieter Rein!
+
+***
+
+\cite{You2013}
+You, C., Okano, H., Hui, S., Zhang, Z., Kim, M., Gunderson, C.W., Wang, Y.-P., Lenz, P., Yan, D., and Hwa, T. (2013). Coordination of bacterial proteome with metabolism by cyclic AMP signalling. Nature 500, 301–6. Available at: http://www.ncbi.nlm.nih.gov/pubmed/23925119 [Accessed January 20, 2014].
+(This is simply the Hwa article re. proteome partitioning, but should check because they also talk about cAMP)
+According to chubukov2014 this is also article that shows akg feedback to CRP.
+
+**
+
+\cite{Somavanshi2016}
+Somavanshi, R., Ghosh, B., and Sourjik, V. (2016). Sugar Influx Sensing by the Phosphotransferase System of Escherichia coli. 1–19.
+
+Also check out other papers in (physical) yellow folder in cabinet labeled CRP.
+
+**
+
+\cite{Flamholz2013}
+Flamholz, A., Noor, E., Bar-Even, A., Liebermeister, W., and Milo, R. (2013). Glycolytic strategy as a tradeoff between energy yield and protein cost. Proc. Natl. Acad. Sci. 110, 10039–10044.
+
+Fig. S2 is already worth it because it gives nice overview between how glycolysis convert glucose to pyruvate and then either ferments it or aerobically burns it to CO2 (+acetate).
+
+**
+
+\cite{chubukov2014} has a few nice graphs about different "activities" that need to happen in the cell (ie. categories of metabolites and how they are produced.) Also explains how CRP is controlled! Point to YOu2013 for a-kg inhibition feedback loop.
+
+**
+
+Stewart-Ornstein 2017 \cite{Stewart-Ornstein2017} was sent by Sander, mentions CRP, so quickly check whether might be interesting.
+
+**
+
+Perhaps it is interesting to check out the network topology validation by Michael Stumpf (see Heidelberg Quant conference 2017). 
+
+**
+
+
+Check also:
+Van Heerden et al. \cite{VanHeerden2017}
+and
+Nordholt et al. \cite{Nordholt2017}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Supplementary figures}
+
+
+
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-figXsup_overviewRegulationTCA.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:figOverviewTCARegulation}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Regulation of the TCA cycle and ED pathway.} 
+	Some regulatory proteins control the expression of many tricarboxylic acid (TCA) cycle and/or enzymes glycolysis pathway simultaneously.
+	This diagram shows the regulatory effects of CRP, but also of the Catabolite repressor activator (Cra) and the Anoxic redox control A (ArcA) protein.
+	Cra controls the direction of the metabolite flux through metabolic pathways \cite{Keseler2017, Ramseier1995}. Cra is activated by the metabolite fructose-1,6-bisphosphate \cite{Kochanowski2013a}.
+	ArcA is part of a two component system (ArcAB) which controls gene expression in response to aerobic versus anaerobic conditions \cite{Keseler2017, Alvarez2010}.
+	Metabolites are displayed in larger font, enzymes that catalyze reactions in smaller fonts.
+	In the colored boxes, regulation by CRP is displayed by an oval symbol marked "CRP".
+	Similarly, when an enzyme is regulated by Cra or ArcA this is displayed next to the boxes; a plus or minus symbol indicates positive or negative regulation.
+	Additionaly, in the boxes this diagram displays the concentration of particular enzymes in ppm, as annotated in PaxDb (retrieved in 2015) \cite{Wang2015}.
+	The boxes are also color-coded according to abundance of the enzymes.
+	The diagram is based on EcoCyc \cite{Keseler2017}. 
+	From top to bottom, clockwise, enzymes abbreviations stand for glucose 6-phosphate, fructose 6-phosphate, fructose 1,6-biphosphate, glyceraldehyde 3-phosphate, 1,3-biphospho-D-glycerate, 3-phospho-glycerate, 2-phospho-glycerate, phosphoenolpyruvate, pyruvate, acetyl coenzyme A, citrate, cis-aconitate, d-threo-isocitrate, (succinate, glyoxalate, acetyl-CoA), 2-oxo-glutarate, succinyl-CoA, succinate, fumarate, malate, oxaloacetate.
+	% See also: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=TCA
+	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pulsing dynamics
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_4.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_2.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_5.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_2.pdf}	
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_3.pdf}
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_4.pdf}	
+	\clearpage % insert a page break
+	\label{fig:CRP:productiontimeevolutions}
+\end{figure}
+
+\clearpage
+
+\captionof{figure}{    
+		\textbf{Time evolution of production versus growth rate during block pulses of high and low cAMP concentrations.}
+		(Top) The production rate of the CRP reporter plotted against growth rate, color coded for time. Production is determined here by the difference in absolute signal between two timepoints, divided by the amount of time inbetween these two points. Note that the production rate also depends on the growth rate, as does the final concentration of the protein. This makes this data not trivial to interpret.
+		(Middle) Similar to top panel, but production rate is divided by growth rate, since production rates might be more faitfully represented as fractions of the growth rate.
+		(Bottom) Similar to top panel, but production rate is divided by the production rate of the constitutively expressed label, which serves a reference for the total production rate capacity of the cell.
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% pdf_scattersoftraces_1
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_1.pdf}
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_2.pdf}	
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell13.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell49.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell144.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Dynamic behavior against itself.
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case1.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case2.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case3.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case4.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case5.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case6.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_overview_means.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRP CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dY5_cycCor_muP9_fitNew_atdY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Consti CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_C6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dC5_cycCor_muP9_fitNew_atdC5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches mu
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches Y (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_Y6_mean_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches dY (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_dY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_plasmids2_overview_correlations_CmuPmu_G.pdf}
+	\caption{ 
+		\textbf{Without feedback, metabolic fluctuations transmit to growth.}
+		The interaction of metabolic and growth fluctuations was measured by plasmid constructs.
+		(A) 
+	}
+	\label{fig:CRP:plasmidCCs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+

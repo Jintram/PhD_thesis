@@ -1,0 +1,236 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RESULTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 
+Because gene expression might fluctuate independent of CRP regulation due to changes in the cellular state,
+we 
+
+Because gene expression in general depends on the cellular state and not only on CRP regulation, 
+is general is noisy, we also used a second construct to provide a background 
+
+
+%
+As explained later in more detail, we also used a second construct with a promoter that has both the lacI and CRP binding site removed. 
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{More content}
+
+
+
+
+Studies often focus on how biochemical networks either one of these dynamics
+
+An example of biochemical networks responding to extracellular change is the adjustment of enzymatic concentrations to changes in extracellular sugar sources \cite{Towbin2017}.
+But even in a constant environment, the stochastic nature of chemical reactions can lead to variations in concentrations of cellular components  \cite{Elowitz2002,Kiviet2014}, 
+and a myriad of examples exist of how the biochemical network is designed to both deal with and take advantage of this noise (see also chapter \ref{chapter:literaturereview}).
+One example is the suppression of spontaneous fluctuations of concentrations of proteins and metabolites by negative feedback \cite{Brandman2008, Lestas2010, Bowsher2013}.
+These two functions --- responding to intracellular on one hand and responding to extracellular changes on the other --- are usually considered separately.
+In this chapter, we investigate how these two functions --- responding to intracellular on one hand and responding to extracellular changes on the other --- that are usually considered separately, are related to each other.
+
+
+
+\section{Introduction}
+
+% IDEA: FIRST GENERAL QUESTION, THEN LATER GO INTO DETAILS
+
+A straightforward view of cells growing in a constant environment might be 
+that of an expanding collection of individual cells that are each perfectly adapted to the environment.
+%
+Each cell senses the environment, 
+conveys this information using intracellular signaling molecules, 
+and adjusts its gene expression accordingly to 
+% This adaptation occurs by biochemical networks, 
+% which make sure that the cell 
+express the right amount of proteins that fit the situation \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%
+This might imply that the cellular behavior solely depends on the environment of the cell.
+%
+However, as discussed in chapter {chapter:literaturereview}, cellular populations are very heterogeneous \cite{Kiviet2014, Hashimoto2016}.
+%
+Since intracellular signaling molecules are not isolated from intracellular fluctuations, 
+this might also have an effect on gene regulation.
+%
+Indeed, it has been found that the input-output relationship between a gene's activator and its expression can be different from one cell to the next \cite{Rosenfeld2005, Keegstra2017}.
+
+\section{Articles}
+
+These: 
+
+% SOME CONVENIENT ARTICLES
+\cite{Brandman2008}
+\cite{Rosenfeld2007}
+\cite{Zambrano2015}
+\cite{Howell2012}
+\cite{Nevozhay2009}
+\cite{Hornung2008}
+\cite{Dublanche2006}
+\cite{Becskei2000}
+\cite{Swain2004}
+\cite{Bowsher2013}
+\cite{Avery2006}
+\cite{Maheshri2007}
+\cite{Levine2007a}
+\cite{Bennett2008a}
+\cite{Smits2006}
+\cite{Balazsi2011}
+\cite{Raj2008}
+\cite{Davidson2008}
+\cite{Elowitz2002}
+\cite{Bruggeman2009}
+\cite{Kitano2004a}
+.
+
+
+
+\section{Introduction}
+
+%Cellular survival critically depends on cellular decision making.
+%Biochemical networks allow cells to express the right genes at the right time \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+
+Cellular survival strongly depends on expressing the right genes at the right time.
+Biochemical networks control when a gene is expressed \cite{Bray1995, Alon2006, Alon2007, Tyson2010}.
+%
+Often, biochemical networks are studied in the context of a changing environment.
+%
+
+
+
+
+
+
+
+In \textit{Escherichia coli}
+
+
+
+
+
+To investigate this question, we employ mutant cells that cannot respond to these stochastic fluctuations.
+%
+
+
+
+To investigate whether the CRP system responds to these stochastic input signals, 
+we employ a mutant that does not have 
+
+we employ a mutant in which we can keep the mean CRP activity at wild type levels,
+
+we employ an adenylate cyclase null mutant that we provide with an external source of cAMP.
+%
+
+
+
+
+
+To investigate whether the CRP system responds to these stochastic input signals, 
+% DECOUPLING STORY LINE IS NONSENSE SINCE WE KILL BOTH EXTERNAL AND INTERNAL INPUT AND INSTEAD HAVE cAMP
+% --> NOT REALLY SINCE WE MAINTAIN THE EXTERNAL INPUT SETTING, SO CASE IS EXTERNAL+INTERNAL vs. EXTERNAL ONLY
+%we need a way to decouple 
+%the response to the external fluctuations
+%the two types of input provided to the CRP system:
+%the external 
+%
+we need to decouple the input the signal receives due environmental conditions versus the input the cell receives due to internal perturbations (Fig. \ref{fig:CRP:fig0}.D).
+%
+To achieve this,
+we employ an adenylate cyclase null mutant that we provide with an external source of cAMP.
+%
+In this mutant we can keep the mean CRP activity similar to the wild type CRP activity, 
+but leave the cell unable to respond to 
+
+
+This annihilitates the feedback and allows us to compare a situation where the cell responds to both 
+%
+In this manuscript, we show that indeed 
+
+
+
+
+Specifically, we focus on the role of the negative feedback in this regulatory architecture.
+
+
+by the metabolite alpha-ketoglutarate ($\upalpha$-KG) on metabolic enzyme production through the cyclic adenosine monophosphate (cAMP) and CRP 
+%\footnote{Previously CRP was also called catabolite gene activator protein (CAP).}.
+This negative feedback interaction is responsible for adjusting metabolic enzyme concentrations to different sugar sources in bacterial growth medium \cite{Towbin2017, Doucette2011, You2013}.
+
+% and ask (a) whether this regulatory interaction is affected by stochastic concentration fluctuations in its input and (b) whether CRP 
+
+
+
+
+
+
+<Feedback is known to regulate stuff \cite{Goyal2010}>
+
+Both single cell growth rates and protein concentrations can 
+which can influence GRF
+
+Maybe put Rosenfeld here?
+SOMETHING THAT EXPLAINS WHY THE FOLLOWING IS RELEVANT:
+assumes fixed cellular state
+[Intracellular messenger molecules might (i) measure fluctuating intracellular concentrations, (ii) fluctuate themselves, 
+%
+When we pick two cells within a population, their individual growth rates can easily differ by a factor of two, 
+as shown by single cell experiments that measured coefficients of variation (CV, standard deviation divided by the mean).
+%
+Both the CV of instantaneous growth rates (single cell mass doubling rate) and cellular generation time (time between divisions) has been determined to lay between $0.2$-$0.4$ \cite{Kiviet2014, Hashimoto2016}.
+%
+Also gene expression is known to vary for a long time \cite{Elowitz2002}, 
+the CV of gene expression from any promoter lies above 0.1 \cite{Keren2015}.
+
+
+This has been suggested to influence gene regulation \cite{Rosenfeld2005}.
+Groups of genes fluctuate together \cite{Stewart-Ornstein2012}
+Johannes' receptor stuff
+
+
+Also gene expression noise is thought to ELOWITZ
+and transmit KIVIET
+INTRACELL. ENVIRONMENT / IMPLICATIONS FOR MESSENGERS 
+
+>> FOR EXAMPLE, CAMP
+
+%
+This means cellular growth rates within a population can vary a factor of two from one cell to the next.
+
+Also in this work, we find 
+
+
+% >>> Note: there should not be (too much of) a contrast, because in the end we will find these two views should exist together..
+
+Each of the individual cells tries to maintain homeostasis 
+
+
+A straightforward view of cells growing in a constant environment is that of 
+
+Cells that grow in a constant environment 
+A population of cells in steady state is often though of as an exponential mass of growing cells in homeostasis.
+%
+
+% 
+However, 

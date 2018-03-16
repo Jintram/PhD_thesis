@@ -1,0 +1,10 @@
+
+
+% first line table bold.
+% thanks to: https://tex.stackexchange.com/questions/4811/make-first-row-of-table-all-bold
+\usepackage{array}
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}|}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}

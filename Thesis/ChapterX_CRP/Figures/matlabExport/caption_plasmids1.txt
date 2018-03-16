@@ -1,0 +1,9 @@
+===
+FIGURE LEGEND
+A: WT_plasmids_pCRP-GFP_asc842, G6_mean_cycCor_at_dG_dG5_cycCor
+B: WT_plasmids_ps70-GFP_asc841, G6_mean_cycCor_at_dG_dG5_cycCor
+C: WT_plasmids_pbla-CRP_pCRP-GFP_asc852, G6_mean_cycCor_at_dG_dG5_cycCor
+D: WT_plasmids_pbla-CRP_ps70-GFP_asc853, G6_mean_cycCor_at_dG_dG5_cycCor
+E: dCRP_plasmids_pbla-CRP_pCRP-GFP_asc854, G6_mean_cycCor_at_dG_dG5_cycCor
+F: dCRP_plasmids_pbla-CRP_ps70-GFP_asc855, G6_mean_cycCor_at_dG_dG5_cycCor
+===
