@@ -195,22 +195,33 @@ as the cellular state might be constantly changing in a way that is facilitated 
 
 \section*{Results}
 
-Our hypothesis is that fluctuations in metabolic enzyme concentration result in metabolite concentration changes.
+\subsection*{The CRP system is able to respond to dynamic signals}
+
+Our hypothesis is that stochastic fluctuations in metabolic enzyme concentration result in metabolite concentration changes, which in turn lead to a response by the CRP system.
 %
-However, the time scales at which stochastic fluctuations in enzyme concentrations happen might be too fast 
-for the CRP regulatory system to respond.
+To test this hypothesis, we first subject the CRP system to artificial fluctuations in the cAMP system to see whether it can respond to such quick fluctuations.
 %
-To see whether this is the case, we 
-
-
-
-
-
-To assess whether the CRP regulatory network can respond to stochastic influences from within the cell, 
-we first wanted to see if the regulatory network can respond at time scales at which the stochastic fluctuations occur.
+%However, the time scales at which these stochastic fluctuations occur might be too fast 
+%for the CRP regulatory system to respond.
+%To test the response time of the CRP system, we subjected cells to quickly alternating low and high cAMP concentrations in our flow cell.
 %
-To assess this we subjected the CRP regulatory network to pulses of medium with high and low cAMP concentrations.
+We find that the CRP system indeed responds considerably at rapid timescales to changes in the cAMP signal it receives.
+
+
+To be able to assess the response of the CRP system, we firstly wanted to be able to measure its output.
 %
+To be able to do this, we used a reporter construct that reads out the expression level of metabolic enzymes \cite{Towbin2017}.
+%
+This reporter construct uses a promoter of the lac operon from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0}.\red{X} and materials and methods for details.
+This promoter is fused to a fluorescent reporter protein (either gfpmut2 or mVenus, depending on the experiment) to allow us to 
+%estimate 
+assess
+the expression level of metabolic enzymes as induced by CRP.
+% 
+
+
+
+
 
 
 
@@ -224,6 +235,7 @@ To assess this we subjected the CRP regulatory network to pulses of medium with 
 	\label{fig:CRP:fig0}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -327,6 +339,11 @@ Recently, it has been shown that the CRP.cAMP regulation
 \section*{Methods}
 
 \textit{E. coli} (CGSC8003)
+
+\begin{itemize}
+	\item Add description of the lac reporter construct made by benjamin.
+	\item Check maternal strain that Vanda used for the double reporter constructs.
+\end{itemize}
 
 % For promoter sequences, see: M_2016_06_26_CRP_s70_promoter_sequences.docx
 
@@ -432,6 +449,24 @@ Nordholt et al. \cite{Nordholt2017}.
 
 \captionof{figure}{    
 	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_2.pdf}	
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_3.pdf}
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_4.pdf}	
+	\clearpage % insert a page break
+	\label{fig:CRP:productiontimeevolutions}
+\end{figure}
+
+\clearpage
+
+\captionof{figure}{    
+		\textbf{Time evolution of production versus growth rate during block pulses of high and low cAMP concentrations.}
+		(Top) The production rate of the CRP reporter plotted against growth rate, color coded for time. Production is determined here by the difference in absolute signal between two timepoints, divided by the amount of time inbetween these two points. Note that the production rate also depends on the growth rate, as does the final concentration of the protein. This makes this data not trivial to interpret.
+		(Middle) Similar to top panel, but production rate is divided by growth rate, since production rates might be more faitfully represented as fractions of the growth rate.
+		(Bottom) Similar to top panel, but production rate is divided by the production rate of the constitutively expressed label, which serves a reference for the total production rate capacity of the cell.
 }%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % pdf_scattersoftraces_1
