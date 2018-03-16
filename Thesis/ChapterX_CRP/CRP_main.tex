@@ -148,7 +148,7 @@ That would imply that also the CRP system receives a large variation of inputs i
 %
 We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.
 
-\subsection*{With and without processing stochastic input}
+\subsection*{CRP with and without processing stochastic input}
 
 To find out whether the CRP system responds to stochastic inpout we need to decouple the responses to stochastic and environmental inputs.
 %To address this question we need to be able to decouple the responses to these two different inputs.
@@ -199,7 +199,7 @@ as the cellular state might be constantly changing in a way that is facilitated 
 
 Our hypothesis is that stochastic fluctuations in metabolic enzyme concentration result in metabolite concentration changes, which in turn lead to a response by the CRP system.
 %
-To test this hypothesis, we first subject the CRP system to artificial fluctuations in the cAMP system to see whether it can respond to such quick fluctuations.
+To test this hypothesis, we first subject the CRP system to artificial cAMP fluctuations to see whether it can respond to such quick fluctuations.
 %
 %However, the time scales at which these stochastic fluctuations occur might be too fast 
 %for the CRP regulatory system to respond.
@@ -208,17 +208,65 @@ To test this hypothesis, we first subject the CRP system to artificial fluctuati
 We find that the CRP system indeed responds considerably at rapid timescales to changes in the cAMP signal it receives.
 
 
-To be able to assess the response of the CRP system, we firstly wanted to be able to measure its output.
+To be able to assess the response of the CRP system, we needed to measure its output.
 %
 To be able to do this, we used a reporter construct that reads out the expression level of metabolic enzymes \cite{Towbin2017}.
 %
-This reporter construct uses a promoter of the lac operon from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0}.\red{X} and materials and methods for details.
-This promoter is fused to a fluorescent reporter protein (either gfpmut2 or mVenus, depending on the experiment) to allow us to 
+This reporter construct uses the lac operon promoter from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0}.\red{X}.
+The promoter is fused to a fluorescent reporter protein (either gfpmut2 or mVenus, depending on the experiment) which allowed us to
 %estimate 
 assess
 the expression level of metabolic enzymes as induced by CRP.
+%
+To probe the response of the CRP system to a quickly changing signal, 
+%we subjected 
+we grew
+our \textit{cyaA}, \textit{cpda} null mutant strain (which we'll call $\Delta$cAMP strain from hereon for convenience) with a chromosomally inserted copy of this reporter construct
+%which carried a chromosomal insertion with this reporter, 
+%to a regime of alternating high and low cAMP concentrations.
+under the microscope whilst alternating between high and low cAMP concentrations.
+%
+We first alternated between high (2100$\upmu$m) and low (43$\upmu$m) concentrations of cAMP at 1hr intervals, and then alternated between the same concentrations at 5hr intervals.
+%
+Figure \ref{fig:CRP:fig1}.A shows the how the concentration of metabolic reporter responds to this signal. 
+%
+During fast switches (1 hours) the signal goes up and down substantially with respectively the high and low cAMP signal supplied, with a minimum of 215 a.u. and a maximum of 258 a.u..
+%
+During slow switches (5 hours) it becomes apparent that the signal did not reach an equilibrium value during the fast switching behavior, as the metabolic reporter reaches a lower and higher minimum and maximum respectively at 144 a.u. and 407 a.u.. 
+%
+Importantly, the behavior in the regime with fast switches suggests that the concentrations of metabolic enzymes under the control of a CRP promoter can respond quickly and substantially in response to a varying input signal. 
 % 
+This leads to our next question: what is the effect of these changes in metabolic enzyme concentration on the whole cellular state? To gauge this, we looked at how cellular growth rate responded to the fluctuations in cAMP signal. 
+Figure \ref{fig:CRP:fig1}.B shows that also the growth rate varies substantially, again suggesting the cell is susceptible to fluctuations in regulatory molecules. 
+%
+However, the signal growth rate behavior shows some puzzling features. 
+%
+Firstly, it appear that in the fast switch regime the high cAMP concentration immediately results in a sustained faster growth rate.
+This is unexpected, as too much metabolic enzyme expression is expected to come with the cost of superfluous protein production, and might even lead to a detrimental unbalanced ratio of fluxes in the cell \cite{Ray2016}.
+%
+However, when looking at the slower switch regime we see that this signal also goes down after while. 
+%
+We can explain this seemingly erratic behavior by plotting a time trace of the growth rate against the concentration of metabolic reporter.
+%
+This trace is shown in figure \ref{fig:CRP:fig1}.C. 
+%
+The most left green square in this figure indicates a switch to a low cAMP concentration, and shows that as the metabolic reporter concentration goes down, the growth rate first goes up, and then comes down again. 
+This is consistent with the idea that metabolic enzyme concentration has an optimal value above and below which the cell grows worse \cite{Jensen1993, Dekel2005, Berkhout2013, Ray2016, Towbin2017}.
+%earlier observations which show that the relationship between growth rate and metabolic enzyme concentration shows an optimum concentration above and below which the cell grows worse.
+%
+The idea of an optimum metabolic enzyme concentration is also confirmed when we plot growth rate against the metabolic reporter concentration, as shown in figure \ref{fig:CRP:scatterspulsing}. 
+%
 
+\subsubsection*{To add}
+
+XXX
+
+This trace shows that when the cell experience an upswitch in cAMP concentration the cellular growth rate immediately responds by going up, but later 
+indicated by the left most red square
+
+
+
+asymmetry!
 
 
 
@@ -243,7 +291,7 @@ the expression level of metabolic enzymes as induced by CRP.
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig1_.pdf}
 	\clearpage % insert a page break
-	\label{fig:CRP:fig1-2}
+	\label{fig:CRP:fig1}
 \end{figure}	
 
 \clearpage
@@ -337,6 +385,16 @@ Recently, it has been shown that the CRP.cAMP regulation
 
 
 \section*{Methods}
+
+\textbf{Pulsing experiment.} Strain asc1004 was grown O/N at 30 $\degree$C and 10X concentrated by spinning the cells down at \red{5K XX}, removing supernatant and resuspension in a table top centrifuge.
+Cells were introduced into microfluidic device \red{type 2} (see chapter \ref{chapter:filarecovery}) with a syringe, after which the device was placed under the microscope in a 37 $\degree$C temperature chamber and we supplied TY medium (flow rate 8 $\upmu$l/min) for a few hours, whereafter we switched to M9 minimal medium plus 0.2 mM uracil, 0.1 $\%$ lactose, 0.01 $\%$ tween and 300 $\upmu$M cAMP (flow rate 7 $\upmu$l/min).
+After this cells were grown in the same medium but supplemented with 0.001 $\%$ tween and sequentially 1hr of 2100 $\upmu$M cAMP ("high") and 1hr of 43 $\upmu$M cAMP ("low"), which was repeated 5 times (totaling 10hrs), and then 5 hrs low, 5 hrs high, and 5 hrs low (all at a flow rate of 8 $\upmu$l/min). 
+Times at which the valve switches were recorded and in the analysis corrected by adding the arrival delay of 58 minutes (in this particular experiment that delay was not yet optimized).
+Fluorescent images were taken every 20 minutes, using a CFP and YFP filter set (chroma models 49001 and 49003 respectively), both with exposure times of 150ms.
+A selection of this sequence was analyzed and displayed.  
+For a description of the computer analysis and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
+
+\subsection*{Todo}
 
 \textit{E. coli} (CGSC8003)
 
@@ -471,14 +529,20 @@ Nordholt et al. \cite{Nordholt2017}.
 
 % pdf_scattersoftraces_1
 
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
 	\centering
 	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_1.pdf}
 	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_2.pdf}	
 	\caption{ 
-		(A) 
+		\textbf{Scatter plots of growth rate versus metabolic and constitutive reporter from single cell measurements.}
+		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration.
+		On the left, growth rate plotted against the concentration of the metabolic reporter.
+		On the right, growth rate plotted against the concentration of a constitutive reporter based on the same lac metabolic reporter but with the CRP binding site replaced by a $\upsigma$70 consensus binding site.
+		The black lines indicate the average signal for corresponding concentrations and standard deviations.
+		The red lines are interpolated 2nd degree polynomial fits of the displayed mean values.
+		The red square shows the maximum value of the interpolated values at a metabolic reporter concentration of 225 a.u. (corresponding to a growth rate of 0.63 doublings/hr).
 	}
-	\label{fig:CRP:XXX}
+	\label{fig:CRP:scatterspulsing}
 \end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
