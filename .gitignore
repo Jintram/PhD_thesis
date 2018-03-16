@@ -6,6 +6,7 @@
 *.tps
 *.blg
 *.gz
+*.log
 *.fig
 *.svg
 *.tif
