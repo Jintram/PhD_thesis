@@ -1,0 +1,74 @@
+\documentclass[]{article}
+
+%opening
+\title{CRP additions written on laptop}
+\author{Martijn Wehrens}
+
+
+% load a collection of convenient shortcut commands
+\input{../PackagesNewCommands/packages_newcommands} % include packages 
+%      and define commands
+
+% My aditions:
+%\usepackage{enumitem } % for lists w/o spacing.
+\usepackage{blindtext} 
+% more list options
+%\usepackage[inline]{enumitem}
+\usepackage{xcolor}
+\usepackage{paralist}
+
+\usepackage{upgreek} % for the upright µ symbol
+
+\usepackage{verbatim}
+\usepackage{breakurl} % in combination with sloppy and fussy commands this should allow breackage of urls, but it didn't; also \url will produce links
+\usepackage{hyperref}
+
+% In case the "d" in dx is desired to have a special markup.
+%\usepackage{amsmath}
+%\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+% Some attempts to corretly break urls (and e.g. also script names).
+% \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+% \g@addto@macro{\UrlBreaks}{\UrlOrds}
+% Suggestions from: https://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
+
+% \usepackage{siunitx} % e.g. \micro % does not work..
+
+% set path for figures % TODO some thing from Noreen setting the figure path..
+%\input{Figures/setFigurePath}
+
+
+%\usepackage{graphicx} % should also enable eps??
+
+%\usepackage{array}
+
+% Needed for floating caption
+\usepackage{graphicx} 
+\usepackage{caption}
+
+% Needed to use svg graphics
+%\usepackage{svg} % does not seem to work --> use pdfs.
+
+% Needed for eps??
+\usepackage{epstopdf}
+
+\graphicspath{{./Figures/}{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
+	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}}
+
+
+
+\include{Commands/additional_custom_commands}
+
+\begin{document}
+
+%\maketitle
+
+\include{CRP_laptop_additions}
+
+% include bibliography
+\bibliography{../library} 
+% carefully choose the .bib file 
+% [see remarks in Bibliography folder]
+\bibliographystyle{Style/bibstyle_dissertation}
+
+\end{document}
