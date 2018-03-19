@@ -332,20 +332,52 @@ Nevertheless, the observations made in this pulsing experiment show that the CRP
 
 Thus, given that the CRP system is sensitive to quickly changing input, we wanted to further probe how a population of cells growing in a constant environment responds to stochastic fluctuations .
 %
-We suspected that CRP regulation might both respond to environmental and intracellular fluctuations.
+Since we suspected that CRP regulation might both respond to environmental and intracellular fluctuations, 
 %
-In order to study the response of the regulatory system to stochastic fluctuations, we needed to isolate the regulatory response to those fluctuations.
+we wanted to isolate and/or manipulate the regulatory response to those fluctuations.
+%In order to study the response of the regulatory system to stochastic fluctuations, we needed to isolate the regulatory response to those fluctuations.
 %
-We found a way to remove the (possible) response of the regulatory system to stochastic fluctuations, while maintaining the mean expression level required as response to the environment.
+Indeed, we managed to remove any potential response of the regulatory system to stochastic fluctuations, while maintaining the mean expression level required as response to the environment.
 %
-This was done by employing the $\Delta$cAMP strain that was grown in minimum medium supplemented with lactose and 800 $\upmu$M cAMP.
+This was done by growing our $\Delta$cAMP strain on minimum medium supplemented with lactose and 800 $\upmu$M cAMP.
 %
-This concentration of cAMP resulted in growth rates that are comparable to those observed in wild type cells growing on lactose.
+That concentration of cAMP resulted in growth rates that are comparable to those observed in wild type cells growing on lactose.
 On the other hand, the cAMP levels in these cells were unable to respond to intracellular metabolite concentrations.
+%
+Using our previously discussed metabolic reporter construct, we were able to assess the CRP dynamics in these cells.
+We compared CRP expression dynamics in these cells without feedback against wild type cells that also carried the metabolic reporter and were also growing on lactose.
 %
 This thus gave us a way to decouple the regulatory response to stochastic intracellular changes from the regulatory response to environmental changes,
 and study whether there is indeed regulatory activity in response to stochastic changes.
+
+We first investigated the metabolic dynamics in the wild type setting.
 %
+The left panel in figure \ref{fig:CRP:fig2}.A shows a scatter plot that relates the concentration of metabolic reporter to the growth rate for a single cell experiment with wild type cells.
+%
+%As expected, individual cells that have a higher metabolic enzyme expression show a lower growth rate.
+%
+%However, d
+Despite earlier observations that showed a concave curve with an optimum enzyme expression (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}), 
+we found that the shape of this cloud appears to follow a straight line with a negative slope.
+%
+The right panel in figure \ref{fig:CRP:fig2}.A shows the relationship between metabolic regulation and growth observed in cells 
+that lack the ability to respond to metabolite signals, ie. for our $\Delta$cAMP cells growing in 800 $\upmu$M cAMP.
+
+(...)
+
+
+\subsubsection*{To add tomorrow}
+
+Despite the curve with an optimum that was observed earlier in our experiments, and also by others , 
+% Surprisingly, 
+cells that have a lower concentration than the average cell have a higher growth rate than average.
+%
+Next, we investigated the 
+
+
+
+To further investigate the observation that stochastically different cells do not follow the mean trend ....
+
 
 
 
@@ -378,7 +410,7 @@ and study whether there is indeed regulatory activity in response to stochastic 
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig4.pdf}
 	\clearpage % insert a page break
-	\label{fig:CRP:fig1-2}
+	\label{fig:CRP:fig4}
 \end{figure}	
 
 \clearpage
@@ -397,9 +429,11 @@ and study whether there is indeed regulatory activity in response to stochastic 
 
 \textbf{Talking points.} Evolution doesn't separate dynamic and steady state functionality, and can potentially optimize both.
 
-
+> Perhaps the feedback ensures that the cells also exhibit "c-line" behavior as observed by you2013.
+^ Figure \ref{fig:CRP:fig2}.A is also consistent with You2013, i.e. the C-line. However not entirely clear how this would mechanistically work.
 > Also mention Chalancon2012, which talks specifically about interaction between regulation fucntion and noise in a network.
 > Mention Rosenfeld2005, idem.
+
 
 For example, how cellular composition changes in response to different food sources has been a topic of study for a long time \cite{Schaechter1958}.
 %
