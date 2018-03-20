@@ -14,6 +14,7 @@
 % load a collection of convenient shortcut commands
 \input{PackagesNewCommands/packages_newcommands} % include packages 
 							 %      and define commands
+							 % also additional commands are defined in Commands/additional_custom_commands, see below
 
 % My aditions:
 %\usepackage{enumitem } % for lists w/o spacing.
@@ -61,12 +62,17 @@
 % for degree symbol
 \usepackage{gensymb}
 
+% misc
+\usepackage{tabularx}
+
+% Graphic paths
 \graphicspath{{./Figures/}{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
 	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}}
 
 
-
+% Additional commands
 \include{Commands/additional_custom_commands}
+% Note that also Noreen added additional commands, see above at PackagesNewCommands/packages_newcommands
 
 \begin{document}
 
