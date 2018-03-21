@@ -365,47 +365,55 @@ The left panel in figure \ref{fig:CRP:fig2}.A shows a scatter plot that relates 
 %As expected, individual cells that have a higher metabolic enzyme expression show a lower growth rate.
 %
 %However, d
-Despite earlier observations that showed a concave cAMP-growth curve with an optimum metabolic expression (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}), 
+Despite the trend observed in the average growth-expression relationship, which showed a concave cAMP-growth curve with an optimum metabolic expression (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}), 
 we found that the shape of this cloud appears to follow a straight line with a negative slope.
 %
-The green cloud in the right panel in figure \ref{fig:CRP:fig2}.A shows the relationship between metabolic regulation and growth observed in cells 
-that lack the ability to respond to stochastically fluctuating metabolite concentrations, ie. our $\Delta$cAMP cells growing in 800 $\upmu$M cAMP.
+Conversely, the green cloud in the right panel in figure \ref{fig:CRP:fig2}.A shows
+% the relationship between metabolic regulation and growth observed in cells 
+the growth-expression relationship observed in cells 
+that lack the ability to respond to stochastically fluctuating metabolite concentrations, ie. our $\Delta$cAMP cells growing in 800 $\upmu$M cAMP lacking negative feedback regulation.
 %
 Remarkably, the cells without feedback do not show the negatively sloped relationship between metabolic expression and growth rate.
 %
-This indicates that the dynamics of wild type cells is influenced by stochastic influences from inside the cell.
+%This indicates that the dynamics of wild type cells is influenced by stochastic influences from inside the cell.
+This indicates that the CRP regulatory interactions play a role in shaping stochastic fluctuations in the cell. 
 
 To make sure this behavior was not due to generic changes in cellular dynamics, we made use of a second reporter construct.
 %
-This construct carried a similar promoter to the metabolic promoter, but it contained mutations that removed the CRP binding site and introduced a $\upsigma$70 consensus binding site instead.
-The idea is that the resulting constitutive promoter fused to a fluorescent mCerulean reporter shows the generic dynamics that exist in protein production in the cell.
-That is, the construct reports for generic protein fluctuations due to stochastic cellular state changes,
-%and growth rate fluctuations, 
-usually referred to as extrinsic noise --- but not due to CRP regulation.
+This construct carried a similar promoter to the metabolic promoter, but it contained mutations that removed the CRP binding site and introduced a $\upsigma$70 consensus binding site instead \cite{Towbin2017}.
 %
-Figure \ref{fig:CRP:fig2}.B shows that the expression-growth relationship of this constitutive reporter does not change in cells with or without feedback (blue and green clouds).
-Thus, this confirms the attribution of the change in dynamics observed in \ref{fig:CRP:fig2}.A to the CRP regulation responding to stochastically fluctuating metabolite concentrations.
+%The idea is that the resulting constitutive promoter fused to a fluorescent mCerulean reporter shows the generic dynamics that exist in protein production in the cell.
+This resulted in a constitutive promoter, which was then fused to the fluorescent mCerulean reporter.
+%
+The aim of this construct is to report specifically for the generic dynamics of protein production due to cellular state changes (i.e. intrinsic noise)
+which might also be experienced by the CRP reporter ---
+%
+%which result from stochastic cellular state changes,
+%and growth rate fluctuations, 
+%usually referred to as extrinsic noise
+% --- but not for due to CRP regulation.
+but to exclude the effects of CRP regulation.
+%
+Figure \ref{fig:CRP:fig2}.B shows that the expression-growth relationship of this constitutive reporter does not change between cells with or without feedback (blue and green clouds).
+This confirms the attribution of the change in dynamics observed in \ref{fig:CRP:fig2}.A to the CRP regulation responding to stochastically fluctuating metabolite concentrations.
 
-The $\Delta$cAMP cells allowed us to investigate another question:
+Our "feedbackless" $\Delta$cAMP cells allowed us to investigate another question:
 how do the stochastic deviations \textit{from} mean behavior relate to the mean behavior itself?
 %
-To investigate this, we also exposed our $\Delta$cAMP cells to two additional constant conditions: minimal medium supplemented with lactose, and additionally respectively 80 or 5000 $\upmu$M cAMP.
-As expected, the orange and red clouds (corresponding to lower and higher concentrations of cAMP respectively) in figure \ref{fig:CRP:fig2}.A show that the average values follow the same concave curve as observed earlier (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}).
+To investigate this relation, we exposed our $\Delta$cAMP cells to two additional constant conditions: minimal medium supplemented with lactose, and additionally respectively 80 or 5000 $\upmu$M cAMP.
+As expected these conditions (visualized by the red and orange clouds respectively in figure \ref{fig:CRP:fig2}.A) showed average values that follow the same concave curve as observed earlier (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}).
 %
-The clouds roughly follow this behavior, but seem to deviate slightly.
+The clouds roughly follow this behavior, but seem to deviate.
 %
 This deviation from the average behavior is much more pronounced in the concentration-growth relationship of the constitutive reporter, as shown in figure \ref{fig:CRP:fig2}.B. 
 %
-The average concentration seems consistent with ideas about cellular resource allocation \cite{You2013}: cells that are forced to produce more metabolic proteins, automatically produce less other proteins such as the constitutive reporter.
+On one hand, the average concentration seems consistent with ideas about cellular resource allocation \cite{You2013}: cells that are forced to produce more metabolic proteins, automatically produce less other proteins such as the constitutive reporter. This relationship between the average concentrations of the metabolic and constitutive reporters is also directly visualized in the top panel of supplemental figure \ref{fig:CRP:fig3scatters_CC_pp}.
 %
-The clouds in figure \ref{fig:CRP:fig2}.B, which show the deviations of single cells from the average cell, do not follow this average behavior at all.
+However, the clouds in figure \ref{fig:CRP:fig2}.B on the other hand, which show the deviations of single cells from the average cell, do not follow this average behavior at all.
 %
 Taken together, these observations suggest that the dynamical behavior of single cells that deviate from the average cell, do not necessarily follow relationships that exist for average quantities over different conditions. More importantly, the fact that cells that are unable to respond to internal metabolite fluctuations show substantially different behavior from those that can, indicates that the CRP regulation network is actively responding to inputs when the cell resides in a constant environment.
-
-XXXXX-continue-here-XXXXXXXXX. 
-In order to understand the shape of this curves (i.e. the clouds) we used CCs. 
-
-\subsection*{Understanding the CRP response to stochastic fluctuations}
+%
+To further understand the shape of the single cell data point clouds, we turn to cross-correlation analyses in the next paragraph.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -413,22 +421,31 @@ In order to understand the shape of this curves (i.e. the clouds) we used CCs.
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig2.pdf}
 	\caption{ 
-		(A)  
-		(B)
+		\textbf{Artificial removal of negative feedback regulation changes the growth-metabolism relationship and reveals its dynamic role.}		
+		% \textbf{Growth-concentration relationships for metabolic and constitutive reporters.}
+		(A) Colored dots show single cell growth rate values are plotted against respective single cell concentrations of metabolic reporter, which is a proxy for the concentration of metabolic enzymes. 
+		The left panel shows that wild type cells which deviate from the average behavior (circle) show a negative correlation between metabolic reporter and growth rate.
+		The green dots in the right panel shows that this behavior changes in $\Delta$cAMP cells which are not able to respond to internal metabolite levels. 
+		Whereas the green cloud corresponds to externally supplied cAMP levels that lead to wild type growth rates (800 $\upmu$M cAMP), the 
+		red and orange dots correspond to cAMP concentrations that lead to diminished growth rates (80 and 5000 $\upmu$M respectively).		
+		Note that the black lines show the average growth rate for cells that are binned according to concentration, and the black isolines reflect kernel density estimates of the probability distribution (using the matlab function \texttt{kde2d} \cite{Botev2010}).
+		(B) As panel A, except that this panel shows the relationship between growth and the concentration of a constitutive reporter. 
+		As opposed to the metabolic behavior, single cells that deviate from the average expression level for the respective condition do not show  different behavior.
+		This shows that the change in metabolic behavior shown in A is not a generic effect on protein expression, but specific to the (regulation of the) metabolic reporter.
+		Additionally, these panels also illustrate the difference between single cell behavior from the trend set out by the average data points.
 	}
 	\label{fig:CRP:fig2}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection*{To add tomorrow}
 
-Despite the curve with an optimum that was observed earlier in our experiments, and also by others , 
-% Surprisingly, 
-cells that have a lower concentration than the average cell have a higher growth rate than average.
-%
-Next, we investigated the 
+\subsection*{Understanding the CRP response to stochastic fluctuations}
 
 
+
+
+
+stronger with future growth
 
 To further investigate the observation that stochastically different cells do not follow the mean trend ....
 
@@ -480,6 +497,7 @@ To further investigate the observation that stochastically different cells do no
 > Also mention Chalancon2012, which talks specifically about interaction between regulation fucntion and noise in a network.
 > Mention Rosenfeld2005, idem.
 > Check out review bruggeman2018.
+> Talk about CV
 
 > Additional strains made and conditions measured.
 
@@ -622,10 +640,13 @@ Nordholt et al. \cite{Nordholt2017}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\FloatBarrier
+\clearpage
 \section*{Supplementary figures}
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
@@ -763,6 +784,75 @@ Nordholt et al. \cite{Nordholt2017}.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of production
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig2sup}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of conc-conc and prod-prod
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}	
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3scatters_CC_pp}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3sup}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_benjamin_ODE_relations.pdf}
+	\caption{ 
+		\textbf{Using models to understand the dynamic behavior of stochastic metabolic and growth fluctuations.}
+		(Left) Illustrations of the contributions from the positive (production) and negative (dilution) terms to the differential equation that describes the time evolution of the concentration of metabolic enzymes as a function of that concentration $C$, according to the Towbin et al. model \cite{Towbin2017}. The different lines correspond to different values of the metabolite concentration $x$. 
+		(Right)	Similar as on the left, except that the terms are production and consumption of metabolites as a function of metabolite concentration $x$ and that the different lines correspond to different values of the metabolic enzyme concentration $C$.
+	}
+	\label{fig:CRP:benjamin_ODEs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FloatBarrier
+\clearpage
+\section*{Additional supplemental figures}
+
+This section contains additional supplemental figures that were not referenced in the chapter.
+
 % Dynamic behavior against itself.
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
@@ -812,57 +902,6 @@ Nordholt et al. \cite{Nordholt2017}.
 	}
 	\label{fig:CRP:XXX}
 \end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:fig2}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:fig3}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:fig3}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRP CCs 1

@@ -62,12 +62,15 @@
 % for degree symbol
 \usepackage{gensymb}
 
+% To enable floatbarriers
+\usepackage{placeins}
+
 % misc
 \usepackage{tabularx}
 
 % Graphic paths
 \graphicspath{{./Figures/}{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
-	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}}
+	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}{./ChapterX_CRP/Figures/matlabExport_model/}}
 
 
 % Additional commands
@@ -98,7 +101,7 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-\include{Chapter0_Preface_etc/preface_etc}
+%\include{Chapter0_Preface_etc/preface_etc}
 %\include{Chapter1_Introduction/chapter1_introduction}
 %\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
 %\include{Chapter2_Methods/chapter2_methods} % \label{chapter:methods}
@@ -115,7 +118,7 @@
 %% Turn off thumb indices for unnumbered chapters and bibliography
 \thumbfalse
 
-\include{ChapterZ_Protocols/chapterZ_appendix_methods_and_protocols}
+%\include{ChapterZ_Protocols/chapterZ_appendix_methods_and_protocols}
 
 
 % include bibliography
