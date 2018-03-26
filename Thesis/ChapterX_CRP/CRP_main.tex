@@ -335,6 +335,8 @@ Nevertheless, the observations made in this pulsing experiment show that the CRP
 %\subsection*{Probing CRP dynamics in a constant environment}
 \subsection*{The effect of stochastic fluctuations on CRP regulation}
 
+\subsubsection*{The feedback loop affects population dynamics}
+
 Thus, given that the CRP system seems sensitive to quickly changing input, we wanted to further probe how cells growing in a constant environment respond to intracellular stochastic fluctuations.
 %
 %Since we suspected that CRP regulation might both respond to environmental and intracellular fluctuations, 
@@ -350,7 +352,7 @@ required in the cellular environment.
 This was done by growing our $\Delta$cAMP strain on minimum medium supplemented with lactose and 800 $\upmu$M cAMP.
 %
 This concentration of cAMP resulted in growth rates that are comparable to those observed in wild type cells growing on lactose (see also supplementary figure \ref{fig:CRP:overviewsummaryparams}).
-On the other hand, the cAMP levels in these cells were unable to respond to intracellular metabolite concentrations.
+On the other hand, the cAMP levels in these cells were fixed and thus unable to respond to intracellular metabolite concentrations.
 %
 Using our metabolic reporter construct, we were able to assess the CRP dynamics in these cells.
 We compared CRP expression dynamics in these cells without feedback against wild type cells (which also carried the metabolic reporter and were also growing on lactose).
@@ -365,27 +367,29 @@ The left panel in figure \ref{fig:CRP:fig2}.A shows a scatter plot that relates 
 %As expected, individual cells that have a higher metabolic enzyme expression show a lower growth rate.
 %
 %However, d
-Despite the trend observed in the average growth-expression relationship, which showed a concave cAMP-growth curve with an optimum metabolic expression (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}), 
-we found that the shape of this cloud appears to follow a straight line with a negative slope.
+The scatter cloud appears to lay on a straight line with a negative slope.
 %
 Conversely, the green cloud in the right panel in figure \ref{fig:CRP:fig2}.A shows
 % the relationship between metabolic regulation and growth observed in cells 
 the growth-expression relationship observed in cells 
 that lack the ability to respond to stochastically fluctuating metabolite concentrations, ie. our $\Delta$cAMP cells growing in 800 $\upmu$M cAMP lacking negative feedback regulation.
 %
-Remarkably, the cells without feedback do not show the negatively sloped relationship between metabolic expression and growth rate.
+Remarkably, the cells without feedback do not show a similarly negatively sloped relationship between metabolic expression and growth rate.
 %
 %This indicates that the dynamics of wild type cells is influenced by stochastic influences from inside the cell.
 This indicates that the CRP regulatory interactions play a role in shaping stochastic fluctuations in the cell. 
-
-To make sure this behavior was not due to generic changes in cellular dynamics, we made use of a second reporter construct.
 %
-This construct carried a similar promoter to the metabolic promoter, but it contained mutations that removed the CRP binding site and introduced a $\upsigma$70 consensus binding site instead \cite{Towbin2017}.
+To make sure  
+%this behavior 
+the changes 
+were not due to generic changes in cellular dynamics, we made use of a second reporter construct.
+%
+This construct carried a similar promoter to the metabolic promoter, but it contained mutations that removed the CRP binding site and introduced a $\upsigma$70 consensus binding site instead \cite{Towbin2017} (see also methods).
 %
 %The idea is that the resulting constitutive promoter fused to a fluorescent mCerulean reporter shows the generic dynamics that exist in protein production in the cell.
-This resulted in a constitutive promoter, which was then fused to the fluorescent mCerulean reporter.
+This resulted in a constitutive promoter, which was then fused to a fluorescent mCerulean reporter.
 %
-The aim of this construct is to report specifically for the generic dynamics of protein production due to cellular state changes (i.e. intrinsic noise)
+The aim of this construct was to report specifically for the generic dynamics of protein production due to cellular state changes (i.e. intrinsic noise)
 which might also be experienced by the CRP reporter ---
 %
 %which result from stochastic cellular state changes,
@@ -397,23 +401,44 @@ but to exclude the effects of CRP regulation.
 Figure \ref{fig:CRP:fig2}.B shows that the expression-growth relationship of this constitutive reporter does not change between cells with or without feedback (blue and green clouds).
 This confirms the attribution of the change in dynamics observed in \ref{fig:CRP:fig2}.A to the CRP regulation responding to stochastically fluctuating metabolite concentrations.
 
-Our "feedbackless" $\Delta$cAMP cells allowed us to investigate another question:
+\subsubsection*{The not so average cell}
+
+Our "feedbackless" $\Delta$cAMP cells allowed us to investigate a second question:
 how do the stochastic deviations \textit{from} mean behavior relate to the mean behavior itself?
 %
-To investigate this relation, we exposed our $\Delta$cAMP cells to two additional constant conditions: minimal medium supplemented with lactose, and additionally respectively 80 or 5000 $\upmu$M cAMP.
-As expected these conditions (visualized by the red and orange clouds respectively in figure \ref{fig:CRP:fig2}.A) showed average values that follow the same concave curve as observed earlier (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}).
+To further probe the behavior of cellular populations, we exposed our $\Delta$cAMP cells to two additional conditions: 
 %
-The clouds roughly follow this behavior, but seem to deviate.
+%To further investigate the behavior of cells , we exposed our $\Delta$cAMP cells to two additional constant conditions:
+respectively 80 or 5000 $\upmu$M cAMP (further conditions were equal to the 800 $\upmu$M cAMP condition).
 %
-This deviation from the average behavior is much more pronounced in the concentration-growth relationship of the constitutive reporter, as shown in figure \ref{fig:CRP:fig2}.B. 
+The behavior of cells on the level of population averages is reasonably straightforward to understand.
 %
-On one hand, the average concentration seems consistent with ideas about cellular resource allocation \cite{You2013}: cells that are forced to produce more metabolic proteins, automatically produce less other proteins such as the constitutive reporter. This relationship between the average concentrations of the metabolic and constitutive reporters is also directly visualized in the top panel of supplemental figure \ref{fig:CRP:fig3scatters_CC_pp}.
+As we show in supplementary note I at the end of this chapter, the steady state relationships between the protein expression and growth are determined by three ingredients:
+(1) the interaction between protein production and dilution, (2) the concave relationship between metabolic enzyme expression and growth which suggests there is an optimal level of metabolic enzyme expression and (3) the observation that an increase in metabolic protein expression leads to a mandatory equal decrease in constitutive protein expression and vice versa.
 %
-However, the clouds in figure \ref{fig:CRP:fig2}.B on the other hand, which show the deviations of single cells from the average cell, do not follow this average behavior at all.
+However, neither the wild type (blue) or $\Delta$cAMP (green) scatter clouds in figure \ref{fig:CRP:fig2} seem to adhere to the concave relationship:
 %
+the wild type cells simply show a negative relationship between CRP concentration and growth rate, whilst the feedbackless cells lay on a line of constant growth rate.
+%
+The population averages of the $\Delta$cAMP cells obtained from the additional experiments at  80 or 5000 $\upmu$M cAMP follow the previously observed concave curve \cite{Towbin2017}, 
+but the single cell datapoints (visualized by the red and orange clouds respectively in figure \ref{fig:CRP:fig2}.A) do not seem to lay on a continuous concave curve.
+%showed population average values that follow the same concave curve as observed earlier (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}).
+%
+%The clouds roughly follow this behavior, but seem to deviate.
+%
+This deviation from the average behavior is much more pronounced in the concentration-growth relationship of the constitutive reporter.
+The population average behavior of the constitutive reporter growth rates is expected to show a concave relationship with reporter concentration (supplementary notes) similar to the metabolic reporter,
+but the single cell data does not follow this relationship at all, see figure \ref{fig:CRP:fig2}.B. 
+%
+% Despite the trend observed in the average growth-expression relationship, which showed a concave cAMP-growth curve with an optimum metabolic expression (supplementary figure \ref{fig:CRP:scatterspulsing} and \cite{Towbin2017}), we found that the shape of this cloud appears to follow a straight line with a negative slope.
+%On one hand, the average concentration seems consistent with ideas about cellular resource allocation \cite{You2013}: cells that are forced to produce more metabolic proteins, automatically produce less other proteins such as the constitutive reporter. This relationship between the average concentrations of the metabolic and constitutive reporters is also directly visualized in the top right panel of supplemental figure \ref{fig:CRP:fig3scatters_CC_pp}.
+%
+%However, the clouds in figure \ref{fig:CRP:fig2}.B on the other hand, which show the deviations of single cells from the average cell, do not follow this average behavior at all.
+
 Taken together, these observations suggest that the dynamical behavior of single cells that deviate from the average cell, do not necessarily follow relationships that exist for average quantities over different conditions. More importantly, the fact that cells that are unable to respond to internal metabolite fluctuations show substantially different behavior from those that can, indicates that the CRP regulation network is actively responding to inputs when the cell resides in a constant environment.
 %
 To further understand the shape of the single cell data point clouds, we turn to cross-correlation analyses in the next paragraph.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -441,6 +466,26 @@ To further understand the shape of the single cell data point clouds, we turn to
 
 \subsection*{Understanding the CRP response to stochastic fluctuations}
 
+We want to understand the effect of fluctuations in cellular parameters on other parameters at the single cell level.
+%
+To understand how parameters dynamically relate to each other in the stochastic cellular environment, time is an important component.
+%
+It has for example been shown by using cross-correlations that certain enzyme's single cell production rates have a delayed effect on single cell growth rates \cite{Kiviet2014}.
+%
+We here also employ cross-correlations to investigate the delayed correlations between our metabolic, constitutive and growth parameters.
+%
+The colored lines in figure \ref{fig:CRP:fig3}.A-B show the cross-correlation between the metabolic reporter concentration $M$ and growth rate $\mu$ based on single cell observations.
+%
+As explained in \red{XXADDREFXX}, the cross-correlation $R_{x,y}(\tau)$ calculates the correlation between a parameter $x$ at time $t$ with parameter $y$ at time $t+\tau$; thus 
+correlations between $x$ and future or past values of $y$ become apparent.
+%
+Thus, from figure \ref{fig:CRP:fig3}.A-B we see that 
+
+reveals more <richly> differences in dynamics
+
+
+supplementary note benjamin (to write) shows that excursions from mean concentrations can take arbitrary form
+>> so it is convenient to generalize them to a linearized model
 
 
 
@@ -498,6 +543,7 @@ To further investigate the observation that stochastically different cells do no
 > Mention Rosenfeld2005, idem.
 > Check out review bruggeman2018.
 > Talk about CV
+> Overproduction metabolic -> too little production generic proteins -> that's why growth decrease.. (this is a bit nuanced difference from simply overproduction costly)
 
 > Additional strains made and conditions measured.
 
@@ -655,11 +701,17 @@ single cell stochastic deviations away from steady state.
 %population average values are established.
 %
 %Moreover, 
-However understanding the steady state relationship between metabolic and constitutive protein production, concentration and the cellular growth rates helps us place the stochastic fluctuations away from the steady state values in the right context.
+However, understanding the steady state relationships themselves between metabolic and constitutive protein production, concentration and the cellular growth rates helps us place the stochastic fluctuations away from the steady state values in the right context.
 %
 We explain our understanding fo this matter in this supplementary. % note we explain our understanding of this matter.
 
 \subsubsection{Model and fitting of model to data}
+
+To better understand steady state relationships it is convenient to write down the differential equations that describe the (supposed) time evolution of the system, 
+and consider the steady state condition where the time derivative is zero.
+%
+Let us here start with an equation for the metabolic reporter.
+%
 %Towbin et al. \cite{Towbin2017} suggest that the relationship between the concentration, production and growth rate is as follows.
 Generally, the change in metabolic protein concentration $M$ over time is set by a production and a dilution term:
 \begin{align}
@@ -668,8 +720,10 @@ Generally, the change in metabolic protein concentration $M$ over time is set by
 	,
 \end{align}
 % 
-where $p_M$ is the production rate ($\text{a.u}/(\text{px} \text{min})$) of $M$ ($\text{a.u}/(\text{px})$) and $\lambda$ ($/\text{min}$) the growth rate of the cell.
-Following Towbin et al. \cite{Towbin2017}, we additionally define $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a function of $\lambda$.
+where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of $M$ ($\text{a.u}/(\text{px})$) and $\lambda$ ($/\text{min}$) the growth rate of the cell.
+%Our single cell experiments allow the independent measurement of all these three parameters.
+We can determine all these three parameters from our single cell experiments.
+Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a function of $\lambda$.
 %
 To understand the interaction between the metabolic reporter expression and the constitutive reporter expression we were inspired by the linear regulation model posed by You et al. \cite{You2013}, and pose
 \begin{align}
@@ -688,7 +742,7 @@ This implies that
 \end{align}
 where $Q$ is the concentration of the constitutive reporter, $p$ its production rate and $\phi_Q$ its fractional production rate.
 %
-Based on equations \ref{eq:CRP:odeM}-\ref{eq:CRP:odeQ} and the steady state assumption $\dot{M}=\dot{Q}=0$ we can make some predictions. Firstly, this implies that the production rates (a quantity that we determine directly from our experiments) divided by the growth rates should be equal to the concentration for both the reporters. The top two panels in figure \ref{fig:CRP:averagerelations1} show that this is indeed the case. Secondly, it implies that the sum of the concentration of the two reporters should be equal, since $\phi_M(\text{cAMP}) = M$ and $\phi_Q(\text{cAMP}) = Q$ and thus 
+Based on equations \ref{eq:CRP:odeM}-\ref{eq:CRP:odeQ} and the steady state assumption $\dot{M}=\dot{Q}=0$ we can make some predictions. Firstly, this suggests that the production rates (a quantity that we determine directly from our experiments) divided by the growth rates should be equal to the concentration for both the reporters. The top two panels in figure \ref{fig:CRP:averagerelations1} show that this is indeed the case. Secondly, it implies that the sum of the concentration of the two reporters should be equal, since $\phi_M(\text{cAMP}) = M$ and $\phi_Q(\text{cAMP}) = Q$ and thus 
 \begin{align}
 	\label{eq:CRP:sumconstant}	
 	T = M + Q
@@ -703,7 +757,7 @@ Surprisingly, equation \ref{eq:CRP:sumconstant} implies that this is not the cas
 %
 In any case, the steady state condition implies that $\phi_M(\text{cAMP}) = M$ (equation \ref{eq:CRP:odeM}), and thus that we can set the concentration of $M$ directly by adjusting the supplied cAMP concentration.
 In other words: $M \propto \text{cAMP}$.
-Furthermore, Towbin et al. \cite{Towbin2017} observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the optimality curve, or "O-curve".
+Furthermore, Towbin et al. observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the optimality curve, or "O-curve" \cite{Towbin2017}.
 We indeed observe a similar relationship, as shown in figure \ref{fig:CRP:averagerelations1}. 
 Towbin et al. derive a functional form for this relationship, but for simplicity we have fitted a 3rd degree polynomial to this O-curve, i.e.
 \begin{align}
@@ -726,12 +780,12 @@ Firstly, the relationship between $\lambda$ and $Q$ is defined by:
 \end{align}
 which is indeed supported by the top left panel in figure \ref{fig:CRP:averagerelations2}.
 %
-Secondly, the relationships between $p$ and $\lambda$ can be parameterized by $M$: 
+Secondly, the relationships between $p$ and $\lambda$ can be parameterized by $M$ and $Q$: 
 \begin{align}
 	\label{eq:CRP:pmu}	
 	\left(p_M, \lambda\right) & = \left(M f_\lambda(M), f_\lambda(M)\right) \nonumber \\ 
 	\left(p_Q, \lambda\right) & = \left(Q f_\lambda(T-Q), f_\lambda(T-Q)\right)
-	,
+	;
 \end{align}
 which can be found using the steady state condition and \ref{eq:CRP:odeM}. These equalities in equation \ref{eq:CRP:pmu} are corroborated by the bottom left and bottom right panels in figure \ref{fig:CRP:averagerelations2}.
 %
