@@ -435,11 +435,14 @@ but the single cell data does not follow this relationship at all, see figure \r
 %
 %However, the clouds in figure \ref{fig:CRP:fig2}.B on the other hand, which show the deviations of single cells from the average cell, do not follow this average behavior at all.
 
-Taken together, these observations suggest that the dynamical behavior of single cells that deviate from the average cell, do not necessarily follow relationships that exist for average quantities over different conditions. More importantly, the fact that cells that are unable to respond to internal metabolite fluctuations show substantially different behavior from those that can, indicates that the CRP regulation network is actively responding to inputs when the cell resides in a constant environment.
+\subsubsection*{Average relations do not predict dynamic relations and CRP regulation responds to stochastic inputs}
+%\subsubsection*{Deviations from average behavior and CRP regulation responds to stochastic inputs}
+
+Taken together, these observations suggest that the dynamical behavior of single cells
+%that deviate from the average cell, 
+does not necessarily follow relationships that exist for average quantities over different conditions. More importantly, the fact that cells that are unable to respond to internal metabolite fluctuations show substantially different behavior from those that can, indicates that the CRP regulation network is actively responding to inputs when the cell resides in a constant environment.
 %
 To further understand the shape of the single cell data point clouds, we turn to cross-correlation analyses in the next paragraph.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -448,7 +451,7 @@ To further understand the shape of the single cell data point clouds, we turn to
 	\caption{ 
 		\textbf{Artificial removal of negative feedback regulation changes the growth-metabolism relationship and reveals its dynamic role.}		
 		% \textbf{Growth-concentration relationships for metabolic and constitutive reporters.}
-		(A) Colored dots show single cell growth rate values are plotted against respective single cell concentrations of metabolic reporter, which is a proxy for the concentration of metabolic enzymes. 
+		(A) Colored dots show single cell growth rate values plotted against respective single cell concentrations of metabolic reporter, which is a proxy for the concentration of metabolic enzymes. 
 		The left panel shows that wild type cells which deviate from the average behavior (circle) show a negative correlation between metabolic reporter and growth rate.
 		The green dots in the right panel shows that this behavior changes in $\Delta$cAMP cells which are not able to respond to internal metabolite levels. 
 		Whereas the green cloud corresponds to externally supplied cAMP levels that lead to wild type growth rates (800 $\upmu$M cAMP), the 
@@ -466,20 +469,64 @@ To further understand the shape of the single cell data point clouds, we turn to
 
 \subsection*{Understanding the CRP response to stochastic fluctuations}
 
-We want to understand the effect of fluctuations in cellular parameters on other parameters at the single cell level.
+We want to understand the effect of fluctuations in cellular parameters on regulatory interactions and other parameters (such as growth) at the single cell level.
 %
-To understand how parameters dynamically relate to each other in the stochastic cellular environment, time is an important component.
+To understand these dynamic relationships time is an important component.
+%To understand how parameters dynamically relate to each other in the stochastic cellular environment, time is an important component.
 %
-It has for example been shown by using cross-correlations that certain enzyme's single cell production rates have a delayed effect on single cell growth rates \cite{Kiviet2014}.
+%It has for example been shown by using cross-correlations that certain enzyme's single cell production rates have a delayed effect on single cell growth rates \cite{Kiviet2014}.
 %
-We here also employ cross-correlations to investigate the delayed correlations between our metabolic, constitutive and growth parameters.
+In this paragraph we dissect the time dynamics with cross-correlations
+%use cross-correlations 
+to show that metabolic fluctuations would transfer to cellular growth rate if it were not for the existence of the negative feedback CRP regulation.
+
+\subsubsection*{Cross-correlations reveal rich dynamics between metabolism and growth}
+
+%We here also employ cross-correlations to investigate the delayed correlations between our metabolic, constitutive and growth parameters.
 %
-The colored lines in figure \ref{fig:CRP:fig3}.A-B show the cross-correlation between the metabolic reporter concentration $M$ and growth rate $\mu$ based on single cell observations.
+We start by investigating the effect that single cell metabolic concentration fluctuations have on growth rates.
 %
-As explained in \red{XXADDREFXX}, the cross-correlation $R_{x,y}(\tau)$ calculates the correlation between a parameter $x$ at time $t$ with parameter $y$ at time $t+\tau$; thus 
-correlations between $x$ and future or past values of $y$ become apparent.
+The cross-correlation $R_{M,\mu}(\tau)$ will show us the relation between the metabolic reporter concentration and past and future growth rates.
 %
-Thus, from figure \ref{fig:CRP:fig3}.A-B we see that 
+More precisely, as explained in chapter \ref{chapter:methods}, the cross-correlation $R_{f,g}(\tau)$ calculates the average correlation between a parameter $f$ at time $t$ with parameter $g$ at time $t+\tau$.
+%
+The colored lines in figure \ref{fig:CRP:fig3}.A-B show the cross-correlation $R_{M,\mu}(\tau)$ for wild type (green) and feedbackless $\Delta$cAMP cells (blue).
+%between the metabolic reporter concentration $M$ and growth rate $\mu$ based on single cell observations.
+%
+%As explained in \red{XXADDREFXX}, the cross-correlation $R_{x,y}(\tau)$ calculates the correlation between a parameter $x$ at time $t$ with parameter $y$ at time $t+\tau$; thus 
+%correlations between $x$ and future or past values of $y$ become apparent.
+%
+From these curves it is immediately apparent that the dynamic metabolic concentration-growth relationship is very different between cells 
+that possess the endogenous CRP feedback and those that do not.
+%
+Not only is the difference between correlations in wild type and $\Delta$cAMP cells that was also observed earlier in the scatter plots apparent from the values at delay $\tau=0$,
+but it also becomes apparent that the concentration-growth relationship shows a strong negative correlation at negative delays, 
+whilst the $\Delta$cAMP cells show a relationship that is positive for most delays and that is equal for positive versus negative delays, or even slightly more present at positive delays.
+%
+%Not only is the correlation that was observed earlier in the scatter plots apparent from the value at delay $\tau=0$, the concentration-growth relationship also shows a strong negative correlation at negative delays, whilst for the .
+%
+Previous studies showed that investigating the relationship between production rates and growth rates can also give further insights in the dynamics of metabolism and growth \cite{Kiviet2014}.
+%
+Hence, we here also tracked the production rate of our reporters.
+%
+The scatter plots for these relationships are shown in supplemental figure \ref{fig:CRP:fig2sup}.
+%
+Note that it is good to place these scatter plots in the context of the expected population average relationships (figure \ref{fig:CRP:averagerelations2}), 
+since these reveal that a specific production rates can map to two growth rate values.
+% on the algebraic curves.
+
+
+%
+To further understand these dynamics, we also tracked the production rates of the metabolic and constitutive reporters.
+%
+
+
+
+This also highlights that the dynamic interactions between cellular parameters go beyond instantaneous relationships that are captured by scatter plots, but instead show richer interactions that act over delays. 
+
+
+
+\subsubsection*{To write down}
 
 reveals more <richly> differences in dynamics
 
@@ -495,22 +542,36 @@ stronger with future growth
 To further investigate the observation that stochastically different cells do not follow the mean trend ....
 
 
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig3.pdf}
 	\caption{ 
-		(A) 
+		\textbf{Without feedback, metabolic dynamics change and transmit to growth.}
+		(A-B) Cross-correlations $R_{M,\mu}(\tau)$ between single cell metabolic reporter concentration $M$ and growth rate values $\mu$ (colored lines) and 
+		cross-correlations $R_{p_M,\mu}(\tau)$ between metabolic production rate $p_M$ and growth rate values $\mu$ (black lines). 
+		Correlations for wild type cells are shown in A, while correlations for feedbackless $\Delta$cAMP cells are shown in B.
+		%
+		(C-D) Cross-correlations $R_{Q,\mu}(\tau)$ between single cell constitutive reporter concentration $Q$ and growth rate values $\mu$ (colored lines) and 
+		cross-correlations $R_{p_Q,\mu}(\tau)$ between constitutive production rate $p_Q$ and growth rate values $\mu$ (black lines). 
+		Correlations for wild type cells are shown in C, while correlations for feedbackless $\Delta$cAMP cells are shown in D.
+		%
+		For all panels, the correlation (which is normalized) is plotted on the y-axis, and reflects the average correlation between two parameters between time points $t$ and $t+\tau$, 
+		the delay $\tau$ is plotted on the x-axis (in hours). The faded lines indicate cross-correlations from different microcolonies, the darker lines their averages. The cross correlations are calculated from cell lineages as described in chapter \ref{chapter:methods}.
+		%(A) Cross-correlation for the wild type cell's metabolic reporter expression and growth rate.
+		%(B) Cross-correlation for the feedbackless $\Delta$cAMP cell's metabolic reporter expression and growth rate.
+		%(C) Cross-correlation for the wild type cell's constitutive reporter expression and growth rate.
+		%(D) Cross-correlation for the feedbackless $\Delta$cAMP cell's constitutive reporter expression and growth rate.
 	}
 	\label{fig:CRP:fig3}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -533,6 +594,8 @@ To further investigate the observation that stochastically different cells do no
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Discussion}
+
+CONCLUSION: THE RULES ARE THE SAME BUT THE THINGS THAT CHANGE DUE FLUCTUATIONS OR IN CONDITIONS ARE DIFFERENT
 
 \textbf{Talking points.} Evolution doesn't separate dynamic and steady state functionality, and can potentially optimize both.
 
@@ -620,7 +683,19 @@ After this cells were grown in the same medium but supplemented with 0.001 $\%$ 
 Times at which the valve switches were recorded and in the analysis corrected by adding the arrival delay of 58 minutes (in this particular experiment that delay was not yet optimized).
 Fluorescent images were taken every 20 minutes, using a CFP and YFP filter set (chroma models 49001 and 49003 respectively), both with exposure times of 150ms.
 A selection of this sequence was analyzed and displayed.  
-For a description of the computer analysis and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
+
+\textbf{More detailed information on the computer analyses.} 
+For a description of the computer analyses and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
+%Extended information can be found in chapters \ref{chapter:methods} and \ref{chapter:filarecovery}. 
+However, some details are also worth mentioning here. 
+Since concentrations, production rates and growth rates play a large role in this chapter, it is good to indicate how they are calculated.
+Concentration (a.u./px) is defined as the mean fluorescence signal (a.u.) in a central bar of pixels along the cell's long axis \cite{Kiviet2010}.
+%
+To calculate the production rate (a.u. px$^{-1}$ min$^{-1}$), first the sum of the fluorescence signal (a.u.) over all pixels that make up a cell is calculated. 
+For each frame $n$ where a fluorescence image was taken, the production rate is determined as the slope of a linear fit through three points $n-\delta{n}$, $n$, and $n+\delta{n}$, where $\delta{n}$ is the interval at which fluorescence pictures are taken. This production rate is then subsequently divided by the total number of pixels of the cell in frame $n$.
+The growth rate (with units dbl/hr or sometimes with units /min) is determined for each frame $n$ by fitting an exponential curve through frames $n-\delta{n}/2$ until $n+\delta{n}/2$ (or sometimes a smaller range).
+Note that to determine scatter plots and correlations, only frames where fluorescence images were taken are considered.
+This means that the choice for a growth rate fitting window of width $\delta{n}+1$ ensures that all data is used, but no point is used twice
 
 \subsection*{Todo}
 
@@ -1016,7 +1091,14 @@ In conclusion, three ingredients determine the steady state relationships in the
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
 	\caption{ 
-		(A) 
+	\textbf{Scatter plots of production rates against growth rate.}
+	(A) Colored dots show single cell growth rate values plotted against respective single cell production rates of metabolic reporter, which is a proxy for the production rate of metabolic enzymes. 	
+	Dots correspond to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP 
+	(colored blue, and red, green and orange, respectively).
+	The black lines show the average growth rate for cells that are binned according to production rates, and the black isolines reflect kernel density estimates of the probability distribution (using the matlab function \texttt{kde2d} \cite{Botev2010}).
+	The circles with thick black edges show population average values per experiment.
+	Note that the trends in population average values are explained in Supplemental note I at the end of this chapter.
+	(B) As panel A, except that this panel shows the relationship between growth and the production rate of a constitutive reporter. 	
 	}
 	\label{fig:CRP:fig2sup}
 \end{figure}
@@ -1028,7 +1110,11 @@ In conclusion, three ingredients determine the steady state relationships in the
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}	
 	\caption{ 
-		(A) 
+		\textbf{Concentration-concentration and production-production relationships between metabolic and constitutive reporters.}
+		This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
+		Panels show: (Top) scatter plots for concentration of metabolic (CRP) reporter against the concentration of constitutive (s70) reporter; 
+		(Bottom) scatter plots for production rate of metabolic (CRP) reporter against the production rate of constitutive (s70) reporter.
+		Blue, red, green and orange dots again correspond respectively to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP.
 	}
 	\label{fig:CRP:fig3scatters_CC_pp}
 \end{figure}
