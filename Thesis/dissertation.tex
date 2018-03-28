@@ -80,6 +80,7 @@
 
 \begin{document}
 
+%%%%%%% TITLE
 
 %% Specify the title and author of the thesis. This information will be used on
 %% the title page (in title/title.tex) and in the metadata of the final PDF.
@@ -106,17 +107,23 @@
 %\onehalfspacing
 \doublespacing
 
+%%%%%%% CHAPTERS (& PREFACE ETC)
+
 %\include{Chapter0_Preface_etc/preface_etc}
 %\include{Chapter1_Introduction/chapter1_introduction}
 %\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
 %\include{Chapter2_Methods/chapter2_methods} % \label{chapter:methods}
 %\include{ChapterX_Filarecovery/ChapterX_Filarecovery}
 \include{ChapterX_CRP/CRP_main}
-%\include{ChapterX_Modeling/Nghe_model_cAMP_v5}
+\include{ChapterX_CRP/CRP_SupplementaryNotes1}
+\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
+\include{ChapterX_CRP/CRP_SupplementaryFigures}
 %\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 %\include{ChapterX_Notes/ChapterX_Notes}
 %\include{ChapterX_Conclusion/ChapterX_Conclusion}
 
+
+%%%%%%% MISC OTHER PARTS AT THE END OF THE THESIS
 
 %% Use letters for the chapter numbers of the appendices.
 \appendix

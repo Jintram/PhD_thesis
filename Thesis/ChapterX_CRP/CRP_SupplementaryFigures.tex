@@ -1,0 +1,397 @@
+\clearpage
+\FloatBarrier
+\section*{Supplementary figures}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-figXsup_overviewRegulationTCA.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:figOverviewTCARegulation}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Regulation of the TCA cycle and ED pathway.} 
+	Some regulatory proteins control the expression of many tricarboxylic acid (TCA) cycle and/or enzymes glycolysis pathway simultaneously.
+	This diagram shows the regulatory effects of CRP, but also of the Catabolite repressor activator (Cra) and the Anoxic redox control A (ArcA) protein.
+	Cra controls the direction of the metabolite flux through metabolic pathways \cite{Keseler2017, Ramseier1995}. Cra is activated by the metabolite fructose-1,6-bisphosphate \cite{Kochanowski2013a}.
+	ArcA is part of a two component system (ArcAB) which controls gene expression in response to aerobic versus anaerobic conditions \cite{Keseler2017, Alvarez2010}.
+	Metabolites are displayed in larger font, enzymes that catalyze reactions in smaller fonts.
+	In the colored boxes, regulation by CRP is displayed by an oval symbol marked "CRP".
+	Similarly, when an enzyme is regulated by Cra or ArcA this is displayed next to the boxes; a plus or minus symbol indicates positive or negative regulation.
+	Additionaly, in the boxes this diagram displays the concentration of particular enzymes in ppm, as annotated in PaxDb (retrieved in 2015) \cite{Wang2015}.
+	The boxes are also color-coded according to abundance of the enzymes.
+	The diagram is based on EcoCyc \cite{Keseler2017}. 
+	From top to bottom, clockwise, enzymes abbreviations stand for glucose 6-phosphate, fructose 6-phosphate, fructose 1,6-biphosphate, glyceraldehyde 3-phosphate, 1,3-biphospho-D-glycerate, 3-phospho-glycerate, 2-phospho-glycerate, phosphoenolpyruvate, pyruvate, acetyl coenzyme A, citrate, cis-aconitate, d-threo-isocitrate, (succinate, glyoxalate, acetyl-CoA), 2-oxo-glutarate, succinyl-CoA, succinate, fumarate, malate, oxaloacetate.
+	% See also: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=TCA
+	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pulsing dynamics
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_4.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_2.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_5.pdf}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_2.pdf}	
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_3.pdf}
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_4.pdf}	
+	\clearpage % insert a page break
+	\label{fig:CRP:productiontimeevolutions}
+\end{figure}
+
+\clearpage
+
+\captionof{figure}{    
+		\textbf{Time evolution of production versus growth rate during block pulses of high and low cAMP concentrations.}
+		(Top) The production rate of the CRP reporter plotted against growth rate, color coded for time. Production is determined here by the difference in absolute signal between two timepoints, divided by the amount of time inbetween these two points. Note that the production rate also depends on the growth rate, as does the final concentration of the protein. This makes this data not trivial to interpret.
+		(Middle) Similar to top panel, but production rate is divided by growth rate, since production rates might be more faitfully represented as fractions of the growth rate.
+		(Bottom) Similar to top panel, but production rate is divided by the production rate of the constitutively expressed label, which serves a reference for the total production rate capacity of the cell.
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
+	\centering
+	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_5.pdf}
+	\caption{ 
+		\textbf{Time evolution of metabolic reporter concentration normalized by constitutive reporter concentration.}
+		This figure is similar to figure \ref{fig:CRP:productiontimeevolutions}, but shows the concentration of the metabolic reporter divided by the constitutive reporter on the x-axis, instead of production rates.
+	}
+	\label{fig:CRP:normalizedconcentrationtimeevolutions}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% pdf_scattersoftraces_1
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
+	\centering
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_1.pdf}
+	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_2.pdf}	
+	\caption{ 
+		\textbf{Scatter plots of growth rate versus metabolic and constitutive reporter from single cell measurements.}
+		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration.
+		On the left, growth rate plotted against the concentration of the metabolic reporter.
+		On the right, growth rate plotted against the concentration of a constitutive reporter based on the same lac metabolic reporter but with the CRP binding site replaced by a $\upsigma$70 consensus binding site.
+		The black lines indicate the average signal for corresponding concentrations and standard deviations.
+		The red lines are interpolated 2nd degree polynomial fits of the displayed mean values.
+		The red square shows the maximum value of the interpolated values at a metabolic reporter concentration of 225 a.u. (corresponding to a growth rate of 0.63 doublings/hr).
+	}
+	\label{fig:CRP:scatterspulsing}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell13.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell49.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell144.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:timevolutionCRPgrowthsinglecell}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Time evolution of growth rate and metabolic reporter concentration for single cells.}
+	Each panel is identical to main figure \ref{fig:CRP:fig1}.C, except that each panel corresponds to the behavior of a lineage of single cells.
+}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Overview (grey bars) with summary parameters from different conditions
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_means.pdf}
+	\clearpage % insert a page break
+	\label{fig:CRP:overviewsummaryparams}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{Comparison of summary parameters in different experimental conditions.} 
+	This figure shows growth rates (doublings per hour), production rates (a.u./(px min)), concentrations (a.u./px) and coefficients of variations (CV). 
+	C is the abbreviation used for the constitutive reporter (which uses a cyan mCerulean label), and Y is the abbreviation used for the metabolic reporter (which uses a yellow mVenus label).
+	WT stands for wild type, indicating wild type cells except the addition of our metabolic and constitutive reporter constructs.
+	No FB stands for no feedback, indicating the $\Delta$cAMP cells that also carry the metabolic and constitutive reporter constructs.
+	Low, med and high correspond to extracellularly provided cAMP concentrations of 80, 800 and 5000 $\upmu$M cAMP respectively.
+	Bars are averages over multiple experiments, and each open circle corresponds to a value observed in one experiment.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of production
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
+	\caption{ 
+	\textbf{Scatter plots of production rates against growth rate.}
+	(A) Colored dots show single cell growth rate values plotted against respective single cell production rates of metabolic reporter, which is a proxy for the production rate of metabolic enzymes. 	
+	Dots correspond to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP 
+	(colored blue, and red, green and orange, respectively).
+	The black lines show the average growth rate for cells that are binned according to production rates, and the black isolines reflect kernel density estimates of the probability distribution (using the matlab function \texttt{kde2d} \cite{Botev2010}).
+	The circles with thick black edges show population average values per experiment.
+	Note that the trends in population average values are explained in Supplemental note I at the end of this chapter.
+	(B) As panel A, except that this panel shows the relationship between growth and the production rate of a constitutive reporter. 	
+	}
+	\label{fig:CRP:fig2sup}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of conc-conc and prod-prod
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}	
+	\caption{ 
+		\textbf{Concentration-concentration and production-production relationships between metabolic and constitutive reporters.}
+		This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
+		Panels show: (Top) scatter plots for concentration of metabolic (CRP) reporter against the concentration of constitutive (s70) reporter; 
+		(Bottom) scatter plots for production rate of metabolic (CRP) reporter against the production rate of constitutive (s70) reporter.
+		Blue, red, green and orange dots again correspond respectively to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP.
+	}
+	\label{fig:CRP:fig3scatters_CC_pp}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:fig3sup}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FloatBarrier
+\clearpage
+\section*{Additional supplemental figures}
+
+This section contains additional supplemental figures that were not referenced in the chapter.
+
+% Dynamic behavior against itself.
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case1.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case2.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case3.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case4.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case5.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\centering
+	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case6.pdf}
+	\caption{ 
+		(A) 
+	}
+	\label{fig:CRP:XXX}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRP CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dY5_cycCor_muP9_fitNew_atdY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Consti CCs 1
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_C6_mean_cycCor_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dC5_cycCor_muP9_fitNew_atdC5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches mu
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_muP9_fitNew_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches Y (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_Y6_mean_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches dY (CRP)
+% Figure with floating caption
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_dY5_cycCor}
+	\clearpage % insert a page break
+	\label{fig:XXX:XXX}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{    
+	\textbf{blabla}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{pdf_plasmids2_overview_correlations_CmuPmu_G.pdf}
+	\caption{ 
+		\textbf{Without feedback, metabolic fluctuations transmit to growth.}
+		The interaction of metabolic and growth fluctuations was measured by plasmid constructs.
+		(A) 
+	}
+	\label{fig:CRP:plasmidCCs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

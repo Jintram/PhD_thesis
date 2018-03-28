@@ -480,7 +480,10 @@ In this paragraph we dissect the time dynamics with cross-correlations
 %use cross-correlations 
 to show that metabolic fluctuations would transfer to cellular growth rate if it were not for the existence of the negative feedback CRP regulation.
 
-\subsubsection*{Cross-correlations reveal rich dynamics between metabolism and growth}
+%\subsubsection*{Cross-correlations reveal rich dynamics between metabolism and growth}
+%\subsubsection*{Cross-correlations reveal a rich difference between metabolism-growth dynamics in wild type versus $\Delta$cAMP cells.}
+%\subsubsection*{Cross-correlations reveal major metabolic changes due to removal of feedback regulation}
+\subsubsection*{Cross-correlations reveal major changes due to removal of feedback}
 
 %We here also employ cross-correlations to investigate the delayed correlations between our metabolic, constitutive and growth parameters.
 %
@@ -488,7 +491,7 @@ We start by investigating the effect that single cell metabolic concentration fl
 %
 The cross-correlation $R_{M,\mu}(\tau)$ will show us the relation between the metabolic reporter concentration and past and future growth rates.
 %
-More precisely, as explained in chapter \ref{chapter:methods}, the cross-correlation $R_{f,g}(\tau)$ calculates the average correlation between a parameter $f$ at time $t$ with parameter $g$ at time $t+\tau$.
+More precisely, as explained in chapter \ref{chapter:methods}, the cross-correlation $R_{M,\mu}(\tau)$ calculates the average correlation between $M$ at time $t$ with $\mu$ at time $t+\tau$.
 %
 The colored lines in figure \ref{fig:CRP:fig3}.A-B show the cross-correlation $R_{M,\mu}(\tau)$ for wild type (green) and feedbackless $\Delta$cAMP cells (blue).
 %between the metabolic reporter concentration $M$ and growth rate $\mu$ based on single cell observations.
@@ -499,47 +502,48 @@ The colored lines in figure \ref{fig:CRP:fig3}.A-B show the cross-correlation $R
 From these curves it is immediately apparent that the dynamic metabolic concentration-growth relationship is very different between cells 
 that possess the endogenous CRP feedback and those that do not.
 %
-Not only is the difference between correlations in wild type and $\Delta$cAMP cells that was also observed earlier in the scatter plots apparent from the values at delay $\tau=0$,
-but it also becomes apparent that the concentration-growth relationship shows a strong negative correlation at negative delays, 
-whilst the $\Delta$cAMP cells show a relationship that is positive for most delays and that is equal for positive versus negative delays, or even slightly more present at positive delays.
+Firstly, as expected, the $R$ values at $\tau=0$ --- which reflect the correlation in the scatter plots shown in figure \ref{fig:CRP:fig2} --- are different.
+But secondly and more importantly, 
+%
+%Not only is the difference between correlations in wild type and $\Delta$cAMP cells that was also observed earlier in the scatter plots apparent from the values at delay $\tau=0$,
+it becomes apparent that the concentration-growth relationship of the wild type cells shows a strong negative correlation at negative delays, 
+whilst the $\Delta$cAMP cells show a relationship that is positive for most delays and that is rather symmetric around the y-axis, or perhaps even has slightly more positive weight at positive $\tau$ values than at negative $\tau$ values.
 %
 %Not only is the correlation that was observed earlier in the scatter plots apparent from the value at delay $\tau=0$, the concentration-growth relationship also shows a strong negative correlation at negative delays, whilst for the .
 %
-Previous studies showed that investigating the relationship between production rates and growth rates can also give further insights in the dynamics of metabolism and growth \cite{Kiviet2014}.
+Previous studies showed that investigating the relationship between protein production rates and growth rates (in addition to to protein concentrations and growth rates) can give further insights in the dynamics of metabolism and growth \cite{Kiviet2014}.
 %
-Hence, we here also tracked the production rate of our reporters.
+Hence, we here also tracked the production rate $p$ of our reporters.
 %
 The scatter plots for these relationships are shown in supplemental figure \ref{fig:CRP:fig2sup}.
 %
-Note that it is good to place these scatter plots in the context of the expected population average relationships (figure \ref{fig:CRP:averagerelations2}), 
-since these reveal that a specific production rates can map to two growth rate values.
+Note that it is convenient to place these scatter plots in the context of the expected population average relationships (figure \ref{fig:CRP:averagerelations2}), 
+since these reveal that this relationship can be described by an algebraic curve, 
+which can map a production rate to two values.
+%a specific production rates can map to two growth rate values.
 % on the algebraic curves.
-
-
 %
-To further understand these dynamics, we also tracked the production rates of the metabolic and constitutive reporters.
+When we use the metabolic production rates $p_M$ to calculate $R_{p_M,\mu}$ cross-correlations, we see a similar difference between wild type cells and $\Delta$cAMP cells as in the $R_{M,\mu}$ curves:
+the wild type cells show more correlation on the left side of the y-axis (albeit slightly positive correlations), whilst the $\Delta$cAMP cells show more correlation on the right side of the y-axis.
 %
-
-
-
-This also highlights that the dynamic interactions between cellular parameters go beyond instantaneous relationships that are captured by scatter plots, but instead show richer interactions that act over delays. 
-
-
-
-\subsubsection*{To write down}
-
-reveals more <richly> differences in dynamics
-
-
-supplementary note benjamin (to write) shows that excursions from mean concentrations can take arbitrary form
->> so it is convenient to generalize them to a linearized model
-
-
-
-
-stronger with future growth
-
-To further investigate the observation that stochastically different cells do not follow the mean trend ....
+As with the scatter plots, we would like to check whether these changes in cellular behavior are specific to CRP regulation,
+or reflect some general change in the cellular state.
+%
+To this end, we also generated cross-correlations $R_{Q,\mu}$ and $R_{p_Q,\mu}$, which correlate the concentration $Q$ and production $p_Q$ of the constitutive reporter $Q$ with growth $\mu$.
+%
+These curves are plotted in figure \ref{fig:CRP:fig3}.C-D and we can make two observations from them.
+Firstly, the curves for the wild type and $\Delta$cAMP cells are highly similar.
+%
+This indicates that the constitutive reporter has similar dynamics both in wild type cells as in $\Delta$cAMP cells.
+%
+This is consistent with our hypothesis that specifically the interaction between growth and metabolism changes due to the absence of the CRP negative feedback loop, 
+which in turn is consistent with the idea that the feedback loop is performing an active role in the wild type cells in response to stochastic signals.
+%
+Secondly, the constitutive dynamics as shown by the $R_(\tau)$ curves appear very similar to the dynamics of metabolism and growth in the wild type cells.
+%
+%To further interpret this similarity and the curves themselves, we turn to a minimal model of the cell.
+These observations also highlight that the dynamic interactions between cellular parameters go beyond instantaneous relationships that are captured by scatter plots, but instead show richer interactions that act over delays. 
+To further interpret these relationships we turn to a minimal model of the cell.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -566,6 +570,23 @@ To further investigate the observation that stochastically different cells do no
 	\label{fig:CRP:fig3}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection*{A minimal model helps interpreting the cross-correlations}
+
+This section gives an interpretation as to why the measured cross-correlation curves (figure \ref{fig:CRP:fig3}) look the way they do.
+%
+As also mentioned in Supplementary notes I, 
+
+
+
+\subsubsection*{To write down, maybe}
+
+
+supplementary note benjamin (to write) shows that excursions from mean concentrations can take arbitrary form
+>> so it is convenient to generalize them to a linearized model
+
+
 
 
 
@@ -677,12 +698,14 @@ Recently, it has been shown that the CRP.cAMP regulation
 
 \textbf{Strains} See table \ref{table:CRP:strains}.
 
-\textbf{Pulsing experiment.} Strain asc1004 was grown O/N at 30 $\degree$C and 10X concentrated by spinning the cells down at \red{5K XX}, removing supernatant and resuspension in a table top centrifuge.
-Cells were introduced into microfluidic device \red{type 2} (see chapter \ref{chapter:filarecovery}) with a syringe, after which the device was placed under the microscope in a 37 $\degree$C temperature chamber and we supplied TY medium (flow rate 8 $\upmu$l/min) for a few hours, whereafter we switched to M9 minimal medium plus 0.2 mM uracil, 0.1 $\%$ lactose, 0.01 $\%$ tween and 300 $\upmu$M cAMP (flow rate 7 $\upmu$l/min).
+\textbf{Pulsing experiment.} Strain asc1004 was grown O/N at 30 $\degree$C and 10X concentrated by spinning the cells down at 2300 RCF, removing supernatant and resuspension in a table top centrifuge.
+Cells were introduced into microfluidic device 2 (see chapter \ref{chapter:filarecovery}) with a syringe, after which the device was placed under the microscope in a 37 $\degree$C temperature chamber and we supplied TY medium (flow rate 8 $\upmu$l/min) for a few hours, whereafter we switched to M9 minimal medium plus 0.2 mM uracil, 0.1 $\%$ lactose, 0.01 $\%$ tween and 300 $\upmu$M cAMP (flow rate 7 $\upmu$l/min).
 After this cells were grown in the same medium but supplemented with 0.001 $\%$ tween and sequentially 1hr of 2100 $\upmu$M cAMP ("high") and 1hr of 43 $\upmu$M cAMP ("low"), which was repeated 5 times (totaling 10hrs), and then 5 hrs low, 5 hrs high, and 5 hrs low (all at a flow rate of 8 $\upmu$l/min). 
 Times at which the valve switches were recorded and in the analysis corrected by adding the arrival delay of 58 minutes (in this particular experiment that delay was not yet optimized).
 Fluorescent images were taken every 20 minutes, using a CFP and YFP filter set (chroma models 49001 and 49003 respectively), both with exposure times of 150ms.
 A selection of this sequence was analyzed and displayed.  
+Data in the figure \ref{fig:CRP:fig2} is based on experiments in which the same physical xenon arc light bulb was used to measure fluorescence for each experiment.
+Figure \ref{fig:CRP:fig3} is based on experiments in similar conditions, but contains more experiments, which also include experiments with a different fluorescent light bulb.
 
 \textbf{More detailed information on the computer analyses.} 
 For a description of the computer analyses and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
@@ -760,580 +783,6 @@ Nordholt et al. \cite{Nordholt2017}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-\FloatBarrier
-\section*{Supplementary notes}
-
-\subsection*{I. Understanding steady state values of metabolic and constitutive production rates, concentration, and growth rates}
-
-\subsubsection{Motivation}
-The purpose of this chapter is to understand 
-single cell stochastic deviations away from steady state. 
-%the dynamical behavior of metabolism and growth, 
-%it is rather unsatisfactory to not understand how 
-%steady state values are established in different conditions.
-%population average values are established.
-%
-%Moreover, 
-However, understanding the steady state relationships themselves between metabolic and constitutive protein production, concentration and the cellular growth rates helps us place the stochastic fluctuations away from the steady state values in the right context.
-%
-We explain our understanding fo this matter in this supplementary. % note we explain our understanding of this matter.
-
-\subsubsection{Model and fitting of model to data}
-
-To better understand steady state relationships it is convenient to write down the differential equations that describe the (supposed) time evolution of the system, 
-and consider the steady state condition where the time derivative is zero.
-%
-Let us here start with an equation for the metabolic reporter.
-%
-%Towbin et al. \cite{Towbin2017} suggest that the relationship between the concentration, production and growth rate is as follows.
-Generally, the change in metabolic protein concentration $M$ over time is set by a production and a dilution term:
-\begin{align}
-	\label{eq:CRP:odeM}
-	\dot{M} = p_M - M \lambda = \phi_M(\text{cAMP}) \lambda -  M \lambda
-	,
-\end{align}
-% 
-where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of $M$ ($\text{a.u}/(\text{px})$) and $\lambda$ ($/\text{min}$) the growth rate of the cell.
-%Our single cell experiments allow the independent measurement of all these three parameters.
-We can determine all these three parameters from our single cell experiments.
-Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a function of $\lambda$.
-%
-To understand the interaction between the metabolic reporter expression and the constitutive reporter expression we were inspired by the linear regulation model posed by You et al. \cite{You2013}, and pose
-\begin{align}
-	\label{eq:CRP:relationMQ}
-	\phi_Q = T - \phi_M
-	,
-\end{align}
-where $\phi_Q$ is the fractional production of the constitutive reporter, and $T$ the total fractional production of both $M$ and $Q$, which we consider a constant independent of the cAMP concentration. 
-(Note that this ignores interaction with other cellular protein sectors such as ribosomes.) 
-%
-This implies that
-\begin{align}
-	\label{eq:CRP:odeQ}
-	\dot{Q} = p_Q - Q \lambda = \phi_Q \lambda -  M \lambda = (T - \phi_M(\text{cAMP})) \lambda -  M \lambda
-	,
-\end{align}
-where $Q$ is the concentration of the constitutive reporter, $p$ its production rate and $\phi_Q$ its fractional production rate.
-%
-Based on equations \ref{eq:CRP:odeM}-\ref{eq:CRP:odeQ} and the steady state assumption $\dot{M}=\dot{Q}=0$ we can make some predictions. Firstly, this suggests that the production rates (a quantity that we determine directly from our experiments) divided by the growth rates should be equal to the concentration for both the reporters. The top two panels in figure \ref{fig:CRP:averagerelations1} show that this is indeed the case. Secondly, it implies that the sum of the concentration of the two reporters should be equal, since $\phi_M(\text{cAMP}) = M$ and $\phi_Q(\text{cAMP}) = Q$ and thus 
-\begin{align}
-	\label{eq:CRP:sumconstant}	
-	T = M + Q
-	.
-\end{align}
-This relationship is confirmed in the bottom left panel of figure \ref{fig:CRP:averagerelations1}. 
-One might have expected that ribosomal expression also factors into the relationship between $M$ and $Q$ --- e.g. $T=Q+M+R$ with $R$ the ribosomal concentration.
-Surprisingly, equation \ref{eq:CRP:sumconstant} implies that this is not the case here; $R$ either remains constant or $R$ does change with $M$ but does not affect $Q$.
-% See also notes 23-3, p.12 for this.
-%
-(Note that the observations in \cite{You2013} are in wild type cells; so the observations here do not necessarily contradict their observations.)
-%
-In any case, the steady state condition implies that $\phi_M(\text{cAMP}) = M$ (equation \ref{eq:CRP:odeM}), and thus that we can set the concentration of $M$ directly by adjusting the supplied cAMP concentration.
-In other words: $M \propto \text{cAMP}$.
-Furthermore, Towbin et al. observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the optimality curve, or "O-curve" \cite{Towbin2017}.
-We indeed observe a similar relationship, as shown in figure \ref{fig:CRP:averagerelations1}. 
-Towbin et al. derive a functional form for this relationship, but for simplicity we have fitted a 3rd degree polynomial to this O-curve, i.e.
-\begin{align}
-	\label{eq:CRP:muwithCRP}	
-	\lambda = f_\lambda(M) = a M^2 + b M + c
-	,
-\end{align}
-where $a$, $b$ and $c$ are fitting parameters.
-%
-Using the relationships we have seen so far (figure \ref{fig:CRP:averagerelations1}), 
-we can predict the relationships between the parameter pairs 
-$\lambda\text{-}Q$, $p_M\text{-}p_Q$, $p_M\text{-}\lambda$, and $p_Q\text{-}\lambda$.
-%$\lambda$-$Q$, $p_M$-$p_Q$, $p_M$-$\lambda$, and $p_Q$-$\lambda$.
-%
-Firstly, the relationship between $\lambda$ and $Q$ is defined by: 
-\begin{align}
-	\label{eq:CRP:muwithQ}	
-	\lambda = f_\lambda(T-Q)
-	,
-\end{align}
-which is indeed supported by the top left panel in figure \ref{fig:CRP:averagerelations2}.
-%
-Secondly, the relationships between $p$ and $\lambda$ can be parameterized by $M$ and $Q$: 
-\begin{align}
-	\label{eq:CRP:pmu}	
-	\left(p_M, \lambda\right) & = \left(M f_\lambda(M), f_\lambda(M)\right) \nonumber \\ 
-	\left(p_Q, \lambda\right) & = \left(Q f_\lambda(T-Q), f_\lambda(T-Q)\right)
-	;
-\end{align}
-which can be found using the steady state condition and \ref{eq:CRP:odeM}. These equalities in equation \ref{eq:CRP:pmu} are corroborated by the bottom left and bottom right panels in figure \ref{fig:CRP:averagerelations2}.
-%
-Thirdly, we find that $p_M$ and $p_Q$ can be related through parameterizing $(p_M, p_Q)$ by $M$:
-%
-\begin{align}
-	\label{eq:CRP:pMpQ}	
-	\left(p_M, p_Q\right) = 
-	\left(M f_\lambda(M), (T-M) f_\lambda(M)\right)
-	.
-\end{align}
-This relationship is indeed confirmed in the top right panel of figure \ref{fig:CRP:averagerelations2}.
-%
-Note that no additional fitting was performed in figure \ref{fig:CRP:averagerelations2}.
-
-\subsubsection*{Conclusion}
-
-In conclusion, three ingredients determine the steady state relationships in the chapter: 
-(1) The interaction between protein production and dilution that set the concentration, 
-(2) the concave relationship ("O-curve") between metabolism and growth (figure \ref{fig:CRP:averagerelations1} bottom right panel) and
-(3) the fact that the total concentration metabolic and constitutive expression remains constant.
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
-	\centering
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_Y.pdf}
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_C.pdf}
-	%
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_sum_YC.pdf}
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_Y_mu.pdf}		
-	\caption{ 
-		\textbf{Fitted relationships between concentration, production rate and growth rate.}
-		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
-		(Top) Concentration is predicted to equal production rate divided by growth rate. Though there is a minor offset to the line x=y (solid black line) as shown by the fits (dashed and dotted lines), this prediction seems approximately correct. (The dotted line only is based on the average offset, whereas the dashed line is a polynomial fit.)
-		(Bottom left) This panel shows that the sum of the metabolic and constitutive reporter concentrations remains approximately equal. The mean sum is 445 a.u./px.
-		(Bottom right) This panel shows the concave relationship between growth and the metabolic reporter concentration. The dashed line shows a third degree polynomial fit to the data points. The fitted parameters (equation \ref{eq:CRP:muwithCRP}) are $a=-4.38\cdot10^{-7}$, $b=2.55\cdot10^{-4}$ and $c=-0.0276$.
-	}
-	\label{fig:CRP:averagerelations1}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
-	\centering
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_C_mu.pdf}
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_prodC_prodY.pdf}	
-	%
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_pY_mu.pdf}
-	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_pC_mu.pdf}	
-	\caption{ 
-		\textbf{Observed and predicted (not fitted) relationships.}
-		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
-		(Top left) The observed and predicted (equation \ref{eq:CRP:muwithQ}) relationship between the constitutive reporter production and growth rate.
-		(Top right) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the constitutive and metabolic production rates.
-		(Bottom left) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the metabolic production rate and growth rate.
-		(Bottom right) The observed and predicted (equation \ref{eq:CRP:pMpQ}) relationship between the constitutive production rate and growth rate.
-		%
-	}
-	\label{fig:CRP:averagerelations2}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_benjamin_ODE_relations.pdf}
-	\caption{ 
-		\textbf{Using models to understand the dynamic behavior of stochastic metabolic and growth fluctuations.}
-		(Left) Illustrations of the contributions from the positive (production) and negative (dilution) terms to the differential equation that describes the time evolution of the concentration of metabolic enzymes as a function of that concentration $C$, according to the Towbin et al. model \cite{Towbin2017}. The different lines correspond to different values of the metabolite concentration $x$. 
-		(Right)	Similar as on the left, except that the terms are production and consumption of metabolites as a function of metabolite concentration $x$ and that the different lines correspond to different values of the metabolic enzyme concentration $C$.
-	}
-	\label{fig:CRP:benjamin_ODEs}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% End of suppl. notes
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-\FloatBarrier
-\section*{Supplementary figures}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-figXsup_overviewRegulationTCA.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:figOverviewTCARegulation}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{Regulation of the TCA cycle and ED pathway.} 
-	Some regulatory proteins control the expression of many tricarboxylic acid (TCA) cycle and/or enzymes glycolysis pathway simultaneously.
-	This diagram shows the regulatory effects of CRP, but also of the Catabolite repressor activator (Cra) and the Anoxic redox control A (ArcA) protein.
-	Cra controls the direction of the metabolite flux through metabolic pathways \cite{Keseler2017, Ramseier1995}. Cra is activated by the metabolite fructose-1,6-bisphosphate \cite{Kochanowski2013a}.
-	ArcA is part of a two component system (ArcAB) which controls gene expression in response to aerobic versus anaerobic conditions \cite{Keseler2017, Alvarez2010}.
-	Metabolites are displayed in larger font, enzymes that catalyze reactions in smaller fonts.
-	In the colored boxes, regulation by CRP is displayed by an oval symbol marked "CRP".
-	Similarly, when an enzyme is regulated by Cra or ArcA this is displayed next to the boxes; a plus or minus symbol indicates positive or negative regulation.
-	Additionaly, in the boxes this diagram displays the concentration of particular enzymes in ppm, as annotated in PaxDb (retrieved in 2015) \cite{Wang2015}.
-	The boxes are also color-coded according to abundance of the enzymes.
-	The diagram is based on EcoCyc \cite{Keseler2017}. 
-	From top to bottom, clockwise, enzymes abbreviations stand for glucose 6-phosphate, fructose 6-phosphate, fructose 1,6-biphosphate, glyceraldehyde 3-phosphate, 1,3-biphospho-D-glycerate, 3-phospho-glycerate, 2-phospho-glycerate, phosphoenolpyruvate, pyruvate, acetyl coenzyme A, citrate, cis-aconitate, d-threo-isocitrate, (succinate, glyoxalate, acetyl-CoA), 2-oxo-glutarate, succinyl-CoA, succinate, fumarate, malate, oxaloacetate.
-	% See also: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=TCA
-	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Pulsing dynamics
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_4.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_2.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_5.pdf}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_2.pdf}	
-	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_3.pdf}
-	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_4.pdf}	
-	\clearpage % insert a page break
-	\label{fig:CRP:productiontimeevolutions}
-\end{figure}
-
-\clearpage
-
-\captionof{figure}{    
-		\textbf{Time evolution of production versus growth rate during block pulses of high and low cAMP concentrations.}
-		(Top) The production rate of the CRP reporter plotted against growth rate, color coded for time. Production is determined here by the difference in absolute signal between two timepoints, divided by the amount of time inbetween these two points. Note that the production rate also depends on the growth rate, as does the final concentration of the protein. This makes this data not trivial to interpret.
-		(Middle) Similar to top panel, but production rate is divided by growth rate, since production rates might be more faitfully represented as fractions of the growth rate.
-		(Bottom) Similar to top panel, but production rate is divided by the production rate of the constitutively expressed label, which serves a reference for the total production rate capacity of the cell.
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
-	\centering
-	\includegraphics[width=0.94\textwidth]{pdf_timeevolution_5.pdf}
-	\caption{ 
-		\textbf{Time evolution of metabolic reporter concentration normalized by constitutive reporter concentration.}
-		This figure is similar to figure \ref{fig:CRP:productiontimeevolutions}, but shows the concentration of the metabolic reporter divided by the constitutive reporter on the x-axis, instead of production rates.
-	}
-	\label{fig:CRP:normalizedconcentrationtimeevolutions}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% pdf_scattersoftraces_1
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
-	\centering
-	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_1.pdf}
-	\includegraphics[width=0.49\textwidth]{pdf_scattersoftraces_2.pdf}	
-	\caption{ 
-		\textbf{Scatter plots of growth rate versus metabolic and constitutive reporter from single cell measurements.}
-		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration.
-		On the left, growth rate plotted against the concentration of the metabolic reporter.
-		On the right, growth rate plotted against the concentration of a constitutive reporter based on the same lac metabolic reporter but with the CRP binding site replaced by a $\upsigma$70 consensus binding site.
-		The black lines indicate the average signal for corresponding concentrations and standard deviations.
-		The red lines are interpolated 2nd degree polynomial fits of the displayed mean values.
-		The red square shows the maximum value of the interpolated values at a metabolic reporter concentration of 225 a.u. (corresponding to a growth rate of 0.63 doublings/hr).
-	}
-	\label{fig:CRP:scatterspulsing}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell13.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell49.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_timetracesinglecell144.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:timevolutionCRPgrowthsinglecell}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{Time evolution of growth rate and metabolic reporter concentration for single cells.}
-	Each panel is identical to main figure \ref{fig:CRP:fig1}.C, except that each panel corresponds to the behavior of a lineage of single cells.
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Overview (grey bars) with summary parameters from different conditions
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_means.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:overviewsummaryparams}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{Comparison of summary parameters in different experimental conditions.} 
-	This figure shows growth rates (doublings per hour), production rates (a.u./(px min)), concentrations (a.u./px) and coefficients of variations (CV). 
-	C is the abbreviation used for the constitutive reporter (which uses a cyan mCerulean label), and Y is the abbreviation used for the metabolic reporter (which uses a yellow mVenus label).
-	WT stands for wild type, indicating wild type cells except the addition of our metabolic and constitutive reporter constructs.
-	No FB stands for no feedback, indicating the $\Delta$cAMP cells that also carry the metabolic and constitutive reporter constructs.
-	Low, med and high correspond to extracellularly provided cAMP concentrations of 80, 800 and 5000 $\upmu$M cAMP respectively.
-	Bars are averages over multiple experiments, and each open circle corresponds to a value observed in one experiment.
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of production
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
-	\caption{ 
-	\textbf{Scatter plots of production rates against growth rate.}
-	(A) Colored dots show single cell growth rate values plotted against respective single cell production rates of metabolic reporter, which is a proxy for the production rate of metabolic enzymes. 	
-	Dots correspond to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP 
-	(colored blue, and red, green and orange, respectively).
-	The black lines show the average growth rate for cells that are binned according to production rates, and the black isolines reflect kernel density estimates of the probability distribution (using the matlab function \texttt{kde2d} \cite{Botev2010}).
-	The circles with thick black edges show population average values per experiment.
-	Note that the trends in population average values are explained in Supplemental note I at the end of this chapter.
-	(B) As panel A, except that this panel shows the relationship between growth and the production rate of a constitutive reporter. 	
-	}
-	\label{fig:CRP:fig2sup}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of conc-conc and prod-prod
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}	
-	\caption{ 
-		\textbf{Concentration-concentration and production-production relationships between metabolic and constitutive reporters.}
-		This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
-		Panels show: (Top) scatter plots for concentration of metabolic (CRP) reporter against the concentration of constitutive (s70) reporter; 
-		(Bottom) scatter plots for production rate of metabolic (CRP) reporter against the production rate of constitutive (s70) reporter.
-		Blue, red, green and orange dots again correspond respectively to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP.
-	}
-	\label{fig:CRP:fig3scatters_CC_pp}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-fig3sup.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:fig3sup}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Sup belonging to figure 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Extra sup not belonging but anyways shown %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\FloatBarrier
-\clearpage
-\section*{Additional supplemental figures}
-
-This section contains additional supplemental figures that were not referenced in the chapter.
-
-% Dynamic behavior against itself.
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case1.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case2.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case3.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case4.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case5.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\centering
-	\includegraphics[width=1.00\textwidth]{pdf_highlowplots_case6.pdf}
-	\caption{ 
-		(A) 
-	}
-	\label{fig:CRP:XXX}
-\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CRP CCs 1
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dY5_cycCor_muP9_fitNew_atdY5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Consti CCs 1
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_C6_mean_cycCor_muP9_fitNew_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 2
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dC5_cycCor_muP9_fitNew_atdC5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches mu
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_muP9_fitNew_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches Y (CRP)
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_Y6_mean_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Branches dY (CRP)
-% Figure with floating caption
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_dY5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
-	\textbf{blabla}
-}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_plasmids2_overview_correlations_CmuPmu_G.pdf}
-	\caption{ 
-		\textbf{Without feedback, metabolic fluctuations transmit to growth.}
-		The interaction of metabolic and growth fluctuations was measured by plasmid constructs.
-		(A) 
-	}
-	\label{fig:CRP:plasmidCCs}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

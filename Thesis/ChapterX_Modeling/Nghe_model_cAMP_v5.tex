@@ -1,10 +1,10 @@
 
 
-\chapter{Modeling the noise transmission}
+%\chapter{Modeling the noise transmission}
 
-\section{Ornstein-Uhlenbeck fluctuations model}
+\subsection*{II. Ornstein-Uhlenbeck fluctuations model}
 
-\subsection{The model}
+\subsubsection*{Introduction}
 
 In these notes I discuss a model which models how noise originates and transmits from and between observables respectively. I will discuss the model proposed by Philippe Nghe in the work by Kiviet et al. \cite{Kiviet2014}, and also possible extensions and modifications to this model.
 
@@ -12,7 +12,7 @@ Parameters that are considered in general are the number of enzymes ($E$), the r
 
 The goal of this model is to interpret the cross-correlations between $\lambda$, $E$ and $p$ (usually $R_{E,\lambda}(\tau)$, $R_{p,\lambda}(\tau)$), that are obtained from experimental data.
 
-\subsection{Implicit noise equations}
+\subsubsection*{Implicit noise equations}
 
 
 \begin{figure}
@@ -71,15 +71,15 @@ $R_{X \leftarrow Y}$ indicates a regulatory interaction, an addition to the mode
 This model assumes all parameters have an average value from which fluctuations deviate, but always return. Hence the dampening terms.
 With respect to transmission, I furthermore rescale the absolute value of the noise to be comparable to the target noise (hence the $M_0^{-1}$ and $c_X$ terms in combination with the $T_{X\leftarrow Y}$ term).
 
-This is similar to the model that Philipe Nghe had in Kiviet et al. \cite{Kiviet2014}, which was inspired by Dunlop et al. \cite{Dunlop2008} (see supplement of that manuscript for a description of the Dunlop model).
+This is similar to the model that Philipe Nghe suggested in Kiviet et al. \cite{Kiviet2014}, which was inspired by Dunlop et al. \cite{Dunlop2008} (see supplement of that manuscript for a description of the Dunlop model).
 %
-A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\mu_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. It seems also Nghe takes the latter approach, dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\mu_E$ parameter (see later for a more involved discussion on these parameters).
+A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\mu_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. \red{Nghe also takes the latter approach, dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\mu_E$ parameter (see later for a more involved discussion on these parameters)}.
 
 The correlations between these equations can be found by linearizing them, writing the correlations in Fourier space, and back-transforming them using residue integration techniques. 
-This document currently does not fully explores this, but this will partially be discussed later.
-First, a comparison with the Nghe model is made.
+\red{These notes do} not fully explores this, but \red{this will partially be discussed later}.
+First, a comparison of the above model with the Nghe model is made.
 
-\section{Separate noise equations}
+\subsection*{Separate noise equations}
 
 Both Nghe and Dunlop define separate ODEs for the noise terms:
 %
@@ -106,7 +106,7 @@ with $F(X)$ some arbitrary function of $X$.
 Note that the $N_X$ function also contains a $\tau$ term (see Eq. \ref{eq:generalgillespienoise}), which is effectively integrated, thus leading to effects of the fluctuations much longer timescales than $\tau$. 
 This effect is (partially) countered by the third term in Eq. \ref{dunlopgeneralequation}, which also contains the $\tau$ term.
 
-\section{Nghe model}
+\subsection*{Nghe model}
 
 As mentioned, the Nghe model takes a different approach. 
 The formulae that follow correspond to Fig. \ref{fig:modeldrawing}.B (Fig. \ref{fig:modeldrawing}.A contains a more polished version of that cartoon that was published in Kiviet et al.).
@@ -118,7 +118,10 @@ The starting point,
 ,
 \end{align}
 %
-is the same in my model, but after linearization (defined as $X=X_0+\delta X$) this leads to only one ODE (see written notes from 28.9.2016 for explicit linearization):
+is the same in my model, but after linearization (defined as $X=X_0+\delta X$) this leads to only one ODE:
+% CONVENIENT NOTE TO SELF: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% See written notes from 28.9.2016 for explicit linearization.
+% END CONVENIENT NOTE TO SELF: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \begin{align}
 \label{eq:ODEElinearized}
@@ -143,7 +146,7 @@ Noise terms are introduced with ODEs that are also shown above in Eq. \ref{eq:ge
 \end{align}
 %
 simply defines the evolution of $\delta \mu$.
-There is also an equation for $\delta p$
+There is also a similar equation for $\delta p$:
 %
 \begin{align}
 \label{eq:Nghe4}
@@ -201,19 +204,28 @@ This is also the reason why $p$ is depicted as a red dashed box in Fig. \ref{fig
 %
 %Where the normalizations by $X_0$ were left out again.
 
-Note however, that this results in the absence of dampening terms on the parameters $X$ themselves, which leads to non-steady state behavior of the parameters.
-The term $X/\tau$ could be added to each of the equations to resolve this issue; the term $-N_X/\tau$ from the noise ODEs could then be dropped.
-{\color{red}Note that a $\mu_E$ term appears eventually in Nghe's equations, which might play the role of a second dampening term.}
+Note that dampening terms can be implicitly present in the Nghe model, in the form of a transmission from the parameter to itself.
+Specifically, $T_{E \leftarrow E}$ can fulfill this role. % when it is negative and $<1$. 
+Second order dampening can also occur, 
+as is pointed out in the Kiviet et al supplementary information, which states that the time scale of the $E$ fluctuations is set by the term $\mu_0(1-T_{E \leftarrow \mu}T_{\mu \leftarrow E}-T_{E \leftarrow E})$.
+
+% I previously thought that dampening was not present in the Nghe model, but this is not the case.
+% Here the previous text:
+%Note however, that this results in the absence of dampening terms on the parameters $X$ themselves, which might lead to 
+%%non-steady state behavior of the parameters.
+%unstable behavior of the parameters.
+%The term $X/\tau$ could be added to each of the equations to resolve this issue; the term $-N_X/\tau$ from the noise ODEs could then be dropped.
+%{\color{red}Note that a $\mu_E$ term appears eventually in Nghe's equations, which might play the role of a second dampening term.}
 
 
 
 %%%%%%%%%%%%%%
 
-\section{Obtaining the cross correlations}
+\subsection*{Obtaining the cross correlations}
 
 {\color{red}TODO: Process below such that it correctly handles Philippe's and my model (text above has been updated after phone call w. PN). Discuss w. ST/others whether and how to expand model.}
 
-\subsection{Obtaining solutions in Fourier space}
+\subsubsection*{Obtaining solutions in Fourier space}
 
 How do we get the cross correlations? A way to define correlations is\footnote{From Wikipedia, https://en.wikipedia.org/wiki/Cross-correlation and Weisstein, Eric W. "Cross-Correlation Theorem." From MathWorld--A Wolfram Web Resource. http://mathworld.wolfram.com/Cross-CorrelationTheorem.html}:
 
@@ -300,7 +312,7 @@ Where M is defined as:
 Plugging Eq. \ref{solutionForM} into Eq. \ref{ODEEFourierExpanded} results in an equation where the only time-dependent parameter is E.
 Solving that formula for E gives a very involved formula, which is not displayed here.
 
-\subsection{Actually getting the cross-correlations}
+\subsubsection*{Actually getting the cross-correlations}
 
 As Dunlop et al. point out, we are now looking at the expectation values of the correlation functions (since we're talking about noise), so in general terms:
 
@@ -309,7 +321,7 @@ As Dunlop et al. point out, we are now looking at the expectation values of the 
 \left< \mathcal{F}^{-1} \left[ \overline{\mathcal{F} (X)} \mathcal{F}(Y) \right] \right>
 \end{align}
 
-\section{Towbin model}
+\subsection*{Towbin model}
 
 \begin{align}
 \text{F}(\text{x})\text{=}\frac{\text{K1}}{\text{K1}+x}
@@ -334,7 +346,7 @@ Here, 1st term rhs describes that how many proteins are produced depends on the 
 \mu (t)=\frac{\alpha  \left(\gamma  x \left(1-C(t)\right)\right)}{\text{K2}+x}
 \end{align}
 
-\section{Notes}
+\subsection*{Notes}
 
 Note that Philippe Nghe's scripts can be found at:
 
