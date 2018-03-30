@@ -577,6 +577,78 @@ To further interpret these relationships we turn to a minimal model of the cell.
 In this section we present a model that gives an interpretation 
 %This section gives an interpretation 
 as to why the measured cross-correlation curves (figure \ref{fig:CRP:fig3}) look the way they do.
+%
+The model suggests that metabolism-growth dynamics in wild type cells and any constitutive expression-growth dynamics are dominated by non-metabolism related fluctuations, whereas metabolism-growth dynamics in feedbackless $\Delta$cAMP cells are dominated by metabolic fluctuations.
+
+
+The dynamic interaction between enzyme expression and growth (or protein expression in general and growth) can be modeled using a system of coupled differential equations.
+%
+The interactions between metabolic expression and growth have been described before using differential equations.
+%
+Kiviet et al. presented a concise model that showed how noise could transmit from enzyme expression to growth.
+This model consists of coupled linearized differential equations that describe the interaction between metabolism, protein production, enzymatic concentration and growth,
+and Ornstein-Uhlenbeck processes to model noise on these parameters \cite{Kiviet2014}.
+Protein production, enzymatic concentration and growth are very concrete parameters, 
+but the interpretation the term metabolism remains rather abstract in the Kiviet et al. manuscript. 
+Perhaps the interpretation could be refined further as the conglomerate of processes that set the metabolic performance of the cell.
+See supplementary note II for more information on the Kiviet model.
+%
+Towbin et al. solve a system of non-linear differential equations assuming steady state conditions to show that cells use a crude set of rules to find optimal enzyme expression {Towbin2017}.
+Interestingly, their metabolic performance is governed completely by what they regard as metabolite concentration $x$.
+Metabolites are imported by metabolic enzymes, and consumed to produce proteins and cell growth.
+See supplementary note III for more information on the Towbin model. 
+%
+We here used a set of the more convenient linear equations similar to the Kiviet et al. model as we were only interested in behavior around the steady state parameter values, where a linear description might be applicable.
+For the purpose of this model we adopted the view that the metabolite concentration $x$ is proportional to the metabolic performance, 
+which allowed for an easy interpretation of how negative feedback from metabolites influences the production of proteins.
+%
+As we solved our model numerically, it was easy to model all our four parameters, metabolites/metabolic performace $x$, protein production $p$, enzymatic concentration $C$ and growth rate $\mu$, as separate (linear) differential equations.
+%
+We also added noise sources to these differential equations, and used dampening terms to make sure the system reverted back to equilibrium.
+%
+Our model is described in more detail in Supplementary notes II, and a graphical diagram is displayed in figure \ref{fig:CRP:fig4}.
+
+
+
+
+
+
+
+
+
+%
+These models, which are concisely discussed in supplementary notes II and III respectively, give a good starting point for a model for our purposes.
+%
+Both give functional expressions for growth, enzymatic protein expression, protein production rate. 
+%
+Additionally, the Kiviet et al. models the metabolic performance of the cell as an Ornstein-Uhlenbeck process,
+whereas Towbin et al. explicitly models the metabolite expression $x$ by a differential equation.
+%
+We combine these approaches by 
+
+Additionally, the Kiviet et al. model describes a fluctuating general metabolic noise source, which reflects the metabolic performance of the cell.
+%
+
+
+In the Kiviet et al. model, the concentration of a metabolite is explicitly modeled with the quantity $x$, 
+
+Towbin et al.
+
+
+ 
+We take a similar approach as the Kiviet et al. model, in that we use a system of linear equations to model the system as a number of Ornstein-Uhlenbeck processes that interact with each other.
+%
+
+%
+As explained in supplementary note II we extend the Kiviet et al. by describing al of our parameters --- growth, enzymatic protein expression, protein production rate and metabolic performance --- as differential equations (instead of explicit functions).
+%
+This allowed us to 
+
+
+
+
+
+
 
 To obtain an interpretation of the cross-correlations, 
 
@@ -584,6 +656,8 @@ As also mentioned in Supplementary notes I, the behavior of cells can me modeled
 %
 
 
+
+\subsection{Scenarios}
 
 
 \subsubsection*{To write down, maybe}
@@ -612,10 +686,21 @@ supplementary note benjamin (to write) shows that excursions from mean concentra
 
 \captionof{figure}{    
 	\textbf{A simple model explains how feedback filters out noise transmission.}
-	A simple model predicts correlation inversion.
-	A.
-	B.
-	C.
+	(A) We used a coupled stochastic differential equiations model with noise sources and dampening terms (also called Ornstein-Uhlenbeck processes). 
+	Here, $p$ represents the production rate of any protein with concentration $C$ that might influence the cells metabolic processes --- represented here by an $x$ that refers to the metabolites involved that may give feedback to the production rate --- and $\mu$ represents the growth rate of the cell.
+	The production rate is set by the overall performance of the metabolism (hence the arrow from $x$ to $p$), inhibitory feedback by metabolites (hence the inhibitory arrow) and noise on the production process.
+	The concentration is set by a combination of production and dilution terms (hence the positive and inhibitory arrow pointing towards it from these quantities).
+	The cell's metabolic performance $x$ might be set by the concentration of proteins $C$ and noise from other cellular sources.
+	This performance $x$ then sets the growth rate $\mu$, which also experiences noise from other cellular sources.
+	All parameters that are displayed in boxes are modeled explicitly by differential equations. Arrows indicate interactions. Circles with a twidle in it represent noise sources.
+	See main text for equations.
+	(B) When the noise source on $\mu$ is largest, and transmission of noise only occurs through the arrow going from $\mu$ to $C$, this is called the dilution mode. 
+	This scenario represents a case where fluctuations in the protein concentration $C$ do not have a large effect on the cell's metabolism.
+	This might be because the protein has no metabolic function, but it could also be that the protein does play an important cellular role but the cell is insensitive to fluctuations in the protein.
+	(C) In the catabolic mode, noise on the production rate $p$ is largest, and this is transmitted from $p$ to $C$, from $C$ to $x$ and finally from $x$ to $\mu$. This leads to a delayed positive correlation between protein expression and growth.
+	(D) In the common mode, the noise source on $x$ is the largest, and this affects both production and growth simultaneously, leading to the symmetric $R_{p,\mu}(\tau)$ peak. 
+	(E) When the categories represented by panels B-D are combined, all kinds of dynamics are possible. This panel shows a combination of the three modes with an emphasis on the dilution and catabolic modes, leading to a broad $R_{C,\mu}$ correlation and a taller $R_{p,\mu}$ correlation.
+	(F) By adding feedback to the situation in panel E (effectively decreasing the strength of the ${x}\rightarrow{p}$ interaction), these positive correlations can be suppressed, reverting the dynamics to something that is more similar to the dilution mode.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

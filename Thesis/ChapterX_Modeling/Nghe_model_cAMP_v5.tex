@@ -79,6 +79,113 @@ The correlations between these equations can be found by linearizing them, writi
 \red{These notes do} not fully explores this, but \red{this will partially be discussed later}.
 First, a comparison of the above model with the Nghe model is made.
 
+\subsubsection*{Numerical implementation}
+
+Out of practical considerations, we numerically solved Eq. \ref{myfirstequation}-\ref{mylastequation} by simple Euler propagation implemented in Matlab.
+%
+The script \texttt{growthnoisepropagatorv2.m} will be made available in an online Github repository, parameter settings that were used are shown below.
+%
+For the dilution mode: 
+\begin{gather*}
+E_0= 2000,
+\mu_0= 1,
+%\lambda_0= 0.6931,
+\lambda_0= 0.0116, 
+\nonumber \\ p_0= 23.1049, 
+C_0= 1,
+\tau_\lambda= 120,
+\Gamma_\lambda= 8.3255e-04,
+\Gamma_\lambda'= 8.3255e-04,
+\nonumber \\ \tau_p= 120,
+\Gamma_p= 0.0048,
+\Gamma_p'= 0.0048,
+\tau_C= 120,
+\Gamma_C= 1.0000e-03,
+\Gamma_C'= 1.0000e-03,
+%dampingNoiseOnly= Inf,
+\nonumber \\ T_{C\rightarrow\lambda}= 0,
+T_{C\rightarrow{p}}= 0,
+T_{E\rightarrow{C}}= 1,
+T_{\lambda\rightarrow{E}}= -1;
+%interactionCProduction= 0,
+\end{gather*}
+%
+($\lambda$ is given in units of $min^{-1}$ here.)
+For the catabolic mode: 
+\begin{gather*}
+E_0= 2000,
+\mu_0= 1,
+%\lambda_0= 0.6931,
+\lambda_0= 0.0116,
+\nonumber \\ p_0= 23.1049,
+C_0= 1,
+\tau_\lambda= 60,
+\Gamma_\lambda= 0,
+\Gamma_\lambda'= 8.3255e-06,
+\nonumber \\ \tau_p= 60,
+\Gamma_p= 1.5200,
+\Gamma_p'= 1.5200,
+\tau_C= 60,
+\Gamma_C= 0,
+\Gamma_C'= 0.3162,
+%dampingNoiseOnly= Inf,
+\nonumber \\ T_{C\rightarrow\lambda}= 0.9000,
+T_{C\rightarrow{p}}= 0,
+T_{E\rightarrow{C}}= 0.9000,
+T_{\lambda\rightarrow{E}}= -1;
+%interactionCProduction= 0,
+\end{gather*}
+For the common mode: 
+\begin{gather*}
+E_0= 2000,
+\mu_0= 1,
+%\lambda_0= 0.6931,
+\lambda_0= 0.0116,
+\nonumber \\p_0= 23.1049,
+C_0= 1,
+\tau_\lambda= 6,
+\Gamma_\lambda= 0,
+\Gamma_\lambda'= 8.3255e-06,
+\nonumber \\ \tau_p= 6,
+\Gamma_p= 0,
+\Gamma_p'= 0.0481,
+\tau_C= 60,
+\Gamma_C= 0.3162,
+\Gamma_C'= 0.3162,
+%dampingNoiseOnly= Inf,
+\nonumber \\ T_{C\rightarrow\lambda}= 0.9000,
+T_{C\rightarrow{p}}= 0.9000,
+T_{E\rightarrow{C}}= 0,
+T_{\lambda\rightarrow{E}}= -1;
+%interactionCProduction= 0,
+\end{gather*}
+For the combined scenario: 
+\begin{gather*}
+E_0= 2000,
+\mu_0= 1,
+%\lambda_0= 0.6931,
+\lambda_0= 0.0116,
+\nonumber \\p_0= 23.1049,
+C_0= 1,
+\tau_\lambda= 60,
+\Gamma_\lambda= 2.4034e-04,
+\Gamma_\lambda'= 2.4034e-04,
+\nonumber \\ \tau_p= 60,
+\Gamma_p= 0.5308,
+\Gamma_p'= 0.5308,
+\tau_C= 60,
+\Gamma_C= 0.1459,
+\Gamma_C'= 0.1459,
+%dampingNoiseOnly= Inf,
+\nonumber \\ T_{C\rightarrow\lambda}= 0.2700,
+T_{C\rightarrow{p}}= 0.3000,
+T_{E\rightarrow{C}}= 0.2700,
+T_{\lambda\rightarrow{E}}= -1,
+%interactionCProduction= -0.2700,
+\end{gather*}
+%
+Cross-correlations were calculated based on 100000 one-minute timesteps, noise was introduced with the matlab function \texttt{normrnd}.
+
 \subsection*{Separate noise equations}
 
 Both Nghe and Dunlop define separate ODEs for the noise terms:
