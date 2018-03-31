@@ -572,119 +572,186 @@ To further interpret these relationships we turn to a minimal model of the cell.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection*{A minimal model helps interpreting the cross-correlations}
+\subsubsection*{A minimal model helps to interpret the cross-correlations}
 
-In this section we present a model that gives an interpretation 
-%This section gives an interpretation 
-as to why the measured cross-correlation curves (figure \ref{fig:CRP:fig3}) look the way they do.
+In the following sections we present a model that suggests the experimental data is consistent with the hypothesis 
+that without feedback, metabolism-growth dynamics would be dominated by fluctuations that originate in metabolic protein production and metabolism itself,
+but that with feedback, the transmission of these fluctuations is suppressed.
+
+%In the following sections we present a model that suggests that 
+%without feedback, metabolism-growth dynamics would be 
+%%
+%%In this section we present a model that gives an interpretation 
+%%This section gives an interpretation 
+%%as to why the measured cross-correlation curves (figure \ref{fig:CRP:fig3}) look the way they do.
+%%
+%%The model suggests that 
+%metabolism-growth dynamics in wild type cells 
+%%and any constitutive expression-growth dynamics
+%are not influenced by CRP-controlled expression fluctuations, 
+%%dominated by non-metabolism related fluctuations, 
+%whereas without feedback, the $\Delta$cAMP cells' metabolism-growth dynamics are dominated by CRP-controlled enzyme fluctuations.
+
+%The dynamic interaction between enzyme expression and growth (or in general, protein expression and growth) can be modeled using a system of coupled differential equations.
 %
-The model suggests that metabolism-growth dynamics in wild type cells and any constitutive expression-growth dynamics are dominated by non-metabolism related fluctuations, whereas metabolism-growth dynamics in feedbackless $\Delta$cAMP cells are dominated by metabolic fluctuations.
-
-
-The dynamic interaction between enzyme expression and growth (or protein expression in general and growth) can be modeled using a system of coupled differential equations.
+To establish our model, we draw on previous models by Dunlop et al. \cite{Dunlop2008}, Kiviet et al, \cite{Kiviet2014} and Towbin et al. \cite{Towbin2017}.
+%We draw here on previous models \cite{Dunlop2008, Kiviet2014, Towbin2017}.
 %
-The interactions between metabolic expression and growth have been described before using differential equations.
+The Kiviet et al. model used coupled stochastic linear differential equations to elucidate the the dynamics between growth $\mu$, enzyme production $p$ and enzyme concentration $C$. % \cite{Kiviet2014}.
 %
-Kiviet et al. presented a concise model that showed how noise could transmit from enzyme expression to growth.
-This model consists of coupled linearized differential equations that describe the interaction between metabolism, protein production, enzymatic concentration and growth,
-and Ornstein-Uhlenbeck processes to model noise on these parameters \cite{Kiviet2014}.
-Protein production, enzymatic concentration and growth are very concrete parameters, 
-but the interpretation the term metabolism remains rather abstract in the Kiviet et al. manuscript. 
-Perhaps the interpretation could be refined further as the conglomerate of processes that set the metabolic performance of the cell.
-See supplementary note II for more information on the Kiviet model.
+We also use these parameters, and --- based on Towbin et al. --- we additionally use the parameter $x$ to represent the metabolite concentration. 
+%We added 
+%%an element 
+%a parameter 
+%from the Towbin et al. model to this, 
+%%Additionally, we drew an element from the Towbin et al. model, and 
+%%and extended our model 
+%%by
+%and also explicitly modeled the metabolite concentration $x$. %, also described by a separate differential equation.
 %
-Towbin et al. solve a system of non-linear differential equations assuming steady state conditions to show that cells use a crude set of rules to find optimal enzyme expression {Towbin2017}.
-Interestingly, their metabolic performance is governed completely by what they regard as metabolite concentration $x$.
-Metabolites are imported by metabolic enzymes, and consumed to produce proteins and cell growth.
-See supplementary note III for more information on the Towbin model. 
+%Furthermore, i
+In our adapted model we 
+%We adapted their model and explicitly 
+model each of these four parameters by its own differential equation.
 %
-We here used a set of the more convenient linear equations similar to the Kiviet et al. model as we were only interested in behavior around the steady state parameter values, where a linear description might be applicable.
-For the purpose of this model we adopted the view that the metabolite concentration $x$ is proportional to the metabolic performance, 
-which allowed for an easy interpretation of how negative feedback from metabolites influences the production of proteins.
+Similar to the Kiviet model, the influence of any parameter $X$ on any other parameter $Y$ is mathematically modeled by coupling coefficients $T_{{Y}\leftarrow{X}}$, such that 
+\begin{align*}
+	\dot{Y} = (..) + T_{{Y}\leftarrow{X}} \cdot X
+	.
+\end{align*}
 %
-As we solved our model numerically, it was easy to model all our four parameters, metabolites/metabolic performace $x$, protein production $p$, enzymatic concentration $C$ and growth rate $\mu$, as separate (linear) differential equations.
+And also like Kiviet et al. we added terms that introduced noise into the system, as well as dampening terms, to allow us to introduce stochastic fluctuations into our model.
+Using such coupling terms and noise sources, 
+we created a model for the parameters $\mu$, $p$, $C$ and $x$ that we think represents the biology of the cell, 
+%our model is wired in a way that we think represents the biology of the cell,
+see figure \ref{fig:CRP:fig4}.A.
 %
-We also added noise sources to these differential equations, and used dampening terms to make sure the system reverted back to equilibrium.
+%The %use of an 
+%explicitly modeled metabolite $x$ allowed for a 
+%more
+In this model, the parameter $x$ allowed for a
+concrete interpretation of metabolic dynamics,
+as growth $\mu$ and production of proteins $p$ can be influenced by the metabolite concentration $x$ (trough transmission coefficients $T_{{\mu}\leftarrow{x}}$ and $T_{{\mu}\leftarrow{x}}$ respectively).
 %
-Our model is described in more detail in Supplementary notes II, and a graphical diagram is displayed in figure \ref{fig:CRP:fig4}.
-
-
-
-
-
-
-
-
-
+In turn, the protein concentration is set by production rate $p$ and dilution rate $\mu$, i.e. 
+\begin{align*}
+\dot{C} = p - \mu C
+.
+\end{align*}
+When a protein is enzymatically active, concentration fluctuations might influence the metabolite concentration $x$ through transmission coefficient $T_{{x}\leftarrow{C}}$.
 %
-These models, which are concisely discussed in supplementary notes II and III respectively, give a good starting point for a model for our purposes.
+% MAYBE WE WANT TO SAY THIS ALL THE WAY IN THE END FOR THE AHA-ERLEBNIS?
+%Interestingly, this model can also allow for a simple interpretation of the feedback, 
+Finally, this model also allows for a conveniently simple interpretation of the metabolite feedback onto the CRP regulation:
+%which
+it might be implemented as a negative contribution to the transmission coefficient $T_{{p}\leftarrow{x}}$.
+%The feedback provided by metabolites onto the protein production rate could be implemented as a negative contribution to the transmission coefficient  $T_{{p}\leftarrow{x}}$.
 %
-Both give functional expressions for growth, enzymatic protein expression, protein production rate. 
+We propagated this model numerically to simulate different scenarios, which we can use as reference to understand our experimental data.
 %
-Additionally, the Kiviet et al. models the metabolic performance of the cell as an Ornstein-Uhlenbeck process,
-whereas Towbin et al. explicitly models the metabolite expression $x$ by a differential equation.
+%For a more detailed discussion about this model, 
+See supplementary note II for a more detailed discussion on the model.
+
+%\subsubsection*{Connecting experimental cross-correlations to model dynamics}
+\subsubsection*{The model connects experimental cross-correlations to types of dynamics}
+
+Previously, three biologically relevant scenarios of how fluctuations transmit from one parameter to the next were presented \cite{Kiviet2014}.
 %
-We combine these approaches by 
-
-Additionally, the Kiviet et al. model describes a fluctuating general metabolic noise source, which reflects the metabolic performance of the cell.
+Our extended model can reproduce these scenarios, which are the dilution mode, the catabolic mode and the common mode.
 %
-
-
-In the Kiviet et al. model, the concentration of a metabolite is explicitly modeled with the quantity $x$, 
-
-Towbin et al.
-
-
- 
-We take a similar approach as the Kiviet et al. model, in that we use a system of linear equations to model the system as a number of Ornstein-Uhlenbeck processes that interact with each other.
+The model simulates for each scenario the dynamics between our experimentally measured observables, $p$, $C$ and $\mu$,
+and predicts the appearance of the associated cross-correlations %behavior of the 
+ $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$, which can be measured experimentally. % cross-correlations associated with each scenario.
 %
-
+In the first scenario, called the dilution scenario, 
+%Firstly, in the dilution scenario, 
+fluctuations starting outside the metabolism that affect growth are the largest. 
+This  leads to dynamics in which dilution by volume growth is the dominates the cross-correlations.
+Fluctuations in growth rate are thus followed by negatively correlated fluctuations in concentration, as expressed by the negative values of $R_{C,\mu}(\tau)$ at negative $\tau$ values.
+Since volume growth does not interact with protein production, the correlation between our other pair of observables $p$ and $\mu$ will be zero for all $\tau$ values.
+Both the $R_{C,\mu}(\tau)$ cross-correlations and the $R_{p,\mu}(\tau)$ cross-correlation for the dilution scenario are shown in figure \ref{fig:CRP:fig4}.B.
 %
-As explained in supplementary note II we extend the Kiviet et al. by describing al of our parameters --- growth, enzymatic protein expression, protein production rate and metabolic performance --- as differential equations (instead of explicit functions).
+In the second scenario, the catabolic scenario,
+%Secondly, in the catabolic scenario, 
+fluctuations in $p$ dominate the system, and are propagated via $C$ and $x$ to $\mu$.
+This leads to  positive values of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ at positive $\tau$ values, 
+%Cross-correlations for this scenario are 
+as shown in figure \ref{fig:CRP:fig4}.C.
+Such a mode implies that concentration fluctuations can have cell-wide consequences, even affecting the growth rate of the cell.
+%Such a mode was observed experimentally for single enzymes, 
+%an observation that implied that the fluctuations in single enzyme concentrations can have cell-wide consequences, even affecting the growth rate of the cell \cite{Kiviet2014}.
+%When observed in our experimental context, this would imply that 
 %
-This allowed us to 
-
-
-
-
-
-
-
-To obtain an interpretation of the cross-correlations, 
-
-As also mentioned in Supplementary notes I, the behavior of cells can me modeled by differential equations.
+Finally, the common scenario relates to propagation of noise that arises in the metabolite concentration as a result of fluctuations arising in metabolic processes.
+This mode represents a situation where such fluctuations have simultaneous effects on growth and protein production, leading to positive values of $R_{C,\mu}(\tau)$ for both 
+positive and negative $\tau$ values, whilst correlations with concentration lag slightly behind.
+Cross-correlations for the common scenario are shown in figure \ref{fig:CRP:fig4}.D.
 %
+We can now use these scenarios as a reference to interpret our own experimentally obtained cross-correlations.
+
+%\subsubsection*{The experimental cross-correlations point to an active role of the negative feedback, even in a constant environment}
+\subsubsection*{Experiments hint to an active role of feedback in constant environment}
+%\subsubsection*{Experiments are consistent with an active role for negative feedback in a constant environment}
+
+Firstly we inspect the experimentally obtained cross-correlations of the constitutive reporter (figure \ref{fig:CRP:fig3}.C and \ref{fig:CRP:fig3}.D).
+Expression of the constitutive reporter is not expected to influence metabolic processes, nor is its expression a proxy for expression of other proteins that should.
+Hence, expression of the constitutive reporter is not expected to affect growth.
+Consistently, the cross-correlations appear to match with the dilution scenario, in which protein fluctuations are not correlated with future growth correlations.
+%
+This is the case both for the wild type cells and the feedback-less $\Delta$cAMP cells.
+%
+Next, we look at the dynamics of the metabolic reporter, which is distinctively different for the wild type cells in comparison with the feedback-less $\Delta$cAMP cells (figure \ref{fig:CRP:fig3}.A and \ref{fig:CRP:fig3}.B).
+%
+Surprisingly, the wild type cells also show cross-correlations that seem similar to the dilution scenario.
+This implies that in wild type cells with feedback regulation, no fluctuations are propagated from metabolic expression to growth.
+%
+On the other hand, the $\Delta$cAMP cells without feedback, show different cross-correlations.
+%
+This is harder to directly connect to one of the scenarios, as the combination of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ curves does not seem to fit any of the three presented scenarios.
+%
+The experimental 
+%Specifically, 
+$R_{p,\mu}(\tau)$ cross-correlation shows a much higher peak than the $R_{C,\mu}(\tau)$ cross-correlation.
+%
+This lead us to the hypothesis that this might be a combination of all three scenarios, where part of the positive $R_{C,\mu}(\tau)$ correlations from the common mode are counteracted by negative dilution mode $R_{C,\mu}(\tau)$ correlations,
+which might give the experimentally observed appearance of the cross-correlations.
+%
+Indeed, if we use our model to simulate a combination of all three scenarios, we can obtain cross-correlation curves that seem consistent with this theory; see figure \ref{fig:CRP:fig4}.E.
+%
+Perhaps we are now in a position to understand the effect of the negative feedback, 
+%Might this also allow us to understand the effect of the feedback?
+%
+since we can introduce the effect of feedback on our hypothetical scenario for feedback-less cells.
+%
+(This is done by adding a negative component to the $x\rightarrow{p}$ coupling, i.e. decreasing $T_{x\leftarrow{p}}$ only.)
+%
+Strikingly, indeed, we see that if we add feedback to the mixed scenario presented in figure \ref{fig:CRP:fig4}.E, it begins to resemble the dilution mode --- see figure \ref{fig:CRP:fig4}.F.
+%
+Thus, although this model is rather simple and a biological cell much more complicated, %it could give a hint of what is going on in the cell:
+the cross-correlations are consistent with modeling results 
+in which the CRP-regulation by negative feedback plays an active role even in a constant environment.
+Specifically, it suggests that the CRP regulation might help to filter out metabolic fluctuations and prevent them from having cell-wide effects, such as on the cellular growth rate.
 
 
-
-\subsection{Scenarios}
-
-
-\subsubsection*{To write down, maybe}
-
-
-supplementary note benjamin (to write) shows that excursions from mean concentrations can take arbitrary form
->> so it is convenient to generalize them to a linearized model
-
-
-
-
-
-
-
+%Hence, as expected, 
+%
+%Consistent with the ideas presented in the previous paragraph, the constitutive reporter, of which expression is not thought to be correlated with any process that impacts metabolism, 
+%shows cross-correlations that are consistent with the dilution scenario.
+%%
+%Indeed, as its expression is not expected to have an effect, no positive correlations are found for any $\tau$ value and 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}
-	\centering
+\begin{figure}	
+	\centering	
 	\includegraphics[width=1.0\textwidth]{CRP-fig4.pdf}
-	\clearpage % insert a page break
 	\label{fig:CRP:fig4}
+	\clearpage % insert a page break
 \end{figure}	
 
 \clearpage
 
-\captionof{figure}{    
+\captionof{figure}{    	
 	\textbf{A simple model explains how feedback filters out noise transmission.}
 	(A) We used a coupled stochastic differential equiations model with noise sources and dampening terms (also called Ornstein-Uhlenbeck processes). 
 	Here, $p$ represents the production rate of any protein with concentration $C$ that might influence the cells metabolic processes --- represented here by an $x$ that refers to the metabolites involved that may give feedback to the production rate --- and $\mu$ represents the growth rate of the cell.
@@ -723,6 +790,8 @@ CONCLUSION: THE RULES ARE THE SAME BUT THE THINGS THAT CHANGE DUE FLUCTUATIONS O
 > Note that C+M=T relationship is not observed for fluctuations, as can be seen from scatter plots p-p.
 
 > Additional strains made and conditions measured.
+
+> note that metabolic reporter only captures cell-wide and CRP-controlled fluctuations, but not intrinsic noise or other fluctuations that are not cell-wide or CRP-controlled.
 
 
 For example, how cellular composition changes in response to different food sources has been a topic of study for a long time \cite{Schaechter1958}.

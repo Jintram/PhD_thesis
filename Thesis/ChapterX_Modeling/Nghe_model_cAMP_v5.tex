@@ -39,7 +39,7 @@ and describe the dynamics per parameter:
 \label{myfirstequation}
 \dot{M} = & - \frac{(M-M_0)}{\tau}  \nonumber \\ 
           & + c_M \cdot \Gamma_M  \nonumber \\ % (1-T_{M\leftarrow E})
-          & + T_{M\leftarrow E} \cdot c_M \cdot (\frac{E}{E_0} - 1)  
+          & + T_{M\leftarrow E} \cdot c_M' \cdot (\frac{E}{E_0} - 1)  
 \end{align}
 % deltaMetabolism = -(metabolismValues(end)-parameters.metabolism0) * 1/parameters.dampingTimeMetabolism + ... % damping; 1 is the equilibrium value
 % (1-parameters.transmissionEnzymeMetabolism) * ((rand()-.5)*2) * parameters.noiseSizeMetabolism + ...                              % white noise component
@@ -49,15 +49,15 @@ and describe the dynamics per parameter:
 \begin{align}
 	\dot{\lambda} = & -\frac{(\lambda - \lambda_0 )}{\tau_\lambda} \nonumber \\ 
  			& + c_\lambda \cdot \Gamma_\lambda \nonumber \\  %  (1-T_{\lambda\leftarrow M}) \cdot
-			& +    T_{\lambda\leftarrow\ M} \cdot c_\lambda \cdot (\frac{M}{M_0}-1) 
+			& + T_{\lambda\leftarrow\ M} \cdot c_\lambda' \cdot (\frac{M}{M_0}-1) 
 \end{align}
 %
 \begin{align}
 \label{mythirdequation}
 \dot{P} = & - \frac{(P-P_0)}{\tau_P} \nonumber \\ 
-		 & + c_\lambda \cdot \Gamma_\lambda \nonumber \\ 
-         & + T_{P\leftarrow M} \cdot c_P \cdot (\frac{M}{M_0}-1)  \nonumber \\ 
-         & + R_{P\leftarrow M} \cdot c_P \cdot (\frac{M}{M_0}-1)
+		 & + c_p \cdot \Gamma_p \nonumber \\ 
+         & + T_{P\leftarrow M} \cdot c_P' \cdot (\frac{M}{M_0}-1)  \nonumber \\ 
+         & + R_{P\leftarrow M} \cdot c_P' \cdot (\frac{M}{M_0}-1)
 \end{align}
 %
 \begin{align}
@@ -65,15 +65,16 @@ and describe the dynamics per parameter:
 \dot{E} = P - \lambda E
 \end{align}
 %
-Where $M$ describes the state of the metabolism, $\lambda$ is the growth rate, $P$ is the production rate, $E$ is the amount of enzyme, $\tau$ is a dampening term ($X_0$ is the equilibrium value), $T_{X \leftarrow Y}$ is the noise transmission constant from $X$ towards $Y$, $c_X$ is a constant that sets the size of the fluctuations, $\Gamma_X$ is a white noise source.
-$R_{X \leftarrow Y}$ indicates a regulatory interaction, an addition to the model by me, but this notation is currently just cosmetical, as $T_\text{effective}=T+R$.
+Where $M$ describes the state of the metabolism, $\lambda$ is the growth rate, $P$ is the production rate, $E$ is the amount of enzyme, $\tau$ is a dampening term ($X_0$ is the equilibrium value), $T_{X \leftarrow Y}$ is the noise transmission constant from $X$ towards $Y$, $c_X$ and $c_X'$ are constants that set the size of the fluctuations, $\Gamma_X$ is a white noise source.
+$R_{X \leftarrow Y}$ indicates a regulatory interaction, an addition to the model, but this notation is just cosmetic, as $T_\text{effective}=T+R$.
 %
 This model assumes all parameters have an average value from which fluctuations deviate, but always return. Hence the dampening terms.
 With respect to transmission, I furthermore rescale the absolute value of the noise to be comparable to the target noise (hence the $M_0^{-1}$ and $c_X$ terms in combination with the $T_{X\leftarrow Y}$ term).
 
 This is similar to the model that Philipe Nghe suggested in Kiviet et al. \cite{Kiviet2014}, which was inspired by Dunlop et al. \cite{Dunlop2008} (see supplement of that manuscript for a description of the Dunlop model).
 %
-A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\mu_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. \red{Nghe also takes the latter approach, dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\mu_E$ parameter (see later for a more involved discussion on these parameters)}.
+A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\mu_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. \red{Nghe also takes the latter approach, see below.}
+% dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\mu_E$ parameter (see later for a more involved discussion on these parameters)}.
 
 The correlations between these equations can be found by linearizing them, writing the correlations in Fourier space, and back-transforming them using residue integration techniques. 
 \red{These notes do} not fully explores this, but \red{this will partially be discussed later}.
@@ -185,6 +186,8 @@ T_{\lambda\rightarrow{E}}= -1,
 \end{gather*}
 %
 Cross-correlations were calculated based on 100000 one-minute timesteps, noise was introduced with the matlab function \texttt{normrnd}.
+% 
+The feedback is added by subtracting $0.27$ from the $T_{C\rightarrow\lambda}$ parameter, i.e. setting it to zero.
 
 \subsection*{Separate noise equations}
 
