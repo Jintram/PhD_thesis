@@ -1,0 +1,10 @@
+diff a/Thesis/dissertation.tex b/Thesis/dissertation.tex	(rejected hunks)
+@@ -113,7 +113,7 @@
+ \bibliography{../library} 
+ % carefully choose the .bib file 
+ % [see remarks in Bibliography folder]
+-\bibliographystyle{Style/bibstyle_dissertation}
++\bibliographystyle{../Style/bibstyle_dissertation}
+ 
+ %******************
+ 
