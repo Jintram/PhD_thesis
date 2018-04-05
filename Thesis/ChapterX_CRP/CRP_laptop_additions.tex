@@ -6,7 +6,7 @@
 
 
 
-\section*{Conclusion}
+\section*{Conclusions}
 
 In this chapter, 
 we investigated how the CRP regulatory networks responds to environmental inputs versus stochastic inputs.
@@ -15,14 +15,69 @@ A negative feedback loop, which inhibits CRP activity (through cAMP) and metabol
 is known to be responsible for adjusting metabolic enzyme expression to the growth medium of the cell.
 %
 We hypothesized that this regulatory interaction should respond equally strong to metabolite fluctuations that occur in the cell due to noise. 
+
+To show that this is a feasible idea, we first subjected the CRP system to a quickly changing cAMP input signal.
+To artificially control the input signal, we used $\Delta$cAMP cells that do not respond to internal regulation, but instead responded to the cAMP concentration that we provided in the cellular growth medium.
+We also introduced a reporter construct to gauge the metabolic enzyme expression levels.
+%\textit{cya} \textit{cpd} null mutants to 
 %
-We first investigated how the 
+The cellular response to an input that we alternated between a high and low signal showed that 
+it takes hours before cells reach a new steady state, but much less than an hour before a change in metabolic expression or growth rate can be detected.
+%The cellular response to our alternating high/low signal showed that it takes a while before 
+%The response to an input that alternated between a high and a low signal in 1 or 5 hour blocks 
+%showed 
+%When we subjected cells to input that alternated between a high and a low cAMP signal in 1 or 5 hour blocks,
+%the metabolic enzyme expression and growth rate 
+%
+We thus concluded that cellular networks have the potential to quickly react to changing inputs such as stochastic fluctuations in metabolite concentration.
 
+Next, we wanted to 
+% expose 
+uncover
+the regulatory dynamics, if any, of the CRP system to stochastic input signals.
+%
+%We grew $\Delta$cAMP cells at
+%a cAMP concentration that was chosen such that the cells grow at wild growth rates.
+We grew  $\Delta$cAMP cells in 800 $\upmu$M cAMP,
+a concentration that was chosen to sustain growth rates that compare to wild type growth rates.
+%
+This resulted in cells that expressed the right amount of metabolic enzymes, 
+but whose CRP regulation could not respond to stochastically changing metabolite concentrations.
+%
+By comparing metabolic expression versus growth scatter plots of these $\Delta$cAMP cells with
+scatter plots of wild type cells that could respond to both environmental and stochastic inputs, 
+we saw that metabolism-growth dynamics was markedly different between the two conditions.
+%
+Since removal of stochastic input to the CRP system resulted in a change in metabolism-growth dynamics, 
+we interpreted this as evidence that the CRP system responds to stochastic fluctuations in metabolite concentrations.
 
+To further investigate what these changes in dynamics mean, 
+we not only compared metabolic expression values with growth rates which were both obtained at the same point in time,
+but calculated the correlation between metabolic expression with past, current and future growth rates.
+%
+This was done by calculating cross-correlations.
+%
+Using CCs we saw that correlations in the feedback-less $\Delta$cAMP cells and wild type were different over a wide range of delays.
+%
+This strengthened our idea that stochastic fluctuations have a profound effect on the CRP regulatory system dynamics.
+
+In order to understand the meaning of the difference in dynamics, we used a stochastic differential equation model.
+%
+This model showed that in experiments without feedback, metabolism-growth dynamics are consistent with modelled dynamics that are influenced by fluctuations in enzyme expression, metabolism itself and volume growth.
+% 
+However, with feedback, the metabolism-growth dynamics were consistent with modelled dynamics that were dominated by fluctuations in volume growth only.
+%
+This suggested to us that the negative feedback regulation might actually function to respond to stochastic input, which is 
+to prevent fluctuations in metabolism from spreading throughout the cellular biochemical network.
 
 
 
 \subsection*{More stuff}
-Also take a look at Briat et al. \cite{Briat2016}.
+Rosenfeld et al. showed in a synthetic circuit that the gene regulatory function can be altered by noise \cite{Rosenfeld2005}.
+%
+Point out (when talking about positive CCs) that CV of noise does not change, so effect is subtle.
+(Or addition of another independent noise source has little effect on total noise?? - No, addition of two independent noises is 2x sigma [wiki:Sum\_of\_normally\_distributed\_random\_variables], which makes sense since your basically kicking a "particle" twice as hard.)
+%
+Also take a look at Briat et al. \cite{Briat2016}, which investigates a theoretical regulation system that can handle noise.
 % >> Not so interesting since this deals more with a hypothetical (ie theoretical) regulation system that can function in a noisy environment..
 % >> Perhaps mention at the end..
