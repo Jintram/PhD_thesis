@@ -1,0 +1,147 @@
+
+\chapter{About the cross-correlations}
+
+\section*{Obtaining the cross correlations}
+
+{\color{red}TODO: Process below such that it correctly handles Philippe's and my model (text above has been updated after phone call w. PN). Discuss w. ST/others whether and how to expand model.}
+
+\subsection*{Obtaining solutions in Fourier space}
+
+How do we get the cross correlations? A way to define correlations is\footnote{From Wikipedia, https://en.wikipedia.org/wiki/Cross-correlation and Weisstein, Eric W. "Cross-Correlation Theorem." From MathWorld--A Wolfram Web Resource. http://mathworld.wolfram.com/Cross-CorrelationTheorem.html}:
+
+\begin{align}
+R_{f,g}(\tau) = f \star g = \int_{t=-\infty}^{\infty} {\bar f(t) g(t+\tau) \delta t}
+\end{align}
+
+With the $\bar{f}$ denoting the complex conjugate. This is equal to the convolution of $f^*(-t)$ and $g(t)$, 
+
+\begin{align}
+f \star g = f^*(-t) * g
+.
+\end{align}
+
+It can be derived that:
+
+\begin{align}
+\mathcal{F} (f \star g) = \overline{\mathcal{F} (f)} \mathcal{F}(g)
+.
+\end{align}
+
+This property can be exploited to find the cross correlation that we are interested in:
+
+\begin{align}
+R_{\mu,E}(\tau) = \mathcal{F}^{-1} \left( \overline{\mathcal{F} (\mu)} \mathcal{F}(E) \right)
+.
+\end{align}
+
+First we find the solutions to the ODEs in Fourier space:
+
+\begin{align}
+\label{nnt:eq:ODEEFourier}
+\mathcal{F} \left( \dot{E} \right) = & \mathcal{F} \left( P - \lambda E \right) \nonumber \\
+%
+i\omega \tilde{E} = & \tilde{P} - \tilde{\lambda} \tilde{E}
+\end{align}
+
+\begin{align}
+ \tilde{E} = & \frac{1}{i\omega+\tilde{\lambda}} \tilde{P} 
+\end{align}
+
+For Thesis Eq. \ref{eq:generalgillespienoise} the solution in Fourier space is:
+
+\begin{align}
+\tilde{N}_X = \frac{\sqrt{c_x}}{i\omega - 1/\tau} \tilde{\Gamma}_x
+\end{align}
+
+which however will not be directly used to solve Thesis Eq. \ref{myfirstequation}-\ref{mylastequation}. With regard to Thesis Eq. \ref{myfirstequation}-\ref{mythirdequation}, the solutions in general terms can be found from taking the Fourier transform:
+
+\begin{align}
+i \omega \tilde{X} = - \frac{\tilde{X}-X_0}{\tau_X} + c_X \tilde{\Gamma}_X + T_{X \leftarrow Y} c_X (\frac{\tilde{Y}}{X_0} - 1)
+\end{align}
+
+which, solving for $X$ gives:
+
+\begin{align}
+\label{nnt:eq:solutionXFourier}
+\tilde{X} = \left( i \omega + \frac{1}{\tau_X} \right)^{-1} \left( \frac{X_0}{\tau_X} + c_X \tilde{\Gamma}_X + T_{X \leftarrow Y} c_X (\frac{\tilde{Y}}{Y_0} - 1) \right)
+,
+\end{align}
+
+$X$ being either $\lambda$, $M$ or $P$.
+%
+The solution for $E$ in Fourier space (i.e. to Thesis Eq. \ref{mylastequation}) without $P$ or $\lambda$ terms is very involved. This can be seen by plugging Eq. \ref{nnt:eq:solutionXFourier} into Eq. \ref{nnt:eq:ODEEFourier}, which results in:
+
+\begin{align}
+\label{nnt:eq:ODEEFourierExpanded}
+i\omega \tilde{E} = & 
+%P
+\left( i \omega + \frac{1}{\tau_P} \right)^{-1} \left( \frac{P_0}{\tau_P} + c_P \tilde{\Gamma}_P + T_{P \leftarrow M} c_P (\frac{\tilde{M}}{M_0} - 1) \right)
+     \nonumber \\
+    & -
+    % lambda
+    \left( i \omega + \frac{1}{\tau_\lambda} \right)^{-1} \left( \frac{\lambda_0}{\tau_\lambda} + c_\lambda \tilde{\Gamma}_\lambda + T_{\lambda \leftarrow M} c_\lambda (\frac{\tilde{M}}{M_0} - 1) \right)
+     \tilde{E}
+\end{align}
+Where M is defined as:
+
+\begin{align}
+\label{nnt:eq:solutionForM}
+\tilde{M} = \left( i \omega + \frac{1}{\tau_M} \right)^{-1} \left( \frac{M_0}{\tau_M} + c_M \tilde{\Gamma}_M + T_{M \leftarrow E} c_M (\frac{\tilde{E}}{E_0} - 1) \right)
+\end{align}
+
+Plugging Eq. \ref{nnt:eq:solutionForM} into Eq. \ref{nnt:eq:ODEEFourierExpanded} results in an equation where the only time-dependent parameter is E.
+Solving that formula for E gives a very involved formula, which is not displayed here.
+
+\subsection*{Actually getting the cross-correlations}
+
+As Dunlop et al. point out, we are now looking at the expectation values of the correlation functions (since we're talking about noise), so in general terms:
+
+\begin{align}
+\left< R_{X,Y}(\tau)\right > = 
+\left< \mathcal{F}^{-1} \left[ \overline{\mathcal{F} (X)} \mathcal{F}(Y) \right] \right>
+\end{align}
+
+\section*{Notes}
+
+Note that Philippe Nghe's scripts can be found at:
+
+\begin{verbatim}
+\\storage01\data\AMOLF\groups\tans-group\Former-Users\
+Nghe\Noise_Growth\matlab3
+\end{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Towbin model}
+
+\textit{These notes are probably outdated since I wrote a new piece about this in my thesis.}
+
+\begin{align}
+\text{F}(\text{x})\text{=}\frac{\text{K1}}{\text{K1}+x}
+\end{align}
+
+\begin{align}
+\frac{\partial x(t)}{\partial t}=\beta  C(t) \text{F}(x)-\frac{\gamma  x \left(1-C(t)\right)}{\text{K2}+x} \\
+\end{align}
+Set to zero to find steady state concentration.
+
+Here, in the first term on rhs, $\beta$ is the efficiency at which the carbon sector (C) converts sugars into metabolites (x). F(x) describes immediate feedback by x. External sugar concentration is assumed constant, and import + conversion directly dependent C, and thus there is no term "s" in this formulae.
+The 2nd time rhs describes the consumption of x, which results in growth. $(1-C[t]) = R$, or the ribosomal sector. $\Gamma$ is some efficiency factor, $x/(x+K2)$ describes reaction kinetics of conversion of x to growth (Michaelis-Menten kinetics aka Hill). 
+We propose x can actually be regarded as in steady state, as the time scales of this reaction are much faster than any other, hence $dX(t),t = 0$. 
+
+\begin{align}
+\frac{\partial C(t)}{\partial t}=f(x) \mu (t)-C \mu =\mu (t) \left(f(x)-C(t)\right);
+\end{align}
+
+Here, 1st term rhs describes that how many proteins are produced depends on the growth rate of the cell (Hwa - but generalized from constant). The 2nd term simply describes dilution.
+
+\begin{align}
+\mu (t)=\frac{\alpha  \left(\gamma  x \left(1-C(t)\right)\right)}{\text{K2}+x}
+\end{align}
+
+
+
+
+%\bibliography{./../../library} %You need a file 'literature.bib' for this.
+%\bibliographystyle{plain}

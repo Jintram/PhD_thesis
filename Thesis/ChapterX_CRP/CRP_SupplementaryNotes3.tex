@@ -1,0 +1,94 @@
+
+
+\subsection*{III. The Towbin et al. model equations}
+
+\subsubsection*{The equations}
+
+This supplementary note offers a brief overview of the formulae used in Towbin et al. to describe the CRP regulation system, and its relation to metabolite concentrations and growth.
+%
+These equations are directly taken from the supplementary notes of Towbin et al. (Equations 7-9), except that some parameter symbols have been changed to match our notation \cite{Towbin2017}.
+%
+The equations are the following:
+%Towbin et al. suggest the following set of equations:
+
+\begin{align}
+	\label{eq:TB:dotM}
+	\dot{M} & = \mu ( \frac{k_f}{k_f+x} - M) ,\\
+%\end{align}
+%\begin{align}
+	\label{eq:TB:dotx}
+	\dot{x} & = \frac{\alpha}{k_2} \left(    \beta f_M(M) \frac{k_1}{x+k_1}  -    \mu    \right) ,\\
+%\end{align}
+% renamed p_BT to alpha
+%\begin{align}
+	\label{eq:TB:mu}
+	\mu & =\gamma(1-M) \frac{x}{x+k_2}
+	.
+\end{align}
+
+Here, $M$ represents the metabolic enzyme expression, $x$ the pool of carbon metabolites which give feedback to the CRP system, and $\mu$ the cellular growth rate.
+%
+Furthermore, $k_1$, $k_2$, and $k_f$ are Michaelis Menten rate constants, where $k_1$ pertains to carbon import (which is self-inhibited), $k_2$ to biomass production and $k_3$ to feedback by metabolites.
+%
+$\alpha$, $\beta$ and $\gamma$ are also constants, 
+$\alpha$ sets the conversion ratio between metabolite consumption and growth,
+$\beta$ the maximum import rate of metabolites,
+and $\gamma$ the maximum catalytic rate of ribosomes.
+%$\gamma$ maximum catalytic rate of ribosomes.
+%$\alpha$ is a constants, which set the conversion ratio between metabolite consumption and growth, and $\beta$ is a constant that sets the maximum import rate of metabolites.
+% which determine the conversion rate from metabolites to biomass.
+%
+The left and right terms (within brackets) in Eq. \ref{eq:TB:dotM} relate to production and dilution and in Eq. \ref{eq:TB:dotx} the left and right terms in brackets relate to import and consumption.
+%
+The growth rate is a function of metabolite consumption and ribosome concentration $R=1-M$.
+
+\subsubsection*{Graphic representations of the model}
+
+The relationships that are set in the differential equations are presented in a diagram in figure \ref{fig:CRP:benjamin_ODEs_diagram}.
+%
+The contributions of the left and right terms can be plotted separately to understand the dynamic behavior of the system when these terms change independently.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{CRP-figXsup_BenjaminInteractions.pdf}
+	\caption{ 
+		\textbf{Diagram of Towbin et al. ODE model.}
+		This diagram shows how the parameters in the Towbin et al. model relate to each other. $M$ and $x$ are the metabolic enzyme and metabolite concentration respectively, which are both modeled using differential equations. The ribsome concentration is only implicitly present as $R=1-M$. Metabolic enzyme production $p_m$, growth rate $\mu$, metabolite production/import rate $p_x$ and metabolite consumption are all terms that are part of these differential equations.
+	}
+	\label{fig:CRP:benjamin_ODEs_diagram}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{pdf_benjamin_ODE_relations.pdf}
+	\caption{ 
+		\textbf{Using models to understand the dynamic behavior of stochastic metabolic and growth fluctuations.}
+		(Left) Illustrations of the contributions from the positive (production) and negative (dilution) terms to the differential equation that describes the time evolution of the concentration of metabolic enzymes as a function of that concentration $C$, according to the Towbin et al. model \cite{Towbin2017}. The different lines correspond to different values of the metabolite concentration $x$ ($x={0.9, 1.0, 1.1}$). 
+		(Right)	Similar as on the left, except that the terms are production and consumption of metabolites as a function of metabolite concentration $x$ and that the different lines correspond to different values of the metabolic enzyme concentration $C$ ($C={0.45,0.50,0.55}$). (Towbin et al. focus on import of metabolites as rate limiting step in the rate at which they are created, but we have used the more general term production here.) 
+		These plots are merely to illustrate the systems behavior, so all parameter values were simply set to $1$.
+		%, the parameter values used for plotting are: 
+		%$k_1=1$,
+		%$k_2=1$,
+		%$k_f=1$,
+		%$\beta=1$,
+		%$\gamma=1$ and
+		%$\alpha=1$.
+		%
+		%  mu0 = .25;
+		%  C0=.5; C = [C0*.9, C0, C0*1.1] = 0.4500    0.5000    0.5500
+		%  x0=1; x = [x0*.9,x0,x0*1.1]
+		%
+		%
+	}
+	\label{fig:CRP:benjamin_ODEs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+

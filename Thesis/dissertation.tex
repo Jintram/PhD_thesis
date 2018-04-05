@@ -14,6 +14,7 @@
 % load a collection of convenient shortcut commands
 \input{PackagesNewCommands/packages_newcommands} % include packages 
 							 %      and define commands
+							 % also additional commands are defined in Commands/additional_custom_commands, see below
 
 % My aditions:
 %\usepackage{enumitem } % for lists w/o spacing.
@@ -30,7 +31,7 @@
 \usepackage{hyperref}
 
 % In case the "d" in dx is desired to have a special markup.
-%\usepackage{amsmath}
+\usepackage{amsmath} % also required for align environment
 %\newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 % Some attempts to corretly break urls (and e.g. also script names).
@@ -58,15 +59,28 @@
 % Needed for eps??
 \usepackage{epstopdf}
 
+% for degree symbol
+\usepackage{gensymb}
+
+% To enable floatbarriers
+\usepackage{placeins}
+
+% misc
+\usepackage{tabularx}
+\usepackage{setspace}
+
+% Graphic paths
 \graphicspath{{./Figures/}{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
-	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}}
+	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}{./ChapterX_CRP/Figures/matlabExport_model/}}
 
 
-
+% Additional commands
 \include{Commands/additional_custom_commands}
+% Note that also Noreen added additional commands, see above at PackagesNewCommands/packages_newcommands
 
 \begin{document}
 
+%%%%%%% TITLE
 
 %% Specify the title and author of the thesis. This information will be used on
 %% the title page (in title/title.tex) and in the metadata of the final PDF.
@@ -89,24 +103,35 @@
 %% Turn on thumb indices.
 \thumbtrue
 
-\include{Chapter0_Preface_etc/preface_etc}
+% SPACING OPTIONS
+%\onehalfspacing
+%\doublespacing
+
+%%%%%%% CHAPTERS (& PREFACE ETC)
+
+%\include{Chapter0_Preface_etc/preface_etc}
 %\include{Chapter1_Introduction/chapter1_introduction}
 %\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
-%\include{Chapter2_Methods/chapter2_methods}
+%\include{Chapter2_Methods/chapter2_methods} % \label{chapter:methods}
 %\include{ChapterX_Filarecovery/ChapterX_Filarecovery}
 \include{ChapterX_CRP/CRP_main}
-%\include{ChapterX_Modeling/Nghe_model_cAMP_v5}
+\include{ChapterX_CRP/CRP_SupplementaryNotes1}
+\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
+\include{ChapterX_CRP/CRP_SupplementaryNotes3}
+\include{ChapterX_CRP/CRP_SupplementaryFigures}
 %\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 %\include{ChapterX_Notes/ChapterX_Notes}
 %\include{ChapterX_Conclusion/ChapterX_Conclusion}
 
+
+%%%%%%% MISC OTHER PARTS AT THE END OF THE THESIS
 
 %% Use letters for the chapter numbers of the appendices.
 \appendix
 %% Turn off thumb indices for unnumbered chapters and bibliography
 \thumbfalse
 
-\include{ChapterZ_Protocols/chapterZ_appendix_methods_and_protocols}
+%\include{ChapterZ_Protocols/chapterZ_appendix_methods_and_protocols}
 
 
 % include bibliography
@@ -116,13 +141,9 @@
 \bibliographystyle{Style/bibstyle_dissertation}
 
 %******************
-
-\include{ChapterZ_Thanks/chapterZ_thanks}
-
-
-% Stuff I'll also have to add:
+% THanks etc..
 %- \include{Summary/summary} % English and Dutch
-\include{Acknowledgements/acknowledgements} 
+%\include{Acknowledgements/acknowledgements} % ALREADY PARTIALLY WRITTEN!
 %- \include{Publications/publications}
 %- \include{Cv/cv}
 

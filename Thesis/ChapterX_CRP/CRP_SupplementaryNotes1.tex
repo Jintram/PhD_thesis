@@ -1,0 +1,167 @@
+
+\clearpage
+\FloatBarrier
+\section*{Supplementary notes}
+
+\subsection*{I. Understanding steady state values of metabolic and constitutive production rates, concentration, and growth rates}
+
+\subsubsection{Motivation}
+The purpose of this chapter is to understand 
+single cell stochastic deviations away from steady state. 
+%the dynamical behavior of metabolism and growth, 
+%it is rather unsatisfactory to not understand how 
+%steady state values are established in different conditions.
+%population average values are established.
+%
+%Moreover, 
+However, understanding the steady state relationships themselves between metabolic and constitutive protein production, concentration and the cellular growth rates helps us place the stochastic fluctuations away from the steady state values in the right context.
+%
+We explain our understanding fo this matter in this supplementary. % note we explain our understanding of this matter.
+
+\subsubsection{Model and fitting of model to data}
+
+To better understand steady state relationships it is convenient to write down the differential equations that describe the (supposed) time evolution of the system, 
+and consider the steady state condition where the time derivative is zero.
+%
+Let us here start with an equation for the metabolic reporter.
+%
+%Towbin et al. \cite{Towbin2017} suggest that the relationship between the concentration, production and growth rate is as follows.
+Generally, the change in metabolic protein concentration $M$ over time is set by a production and a dilution term:
+\begin{align}
+	\label{eq:CRP:odeM}
+	\dot{M} = p_M - M \lambda = \phi_M(\text{cAMP}) \lambda -  M \lambda
+	,
+\end{align}
+% 
+where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of $M$ ($\text{a.u}/(\text{px})$) and $\lambda$ ($/\text{min}$) the growth rate of the cell.
+%Our single cell experiments allow the independent measurement of all these three parameters.
+We can determine all these three parameters from our single cell experiments.
+Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a function of $\lambda$.
+%
+To understand the interaction between the metabolic reporter expression and the constitutive reporter expression we were inspired by the linear regulation model posed by You et al. \cite{You2013}, and pose
+\begin{align}
+	\label{eq:CRP:relationMQ}
+	\phi_Q = T - \phi_M
+	,
+\end{align}
+where $\phi_Q$ is the fractional production of the constitutive reporter, and $T$ the total fractional production of both $M$ and $Q$, which we consider a constant independent of the cAMP concentration. 
+(Note that this ignores interaction with other cellular protein sectors such as ribosomes.) 
+%
+This implies that
+\begin{align}
+	\label{eq:CRP:odeQ}
+	\dot{Q} = p_Q - Q \lambda = \phi_Q \lambda -  M \lambda = (T - \phi_M(\text{cAMP})) \lambda -  M \lambda
+	,
+\end{align}
+where $Q$ is the concentration of the constitutive reporter, $p$ its production rate and $\phi_Q$ its fractional production rate.
+%
+Based on equations \ref{eq:CRP:odeM}-\ref{eq:CRP:odeQ} and the steady state assumption $\dot{M}=\dot{Q}=0$ we can make some predictions. Firstly, this suggests that the production rates (a quantity that we determine directly from our experiments) divided by the growth rates should be equal to the concentration for both the reporters. The top two panels in figure \ref{fig:CRP:averagerelations1} show that this is indeed the case. Secondly, it implies that the sum of the concentration of the two reporters should be equal, since $\phi_M(\text{cAMP}) = M$ and $\phi_Q(\text{cAMP}) = Q$ and thus 
+\begin{align}
+	\label{eq:CRP:sumconstant}	
+	T = M + Q
+	.
+\end{align}
+This relationship is confirmed in the bottom left panel of figure \ref{fig:CRP:averagerelations1}. 
+One might have expected that ribosomal expression also factors into the relationship between $M$ and $Q$ --- e.g. $T=Q+M+R$ with $R$ the ribosomal concentration.
+Surprisingly, equation \ref{eq:CRP:sumconstant} implies that this is not the case here; $R$ either remains constant or $R$ does change with $M$ but does not affect $Q$.
+% See also notes 23-3, p.12 for this.
+%
+(Note that the observations in \cite{You2013} are in wild type cells; so the observations here do not necessarily contradict their observations.)
+%
+In any case, the steady state condition implies that $\phi_M(\text{cAMP}) = M$ (equation \ref{eq:CRP:odeM}), and thus that we can set the concentration of $M$ directly by adjusting the supplied cAMP concentration.
+In other words: $M \propto \text{cAMP}$.
+Furthermore, Towbin et al. observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the optimality curve, or "O-curve" \cite{Towbin2017}.
+We indeed observe a similar relationship, as shown in figure \ref{fig:CRP:averagerelations1}. 
+Towbin et al. derive a functional form for this relationship, but for simplicity we have fitted a 3rd degree polynomial to this O-curve, i.e.
+\begin{align}
+	\label{eq:CRP:muwithCRP}	
+	\lambda = f_\lambda(M) = a M^2 + b M + c
+	,
+\end{align}
+where $a$, $b$ and $c$ are fitting parameters.
+%
+Using the relationships we have seen so far (figure \ref{fig:CRP:averagerelations1}), 
+we can predict the relationships between the parameter pairs 
+$\lambda\text{-}Q$, $p_M\text{-}p_Q$, $p_M\text{-}\lambda$, and $p_Q\text{-}\lambda$.
+%$\lambda$-$Q$, $p_M$-$p_Q$, $p_M$-$\lambda$, and $p_Q$-$\lambda$.
+%
+Firstly, the relationship between $\lambda$ and $Q$ is defined by: 
+\begin{align}
+	\label{eq:CRP:muwithQ}	
+	\lambda = f_\lambda(T-Q)
+	,
+\end{align}
+which is indeed supported by the top left panel in figure \ref{fig:CRP:averagerelations2}.
+%
+Secondly, the relationships between $p$ and $\lambda$ can be parameterized by $M$ and $Q$: 
+\begin{align}
+	\label{eq:CRP:pmu}	
+	\left(p_M, \lambda\right) & = \left(M f_\lambda(M), f_\lambda(M)\right) \nonumber \\ 
+	\left(p_Q, \lambda\right) & = \left(Q f_\lambda(T-Q), f_\lambda(T-Q)\right)
+	;
+\end{align}
+which can be found using the steady state condition and \ref{eq:CRP:odeM}. These equalities in equation \ref{eq:CRP:pmu} are corroborated by the bottom left and bottom right panels in figure \ref{fig:CRP:averagerelations2}.
+%
+Thirdly, we find that $p_M$ and $p_Q$ can be related through parameterizing $(p_M, p_Q)$ by $M$:
+%
+\begin{align}
+	\label{eq:CRP:pMpQ}	
+	\left(p_M, p_Q\right) = 
+	\left(M f_\lambda(M), (T-M) f_\lambda(M)\right)
+	.
+\end{align}
+This relationship is indeed confirmed in the top right panel of figure \ref{fig:CRP:averagerelations2}.
+%
+Note that no additional fitting was performed in figure \ref{fig:CRP:averagerelations2}.
+
+\subsubsection*{Conclusion}
+
+In conclusion, three ingredients determine the steady state relationships between metabolism, constitutive protein expression, and growth in this chapter: 
+(1) The interaction between protein production and dilution that set the concentration, 
+(2) the concave relationship ("O-curve") between metabolism and growth (figure \ref{fig:CRP:averagerelations1} bottom right panel) and
+(3) the fact that the total concentration metabolic and constitutive expression remains constant.
+%
+For a more extensive treaty and mathematical description of the steady-state CRP regulation the reader is referred to Towbin et al. \cite{Towbin2017}.
+%
+The relationships presented here are considered sufficient to put the dynamic relationships in this chapter in context.
+
+
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
+	\centering
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_Y.pdf}
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_C.pdf}
+	%
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_sum_YC.pdf}
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_Y_mu.pdf}		
+	\caption{ 
+		\textbf{Fitted relationships between concentration, production rate and growth rate.}
+		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
+		(Top) Concentration is predicted to equal production rate divided by growth rate. Though there is a minor offset to the line x=y (solid black line) as shown by the fits (dashed and dotted lines), this prediction seems approximately correct. (The dotted line only is based on the average offset, whereas the dashed line is a polynomial fit.)
+		(Bottom left) This panel shows that the sum of the metabolic and constitutive reporter concentrations remains approximately equal. The mean sum is 445 a.u./px.
+		(Bottom right) This panel shows the concave relationship between growth and the metabolic reporter concentration. The dashed line shows a third degree polynomial fit to the data points. The fitted parameters (equation \ref{eq:CRP:muwithCRP}) are $a=-4.38\cdot10^{-7}$, $b=2.55\cdot10^{-4}$ and $c=-0.0276$.
+	}
+	\label{fig:CRP:averagerelations1}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
+	\centering
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_C_mu.pdf}
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_prodC_prodY.pdf}	
+	%
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_pY_mu.pdf}
+	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_pC_mu.pdf}	
+	\caption{ 
+		\textbf{Observed and predicted (not fitted) relationships.}
+		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
+		(Top left) The observed and predicted (equation \ref{eq:CRP:muwithQ}) relationship between the constitutive reporter production and growth rate.
+		(Top right) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the constitutive and metabolic production rates.
+		(Bottom left) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the metabolic production rate and growth rate.
+		(Bottom right) The observed and predicted (equation \ref{eq:CRP:pMpQ}) relationship between the constitutive production rate and growth rate.
+		%
+	}
+	\label{fig:CRP:averagerelations2}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
