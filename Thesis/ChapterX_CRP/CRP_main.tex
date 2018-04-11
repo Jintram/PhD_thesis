@@ -33,17 +33,17 @@
 \chapter{CRP responds dynamically to internal noise}
 \label{chapter:CRP}
 
-\textit{Martijn Wehrens, Laurens H.J. Krah, Benjamin D. Towbin, Rutger Hermsen, Sander J. Tans}
-
-\section*{Abstract}
-
-Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
+%\textit{Martijn Wehrens, Laurens H.J. Krah, Benjamin D. Towbin, Rutger Hermsen, Sander J. Tans}
 %
-In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
-
-% Chapter clear first page
-\thispagestyle{empty}
-\clearpage
+%\section*{Abstract}
+%
+%Some regulatory interactions are known to help the cell deal with changes in the environment, but it is unclear how these regulatory interactions respond to concentration changes due to stochastic fluctuations.
+%%
+%In this chapter, we address this open question by looking at the cAMP receptor protein (CRP), of which the 
+%
+%% Chapter clear first page
+%\thispagestyle{empty}
+%\clearpage
 
 \section*{Introduction}
 
@@ -112,32 +112,18 @@ by concentration fluctuations in the intracellular environment due to noise?
 %\subsection*{The metabolic regulator CRP recieves both stochastic and environmental input}
 \subsection*{Stochastic and environmental input in a model system: CRP}
 
-%To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
-To investigate this question we looked at a master regulator of metabolic enzyme expression in \textit{Escherichia coli}.
+To investigate this question, we look at the regulation of metabolic enzyme expression by the cAMP receptor protein (CRP).
 %
-Metabolic enzymes convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
+Activated CRP stimulates metabolic enzyme expression, but CRP is inhibited by the metabolites that are produced by these enzymes \cite{You2013}.
 %
-It has been suggested that the cAMP receptor protein (CRP)\footnote{CRP was previously called catabolite gene activator protein, or CAP} 
-controls the expression level of all catabolic genes in concert \cite{You2013, Hui2015, Kochanowski2017};
+It was recently discovered that when cells are grown in environments with different sugar sources, 
+%on different sugar sources, 
+this sensing of the metabolite concentrations by negative feedback 
+is the regulatory interaction which
+allows cells to express the appropriate amount of enzymes for most sugar sources \cite{Towbin2017}.
 %
-CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011, Grainger2005, Zheng2004}.
-%
-Amidst these targets are also all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
-%
-CRP is allosterically activated by the small signaling molecule cyclic adenosine monophosphate (cAMP), 
-which is produced from ATP by the enzyme adenylate cyclase (CyaA).
-Adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
-(Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
-%
-Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression, see also figure \ref{fig:CRP:fig0}.A. 
-It is thought that this negative feedback in the CRP regulatory system
-is responsible for adjusting the concentration of metabolic enzymes in the cell to handle the carbohydrate nutrient source available to the cell appropriately \cite{Towbin2017}.
-%
-%More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
-%The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
-%and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
-%
-However, when the cell is growing steadily on a single carbon source for an extended period of time, 
+However, when a population of cells is growing in a constant environment with a constant carbon source,
+%However, when the cell is growing steadily on a single carbon source for an extended period of time, 
 there is still a large heterogeneity observed in growth rates and metabolic enzyme expression levels \cite{Kiviet2014} (see also chapter \ref{chapter:literaturereview}).
 %
 %Observations by Kiviet et al. suggest that single cell stochastic fluctuations in enzyme levels result in changes in metabolite fluxes, and eventually fluctuations in growth rate \cite{Kiviet2014}.
@@ -151,43 +137,88 @@ That would imply that also the CRP system receives a large variation of inputs i
 %
 We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.
 
+\subsection*{The CRP system}
+
+Before turning to how we manipulate and measure the dynamics of the CRP system, 
+% and perform measurements on it, 
+we would also like to provide some context on this considerably researched system \cite{Keseler2017, Fic2009, Deutscher2008, Gorke2008}.
+%
+%To investigate this question, we take a closer look at the dynamics of regulation by the cAMP receptor protein (CRP; previously called catabolite gene activator protein, or CAP). 
+%To investigate this question we looked at a master regulator of metabolic enzyme expression in \textit{Escherichia coli}.
+%
+CRP might be called a master regulator of metabolic enzyme expression in \textit{Escherichia coli}\footnote{CRP was previously called catabolite gene activator protein, or CAP.}, since
+%
+it is thought to % that CRP 
+control the expression level of all catabolic genes in concert \cite{You2013, Hui2015, Kochanowski2017}.
+%
+Catabolic enzymes 
+are of major importance to the cell, 
+as they
+convert large carbohydrate molecules into smaller metabolites, and generate energy for the cell during this process in the form of ATP \cite{Nelson2005}.
+%
+CRP controls 378 promoters, among which 70 transcription factors \cite{Green2014, Shimada2011, Grainger2005, Zheng2004}.
+%
+Amidst these targets are also all enzymes in the TCA cycle, see also figure \ref{fig:CRP:figOverviewTCARegulation}.
+%
+CRP is allosterically activated by the small signaling molecule cyclic adenosine monophosphate (cAMP), 
+which is produced from ATP by the enzyme adenylate cyclase (CyaA).
+%
+The cell can also control cAMP concentration by active degradation, 
+which is catalyzed by the 
+% An important other way by which the cell controls the cAMP concentrations is active degradation by the 
+cAMP phosphodiesterase (CpdA) enzyme\footnote{It is sometimes mentioned in literature that cAMP is also actively exported from the cell by the membrance channel protein TolC, but the primary publication that made this claim has been retracted \cite{Hantke2011}.}.
+%
+cAMP production by adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
+(Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
+%
+Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression, see also figure \ref{fig:CRP:fig0}.A. 
+%
+As mentioned, 
+it is thought that this negative feedback in the CRP regulatory system
+is responsible for adjusting the concentration of metabolic enzymes in the cell to handle the carbohydrate nutrient source available to the cell appropriately \cite{Towbin2017}.
+%
+%More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
+%The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
+%and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
+
+
 \subsection*{CRP with and without processing stochastic input}
 
-To find out whether the CRP system responds to stochastic input we need to decouple the responses to stochastic and environmental inputs.
+To find out whether the CRP system responds to stochastic input we needed to decouple the responses to stochastic and environmental inputs.
 %To address this question we need to be able to decouple the responses to these two different inputs.
 %
-To this end, we employed two strains that have the appropriate mean CRP activity for the sugar source they're grown on, 
-but where in one strain the feedback loop cannot respond to stochastic input it might receive.
+To this end, we employed two strains that had the appropriate mean CRP activity for the sugar source they were grown on, 
+but where in one strain the feedback loop could not respond to stochastic input it might receive.
 %
 The two strains we used are a wild type MG1655, and a \textit{cyaA}, \textit{cpda} null mutant \cite{Towbin2017}.
-(\textit{cyaA} produces cAMP and \textit{cpda} degrades cAMP.)
+As mentioned, \textit{cyaA} enables cAMP production and \textit{cpda} cAMP degradation, 
 % note $\Delta$ is upright by default
 %
-The latter strain is unable to modify its cAMP levels, and thus has a crippled feedback loop that cannot respond to both environmental and stochastic input signals.
+which means that the \textit{cyaA}, \textit{cpda} null mutant was unable to modify its cAMP levels, and had a crippled feedback loop that could not respond to both environmental and stochastic input signals.
 %
 %This means these cells cannot use their feedback regulation to determine the correct mean CRP activity they should have in their environment. 
 %
 To repair this strain's ability to express the right amount of metabolic enzymes with regard to their environment, 
-we provide cAMP extracellularly in the cells' growth medium.
+we provided cAMP extracellularly in the cells' growth medium.
 %
-This bypasses the feedback loop and directly sets the correct CRP activity for the sugar they are growing on \cite{Towbin2017},
-but leaves the feedback loop unable to respond to stochastic input signals.
+This bypassed the feedback loop and directly set the correct CRP activity for the sugar they were grown on \cite{Towbin2017},
+but left the feedback loop unable to respond to stochastic input signals, see also figure \ref{fig:CRP:fig0}.B.
 %
-This experimental design allows us to compare a cell that has the correct mean CRP activity and \textit{can} respond to stochastic input signals, 
-with a cell that has the correct mean CRP activity but \textit{cannot} respond to stochastic input signals.
+This experimental design allowed us to compare a cell that has the correct mean CRP activity and \textit{could} respond to stochastic input signals, 
+with a cell that had the correct mean CRP activity but \textit{could not} respond to stochastic input signals.
 %
-We then use single cell time lapse microscopy and fluorescent labeling to determine single cell growth and CRP dynamics. 
+We then used single cell time lapse microscopy and fluorescent labeling to determine single cell growth and CRP dynamics. 
 %
-We first use these single cell technique to see whether the CRP system can respond on timescales at which the stochastic fluctuations take place.
+We first used these single cell technique to see whether the CRP system could respond on timescales at which the stochastic fluctuations take place.
 %
-Secondly, we use cross-correlation analyses to quantify the dynamical growth and CRP behavior of the two strains described above.
+Secondly, we used cross-correlation analyses to quantify the dynamical growth and CRP behavior of the two strains described above.
 %
-This shows that the CRP system can indeed operate on timescales that are comparable to time scales of stochastic fluctuations, and moreover that
+This showed that the CRP system can indeed operate on timescales that are comparable to time scales of stochastic fluctuations, and moreover that
 the dynamics of metabolism and growth change remarkably when its regulation is not able to respond to stochastic inputs.
 %
-These observations suggest that regulatory interactions also respond to stochastic inputs.
+These observations suggested that regulatory interactions also respond to stochastic inputs.
 %
-This implies in turn that our notion of steady state behavior should be updated, 
+This implied in turn that our notion of steady state behavior should be updated, 
 as the cellular state might be constantly changing in a way that is facilitated by regulatory interactions.
 
 
@@ -196,7 +227,11 @@ as the cellular state might be constantly changing in a way that is facilitated 
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig0.pdf}
 	\caption{ 
-		(A) 
+		(A) A simple diagram that depicts the regulation of metabolic enzyme expression in \ecoli. Metabolic proteins import sugars and convert these large carbohydrate molecules to smaller metabolites, a process in which the cellular energy source ATP is produced. The metabolites are also a cellular resource and are building blocks for other cellular components, and are thus needed for cellular growth. They also inhibit cAMP production, thereby inhibiting CRP activation by cAMP. CRP is a master regulator (hence represented by a small ship's wheel): the concentration of activated CRP sets the metabolic enzyme concentration.
+        (B) In our \textit{cyaA}, \textit{cpda} null mutant, the cell is unable to modify cAMP concentration and
+        metabolites are thus unable to set the CRP activity (indicated by the black cross) nor metabolic enzyme expression. 
+        Instead, we supply cAMP in the medium such that we can artificially control metabolic enzyme expression. 
+        This external setting of the cAMP concentration makes that these mutants are unable to respond to intracellular fluctuations of metabolites.
 	}
 	\label{fig:CRP:fig0}
 \end{figure}
@@ -215,7 +250,8 @@ as the cellular state might be constantly changing in a way that is facilitated 
 
 Our hypothesis is that stochastic fluctuations in metabolic enzyme concentration result in metabolite concentration changes, which in turn lead to a response by the CRP system.
 %
-To test this hypothesis, we first subjected the CRP system to artificial cAMP fluctuations to see whether it can respond to such quick fluctuations.
+We first wanted to see whether the CRP system was at all capable of responding to a quickly changing input signal, such as stochastic fluctuations might generate.
+% To test this hypothesis, we first subjected the CRP system to artificial cAMP fluctuations to see whether it can respond to such quick fluctuations.
 %
 %However, the time scales at which these stochastic fluctuations occur might be too fast 
 %for the CRP regulatory system to respond.
@@ -227,7 +263,7 @@ In this paragraph we show that the CRP system indeed responds considerably at ra
 To probe the response of the CRP system to a quickly changing signal, 
 %we subjected 
 we used
-our \textit{cyaA}, \textit{cpda} null mutant strain that does not respond to intracellular metabolic feedback (we'll refer to this strain as $\Delta$cAMP from hereon for convenience).
+our \textit{cyaA}, \textit{cpda} null mutant strain that does not respond to intracellular metabolic feedback (we will refer to this strain as $\Delta$cAMP from hereon for convenience).
 Instead of the intracellular signal, we provided it with an artificial cAMP signal by providing high (2100$\upmu$m) or low (43$\upmu$m) concentrations of cAMP in the cellular growth medium.
 %
 Additionally, 
@@ -241,7 +277,7 @@ to assess the response of the CRP system we equipped these cells with a chromoso
 %To be able to do this, we used a reporter construct that reads out the expression level of metabolic enzymes \cite{Towbin2017}.
 %
 %
-This reporter construct uses the lac operon promoter from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0}.\red{X}.
+This reporter construct uses the lac operon promoter from which the lacI binding site has been removed, see figure \ref{fig:CRP:fig0sup}.
 The promoter is fused to a fluorescent reporter protein (either gfpmut2 or mVenus, depending on the experiment) which allowed us to
 %estimate 
 assess
@@ -250,14 +286,14 @@ the expression level of metabolic enzymes as induced by CRP.
 %
 %
 %
-We grew these cells in our microfluidic device (see methods section) under the microscope, and 
+We grew these cells in our microfluidic device (see methods section and chapter \ref{chapter:methods}) under the microscope, and 
 first alternated between high and low concentrations of cAMP at 1hr intervals, and then alternated between the same concentrations at 5hr intervals.
 %
-Figure \ref{fig:CRP:fig1}.A shows the how the concentration of metabolic reporter responds to the quickly changing cAMP system. 
+Figure \ref{fig:CRP:fig1}.A shows how the concentration of metabolic reporter responded to the quickly changing cAMP signal. 
 %
 During fast switches (1 hours) the signal went up and down substantially, consistent with respectively the high and low cAMP signal supplied, with a minimum of 215 a.u. and a maximum of 258 a.u..
 %
-During slow switches (5 hours) it becomes apparent that the signal did not reach an equilibrium value during the fast switching behavior, as the metabolic reporter reaches a lower and higher minimum and maximum respectively at 144 a.u. and 407 a.u.. 
+During slow switches (5 hours) it became apparent that the signal did not reach an equilibrium value during the fast switching behavior, as the metabolic reporter reached a lower and higher minimum and maximum respectively at 144 a.u. and 407 a.u.. 
 %
 Importantly, the behavior in the regime with fast switches suggested that the concentrations of metabolic enzymes under the control of a CRP promoter can respond quickly and substantially in response to a varying input signal. 
  
@@ -267,11 +303,11 @@ This led to our next question: what is the effect of these changes in metabolic 
 %
 To gauge this, we looked at how cellular growth rate responded to the fluctuations in cAMP signal. 
 %
-Figure \ref{fig:CRP:fig1}.B shows that also the growth rate varies substantially, again suggesting the cell is susceptible to fluctuations in regulatory molecules. 
+Figure \ref{fig:CRP:fig1}.B shows that also the growth rate varied substantially, again suggesting the cell is susceptible to fluctuations in regulatory molecules. 
 %
-However, the growth rate behavior shows some puzzling features. 
+However, the growth rate behavior showed some puzzling features. 
 %
-Firstly, it appear that in the fast switch regime the high cAMP concentration immediately results in a sustained faster growth rate.
+Firstly, it appeared that in the fast switch regime the high cAMP concentration immediately results in a sustained faster growth rate.
 This is unexpected, as too much metabolic enzyme expression is expected to come with the cost of superfluous protein production, and might even lead to a detrimental unbalanced ratio of fluxes in the cell \cite{Ray2016}.
 %
 However, when looking at the slower switch regime we see that this signal also goes down after while. 
@@ -290,7 +326,7 @@ Conversely, looking at the part of the trace that starts at the leftmost red squ
 %
 The rest of the trace is then consistent with traversing on the right part of an optimum curve.
 %
-An explanation for this part of the trace being inconsistent with the earlier discussed part of the trace, and the quick growth rate response without concentration change, 
+An explanation for this part of the trace not overlapping with the earlier discussed part of the trace, and the quick growth rate response without concentration change, 
 could be that cAMP also has some post-translational roles in the cell. 
 This would explain the quick responses both in the fast-switching regime and the quick response to an upshift of cAMP.
 
@@ -410,7 +446,7 @@ how do the stochastic deviations \textit{from} mean behavior relate to the mean 
 To further probe the behavior of cellular populations, we exposed our $\Delta$cAMP cells to two additional conditions: 
 %
 %To further investigate the behavior of cells , we exposed our $\Delta$cAMP cells to two additional constant conditions:
-respectively 80 or 5000 $\upmu$M cAMP (further conditions were equal to the 800 $\upmu$M cAMP condition).
+respectively 80 or 5000 $\upmu$M cAMP (further conditions were equal to the earlier experiments).
 %
 The behavior of cells on the level of population averages is reasonably straightforward to understand.
 %
@@ -490,7 +526,8 @@ to show that metabolic fluctuations would transfer to cellular growth rate if it
 %
 We start by investigating the effect that single cell metabolic concentration fluctuations have on growth rates.
 %
-The cross-correlation $R_{M,\mu}(\tau)$ will show us the relation between the metabolic reporter concentration and past and future growth rates.
+We use the 
+cross-correlation $R_{M,\mu}(\tau)$ to show us the relation between the metabolic reporter $M$ concentration and past and future growth rates $\mu$.
 %
 More precisely, as explained in chapter \ref{chapter:methods}, the cross-correlation $R_{M,\mu}(\tau)$ calculates the average correlation between $M$ at time $t$ with $\mu$ at time $t+\tau$.
 %
@@ -508,13 +545,14 @@ But secondly and more importantly,
 %
 %Not only is the difference between correlations in wild type and $\Delta$cAMP cells that was also observed earlier in the scatter plots apparent from the values at delay $\tau=0$,
 it becomes apparent that the concentration-growth relationship of the wild type cells shows a strong negative correlation at negative delays, 
-whilst the $\Delta$cAMP cells show a relationship that is positive for most delays and that is rather symmetric around the y-axis, or perhaps even has slightly more positive weight at positive $\tau$ values than at negative $\tau$ values.
+whilst the $\Delta$cAMP cells show a relationship that is positive for most delays and that is rather symmetric around the y-axis, or perhaps even has slightly more positive weight at positive $\tau$ values.
+% than at negative $\tau$ values.
 %
 %Not only is the correlation that was observed earlier in the scatter plots apparent from the value at delay $\tau=0$, the concentration-growth relationship also shows a strong negative correlation at negative delays, whilst for the .
 %
 Previous studies showed that investigating the relationship between protein production rates and growth rates (in addition to to protein concentrations and growth rates) can give further insights in the dynamics of metabolism and growth \cite{Kiviet2014}.
 %
-Hence, we here also tracked the production rate $p$ of our reporters.
+Hence, we here also calculated the production rate $p$ of our reporters.
 %
 The scatter plots for these relationships are shown in supplemental figure \ref{fig:CRP:fig2sup}.
 %
@@ -527,10 +565,10 @@ which can map a production rate to two values.
 When we use the metabolic production rates $p_M$ to calculate $R_{p_M,\mu}$ cross-correlations, we see a similar difference between wild type cells and $\Delta$cAMP cells as in the $R_{M,\mu}$ curves:
 the wild type cells show more correlation on the left side of the y-axis (albeit slightly positive correlations), whilst the $\Delta$cAMP cells show more correlation on the right side of the y-axis.
 %
-As with the scatter plots, we would like to check whether these changes in cellular behavior are specific to CRP regulation,
+As with the scatter plots, we wanted to check whether these changes in cellular behavior are specific to CRP regulation,
 or reflect some general change in the cellular state.
 %
-To this end, we also generated cross-correlations $R_{Q,\mu}$ and $R_{p_Q,\mu}$, which correlate the concentration $Q$ and production $p_Q$ of the constitutive reporter $Q$ with growth $\mu$.
+To this end, we generated cross-correlations $R_{Q,\mu}$ and $R_{p_Q,\mu}$, which correlate the concentration $Q$ and production $p_Q$ of the constitutive reporter $Q$ with growth $\mu$.
 %
 These curves are plotted in figure \ref{fig:CRP:fig3}.C-D and we can make two observations from them.
 Firstly, the curves for the wild type and $\Delta$cAMP cells are highly similar.
@@ -538,9 +576,12 @@ Firstly, the curves for the wild type and $\Delta$cAMP cells are highly similar.
 This indicates that the constitutive reporter has similar dynamics both in wild type cells as in $\Delta$cAMP cells.
 %
 This is consistent with our hypothesis that specifically the interaction between growth and metabolism changes due to the absence of the CRP negative feedback loop, 
-which in turn is consistent with the idea that the feedback loop is performing an active role in the wild type cells in response to stochastic signals.
+but not other dynamics such as constitutive expression - growth dynamics.
 %
-Secondly, the constitutive dynamics as shown by the $R_(\tau)$ curves appear very similar to the dynamics of metabolism and growth in the wild type cells.
+% which in turn 
+This is in turn consistent with the idea that the feedback loop is performing an active role in the wild type cells in response to stochastic signals.
+%
+Secondly, the constitutive reporter dynamics as shown by the $R(\tau)$ curves (figures \ref{fig:CRP:fig3}.C-D) appear very similar to the dynamics of metabolism and growth in the wild type cells (figure \ref{fig:CRP:fig3}.A).
 %
 %To further interpret this similarity and the curves themselves, we turn to a minimal model of the cell.
 These observations also highlight that the dynamic interactions between cellular parameters go beyond instantaneous relationships that are captured by scatter plots, but instead show richer interactions that act over delays. 
@@ -596,7 +637,7 @@ but that with feedback, the transmission of these fluctuations is suppressed.
 
 %The dynamic interaction between enzyme expression and growth (or in general, protein expression and growth) can be modeled using a system of coupled differential equations.
 %
-To establish our model, we draw on previous models by Dunlop et al. \cite{Dunlop2008}, Kiviet et al, \cite{Kiviet2014} and Towbin et al. \cite{Towbin2017}.
+To establish our model, we drew on previous models by Dunlop et al. \cite{Dunlop2008}, Kiviet et al. \cite{Kiviet2014} and Towbin et al. \cite{Towbin2017}.
 %We draw here on previous models \cite{Dunlop2008, Kiviet2014, Towbin2017}.
 %
 The Kiviet et al. model used coupled stochastic linear differential equations to elucidate the the dynamics between growth $\mu$, enzyme production $p$ and enzyme concentration $C$. % \cite{Kiviet2014}.
@@ -622,7 +663,7 @@ Similar to the Kiviet model, the influence of any parameter $X$ on any other par
 	.
 \end{align*}
 %
-And also like Kiviet et al. we added terms that introduced noise into the system, as well as dampening terms, to allow us to introduce stochastic fluctuations into our model.
+Furthermore, also like Kiviet et al. we added terms that introduced noise into the system, as well as dampening terms, to allow us to introduce stochastic fluctuations into our model.
 Using such coupling terms and noise sources, 
 we created a model for the parameters $\mu$, $p$, $C$ and $x$ that we think represents the biology of the cell, 
 %our model is wired in a way that we think represents the biology of the cell,
@@ -640,7 +681,7 @@ In turn, the protein concentration is set by production rate $p$ and dilution ra
 \dot{C} = p - \mu C
 .
 \end{align*}
-When a protein is enzymatically active, concentration fluctuations might influence the metabolite concentration $x$ through transmission coefficient $T_{{x}\leftarrow{C}}$.
+When a protein is enzymatically active, protein concentration fluctuations might influence the metabolite concentration $x$ through transmission coefficient $T_{{x}\leftarrow{C}}$.
 %
 % MAYBE WE WANT TO SAY THIS ALL THE WAY IN THE END FOR THE AHA-ERLEBNIS?
 %Interestingly, this model can also allow for a simple interpretation of the feedback, 
@@ -652,31 +693,33 @@ it might be implemented as a negative contribution to the transmission coefficie
 We propagated this model numerically to simulate different scenarios, which we can use as reference to understand our experimental data.
 %
 %For a more detailed discussion about this model, 
-See supplementary note II for a more detailed discussion on the model.
+See supplementary note II for a more detailed description of the model.
 
 %\subsubsection*{Connecting experimental cross-correlations to model dynamics}
 \subsubsection*{The model connects experimental cross-correlations to types of dynamics}
 
 Previously, three biologically relevant scenarios of how fluctuations transmit from one parameter to the next were presented \cite{Kiviet2014}.
 %
-Our extended model can reproduce these scenarios, which are the dilution mode, the catabolic mode and the common mode.
+%Our extended model can reproduce these scenarios, 
+We first used our model to reproduce these scenarios,
+which are the dilution mode, the catabolic mode and the common mode.
 %
-The model simulates for each scenario the dynamics between our experimentally measured observables, $p$, $C$ and $\mu$,
-and predicts the appearance of the associated cross-correlations %behavior of the 
+The model simulated for each scenario the dynamics between our experimentally measured observables, $p$, $C$ and $\mu$,
+and predicted the appearance of the associated cross-correlations %behavior of the 
  $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$, which can be measured experimentally. % cross-correlations associated with each scenario.
 %
 In the first scenario, called the dilution scenario, 
 %Firstly, in the dilution scenario, 
 fluctuations starting outside the metabolism that affect growth are the largest. 
-This  leads to dynamics in which dilution by volume growth is the dominates the cross-correlations.
+This  leads to dynamics in which dilution by volume growth dominates the cross-correlations.
 Fluctuations in growth rate are thus followed by negatively correlated fluctuations in concentration, as expressed by the negative values of $R_{C,\mu}(\tau)$ at negative $\tau$ values.
-Since volume growth does not interact with protein production, the correlation between our other pair of observables $p$ and $\mu$ will be zero for all $\tau$ values.
+Since volume growth does not interact with protein production, the correlation between our other pair of observables $p$ and $\mu$ was found to be zero for all $\tau$ values.
 Both the $R_{C,\mu}(\tau)$ cross-correlations and the $R_{p,\mu}(\tau)$ cross-correlation for the dilution scenario are shown in figure \ref{fig:CRP:fig4}.B.
 %
 In the second scenario, the catabolic scenario,
 %Secondly, in the catabolic scenario, 
 fluctuations in $p$ dominate the system, and are propagated via $C$ and $x$ to $\mu$.
-This leads to  positive values of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ at positive $\tau$ values, 
+This led to  positive values of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ at positive $\tau$ values, 
 %Cross-correlations for this scenario are 
 as shown in figure \ref{fig:CRP:fig4}.C.
 Such a mode implies that concentration fluctuations can have cell-wide consequences, even affecting the growth rate of the cell.
@@ -685,49 +728,51 @@ Such a mode implies that concentration fluctuations can have cell-wide consequen
 %When observed in our experimental context, this would imply that 
 %
 Finally, the common scenario relates to propagation of noise that arises in the metabolite concentration as a result of fluctuations arising in metabolic processes.
-This mode represents a situation where such fluctuations have simultaneous effects on growth and protein production, leading to positive values of $R_{C,\mu}(\tau)$ for both 
-positive and negative $\tau$ values, whilst correlations with concentration lag slightly behind.
+This mode represents a situation where such fluctuations have simultaneous effects on growth and protein production, which led to positive values of $R_{C,\mu}(\tau)$ for both 
+positive and negative $\tau$ values, whilst correlations with concentration lagged slightly behind.
 Cross-correlations for the common scenario are shown in figure \ref{fig:CRP:fig4}.D.
 %
-We can now use these scenarios as a reference to interpret our own experimentally obtained cross-correlations.
+We then proceeded to use these scenarios as a reference to interpret our own experimentally obtained cross-correlations.
 
 %\subsubsection*{The experimental cross-correlations point to an active role of the negative feedback, even in a constant environment}
-\subsubsection*{Experiments hint to an active role of feedback in constant environment}
+%\subsubsection*{Experiments hint to an active role of feedback in constant environment}
 %\subsubsection*{Experiments are consistent with an active role for negative feedback in a constant environment}
+\subsubsection*{An active role of feedback in constant environment}
 
-Firstly we inspect the experimentally obtained cross-correlations of the constitutive reporter (figure \ref{fig:CRP:fig3}.C and \ref{fig:CRP:fig3}.D).
+Firstly we inspected the experimentally obtained cross-correlations of the constitutive reporter (figure \ref{fig:CRP:fig3}.C and \ref{fig:CRP:fig3}.D).
 Expression of the constitutive reporter is not expected to influence metabolic processes, nor is its expression a proxy for expression of other proteins that should.
 Hence, expression of the constitutive reporter is not expected to affect growth.
-Consistently, the cross-correlations appear to match with the dilution scenario, in which protein fluctuations are not correlated with future growth correlations.
+Consistently, the cross-correlations appeared to match with the dilution scenario, in which protein fluctuations are not correlated with future growth correlations.
 %
 This is the case both for the wild type cells and the feedback-less $\Delta$cAMP cells.
 %
-Next, we look at the dynamics of the metabolic reporter, which is distinctively different for the wild type cells in comparison with the feedback-less $\Delta$cAMP cells (figure \ref{fig:CRP:fig3}.A and \ref{fig:CRP:fig3}.B).
+Next, we looked at the dynamics of the metabolic reporter, which was distinctively different for the wild type cells in comparison with the feedback-less $\Delta$cAMP cells (figure \ref{fig:CRP:fig3}.A and \ref{fig:CRP:fig3}.B).
 %
-Surprisingly, the wild type cells also show cross-correlations that seem similar to the dilution scenario.
-This implies that in wild type cells with feedback regulation, no fluctuations are propagated from metabolic expression to growth.
+The wild type cells also showed cross-correlations that seem similar to the dilution scenario.
+This implied that in wild type cells with feedback regulation, no fluctuations are propagated from metabolic expression to growth.
 %
-On the other hand, the $\Delta$cAMP cells without feedback, show different cross-correlations.
+On the other hand, the $\Delta$cAMP cells without feedback, showed different cross-correlations.
 %
-This is harder to directly connect to one of the scenarios, as the combination of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ curves does not seem to fit any of the three presented scenarios.
+This was harder to directly connect to one of the scenarios, as the combination of $R_{C,\mu}(\tau)$ and $R_{p,\mu}(\tau)$ curves did not seem to fit any of the three presented scenarios.
 %
 The experimental 
 %Specifically, 
-$R_{p,\mu}(\tau)$ cross-correlation shows a much higher peak than the $R_{C,\mu}(\tau)$ cross-correlation.
+$R_{p,\mu}(\tau)$ cross-correlation showed a much higher peak than the $R_{C,\mu}(\tau)$ cross-correlation.
 %
-This lead us to the hypothesis that this might be a combination of all three scenarios, where part of the positive $R_{C,\mu}(\tau)$ correlations from the common mode are counteracted by negative dilution mode $R_{C,\mu}(\tau)$ correlations,
+This led us to the hypothesis that the dynamics might be a combination of all three scenarios, where part of the positive $R_{C,\mu}(\tau)$ correlations from the common mode are counteracted by negative dilution mode $R_{C,\mu}(\tau)$ correlations,
 which might give the experimentally observed appearance of the cross-correlations.
 %
-Indeed, if we use our model to simulate a combination of all three scenarios, we can obtain cross-correlation curves that seem consistent with this theory; see figure \ref{fig:CRP:fig4}.E.
+Indeed, when we used our model to simulate a combination of all three scenarios, we obtained cross-correlation curves that seemed consistent with this idea; see figure \ref{fig:CRP:fig4}.E.
 %
-Perhaps we are now in a position to understand the effect of the negative feedback, 
+%Perhaps we are now in a position to understand the effect of the negative feedback, 
+This put us in a position where we could understand the effect of the negative feedback,
 %Might this also allow us to understand the effect of the feedback?
 %
-since we can introduce the effect of feedback on our hypothetical scenario for feedback-less cells.
+since we could introduce the effect of feedback in our hypothetical combined scenario for feedback-less cells.
 %
-(This is done by adding a negative component to the $x\rightarrow{p}$ coupling, i.e. decreasing $T_{x\leftarrow{p}}$ only.)
+(This was done by adding a negative component to the $x\rightarrow{p}$ coupling, i.e. decreasing $T_{x\leftarrow{p}}$ only.)
 %
-Strikingly, indeed, we see that if we add feedback to the mixed scenario presented in figure \ref{fig:CRP:fig4}.E, it begins to resemble the dilution mode --- see figure \ref{fig:CRP:fig4}.F.
+Strikingly, indeed, we saw that if we add feedback to the mixed scenario presented in figure \ref{fig:CRP:fig4}.E, it began to resemble the dilution mode --- as presented in figure \ref{fig:CRP:fig4}.F.
 %
 Thus, although this model is rather simple and a biological cell much more complicated, %it could give a hint of what is going on in the cell:
 the cross-correlations are consistent with modeling results 
@@ -774,8 +819,97 @@ Specifically, it suggests that the CRP regulation might help to filter out metab
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Discussion}
 
+
+
+
+
+
+
+
+\section*{Conclusions}
+
+In this chapter, 
+we investigated how the CRP regulatory networks responds to environmental inputs versus stochastic inputs.
+%
+A negative feedback loop, which inhibits CRP activity (through cAMP) 
+%and metabolic enzymes expression 
+when metabolite concentrations increase,
+is known to be responsible for adjusting metabolic enzyme expression to the growth medium of the cell.
+%
+We hypothesized that this regulatory interaction should respond equally strong to metabolite fluctuations that occur in the cell due to noise. 
+
+We first showed that 
+%To show that 
+this is a feasible idea, we first subjected the CRP system to a quickly changing cAMP input signal.
+To artificially control the input signal, we used $\Delta$cAMP cells that do not respond to internal regulation, but instead responded to the cAMP concentration that we provided in the cellular growth medium.
+We also introduced a reporter construct to gauge the metabolic enzyme expression levels.
+%\textit{cya} \textit{cpd} null mutants to 
+%
+The cellular response to an input that alternated between a high and low signal showed that 
+it takes hours before cells reach a new steady state, but much less than an hour before a change in metabolic expression or growth rate can be detected.
+%The cellular response to our alternating high/low signal showed that it takes a while before 
+%The response to an input that alternated between a high and a low signal in 1 or 5 hour blocks 
+%showed 
+%When we subjected cells to input that alternated between a high and a low cAMP signal in 1 or 5 hour blocks,
+%the metabolic enzyme expression and growth rate 
+%
+We thus concluded that cellular networks have the potential to quickly react to changing inputs such as stochastic fluctuations in metabolite concentration.
+
+Next, we wanted to 
+% expose 
+uncover
+the regulatory dynamics, if any, of the CRP system to stochastic input signals.
+%
+%We grew $\Delta$cAMP cells at
+%a cAMP concentration that was chosen such that the cells grow at wild growth rates.
+We grew  $\Delta$cAMP cells in 800 $\upmu$M cAMP,
+a concentration that was chosen to sustain growth rates that compare to wild type growth rates.
+%
+This resulted in cells that expressed the right amount of metabolic enzymes, 
+but whose CRP regulation could not respond to stochastically changing metabolite concentrations.
+%
+By comparing metabolic expression versus growth scatter plots of these $\Delta$cAMP cells with
+scatter plots of wild type cells (which could respond to both environmental and stochastic inputs)  
+we saw that metabolism-growth dynamics was markedly different between the two conditions.
+%
+Since the absence 
+%removal 
+of stochastic input to the CRP system resulted in a change in metabolism-growth dynamics, 
+we interpreted this as evidence that the CRP system responds to stochastic fluctuations in metabolite concentrations.
+
+To further investigate what these changes in dynamics mean, 
+we not only compared metabolic expression values with growth rates that were both obtained at the same point in time,
+but also calculated the correlation between metabolic expression with past, current and future growth rates.
+%
+This was done by calculating cross-correlations.
+%
+Using CCs we saw that correlations in the feedback-less $\Delta$cAMP cells and wild type were different over a wide range of delays.
+%
+This strengthened our idea that stochastic fluctuations have a profound effect on the CRP regulatory system dynamics.
+
+In order to understand the meaning of the difference in dynamics, we used a stochastic differential equation model.
+%
+This model showed that in experiments without feedback, metabolism-growth dynamics are consistent with modelled dynamics that are influenced by fluctuations in enzyme expression, metabolism itself and volume growth.
+% 
+However, with feedback, the metabolism-growth dynamics were consistent with modelled dynamics that were dominated by fluctuations in volume growth only.
+%
+This suggested to us that the negative feedback regulation might actually 
+%function to respond to stochastic input, which is to 
+prevent fluctuations in metabolism from spreading throughout the cellular biochemical network.
+
+
+
+\subsection*{More stuff}
+Rosenfeld et al. showed in a synthetic circuit that the gene regulatory function can be altered by noise \cite{Rosenfeld2005}.
+%
+Point out (when talking about positive CCs) that CV of noise does not change, so effect is subtle.
+(Or addition of another independent noise source has little effect on total noise?? - No, addition of two independent noises is 2x sigma [wiki:Sum\_of\_normally\_distributed\_random\_variables], which makes sense since your basically kicking a "particle" twice as hard.)
+%
+Also take a look at Briat et al. \cite{Briat2016}, which investigates a theoretical regulation system that can handle noise.
+% >> Not so interesting since this deals more with a hypothetical (ie theoretical) regulation system that can function in a noisy environment..
+% >> Perhaps mention at the end..
+ECOCYC SAYS "In addition, CRP is involved in many other processes, such as osmoregulation [Landis99, Balsalobre06], stringent response [Johansson00], biofilm formation [Jackson02], virulence [Balsalobre06], nitrogen assimilation [Mao07, Paul07, Tian01], iron uptake [Zhang05], competence [Sinha09a], multidrug resistance to antibiotics [Nishino08, Hirakawa06], and expression of CyaR sRNA [De09]."
 
 \section*{Methods}
 

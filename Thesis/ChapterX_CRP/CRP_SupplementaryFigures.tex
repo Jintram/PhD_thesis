@@ -32,6 +32,30 @@
 	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
 }%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{CRP-fig0sup.pdf}
+    \caption{ 
+        \textbf{The reporters used in this study.}
+        (Top panel) This panel shows the lac operon, on which these promoters are based.
+        The lac operon consists of three genes, \textit{lacZ}, \textit{lacY} and \textit{lacA}, that are required to metabolize lactose.
+        These three genes are regulated by the same promoter, which is activated by CRP. 
+        When there is no lactose, transcriptional repressor lacI blocks gene expression from the lac operon.
+        The \textit{lacI} gene is encoded at a location near to the lac operon, and is also displayed (it is also regulated by CRP).
+        When there is lactose, transcriptional repressor lacI is inhibited by lactose and LacZ, LacY and LacA are produced.
+        CRP recruits initiation factor sigma 70, which is followed by polymerase binding and transcription.
+        (It is furthermore also known that pleiotropic transcription factor H-NS can bind to the lac operon and repress gene expression.)
+        (2nd and 3rd panel) Using the lac promoter as a starting point, Towbin et al. created two reporters \cite{Towbin2017}.
+        Both posses mutations which result in the removal of the LacI binding site (indicated with a black cross).
+        The CRP sensitive promoter is then created by fusing the promoter to a GFP fluorescent protein sequence.
+        We call this the CRP reporter or metabolic reporter.
+        In the promoter of the second reporter, which is intented to measure background fluctuations in gene expression, also mutations have been introduced that remove the CRP binding site. Instead, a consensus binding site for the sigma 70 initiation factor is introduced, effectively making it a constitutive promoter that is otherwise similar to the promoter used for the CRP reporter. It was also fused to GFP, and we call this the sigma 70 reporter or constitutive reporter.
+        (Bottom panel) To be able to perform single cell measurements that involve both reporters, we replaced the GFP sequences of the metabolic and constitutive reporters with mVenus and mCerulean sequences respectively. 
+        The GFP reporters were introduced to cells using plasmids as vector,
+        whilst the mVenus and mCerulean reporters were chromosomally inserted at the \textit{intC} and \textit{galK} locations respectively.
+    }
+    \label{fig:CRP:fig0sup}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pulsing dynamics
