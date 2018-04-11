@@ -898,18 +898,51 @@ This suggested to us that the negative feedback regulation might actually
 %function to respond to stochastic input, which is to 
 prevent fluctuations in metabolism from spreading throughout the cellular biochemical network.
 
+\subsection*{Discussion & outlook}
+
+We have observed that the CRP metabolic regulation responds to stochastic fluctuations in cellular concentrations.
+%
+This is consistent with earlier observations where it was shown that 
+in a synthetic gene circuit, 
+regulatory interactions can result in different protein production rates due to cellular heterogeneity \cite{Rosenfeld2005}.
+%
+The negatively sloped relationship between metabolic enzyme expression and growth that we observe, 
+was also consistent with the so called C-line law \cite{You2013} that applies to growth on different conditions.
+%
+The idea behind that law is that some carbon sources provide a higher energy yield, which allows cells to express less metabolic enzymes and spent more resources on other cellular processes, leading to a higher growth rate.
+%
+Since cells in our experiments grow in the same environment, such an explanation does not apply to our observations.
+%
+We thus argue that the observed trend is to be understood in the context of the underlying growth-metabolism dynamics.
+
+Given the observed interaction of the negative feedback with the stochastic fluctuations, 
+we also investigated whether the coefficient of variation (CV) of the growth rate was higher for $\Delta$cAMP cells compared to wild type cells.
+%
+As supplementary figure \ref{fig:CRP:overviewsummaryparams} shows, it is indeed very slightly higher, but more data is required to make statistical claims.
+
+A question one might ask is: why do not all single cells simply grow at the rate of the fastest growing cell in the population?
+%
+Our observations suggest that stochastic fluctuations simply have to large cellular implications for cells to achieve that.
+%
+On the other hand, a versatile population might have an evolutionary benefit that outweighs the population average reduction in growth rate.
+%
+In other words, it could also be that there is no evolutionary pressure for cells to all become fast growing but similar individuals.
+
+To further probe these questions, one could device additional experiments.
+%
+For example, xylose is a sugar source for which it was observed that concentrations need to fall in a very narrow concentration range to observe growth at all \cite{Towbin2017personalcomm}. 
+%
+Growing cells in such a sugar source might provide an opportunity to observe a bigger effects of feedback removal than in growth on lactose.
+%
+Furthermore, an interesting control to compare our experiments involving $\Delta$cAMP cells with might be to investigate controlled expression of constitutively active CRP (CRP*), which could also be used to remove the negative feedback. A disadvantge of that experimental setup might be that the known constitutive forms of CRP have a rather low activity, or are still mildly responsive to cAMP \cite{Aiba1985, Garges1985}.
+%
+More generally, another question might be what 
+(1) CRP IS INVOLVED OTHER PROCESSES > CONSEQUENCES
+(2) HOW DOES THIS AFFECT OTHER REGULATION
 
 
-\subsection*{More stuff}
-Rosenfeld et al. showed in a synthetic circuit that the gene regulatory function can be altered by noise \cite{Rosenfeld2005}.
-%
-Point out (when talking about positive CCs) that CV of noise does not change, so effect is subtle.
-(Or addition of another independent noise source has little effect on total noise?? - No, addition of two independent noises is 2x sigma [wiki:Sum\_of\_normally\_distributed\_random\_variables], which makes sense since your basically kicking a "particle" twice as hard.)
-%
-Also take a look at Briat et al. \cite{Briat2016}, which investigates a theoretical regulation system that can handle noise.
-% >> Not so interesting since this deals more with a hypothetical (ie theoretical) regulation system that can function in a noisy environment..
-% >> Perhaps mention at the end..
-ECOCYC SAYS "In addition, CRP is involved in many other processes, such as osmoregulation [Landis99, Balsalobre06], stringent response [Johansson00], biofilm formation [Jackson02], virulence [Balsalobre06], nitrogen assimilation [Mao07, Paul07, Tian01], iron uptake [Zhang05], competence [Sinha09a], multidrug resistance to antibiotics [Nishino08, Hirakawa06], and expression of CyaR sRNA [De09]."
+
+
 
 \section*{Methods}
 
