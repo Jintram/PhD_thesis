@@ -898,50 +898,109 @@ This suggested to us that the negative feedback regulation might actually
 %function to respond to stochastic input, which is to 
 prevent fluctuations in metabolism from spreading throughout the cellular biochemical network.
 
-\subsection*{Discussion & outlook}
+\subsection*{Discussion and outlook}
 
-We have observed that the CRP metabolic regulation responds to stochastic fluctuations in cellular concentrations.
+Given the idea that fluctuations might be prevented from spreading, 
+%Given the observed interaction of the negative feedback with the stochastic fluctuations, 
+we also investigated whether the coefficient of variation (CV) of the growth rate was higher for $\Delta$cAMP cells compared to wild type cells.
+%
+As supplementary figure \ref{fig:CRP:overviewsummaryparams} shows, it is indeed very slightly higher, but more data is required to make statistical claims.
+
+
+Nevertheless, we observed that the CRP metabolic regulation responds to stochastic fluctuations in cellular concentrations.
 %
 This is consistent with earlier observations where it was shown that 
 in a synthetic gene circuit, 
 regulatory interactions can result in different protein production rates due to cellular heterogeneity \cite{Rosenfeld2005}.
 %
-The negatively sloped relationship between metabolic enzyme expression and growth that we observe, 
-was also consistent with the so called C-line law \cite{You2013} that applies to growth on different conditions.
+The negatively sloped relationship between metabolic enzyme expression and growth that we observe (figure \ref{fig:CRP:fig2}), 
+is also consistent with the so called C-line law \cite{You2013} that applies to growth in different conditions.
 %
-The idea behind that law is that some carbon sources provide a higher energy yield, which allows cells to express less metabolic enzymes and spent more resources on other cellular processes, leading to a higher growth rate.
+The idea behind the law is that some carbon sources provide a higher energy yield, which allows cells to express less metabolic enzymes and spent more resources on other cellular processes, leading to a higher growth rate.
 %
-Since cells in our experiments grow in the same environment, such an explanation does not apply to our observations.
+However, since cells in our experiments all grow in the same environment in the same sugar, such an explanation does not apply to our observations.
 %
-We thus argue that the observed trend is to be understood in the context of the underlying growth-metabolism dynamics.
+We thus argue that the trend we observe is to be understood in the context of the underlying growth-metabolism dynamics, 
+instead of by looking for similarities with the cellular response to different environments.
+% 
+This might also apply more broadly. 
+%
+The response of biochemical networks to the change in one parameter (e.g. a change in sugar source), is often well understood.
+%
+However, stochastic fluctuations might occur in all cellular components, meaning that many input parameters to regulatory networks are constantly changing.
+%
+This is perhaps why it is hard to understand the fluctuations 
+% in terms of a very specific mechanistic framework 
+using a mechanistic description of a regulatory network
+%(for example, applying the equations in supplementary note III to the stochastic dynamics), 
+(it is for example hard to apply equations in supplementary note III and understand the stochastic dynamics), 
+but instead it is possible to describe the mechanics with a coarse grained linear model as we did (figure \ref{fig:CRP:fig4}).
 
-Given the observed interaction of the negative feedback with the stochastic fluctuations, 
-we also investigated whether the coefficient of variation (CV) of the growth rate was higher for $\Delta$cAMP cells compared to wild type cells.
-%
-As supplementary figure \ref{fig:CRP:overviewsummaryparams} shows, it is indeed very slightly higher, but more data is required to make statistical claims.
 
-A question one might ask is: why do not all single cells simply grow at the rate of the fastest growing cell in the population?
+Another question one might ask is: why do not all single cells simply grow at the rate of the fastest growing cell in the population?
 %
-Our observations suggest that stochastic fluctuations simply have to large cellular implications for cells to achieve that.
+%Our observations
+The observed correlations between metabolic reporter expression and the 
+%coarse 
+conglomerate parameter $\mu$ 
+suggest that stochastic fluctuations might simply have too large cellular implications for cells to achieve that.
 %
-On the other hand, a versatile population might have an evolutionary benefit that outweighs the population average reduction in growth rate.
+On the other hand, a versatile population might have an evolutionary benefit that outweighs the population average reduction in growth rate (see also chapter \ref{chapter:literaturereview}).
 %
-In other words, it could also be that there is no evolutionary pressure for cells to all become fast growing but similar individuals.
+In other words, it could also be that there is no evolutionary pressure for cells in a population to all become fast growing and similar individuals.
 
 To further probe these questions, one could device additional experiments.
 %
+%Firstly, an interesting control 
+Firstly, an interesting alternative to also create a feedbackless strain, would be to
+create a construct with an inducible promoter that expresses 
+%to compare our experiments involving $\Delta$cAMP cells with might be to investigate controlled expression of 
+constitutively active CRP protein. %(CRP*). 
+%, which could also be used to remove the negative feedback. 
+A challenge in this experimental approach might be that the known constitutive forms of CRP have a rather low activity, or are still mildly responsive to cAMP \cite{Aiba1985, Garges1985}.
+%
+Secondly, it might be interesting to probe different conditions, and e.g. change the sugar source in the growth medium.
+For certain sugar sources, like glucose, we expect similar behaviour as observed in this manuscript, 
+but some sugar sources might be more challenging for the cell to handle, and alter the dynamics.
+% 
 For example, xylose is a sugar source for which it was observed that concentrations need to fall in a very narrow concentration range to observe growth at all \cite{Towbin2017personalcomm}. 
 %
-Growing cells in such a sugar source might provide an opportunity to observe a bigger effects of feedback removal than in growth on lactose.
+Growing cells in such a sugar source might provide an opportunity to observe a bigger effects of feedback removal. % than in growth on lactose.
 %
-Furthermore, an interesting control to compare our experiments involving $\Delta$cAMP cells with might be to investigate controlled expression of constitutively active CRP (CRP*), which could also be used to remove the negative feedback. A disadvantge of that experimental setup might be that the known constitutive forms of CRP have a rather low activity, or are still mildly responsive to cAMP \cite{Aiba1985, Garges1985}.
+Follow-up experiments could also involve further investigating the role of the $\alpha$-ketoacids, 
+which could be introduced in experiments to disturb the feedback loop.
 %
-More generally, another question might be what 
-(1) CRP IS INVOLVED OTHER PROCESSES > CONSEQUENCES
-(2) HOW DOES THIS AFFECT OTHER REGULATION
-
-
-
+More broadly speaking, 
+CRP is a versatile regulatory protein.%, that is also involved in the regulation of many other processes.
+%
+As pointed out by the \textit{Ecocyc} database \cite{Keseler2017}, it is also involved in 
+osmoregulation \cite{Landis1999},
+%alsalobre06], 
+stringent response \cite{Johansson2000}, 
+biofilm formation \cite{Jackson2002}, 
+virulence \cite{Baga1985} %\cite{Balsalobre2006}, 
+nitrogen assimilation \cite{Mao2007, Paul2007}, 
+iron uptake \cite{Zhang2005}, 
+competence \cite{Sinha2009}, 
+multidrug resistance to antibiotics \cite{Hirakawa2006a}, 
+and expression of CyaR sRNA \cite{DeLay2009a}.
+%
+An open question remains what the effect of fluctuations in CRP activity is on these processes.
+%
+%And finally, it will be interesting to investigate the dynamical behavior of other regulatory systems
+%that are known for their role in responding to environ
+%
+And finally,
+there are many more other 
+regulatory systems 
+%which are known for their response to environmental changes,
+that are known for their regulatory role in responding to environmental changes.
+It will be interesting to
+% see how these systems respond to stochastically changing 
+investigate whether all of these systems are also actively responding to stochastic input signals.
+%
+If so, 
+that would mean that the often used term "growing in steady state" requires thorough revision.
 
 
 \section*{Methods}
@@ -951,33 +1010,91 @@ More generally, another question might be what
 \begin{table}[h]
 	\begin{tabularx}{\textwidth}{llXl}
 
-	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\\
+	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
 	\hline
 
-	ASC839	& 				& Wild type MG1655 strain btained from Benjamin Towbin, Uri Alon lab (also known as strain bBT12 and CGSC number 8003). Known mutations: $\uplambda$-, 	$\Delta$fnr-267, rph-1. \cite{Towbin2017} \\
-	ASC839	& 				& \textit{cyaA}, \textit{cpda} null mutant. Obtained from Benjamin Towbin, Uri Alon lab (also known as strain bBT80). Based on ASC838. \cite{Towbin2017} \\
+	ASC839	& 				& Wild type MG1655 strain btained from Benjamin Towbin, Uri Alon lab (also known as strain bBT12 and CGSC number 8003). This is the basis for all Towbin et al. strains. Known mutations: $\uplambda$-, 	$\Delta$fnr-267, rph-1. & \cite{Towbin2017} \\
+	ASC839	& 				& \textit{cyaA}, \textit{cpda} null mutant. Obtained from Benjamin Towbin, Uri Alon lab (also known as strain bBT80). Based on ASC838. & \cite{Towbin2017} \\
 	
 	
-	ASC0990  &  			& Wild type strain, except for $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. \\
-	ASC1004  & $\Delta$cAMP & Strain based on ASC839 ($\Delta$cyaA $\Delta$cpda), introduced $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. \\
+	ASC0990  &  			& Wild type strain, except for $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. & VS \\
+	ASC1004  & $\Delta$cAMP & Strain based on ASC839 ($\Delta$cyaA $\Delta$cpda), introduced $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. & \cite{Towbin2017}, VS \\
 	
 	\hline
 	\end{tabularx}
-	\caption{\textbf{Strains used in this work.} ASC stands for AMOLF strain collection.}
+	\caption{\textbf{Strains used in this work.} ASC stands for AMOLF strain collection. VS indicates this strain is produced at AMOLF by technician Vanda Sunderlikova.}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%% EXTRA TABLE 
 \begin{table}[h]
-	\begin{tabularx}{\textwidth}{llXl}
+	\begin{tabularx}{\textwidth}{llXll}
 		
-		\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\\
+		\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	& \textbf{Source} \\
 		\hline
-				
-		\red{XXX} & 				\red{XXX} & 				\red{XXX} \\
-				
+%				
+%		\red{XXX} & 				\red{XXX} & 				\red{XXX} \\
+%		
+ASC838	& 		& MG1655 wild type strain bBT12; CGSC nr: 8003, which contains a Fnr- mutation. This is the basis for all Towbin et al. strains. & \cite{Towbin2017} \\
+ASC840 & $\Delta$CRP &	\textit{cyaA} \textit{crp} null mutant, also known as bBT92. In addition to the \textit{crp} gene, also the \textit{cyaA} gene has been knocked out, since some of the constitutive CRP proteins still have a residual response to cAMP. & \cite{Towbin2017} \\
+%		
+ASC841 & 	p\_s70 & MG1655 wild type strain with sigma70 GFP reporter on pSCS101 plasmid. & \cite{Towbin2017} \\
+ASC842 &	p\_CRPr & MG1655 wild type strain with GFP CRP reporter on pSCS101 plasmid. & \cite{Towbin2017} \\
+%
+ASC843	&	bBT12+pU66	& MG1655 WT strain + GFP w/o promo PSCS101 (control) & \cite{Towbin2017} \\
+%
+%
+ASC847	&	pHA5	& p\_CRP-CRP construct in a pBR322 plasmid; stored in DH5$\upalpha$. This is the CRP protein sequence behind its native promoter. & \cite{Aiba1985, Towbin2017} \\
+ASC845	&	pHA7	& p\_bla-CRP construct in a pBR322 plasmid; stored in DH5$\upalpha$. This is the CRP protein behind a bla promoter. & \cite{Aiba1985, Towbin2017} \\
+ASC859	&	pHA7*1	& p\_bla-CRP*1 construct in a pBR322 plasmid; stored in DH5$\upalpha$. The star indicates this is a constitutively active version of CRP, the number indicates which version. See Aiba et al. for more information \cite{Aiba1985}. & \cite{Aiba1985, Towbin2017} \\
+n/a 	&	pHA7*2	& p\_bla-CRP*2 construct in a pBR322 plasmid; plasmid only. Idem. & \cite{Aiba1985, Towbin2017} \\
+n/a		&	pHA7*3	& p\_bla-CRP*3 construct in a pBR322 plasmid; plasmid only. Idem. & \cite{Aiba1985, Towbin2017} \\
+	\end{tabularx}
+\label{table:CRP:extrastrains}
+\caption{\textbf{Additional strains produced for this work, but not used in experiments presented here.} ASC stands for AMOLF strain collection.
+    Note with ASC844: this strain was received from the Alon lab as is, for the other plasmids stored in DH5$\upalpha$ strains AMOLF DH5$\upalpha$ strains were used. FB stands for Ferhat Buke, a member of both the Sander Tans lab and Greg Bokinsky lab. VS indicates this strain is produced at AMOLF by technician Vanda Sunderlikova.}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%% EXTRA TABLE extended
+\begin{table}[h]
+    \begin{tabularx}{\textwidth}{llXll}
+        	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\textbf{Source} \\
+        \hline
+ASC858	&	pHA7*4	& p\_bla-CRP*4 construct in a pBR322 plasmid; stored in DH5$\upalpha$. Idem. & \cite{Aiba1985, Towbin2017} \\
+ASC846	&	pHA7*5	& p\_bla-CRP*5 construct in a pBR322 plasmid; stored in DH5$\upalpha$. Idem. & \cite{Aiba1985, Towbin2017} \\
+ASC844	&	pHA7*6	& P\_bla::CRP*6 construct in a pBR322 plasmid; stored in DH5$\upalpha$.  Idem. & \cite{Aiba1985, Towbin2017} \\
+ASC843	&	pBR322	& Empty pBR322 plasmid only; stored in DH5$\upalpha$. & \cite{Towbin2017}\\
+%                        
+ASC852	&	& pHA7 strain, with additionally p\_CRPr plasmid. & \\
+ASC853	&	& pHA7 strain, with additionally p\_s70 plasmid. & \\
+ASC854	&	& pHA7*5 plasmid and p\_CRPr in $\Delta$cAMP strain. & \\
+ASC855	&	& pHA7*5 plasmid and p\_s70 in $\Delta$cAMP strain. & \\
+%
+n.a.	&		& pHA7*2 plus P\_s70. (This strain was attempted to be made, but grew very slowly in TY which resulted in failure to produce it in a first attempt.)  & \\
+ASC878	&		& pHA7*6 plus p\_s70. & \\
+	\end{tabularx}
+	\caption{\textbf{Table \ref{table:CRP:extrastrains} continued.}}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%% EXTRA TABLE extended
+\begin{table}[h]
+    \begin{tabularx}{\textwidth}{llXll}
+        	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\textbf{Source} \\
+        \hline
+ASC879	&		& pHA7*2 plus P\_RCRP.  & \\
+ASC880	&		& pHA7*6 plus P\_RCRP.  & \\
+%
+ACS893	&		& $\Delta$cAMP strain plus P\_CRPr plasmid. (ASC894 is identical to this strain.) & \\
+%
+asc1005	& &	$\Delta$CRP with the following additional chromosomally inserted reporters: delta(galk)::s70-mCerulean-kanR + delta(intc)::rcrp-mVenus-cmR. & VS \\
+asc1018	& &	pzs101-yfp; ptet system + repressor, expressing a YFP fluorescent reporter. & FB \\
+asc1021	& &	ASC1005 plus ptet-CRP*2 in asc1018 vector (instead of yfp) & VS \\
+asc1022	& &	ASC1005 plus ptet-CRP*5 in asc1018 vector (instead of yfp) & VS \\
+asc1023	& & ASC838 strain plus ASC1018 plasmid (control). & VS \\
 		\hline
 	\end{tabularx}
-	\caption{\textbf{Additional strains produced for this work, but not used in experiments presented here.} ASC stands for AMOLF strain collection.}
+	\caption{\textbf{Table \ref{table:CRP:extrastrains} continued.}}
 \end{table}
+
 
 \textbf{Strains} See table \ref{table:CRP:strains}.
 
@@ -989,6 +1106,8 @@ Fluorescent images were taken every 20 minutes, using a CFP and YFP filter set (
 A selection of this sequence was analyzed and displayed.  
 Data in the figure \ref{fig:CRP:fig2} is based on experiments in which the same physical xenon arc light bulb was used to measure fluorescence for each experiment.
 Figure \ref{fig:CRP:fig3} is based on experiments in similar conditions, but contains more experiments, which also include experiments with a different fluorescent light bulb.
+
+\textbf{Gel pad experiments.} \red{A detailed explanation of the experimental protocol for gel pad analysis can be found ...}
 
 \textbf{More detailed information on the computer analyses.} 
 For a description of the computer analyses and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
