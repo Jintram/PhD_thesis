@@ -37,7 +37,7 @@
     \includegraphics[width=1.0\textwidth]{CRP-fig0sup.pdf}
     \caption{ 
         \textbf{The reporters used in this study.}
-        (Top panel) This panel shows the lac operon, on which these promoters are based.
+        (Top left panel) This panel shows the lac operon, on which these promoters are based.
         The lac operon consists of three genes, \textit{lacZ}, \textit{lacY} and \textit{lacA}, that are required to metabolize lactose.
         These three genes are regulated by the same promoter, which is activated by CRP. 
         When there is no lactose, transcriptional repressor lacI blocks gene expression from the lac operon.
@@ -45,12 +45,12 @@
         When there is lactose, transcriptional repressor lacI is inhibited by lactose and LacZ, LacY and LacA are produced.
         CRP recruits initiation factor sigma 70, which is followed by polymerase binding and transcription.
         (It is furthermore also known that pleiotropic transcription factor H-NS can bind to the lac operon and repress gene expression.)
-        (2nd and 3rd panel) Using the lac promoter as a starting point, Towbin et al. created two reporters \cite{Towbin2017}.
+        (Top right and bottom left panel) Using the lac promoter as a starting point, Towbin et al. created two reporters \cite{Towbin2017}.
         Both posses mutations which result in the removal of the LacI binding site (indicated with a black cross).
         The CRP sensitive promoter is then created by fusing the promoter to a GFP fluorescent protein sequence.
         We call this the CRP reporter or metabolic reporter.
         In the promoter of the second reporter, which is intented to measure background fluctuations in gene expression, also mutations have been introduced that remove the CRP binding site. Instead, a consensus binding site for the sigma 70 initiation factor is introduced, effectively making it a constitutive promoter that is otherwise similar to the promoter used for the CRP reporter. It was also fused to GFP, and we call this the sigma 70 reporter or constitutive reporter.
-        (Bottom panel) To be able to perform single cell measurements that involve both reporters, we replaced the GFP sequences of the metabolic and constitutive reporters with mVenus and mCerulean sequences respectively. 
+        (Bottom right panel) To be able to perform single cell measurements that involve both reporters, we replaced the GFP sequences of the metabolic and constitutive reporters with mVenus and mCerulean sequences respectively. 
         The GFP reporters were introduced to cells using plasmids as vector,
         whilst the mVenus and mCerulean reporters were chromosomally inserted at the \textit{intC} and \textit{galK} locations respectively.
     }
@@ -144,7 +144,20 @@
 	Each panel is identical to main figure \ref{fig:CRP:fig1}.C, except that each panel corresponds to the behavior of a lineage of single cells.
 }%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cAMP optimality curve me & Benjamin
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{pdf_optimalityCurve.pdf}
+    \caption{ 
+        \textbf{Growth rates in minimal medium supplemented with lactose at different cAMP concentrations.}
+        Measured exponential phase growth rates of $\Delta$cAMP cells at different concentrations of cAMP as measured in a platereader.
+        Method 1 refers to a procedure where the fit range was manually chosen, whereas in method 2 the fits were made inbetween certain OD values.
+        Also, this figure shows data from a similar experiment performed by Towbin et al. \cite{Towbin2017}.
+%        1 is manual selection of data that fit is bas
+    }
+    \label{fig:CRP:ocurvePlatereader}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Overview (grey bars) with summary parameters from different conditions
 % Figure with floating caption

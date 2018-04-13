@@ -1,7 +1,7 @@
 
 
 
-\hyphenation{met-a-bol-ic}
+\hyphenation{met-a-bol-ic pol-y-a-cryl-a-mide}
 
 
 
@@ -388,7 +388,7 @@ required in the cellular environment.
 %
 This was done by growing our $\Delta$cAMP strain on minimum medium supplemented with lactose and 800 $\upmu$M cAMP.
 %
-This concentration of cAMP resulted in growth rates that are comparable to those observed in wild type cells growing on lactose (see also supplementary figure \ref{fig:CRP:overviewsummaryparams}).
+This concentration of cAMP resulted in growth rates that are comparable to those observed in wild type cells growing on lactose (see also supplementary figures  \ref{fig:CRP:ocurvePlatereader} and \ref{fig:CRP:overviewsummaryparams}).
 On the other hand, the cAMP levels in these cells were fixed and thus unable to respond to intracellular metabolite concentrations.
 %
 Using our metabolic reporter construct, we were able to assess the CRP dynamics in these cells.
@@ -964,8 +964,11 @@ For certain sugar sources, like glucose, we expect similar behaviour as observed
 but some sugar sources might be more challenging for the cell to handle, and alter the dynamics.
 % 
 For example, xylose is a sugar source for which it was observed that concentrations need to fall in a very narrow concentration range to observe growth at all \cite{Towbin2017personalcomm}. 
-%
 Growing cells in such a sugar source might provide an opportunity to observe a bigger effects of feedback removal. % than in growth on lactose.
+%
+Or, other interesting alternate sugar sources are pyruvate, glycerol and galactose. These are sugar sources where the metabolic enzyme expression is known to be sub-optimal, since the negative feedback loop only provides a "rule of thumb" to the cell, which is not adequate for these sugar sources \cite{Towbin2017}. 
+%
+This might lead to different dynamics also.
 %
 Follow-up experiments could also involve further investigating the role of the $\alpha$-ketoacids, 
 which could be introduced in experiments to disturb the feedback loop.
@@ -1012,91 +1015,67 @@ that would mean that the often used term "growing in steady state" requires thor
 
 	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
 	\hline
-
-	ASC839	& 				& Wild type MG1655 strain btained from Benjamin Towbin, Uri Alon lab (also known as strain bBT12 and CGSC number 8003). This is the basis for all Towbin et al. strains. Known mutations: $\uplambda$-, 	$\Delta$fnr-267, rph-1. & \cite{Towbin2017} \\
-	ASC839	& 				& \textit{cyaA}, \textit{cpda} null mutant. Obtained from Benjamin Towbin, Uri Alon lab (also known as strain bBT80). Based on ASC838. & \cite{Towbin2017} \\
-	
-	
-	ASC0990  &  			& Wild type strain, except for $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. & VS \\
-	ASC1004  & $\Delta$cAMP & Strain based on ASC839 ($\Delta$cyaA $\Delta$cpda), introduced $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. Kanamycin and chloramphenicol resistant. & \cite{Towbin2017}, VS \\
-	
+    %
+	ASC838	& 				& Wild type MG1655 strain obtained from Benjamin Towbin, Uri Alon lab (also known as strain bBT12 and CGSC number 8003). This is the basis for all Towbin et al. strains. Known mutations: $\uplambda$-, 	$\Delta$fnr-267, rph-1. (No resistance modules.) & \cite{Towbin2017}  \\
+	ASC839	& 				& \textit{cyaA}, \textit{cpda} null mutant. Obtained from Benjamin Towbin, Uri Alon lab (also known as strain bBT80). Based on ASC838. (No resistance modules.) & \cite{Towbin2017}  \\
+	ASC841 & 	p\_s70 & MG1655 wild type strain with modified lac promoter fused to GFP (sigma 70 reporter) on pSCS101 plasmid. (Kanamycin resistant.) & \cite{Towbin2017} \\
+    ASC842 &	p\_CRPr & MG1655 wild type strain with modified lac promoter fused to GFP (CRP reporter) on pSCS101 plasmid. (Kanamycin resistant.) & \cite{Towbin2017} \\
+	%
+	ASC0990  &  			& Wild type strain, except for $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. (Kanamycin and chloramphenicol resistant.) & VS \\
+	ASC1004  & $\Delta$cAMP & Strain based on ASC839 ($\Delta$cyaA $\Delta$cpda), introduced $\Delta$(galk)::s70-mCerulean-kanR and $\Delta$(intc)::rcrp-mVenus-cmR. (Kanamycin and chloramphenicol resistant.) & VS \\
+	%
 	\hline
 	\end{tabularx}
 	\caption{\textbf{Strains used in this work.} ASC stands for AMOLF strain collection. VS indicates this strain is produced at AMOLF by technician Vanda Sunderlikova.}
 \end{table}
 
-%%%%%%%%%%%%%%%%%%%% EXTRA TABLE 
-\begin{table}[h]
-	\begin{tabularx}{\textwidth}{llXll}
-		
-		\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	& \textbf{Source} \\
-		\hline
-%				
-%		\red{XXX} & 				\red{XXX} & 				\red{XXX} \\
-%		
-ASC838	& 		& MG1655 wild type strain bBT12; CGSC nr: 8003, which contains a Fnr- mutation. This is the basis for all Towbin et al. strains. & \cite{Towbin2017} \\
-ASC840 & $\Delta$CRP &	\textit{cyaA} \textit{crp} null mutant, also known as bBT92. In addition to the \textit{crp} gene, also the \textit{cyaA} gene has been knocked out, since some of the constitutive CRP proteins still have a residual response to cAMP. & \cite{Towbin2017} \\
-%		
-ASC841 & 	p\_s70 & MG1655 wild type strain with sigma70 GFP reporter on pSCS101 plasmid. & \cite{Towbin2017} \\
-ASC842 &	p\_CRPr & MG1655 wild type strain with GFP CRP reporter on pSCS101 plasmid. & \cite{Towbin2017} \\
+\textbf{Strains} See also table \ref{table:CRP:strains}. 
 %
-ASC843	&	bBT12+pU66	& MG1655 WT strain + GFP w/o promo PSCS101 (control) & \cite{Towbin2017} \\
+Strains ASC838, ASC839, ASC841 and ASC842 were a kind gift from the Alon lab. 
 %
+The sequence of the modified lac promoter which reports for CRP activity (p\_CRPr) is:
 %
-ASC847	&	pHA5	& p\_CRP-CRP construct in a pBR322 plasmid; stored in DH5$\upalpha$. This is the CRP protein sequence behind its native promoter. & \cite{Aiba1985, Towbin2017} \\
-ASC845	&	pHA7	& p\_bla-CRP construct in a pBR322 plasmid; stored in DH5$\upalpha$. This is the CRP protein behind a bla promoter. & \cite{Aiba1985, Towbin2017} \\
-ASC859	&	pHA7*1	& p\_bla-CRP*1 construct in a pBR322 plasmid; stored in DH5$\upalpha$. The star indicates this is a constitutively active version of CRP, the number indicates which version. See Aiba et al. for more information \cite{Aiba1985}. & \cite{Aiba1985, Towbin2017} \\
-n/a 	&	pHA7*2	& p\_bla-CRP*2 construct in a pBR322 plasmid; plasmid only. Idem. & \cite{Aiba1985, Towbin2017} \\
-n/a		&	pHA7*3	& p\_bla-CRP*3 construct in a pBR322 plasmid; plasmid only. Idem. & \cite{Aiba1985, Towbin2017} \\
-	\end{tabularx}
-\label{table:CRP:extrastrains}
-\caption{\textbf{Additional strains produced for this work, but not used in experiments presented here.} ASC stands for AMOLF strain collection.
-    Note with ASC844: this strain was received from the Alon lab as is, for the other plasmids stored in DH5$\upalpha$ strains AMOLF DH5$\upalpha$ strains were used. FB stands for Ferhat Buke, a member of both the Sander Tans lab and Greg Bokinsky lab. VS indicates this strain is produced at AMOLF by technician Vanda Sunderlikova.}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%% EXTRA TABLE extended
-\begin{table}[h]
-    \begin{tabularx}{\textwidth}{llXll}
-        	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\textbf{Source} \\
-        \hline
-ASC858	&	pHA7*4	& p\_bla-CRP*4 construct in a pBR322 plasmid; stored in DH5$\upalpha$. Idem. & \cite{Aiba1985, Towbin2017} \\
-ASC846	&	pHA7*5	& p\_bla-CRP*5 construct in a pBR322 plasmid; stored in DH5$\upalpha$. Idem. & \cite{Aiba1985, Towbin2017} \\
-ASC844	&	pHA7*6	& P\_bla::CRP*6 construct in a pBR322 plasmid; stored in DH5$\upalpha$.  Idem. & \cite{Aiba1985, Towbin2017} \\
-ASC843	&	pBR322	& Empty pBR322 plasmid only; stored in DH5$\upalpha$. & \cite{Towbin2017}\\
-%                        
-ASC852	&	& pHA7 strain, with additionally p\_CRPr plasmid. & \\
-ASC853	&	& pHA7 strain, with additionally p\_s70 plasmid. & \\
-ASC854	&	& pHA7*5 plasmid and p\_CRPr in $\Delta$cAMP strain. & \\
-ASC855	&	& pHA7*5 plasmid and p\_s70 in $\Delta$cAMP strain. & \\
+\begin{verbatim}
+CGTCAGGAGGAGAGGGGCAGTGAGCGCAACGCAATTAATGTGAGTTAGCT
+CACTCATTAGGCACCCCAGGCTTTACACTTTATGCTTCCGGCTCGTATGT
+TGTGTGCATGGATAAGTAGCTAGGAATTTCACACTGCAAACAGCT.
+\end{verbatim}
+Which is the LacZ promoter with LacI1 site reshuffled (created by Towbin et al. using synthetic oligos \cite{Towbin2017}).
 %
-n.a.	&		& pHA7*2 plus P\_s70. (This strain was attempted to be made, but grew very slowly in TY which resulted in failure to produce it in a first attempt.)  & \\
-ASC878	&		& pHA7*6 plus p\_s70. & \\
-	\end{tabularx}
-	\caption{\textbf{Table \ref{table:CRP:extrastrains} continued.}}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%% EXTRA TABLE extended
-\begin{table}[h]
-    \begin{tabularx}{\textwidth}{llXll}
-        	\textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description}	\textbf{Source} \\
-        \hline
-ASC879	&		& pHA7*2 plus P\_RCRP.  & \\
-ASC880	&		& pHA7*6 plus P\_RCRP.  & \\
+The sequence of the lac promoter modified to report for constitutive fluctuations (p\_s70) is:
+\begin{verbatim}
+CGTCAGGAGGAGAGGGGCAGTGAGCGCAACGCAATCAGATCAAATGTGTC
+GTTTCCATAGGCACCCCAGGCTTGACACTTTATGCTTCCGGCTCGTATAA
+TGTGTGCATGGATAAGTAGCTAGGAATTTCACACTGCAAACAGCT.
+\end{verbatim}
+This sequence has reshuffled CRP binding sites and a reshuffled lacI binding site. 
+The sigma 70 site was changed to a consensus binding site \cite{Towbin2017}.
 %
-ACS893	&		& $\Delta$cAMP strain plus P\_CRPr plasmid. (ASC894 is identical to this strain.) & \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{CRP-reporterconstruct.pdf}
+    \caption{ 
+        \textbf{Promoter constructs used in this manuscript for metabolic and constitutive reporters.}
+        This figure displays additional details about the promoter sequences used for the reporters in this study.
+        These promoter sequences were designed by Towbin et al. \cite{Towbin2017}.
+        This image supplies additional information about them.
+        (A) This panel compares the upstream sequence of the LacZ coding sequence (and the start codon, shown in green) as retrieved from the NCBI database (accession: NC\_000913; region: 363231..366305; version: NC\_000913.3) with
+        the synthetic CRP reporter promoter sequence by Towbin et al \cite{Towbin2017}.
+        For reference, the CRP 
+        binding sites as reported in refs \cite{Hudson1990} and \cite{Lawson2004} are highlighted, as are the LacI binding site and the -10 and -35 upstream locations.
+        (B) This panel shows the promoter for the CRP reporter construct compared with the sigma 70 (constitutive) promoter sequence by Towbin et al. \cite{Towbin2017}.
+    }        %\footnote{https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3?report=genbank&from=363231&to=366305.}, with below it the synthetic promoter that reports for CRP activity. 
+    \label{fig:CRP:promoterconstructs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-asc1005	& &	$\Delta$CRP with the following additional chromosomally inserted reporters: delta(galk)::s70-mCerulean-kanR + delta(intc)::rcrp-mVenus-cmR. & VS \\
-asc1018	& &	pzs101-yfp; ptet system + repressor, expressing a YFP fluorescent reporter. & FB \\
-asc1021	& &	ASC1005 plus ptet-CRP*2 in asc1018 vector (instead of yfp) & VS \\
-asc1022	& &	ASC1005 plus ptet-CRP*5 in asc1018 vector (instead of yfp) & VS \\
-asc1023	& & ASC838 strain plus ASC1018 plasmid (control). & VS \\
-		\hline
-	\end{tabularx}
-	\caption{\textbf{Table \ref{table:CRP:extrastrains} continued.}}
-\end{table}
-
-
-\textbf{Strains} See table \ref{table:CRP:strains}.
+Figure \ref{fig:CRP:promoterconstructs} highlights some important features of the LacZ promoter and indicates where the synthetic promoters differ from the native promoter.
+%
+To be able to use the p\_CRPr and p\_s70 reporters in the same strain, the reporters in strains ASC841 and ASC842 were used to create new reporters using the promoters created by Benjamin Towbin but fused mCerulean and mVenus fluorescent proteins.
+These reporters were chromosomally inserted in the ASC838 and ASC839 strains using a lambda red protocol, resulting in the strains labeled ASC0990 and ASC1004, respectively.
+%
+Strains that were obtained or made for the purpose of this project but not used for experiments presented here, are listed in supplementary table \ref{table:CRP:extrastrains}. All strains listing ref. \cite{Towbin2017} as source were kindly supplied by the Alon lab.
 
 \textbf{Pulsing experiment.} Strain asc1004 was grown O/N at 30 $\degree$C and 10X concentrated by spinning the cells down at 2300 RCF, removing supernatant and resuspension in a table top centrifuge.
 Cells were introduced into microfluidic device 2 (see chapter \ref{chapter:filarecovery}) with a syringe, after which the device was placed under the microscope in a 37 $\degree$C temperature chamber and we supplied TY medium (flow rate 8 $\upmu$l/min) for a few hours, whereafter we switched to M9 minimal medium plus 0.2 mM uracil, 0.1 $\%$ lactose, 0.01 $\%$ tween and 300 $\upmu$M cAMP (flow rate 7 $\upmu$l/min).
@@ -1107,7 +1086,9 @@ A selection of this sequence was analyzed and displayed.
 Data in the figure \ref{fig:CRP:fig2} is based on experiments in which the same physical xenon arc light bulb was used to measure fluorescence for each experiment.
 Figure \ref{fig:CRP:fig3} is based on experiments in similar conditions, but contains more experiments, which also include experiments with a different fluorescent light bulb.
 
-\textbf{Gel pad experiments.} \red{A detailed explanation of the experimental protocol for gel pad analysis can be found ...}
+\textbf{Gel pad experiments.} A detailed description of the protocol for gel pad experiments including a list of the involved chemicals can be found in chapter \ref{chapter:filarecovery}. Briefly, polyacrylamide gel pads were soaked (at 37 $\degree$C and on a shaker) trice in the desired growth medium for a period of 30-90 minutes right before the experiment. In this case, M9 minimal medium was used supplemented with lactose (0.01 \% g/mL) and uracil (0.2mM), and only in the last wash step also with Tween20 (0.001\%).
+Also, the medium was supplemented with the desired concentration of cAMP (Sigma Aldrich) if applicable.
+1 $\upmu$l culture of the applicable strain was grown O/N in the same medium (OD 0.005; or diluted to that OD if necessary from exponential growth phase) and inoculated on the gel pad. Data acquisition was then performed as described in chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
 
 \textbf{More detailed information on the computer analyses.} 
 For a description of the computer analyses and more information see chapters \ref{chapter:methods} and \ref{chapter:filarecovery}.
@@ -1122,18 +1103,20 @@ The growth rate (with units dbl/hr or sometimes with units /min) is determined f
 Note that to determine scatter plots and correlations, only frames where fluorescence images were taken are considered.
 This means that the choice for a growth rate fitting window of width $\delta{n}+1$ ensures that all data is used, but no point is used twice
 
-\subsection*{Todo}
-
-\begin{itemize}
-	\item Add description of the lac reporter construct made by benjamin.
-	\item Check maternal strain that Vanda used for the double reporter constructs.
-	\item Comment on which datasets we are showing and which ones we are not, and where.
-\end{itemize}
+%\subsection*{Todo}
+%
+%\begin{itemize}
+%	\item Add description of the lac reporter construct made by benjamin.
+%	\item Check maternal strain that Vanda used for the double reporter constructs.
+%	\item Comment on which datasets we are showing and which ones we are not, and where.
+%\end{itemize}
 
 % For promoter sequences, see: M_2016_06_26_CRP_s70_promoter_sequences.docx
 
 \section*{Acknowledgements}
 
+This work was performed in collaboration with Laurens H.J. Krah, Benjamin D. Towbin and Rutger Hermsen.
+%
 I thank Pieter Rein ten Wolde and Harmen Wierenga for useful discussions.
 
 %\section{Author contributions}
