@@ -1,0 +1,5 @@
+===
+FIGURE LEGEND
+A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+===
