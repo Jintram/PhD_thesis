@@ -26,17 +26,17 @@ and consider the steady state condition where the time derivative is zero.
 Let us here start with an equation for the metabolic reporter.
 %
 %Towbin et al. \cite{Towbin2017} suggest that the relationship between the concentration, production and growth rate is as follows.
-Generally, the change in metabolic protein concentration $C_M$ over time is set by a production and a dilution term:
+Generally, the change in metabolic protein concentration $C_M$ ($\text{a.u}/(\text{px})$) over time is set by a production and a dilution term:
 \begin{align}
 	\label{eq:CRP:odeM}
 	\dot{C_M} = p_M - C_M \lambda = \phi_M(\text{cAMP}) \lambda -  C_M \lambda
 	,
 \end{align}
 % 
-where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of $C_M$ ($\text{a.u}/(\text{px})$) and $\lambda$ ($/\text{min}$) the growth rate of the cell.
+where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of metabolic protein and $\lambda$ ($/\text{min}$) the growth rate of the cell.
 %Our single cell experiments allow the independent measurement of all these three parameters.
 We can determine all these three parameters from our single cell experiments.
-Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a function of $\lambda$.
+Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a fraction of $\lambda$.
 %
 To understand the interaction between the metabolic reporter expression and the constitutive reporter expression we were inspired by the linear regulation model posed by You et al. \cite{You2013}, and pose
 \begin{align}
