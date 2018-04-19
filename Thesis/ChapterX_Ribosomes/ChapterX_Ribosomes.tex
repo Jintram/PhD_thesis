@@ -34,7 +34,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
+\section*{Introduction}
+
+\subsection*{The central role of the ribosome}
 
 Ribosomes are life.
 %
@@ -52,38 +54,92 @@ the synthesis of proteins using mRNA molecules as templates; also known as trans
 The components became known as ribosomes.
 %
 % Given the central place of the ribosome, in the circle of life, and 
-Given the idea that early life consisted only of RNA molecules that could catalyze other reactions (the "RNA world" \cite{Campbell2002}), it is not surprising that this component of the cell consists of both catalytic RNA and proteins.
-See also figure \ref{fig:ribo:pictureofribo}.
+Given the idea that early life consisted only of RNA molecules that could catalyze other reactions (the "RNA world" \cite{Campbell2002}), it is not surprising that the ribosomes 
+% these components of the cell
+consist of both catalytic RNA and proteins,
+as shown in figure \ref{fig:ribo:pictureofribo}.
 %
 %As such, it is not only an embodiment of the central dogma, but also the exception to the rule.
 As such, we can say ribosomes are a key element of life.
 
-\subsection*{bla}
-
-% When we want to understand the cell, ribosomes are a good starting point.
-It is our aim to better understand % cellular dynamics.
-temporal fluctuations in the concentrations of cellular components.%, which occur due to the intrinsic stochastic nature of chemical processes that underlay cellular 
-%
-These fluctuations are a result of the intrinsic stochastic nature of chemical processes that occur in the cell (see also previous chapters \ref{chapter:literaturereview} and  \ref{chapter:CRP}).
-%
-Given the central role of the ribosome in the cell that was just discussed, 
-%Since ribosomes are key components in the cell, 
-it is often suggested that fluctuations in ribosomal concentration could result in cell-wide protein concentration fluctuations \cite{Davidson2008, Chalancon2012, Raj2008, Bruggeman2018}.
-%
-Such concerted concentration fluctuations are also referred to as extrinsic noise (as opposed to intrinsic noise, fluctuations that only occur in one cellular species).
-
-Cell-wide fluctuations 
-
-Key components of the cell are often 
-
-
-Given the central role of the ribosome in the cell, it is not surprising the 
-
-extrinsic noise \cite{Davidson2008, Chalancon2012, Raj2008, Bruggeman2018}
-
 % life
 % Lawrence: information storage, catalysts, energy relation environment, grow and reproduce, respond stimuli
 % Koshland: program, improvisation (MW: long term adaptation), compartmentalization, energy, regeneration, adaptabilty (short term adaptation), seclusion (being able to separate different processes, e.g. enzyme's specifity).
+
+\subsection*{Understanding the role of ribosomes in protein fluctuations}
+
+In this thesis, 
+we have been trying to further 
+% When we want to understand the cell, ribosomes are a good starting point.
+%It is our aim to better 
+understand % cellular dynamics.
+temporal fluctuations in the concentrations of cellular components.%, which occur due to the intrinsic stochastic nature of chemical processes that underlay cellular 
+%
+As mentioned in earlier chapters (\ref{chapter:literaturereview} and  \ref{chapter:CRP}),
+these fluctuations are a result of the intrinsic stochastic nature of chemical processes that occur in the cell.
+% (see also previous chapters \ref{chapter:literaturereview} and  \ref{chapter:CRP}).
+%
+Given the central role of the ribosome in the cell that was just discussed, ribosomes might play a big role in such fluctuations.
+%Since ribosomes are key components in the cell, 
+Indeed, it is often suggested that fluctuations in ribosomal concentration could result in cell-wide protein concentration fluctuations \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
+%
+Such concerted concentration fluctuations are also referred to as extrinsic noise (as opposed to intrinsic noise, fluctuations that only occur in one cellular species) \cite{Elowitz2002}.
+
+\subsection*{Quantifying ribosomal dynamics}
+
+In a previous thesis from the Tans lab, Noreen Walker 
+% In previous work from our lab, Walker et al. 
+quantified the dynamic relationship between ribosomal expression fluctuations and growth \cite{Walker2016t}.
+%
+The experiments involved present many challenges, 
+of which a number is described in her thesis.
+%
+The results from these experiments were rather inconclusive.
+%
+Given previously described central role of the ribosome, it was hypothesized ribosomes might be limiting, meaning that that ribosomal fluctuations might result in growth rate fluctuations.
+%
+In steady state single cell time lapse experiments, no clear indications were found to support this hypothesis.
+%
+Instead, mCherry-labeled L31 and L19 subunits (L31-R and L19-R) showed cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
+L31 labeled with mCerulean (L31-C) showed cross-correlations with small correlations around zero delay 
+% at positive delays 
+between expression and growth in minimal medium.
+This difference with the other experiment was unexpected, as the only difference was the label.
+%
+In rich medium, the L31-C cross-correlation was consistent with the L31-R cross-correlation, and showed almost no correlation.
+%
+Since the ribosome mainly consists of RNA, 
+a GFP reporter under the control of one of the ribosomal RNA promoters was also used (rrna-G).
+Like the L31-C reporter, the dynamics of this rrna-G reporter showed positive correlations in minimal medium and only very small correlations in rich medium.
+% an additional reporter was used which consisted of the ribosomal RNA promoter 
+
+In an attempt to force the cell in a scenario where ribosomes are limiting, experiments were conducted where cells were grown in the presence of sub-inhibitory concentrations of tetracycline, an antibiotic.
+%
+The outcome of such an experiment could serve as a reference to interpret other experiments.
+%
+In rich medium, both for the L31-R and the rrn-G reporter, this did not lead to more positive correlations.
+%
+Given these disparate observations, both between reporters and conditions, 
+and the absence of a point of reference,
+the nature of the ribosomal dynamics remained fairly elusive; it was concluded that ribosomes perhaps do not have a pivotal role in cellular growth dynamics.
+
+\subsubsection*{}
+
+\subsection*{Bla}
+
+inconclusive
+like this chapter too,
+nevertheless
+%
+In this chapter, we will describe a number of additional experiments that have been conducted to 
+
+> focus on pn25
+> repeat experiments to get more data
+> measure in switch condition
+
+\subsubsection*{bla}
+
+
 
 \section{Structure of the ribosome}
 
@@ -107,14 +163,14 @@ structure visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pette
 % > they build themselves
 % > they build anything in the cell
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\textwidth]{riboFig1.pdf}
-    \caption{ 
-        (A) \red{XXX ribosome} 
-    }
-    \label{fig:modeldrawing}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{riboFig1.pdf}
+%    \caption{ 
+%        (A) \red{XXX ribosome} 
+%    }
+%    \label{fig:modeldrawing}
+%\end{figure}
 
 
 \section{The Ribosome}
@@ -644,6 +700,13 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
     \end{tabularx}
     \caption{\textbf{Strains used in previous work and miscellaneous strains.} NW indicates these strains were used in Noreen Walker's thesis \cite{Walker2016t}. VS indicates these strains are created by Vanda Sunderlikova.}
 \end{table}
+
+
+\subsection*{Discussion and conclusion}
+
+(a) 
+(b) would be nice to re-run some of noreen's analyses with the script that creates the controls.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
