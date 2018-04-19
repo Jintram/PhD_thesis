@@ -5,48 +5,81 @@
 \chapter{The Ribosomal City}
 \label{chapter:ribosomes}
 
-{\color{red}
-\section{Misc. todo's etc}
 
-References that might be convenient:
-\begin{itemize}
-    \item Bosdriesz E, Molenaar, D., Teusink, B., and Bruggeman, F.J. CHAPTER 6 How fast-growing bacteria robustly tune their ribosome concentration to approximate growth rate maximisation. Manuscr. Accept. Publ. FEBS J., 119–153.
-    \cite{BosdrieszE}
-    \item Maeda, M., Shimada, T., and Ishihama, A. (2015). Strength and Regulation of Seven rRNA Promoters in Escherichia coli. PLoS One 10, 1–19. \cite{Maeda2015}
-    \item Gyorfy, Z., Draskovits, G., Vernyik, V., Blattner, F.F., Gaal, T., and Posfai, G. (2015). Engineered ribosomal RNA operon copy-number variants of E. coli reveal the evolutionary trade-offs shaping rRNA operon number. Nucleic Acids Res. 43, 1783–1794. \cite{Gyorfy2015}
-    \item \textit{(The following two articles talk about the ribosomal RNA deletion strains, also surprising interactions with antibiotics. Of main importance is the observation that mainly tRNA seems to be limiting. See also unpublished \cite{Quan2013}.)} Bollenbach, T., Quan, S., Chait, R., and Kishony, R. (2009). Nonoptimal Microbial Response to Antibiotics Underlies Suppressive Drug Interactions. Cell 139, 707–718. \cite{Bollenbach2009} AND 1. Quan, S., Skovgaard, O., McLaughlin, R.E., Buurman, E.T., and Squires, C.L. (2015). Markerless Escherichia coli rrn Deletion Strains for Genetic Determination of Ribosomal Binding Sites. G3 Genes|Genomes|Genetics 5, 2555–2557. \cite{Quan2015} \textit{Quan et al. also refer to Orelle et al. 2013; Polikanov et al. 2014b; Orelle et al. 2015.}
-    \item \textit{(This article details the rRNA regulation.)} Schneider, D.A., Ross, W., and Gourse, R.L. (2003). Control of rRNA expression in Escherichia coli. Curr. Opin. Microbiol. 6, 151–156. \cite{Schneider2003} 
-    \item \textit{(These two article with description of the structures generated from rRNA genes, also mention the cleavage of the RNA genes.)}  Kaczanowska, M., and Ryden-Aulin, M. (2007). Ribosome Biogenesis and the Translation Process in Escherichia coli. Microbiol. Mol. Biol. Rev. 71, 477–494. \cite{Kaczanowska2007} AND Shajani, Z., Sykes, M.T., and Williamson, J.R. (2011). Assembly of bacterial ribosomes. Annu. Rev. Biochem. 80, 501–26. \cite{Shajani2011}
-    \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.
-    \cite{Shachrai2010}
-\item Maaloe1979 and Scott2010 (see Hui2015) which claims that ribosomes operate at "saturated translational capacity".
-\end{itemize} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Picture of the ribosome
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{ribosomes_allproteinscolored.png}
+    \caption{ 
+        \textbf{Picture of the ribosome.}
+        The ribosome consist of a small and a large subunit. These two come together on messenger RNA templates to perform protein synthesis.
+        The complete ribosome is made of 3 ribosomal RNA molecules and 54 proteins, shown in grey and color in the picture above, respectively.
+        The 16S rRNA and 23S rRNA molecules function as backbone. % for the small and large subunits, respectively.
+        Proteins labeled \red{S1 up to S21} bind to the 16S rRNA to form the small subunit, and proteins labeled \red{L1-L33} and the 5S rRNA bind to the 23S rRNA to form the large subunit.
+        % The 5S rRNA also binds to the large subunit.
+        Assembly of the ribosome also requires many co-factors \cite{Chen2013}. % note also DnaK is required.
+        %
+        This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
+        visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}).
+        % Previously, I seemed to have used 4v4a, which is from 2003 http://www.rcsb.org/pdb/explore.do?structureId=4v4a.        
+        %
+        %        
+    }
+    \label{fig:ribo:pictureofribo}
+\end{figure}
 
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
 
-
-{\color{red}[This text needs a storyline:]}
-%
-%Ribosomes play a central role in biology.
+Ribosomes are life.
 %
 In 1958, Francis Crick, who discovered the structure of DNA with James Watson and Rosalind Franklin,
 formulated what is called the central dogma of molecular biology.
-This declares that DNA holds the sequence information on how to build a protein, the sequence information is first translated to RNA, which is then transcribed into a protein \cite{Crick1958}.
+This declares that DNA holds the amino acid sequence information required to build a protein, and that this sequence information is first translated to RNA, which is then transcribed into a protein \cite{Crick1958}.
 % 
-It relates immediately to some of the features that are said to define life: 
+This dogma relates immediately to some of the features that are said to define life: 
 the capability to store information and 
 the regeneration of components from scratch \cite{Lawrence2005, Koshland2002}.
 %
-Also in 1958, "new cytoplasmic components" were discovered under an electron microscope \cite{Palade1955}.
-These components turned out to be the component in the cell that performs the last step of the central dogma: 
+Also around that time, "new cytoplasmic components" were discovered under an electron microscope \cite{Palade1955}.
+These components turned out to be the components in the cell that perform the last step of the central dogma: 
 the synthesis of proteins using mRNA molecules as templates; also known as transcription.
 The components became known as ribosomes.
+%
+% Given the central place of the ribosome, in the circle of life, and 
+Given the idea that early life consisted only of RNA molecules that could catalyze other reactions (the "RNA world" \cite{Campbell2002}), it is not surprising that this component of the cell consists of both catalytic RNA and proteins.
+See also figure \ref{fig:ribo:pictureofribo}.
+%
+%As such, it is not only an embodiment of the central dogma, but also the exception to the rule.
+As such, we can say ribosomes are a key element of life.
 
-Given the central place of the ribosome in the circle of life, and the idea that early life consisted only of RNA molecules that could catalyze other reactions (the "RNA world" \cite{Campbell2002}), it is not surprising that this component of the cell consists of both catalytic RNA and proteins.
-As such, it is not only an embodiment of the central dogma, but also the exception to the rule.
+\subsection*{bla}
+
+% When we want to understand the cell, ribosomes are a good starting point.
+It is our aim to better understand % cellular dynamics.
+temporal fluctuations in the concentrations of cellular components.%, which occur due to the intrinsic stochastic nature of chemical processes that underlay cellular 
+%
+These fluctuations are a result of the intrinsic stochastic nature of chemical processes that occur in the cell (see also previous chapters \ref{chapter:literaturereview} and  \ref{chapter:CRP}).
+%
+Given the central role of the ribosome in the cell that was just discussed, 
+%Since ribosomes are key components in the cell, 
+it is often suggested that fluctuations in ribosomal concentration could result in cell-wide protein concentration fluctuations \cite{Davidson2008, Chalancon2012, Raj2008, Bruggeman2018}.
+%
+Such concerted concentration fluctuations are also referred to as extrinsic noise (as opposed to intrinsic noise, fluctuations that only occur in one cellular species).
+
+Cell-wide fluctuations 
+
+Key components of the cell are often 
+
+
+Given the central role of the ribosome in the cell, it is not surprising the 
+
+extrinsic noise \cite{Davidson2008, Chalancon2012, Raj2008, Bruggeman2018}
 
 % life
 % Lawrence: information storage, catalysts, energy relation environment, grow and reproduce, respond stimuli
@@ -56,13 +89,13 @@ As such, it is not only an embodiment of the central dogma, but also the excepti
 
 Nowadays, the structure of the ribosome has been unraveled.
 
-It is known that the ribosome consists of 3 RNA molecules and 54 proteins \cite{Chen2012}.%, Lodish2003}.
+It is known that the ribosome consists of 3 RNA molecules and 54 proteins \cite{Chen2013}.%, Lodish2003}.
 
 % about the structure
 % AA, B0 and 
 structure retrieved from
 http://www.rcsb.org/pdb/explore.do?structureId=4v4a
-structure visualized with UCSF Chimera \cite{pettersen2004}.
+structure visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}).
 
 
 
@@ -112,6 +145,422 @@ Despite this fact, only 3-4.5\% of the cell's RNA is mRNA.
 Table \ref{tab:ribosubunits} shows a list of the subunits we have currently labeled.
 
 Given that the ribosome
+
+
+
+\section{First some material}
+
+\begin{table}[h]
+    \begin{tabularx}{\textwidth}{llXl}
+        %
+        \textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
+        \hline
+        ASC976  &	Prrna-C, pn25-Y	&	Δphp::pn25-mVenus-cmR, Δche::Prrsa-mCerulean-kanR. (Kanamycin and chloramphenicol resistance.)  & VS \\
+        %     
+        ASC968	& L19-C, pn25-Y	& L19-gc-mCerulean-kanR (GC linker), Δ(…)::pn25-mVenus-cmR.	(Kanamycin and chloramphenicol resistance.)	& VS \\
+        %
+        ASC1058	& L9-R, S2-Y	& Also known as JE202. rplI-mCherry-KanR (L9), rpsB-venus-CmR (S2). (Kanamycin and chloramphenicol resistance.) Gift from Johan Elf lab. & \cite{Wallden2016} \\
+        \hline
+        %
+        % ASC631 & pn25-R, lacA-G & $\Delta$lacA::gfp-cat, $\Delta$php::pn25-mCherry-kanR & \cite{Kiviet2014} \\
+        ASC666 & L31-R, gltA-G  & L31::mCherry-kanR, gltA::gfpA206K-cat & \cite{Kiviet2014} \\
+        ASC810	& L31-C & L31-gc-mCerulean-kanR (GC linker). (Kanamycin resistant.) & NW, VS \\
+        \hline
+\end{tabularx}
+\caption{\textbf{Strains used in this work.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab.}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dataset w/ pn25 reporters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Constitutive reporters 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between concentration of constitutive reporter and growth.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between production rate of constitutive reporter and growth.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ribosomal reporters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_C6_mean_cycCor_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between concentration of ribosomal reporter and growth.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_dC5_divAreaPx_cycCor_muP9_fitNew_atdC5_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between production rate of ribosomal reporter and growth.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Correlations between ribosomal expression and pn25 expression
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_C6_mean_cycCor_Y6_mean_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between concentration of ribosomal reporter and concentration of pn25 reporter.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_CCs_dC5_divAreaPx_cycCor_dY5_divAreaPx_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between production rate of ribosomal reporter and production rate of pn25 reporter.}
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+        %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+        %        (C) giu_asc976_TY_steady						Prrna-mCerulean, pn25-mVenus
+        %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dataset with Elf dual reporter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% S2-Y ribosomal reporter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between the concentration of the S2 ribosomal protein and growth.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        %
+%        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+%        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between the production rate of the S2 ribosomal protein and growth.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%
+%        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+%        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% L9-R ribosomal reporter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_R6_mean_cycCor_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between the concentration of the L9 ribosomal protein and growth.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%
+%        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+%        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between the production rate of the L9 ribosomal protein and growth.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%
+%        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+%        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Overview figures of branches and means for all datasets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Means for ASC968andASC976 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboAll_overview_means.pdf}
+    \caption{ 
+        \textbf{Population mean values of different parameters measured in different strains and conditions.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        C: giu_asc1058_M9_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        D: giu_asc976_TY_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        E: giu_asc976_TY_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        F: giu_asc976_M9_steadymw_asc976_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+% Branches for ASC968andASC976 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_branches_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Growth of single cells of the different strain populations in the different conditions.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        C: giu_asc1058_M9_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        D: giu_asc976_TY_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        E: giu_asc976_TY_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        F: giu_asc976_M9_steadymw_asc976_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+% Branches for ASC1058 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_branches_muP9_fitNew_cycCor.pdf}
+    \caption{ 
+        \textbf{Growth of single cells of the different strain populations in the different conditions.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        C: giu_asc1058_M9_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        D: giu_asc976_TY_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        E: giu_asc976_TY_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        F: giu_asc976_M9_steadymw_asc976_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Switch experiment figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% Scatter plots
+\begin{figure}
+    \centering    
+    \includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    %\includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%% General trend of signals
+\begin{figure}
+    \centering    
+    \includegraphics[width=0.3\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_fluorTrend.pdf}
+    \includegraphics[width=0.3\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_fluorTrend.pdf} \\
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_fluorTrend} % added
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_fluorTrend}
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_fluorTrend}            
+    \caption{ 
+        \textbf{Fluorescence intensity for switch from clean medium to medium supplemental with antibiotics.}
+        Red dots show single cell obsvervations, the black line indicates the colony average.
+        (Top left) L31-R strain. 
+        (Top right) L31-C strain.
+        (Bottom three) All are rrsa-C strains.      
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%% Scatter plots
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+
 			
 
 \begin{table}                       
@@ -149,25 +598,80 @@ Given that the ribosome
 
 
 
+
+
+
+
+
+
+
+
 \subsection{Acknowledgements}
 Molecular graphics and analyses 
 % addition MW
 of crystal structures
 %
-were performed with the UCSF Chimera package. Chimera is developed by the Resource for Biocomputing, Visualization, and Informatics at the University of California, San Francisco (supported by NIGMS P41-GM103311). 
+were performed with the UCSF Chimera package (production version 1.11.2, build 41376). Chimera is developed by the Resource for Biocomputing, Visualization, and Informatics at the University of California, San Francisco (supported by NIGMS P41-GM103311). 
 
 
 
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Supplementary stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h]
+    \begin{tabularx}{\textwidth}{llXl}
+        %
+        \textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
+        \hline
+        %      									
+        asc656	& L31-R & L31-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
+        asc657	& L19-R & L19-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
+        asc680	& L31-R, Prrn-G & L31-mCherry-kanR (no linker), Δ(cheZ)::Prrn-GFP-catR. (Kanamycin and chloramphenicol resistant.)	& NW, VS \\
+        asc779	& Prrn-G& Δ(cheZ)::Prrn-GFP, rrsa promoter. (No resistance.) &	NW, VS \\
+        
+        \hline										
+        & L19-C & 	L19-mCerulean L19-gc-mCerulean-kanR (GC linker)	(Kanamycin resistance.)	& VS \\
+        & Prrn-C & 	Δ(cheZ)::Prrn-mCerulean-kanR	(Kanamycin resistance)	& VS \\
+        \hline
+        asc1088 & mCherry+
+        % L19-C, pn25-Y, p-pn25-R 
+        &	asc968 + high copy plasmid w. pn25-mCherry (Resistances: kanamycin, chloramphenicol, ampicilin.) & VS \\
+        \hline
+    \end{tabularx}
+    \caption{\textbf{Strains used in previous work and miscellaneous strains.} NW indicates these strains were used in Noreen Walker's thesis \cite{Walker2016t}. VS indicates these strains are created by Vanda Sunderlikova.}
+\end{table}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes to self
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\clearpage
 
-
-
-
+{\color{red}
+    \section{Misc. todo's etc}
+    
+    References that might be convenient:
+    \begin{itemize}
+        \item Bosdriesz E, Molenaar, D., Teusink, B., and Bruggeman, F.J. CHAPTER 6 How fast-growing bacteria robustly tune their ribosome concentration to approximate growth rate maximisation. Manuscr. Accept. Publ. FEBS J., 119–153.
+        \cite{BosdrieszE}
+        \item Maeda, M., Shimada, T., and Ishihama, A. (2015). Strength and Regulation of Seven rRNA Promoters in Escherichia coli. PLoS One 10, 1–19. \cite{Maeda2015}
+        \item Gyorfy, Z., Draskovits, G., Vernyik, V., Blattner, F.F., Gaal, T., and Posfai, G. (2015). Engineered ribosomal RNA operon copy-number variants of E. coli reveal the evolutionary trade-offs shaping rRNA operon number. Nucleic Acids Res. 43, 1783–1794. \cite{Gyorfy2015}
+        \item \textit{(The following two articles talk about the ribosomal RNA deletion strains, also surprising interactions with antibiotics. Of main importance is the observation that mainly tRNA seems to be limiting. See also unpublished \cite{Quan2013}.)} Bollenbach, T., Quan, S., Chait, R., and Kishony, R. (2009). Nonoptimal Microbial Response to Antibiotics Underlies Suppressive Drug Interactions. Cell 139, 707–718. \cite{Bollenbach2009} AND 1. Quan, S., Skovgaard, O., McLaughlin, R.E., Buurman, E.T., and Squires, C.L. (2015). Markerless Escherichia coli rrn Deletion Strains for Genetic Determination of Ribosomal Binding Sites. G3 Genes|Genomes|Genetics 5, 2555–2557. \cite{Quan2015} \textit{Quan et al. also refer to Orelle et al. 2013; Polikanov et al. 2014b; Orelle et al. 2015.}
+        \item \textit{(This article details the rRNA regulation.)} Schneider, D.A., Ross, W., and Gourse, R.L. (2003). Control of rRNA expression in Escherichia coli. Curr. Opin. Microbiol. 6, 151–156. \cite{Schneider2003} 
+        \item \textit{(These two article with description of the structures generated from rRNA genes, also mention the cleavage of the RNA genes.)}  Kaczanowska, M., and Ryden-Aulin, M. (2007). Ribosome Biogenesis and the Translation Process in Escherichia coli. Microbiol. Mol. Biol. Rev. 71, 477–494. \cite{Kaczanowska2007} AND Shajani, Z., Sykes, M.T., and Williamson, J.R. (2011). Assembly of bacterial ribosomes. Annu. Rev. Biochem. 80, 501–26. \cite{Shajani2011}
+        \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.
+        NOTE that \cite{Chen2013} has also a picture of biogenesis and assembly.
+        \cite{Shachrai2010}
+        \item Maaloe1979 and Scott2010 (see Hui2015) which claims that ribosomes operate at "saturated translational capacity".
+    \end{itemize} 
+    
+\clearpage    
+}
 
 
 
