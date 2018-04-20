@@ -2,7 +2,9 @@
 
 
 
-\chapter{The Ribosomal City}
+%\chapter{The Ribosomal City}
+%\chapter{The Ribosome, a puzzling protein-rna complex}
+\chapter{Ribosomal dynamics, a puzzling affair}
 \label{chapter:ribosomes}
 
 
@@ -17,9 +19,12 @@
     \caption{ 
         \textbf{Picture of the ribosome.}
         The ribosome consist of a small and a large subunit. These two come together on messenger RNA templates to perform protein synthesis.
-        The complete ribosome is made of 3 ribosomal RNA molecules and 54 proteins, shown in grey and color in the picture above, respectively.
+        The complete ribosome is made of 3 ribosomal RNA molecules and more than 50 proteins, shown in grey and color in the picture above, respectively \cite{Chen2013}.
         The 16S rRNA and 23S rRNA molecules function as backbone. % for the small and large subunits, respectively.
-        Proteins labeled \red{S1 up to S21} bind to the 16S rRNA to form the small subunit, and proteins labeled \red{L1-L33} and the 5S rRNA bind to the 23S rRNA to form the large subunit.
+        Proteins labeled S1 up to S22 
+        % (S22 being sub-stoichiometric) 
+        bind to the 16S rRNA to form the small subunit, and proteins labeled L1-L36 and the 5S rRNA bind to the 23S rRNA to form the large subunit \cite{Keseler2017}.
+        The Ecocyc database lists 58 ribsomal proteins, though also different numbers of ribosomal proteins are listed (ref. \cite{Chen2013} e.g. talks about 54 ribosomal proteins).
         % The 5S rRNA also binds to the large subunit.
         Assembly of the ribosome also requires many co-factors \cite{Chen2013}. % note also DnaK is required.
         %
@@ -42,13 +47,16 @@ Ribosomes are life.
 %
 In 1958, Francis Crick, who discovered the structure of DNA with James Watson and Rosalind Franklin,
 formulated what is called the central dogma of molecular biology.
-This declares that DNA holds the amino acid sequence information required to build a protein, and that this sequence information is first translated to RNA, which is then transcribed into a protein \cite{Crick1958}.
+This states 
+% declares 
+that DNA holds the amino acid sequence information required to build a protein, and that this sequence information is first translated to RNA, which is then transcribed into a protein \cite{Crick1958}.
 % 
 This dogma relates immediately to some of the features that are said to define life: 
 the capability to store information and 
 the regeneration of components from scratch \cite{Lawrence2005, Koshland2002}.
 %
-Also around that time, "new cytoplasmic components" were discovered under an electron microscope \cite{Palade1955}.
+Also around that time, 
+Slightly earlier, in 1955, "new cytoplasmic components" were already discovered under an electron microscope \cite{Palade1955}.
 These components turned out to be the components in the cell that perform the last step of the central dogma: 
 the synthesis of proteins using mRNA molecules as templates; also known as transcription.
 The components became known as ribosomes.
@@ -89,22 +97,25 @@ Such concerted concentration fluctuations are also referred to as extrinsic nois
 
 In a previous thesis from the Tans lab, Noreen Walker 
 % In previous work from our lab, Walker et al. 
-quantified the dynamic relationship between ribosomal expression fluctuations and growth \cite{Walker2016t}.
+quantified the dynamic relationship between single cell ribosomal expression fluctuations and growth in steady state growth conditions \cite{Walker2016t}.
 %
-The experiments involved present many challenges, 
+The experiments involved presented many challenges, 
 of which a number is described in her thesis.
 %
 The results from these experiments were rather inconclusive.
 %
-Given previously described central role of the ribosome, it was hypothesized ribosomes might be limiting, meaning that that ribosomal fluctuations might result in growth rate fluctuations.
+Given previously described central role of the ribosome, 
+it was hypothesized that the stochastically fluctuating concentration of ribosomes might be limiting, 
+meaning that ribosomal fluctuations might result in growth rate fluctuations.
 %
-In steady state single cell time lapse experiments, no clear indications were found to support this hypothesis.
+In single cell time lapse experiments, no clear indications were found to support this hypothesis.
 %
-Instead, mCherry-labeled L31 and L19 subunits (L31-R and L19-R) showed cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
-L31 labeled with mCerulean (L31-C) showed cross-correlations with small correlations around zero delay 
+Instead, mCherry-labeled L31 and L19 subunits (L31-R and L19-R) showed expression-growth cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
+mCerulean labeled L31 (L31-C) showed expression-growth CCs with small correlations around zero delay 
 % at positive delays 
-between expression and growth in minimal medium.
-This difference with the other experiment was unexpected, as the only difference was the label.
+%between expression and growth 
+in minimal medium.
+This difference between the L31-C and L31-R experiments was unexpected, as only the label was different.
 %
 In rich medium, the L31-C cross-correlation was consistent with the L31-R cross-correlation, and showed almost no correlation.
 %
@@ -112,18 +123,208 @@ Since the ribosome mainly consists of RNA,
 a GFP reporter under the control of one of the ribosomal RNA promoters was also used (rrna-G).
 Like the L31-C reporter, the dynamics of this rrna-G reporter showed positive correlations in minimal medium and only very small correlations in rich medium.
 % an additional reporter was used which consisted of the ribosomal RNA promoter 
+%
+Also growth-expression scatter plots were used, to investigate possible interesting shapes of growth-expression relationships, but this yielded no noteworthy shapes.
 
 In an attempt to force the cell in a scenario where ribosomes are limiting, experiments were conducted where cells were grown in the presence of sub-inhibitory concentrations of tetracycline, an antibiotic.
 %
-The outcome of such an experiment could serve as a reference to interpret other experiments.
+Though also interesting in itself, the outcome of such an experiment could serve as a reference to interpret other experiments.
 %
-In rich medium, both for the L31-R and the rrn-G reporter, this did not lead to more positive correlations.
+In rich medium, both for the L31-R and the rrn-G reporter, the antibiotic did not lead to more positive correlations.
 %
-Given these disparate observations, both between reporters and conditions, 
+Given the disparate observations, both between reporters and conditions, 
 and the absence of a point of reference,
-the nature of the ribosomal dynamics remained fairly elusive; it was concluded that ribosomes perhaps do not have a pivotal role in cellular growth dynamics.
+the nature of the ribosomal dynamics remained fairly elusive; it was concluded that ribosomal fluctuations perhaps do not have a pivotal role in steady state cellular growth dynamics.
 
-\subsubsection*{}
+\subsection*{New work}
+
+In this chapter, we will describe a few additional experiments that were aimed at gaining further insights in the ribosomal dynamics.
+Specifically, we tried to understand whether fluctuations in ribosomal concentration could have cell-wide implications.
+%
+To answer this question, we tried both new experiments as well increase the throughput of existing experiments.
+%
+Since this is an ongoing project, this chapter will be more succinct than previous ones.
+
+\section*{Results}
+% > looked at dual reporters with pn25 reporter to assess effect from ribosomal concentration > protein production
+    % ^> (outlook) Note that also R_CR-pq would be interesting in future with minor technical adjustment
+% > looked at shift experiment to look at a (dynamic) environment where we knew cells with more ribosomes have an advantage
+% > Additional semi-steady state measurements w/ and w/o antibiotics (incl. the pn25 reporter)
+% > (outlook) we also looked into adding a plasmid that would introduce a burden unto the ribosomes 
+%	% ^> Note that cells will adjust, so in a sense this might not increase the effect of fluctuations (perhaps put in sketch of two graphs with two optimums)
+% > (outlook) we also looked into rrna reporter in delta(rna) strains
+% > (outlook) maybe r-proteins are not as stochastically equivalent as sometimes assumed, ratio Y_m9:Y_ab and R_m9:R_ab not equal (2.4 and 2.3)
+    % ^> what about production though, that's ratio_Y 3.18 vs. 2.15, should these ratios not be equal? --> not to C-ratio as the growth rates differ.
+% > (outlook) ppgpp titration
+% > (outlook) perhpas the fluctuations in total ribosome activity are a difficult function of fluctuations in all of the separate ribosomal components, which all might have their own (partially) independent contributions, and therefor it is hard to see single correlations. (the C
+
+\subsection*{Additional strains}
+
+\red{
+pn25 both L and rna, refer to table;
+elf strain}
+
+%\subsection*{An attempt to create a limiting situation}
+\subsection*{Antibiotic shift experiments to create limiting situations}
+
+%\subsubsection{The shift experiment}
+
+To understand the dynamics of a process, it is often convenient to grasp what happens in extreme cases.
+%
+We therefore attempted to device an experiment which would lead to a situation where single cells that expressed more ribosomes than the population average would have a growth advantage, thus forcing a "limiting" situation.
+% 
+We did this by growing cells in minimal medium in our microfluidic device 1 for a few hours, and then switching to minimal medium supplemented with antibiotics (see chapter \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
+%We did this by growing cells in minimal medium in our microfluidic device 1 (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
+%
+We hypothesized that right after the medium has switched, cells in the population --- which at that point is calibrated for growth in minimal medium --- that happen to express more ribosomes have a growth advantage.
+%
+To analyse whether this was indeed the case, we made scatter plots for any point in time during the experiment for measured single cell growth versus concentration values.
+We further analysed these plots by calculating the slope and correlation of these scatter plots for each point in time.
+%
+One experiment like this was already conducted Tans lab alumni Sarah Boulinea for the L31-R, gltA-G strain \ref{table:ribostrains1}, previously mentioned analysis was also run on this data.
+Two additional experiments were conducted, one with the L31-C strain where one microcolony was followed, and one with the rrsa-C, pn25-Y strain, where three microcolonies were followed.
+%
+The trends in fluor concentration for all these five datasets are shown in figure \ref{fig:ribo:scatter1}.
+This figure shows that for the Prrna-C strain datasets, the signal goes up after the switch to medium with antibiotics, as is expected.
+However, for both for the L31-R and L31-C datasets, the signal appears to be going down after the shift (though pre-shift fluctuations on the population average level of the L31-R data make it unclear what is exactly going on).
+It is unclear why this happens, since ribosome inhibition should increase relative ribosomal demand \cite{You2013}.
+%
+As mentioned, we created scatter plots for all of these datasets, and for brevity we only show the representative series of scatter plots that relates to the L31-C dataset, see figure \ref{fig:ribo:scatter1}. 
+This figure shows that there is no clear change in the shape of the cloud visible by eye after the switch.
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Switch experiment figures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%% General trend of signals
+\begin{figure}
+    \centering    
+    \includegraphics[width=0.3\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_fluorTrend.pdf}
+    \includegraphics[width=0.3\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_fluorTrend.pdf} \\
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_fluorTrend} % added
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_fluorTrend}
+    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_fluorTrend}            
+    \caption{ 
+        \textbf{Fluorescence intensity for switch from clean medium to medium supplemental with antibiotics.}
+        Red dots show single cell obsvervations, the black line indicates the colony average.
+        (Top left) L31-R strain. 
+        (Top right) L31-C strain.
+        (Bottom three) All are rrsa-C strains.      
+    }
+    \label{fig:ribo:fluorsignals}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%% Scatter plots (only one shown for brevity).
+\begin{figure}
+    \centering    
+    \includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    %\includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:scatter1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%% Summary plots for shift experiments
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:switch1}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:switch2}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:switch3}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:switch4}
+\end{figure}
+\begin{figure}
+    \centering    
+    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \caption{ 
+        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        %
+        %        
+    }
+    \label{fig:ribo:switch5}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Higher throughput determination of additional cross-correlations}
+
+%
+
+
+\subsubsection*{Increased data throughput: many experiments in one}
+
+Additionally, the use of the microfluidic device 2 allowed us to increase the throughput of the experiments, and allowed us to also measure steady state expression-growth cross-correlation curves by prolonged multi-hour experiments.
+%
+For example, table \ref{table:ribosomes:typicaldevice2experiment} shows the setup of a typical experiment.
+For example, the experimental design for measurements on the L19-R pn25-Y strain, included the following sequence of supplemented medium: \textit{6 hours TY, 6 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 6 hours M9, 6 hours M9 + TET, 2 hours M9, 2 hours M9 + TET, 2 hours M9, 2 hours M9 + TET}. (M9 indicates M9 minimal medium here, supplemented with lactose, uracil and tween20; see chapter \ref{chapter:filarecovery} for further description of used media). 
+%
+By analyzing the last two hours of the 6hr sequences, we could investigate the steady state behavior of the population.
+The many switches would allow us to investigate the behavior in the case of switches.
+
+\subsubsection*{bla}
+
+L19-gc-mCerulean-kanR (GC linker) 
+and one constitutive reporter, Δ(…)::pn25-mVenus.
+the medium flown through might 
+
+
+
+
+
+\subsubsection{Conclusion of the shift experiment}
+
+DISCUSS GIULIA FIRST, THEN SARAH
+
+
+\subsubsection*{More stuff}
+
+It might be the case that ribosomes are regulated in such a way that 
+THEY ARE NOT LIMITING
+SO WE NEED POSITIVE CONTROL WHERE IT IS LIMITING TO CONTRAST IT WITH
 
 \subsection*{Bla}
 
@@ -224,6 +425,7 @@ Given that the ribosome
         \hline
 \end{tabularx}
 \caption{\textbf{Strains used in this work.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab.}
+\label{table:ribostrains1}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -404,6 +606,8 @@ Given that the ribosome
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % L9-R ribosomal reporter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -440,7 +644,36 @@ Given that the ribosome
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Correlations between ribosomal expression r-protein1 and r-protein2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_Y6_mean_cycCor_R6_mean_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between concentration of ribosomal reporter and concentration of pn25 reporter.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+(B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+        %        
+    }
+    \label{fig:ribo:CCsEmuY}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_CCs_dY5_divAreaPx_cycCor_dR5_divAreaPx_cycCor.pdf}
+    \caption{ 
+        \textbf{Cross-correlations between production rate of ribosomal reporter and production rate of pn25 reporter.}
+        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+(B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -450,15 +683,15 @@ Given that the ribosome
 % Means for ASC968andASC976 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{pdf_riboAll_overview_means.pdf}
+        \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_overview_means.pdf}
     \caption{ 
         \textbf{Population mean values of different parameters measured in different strains and conditions.}
-        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
-        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
-        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
-        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
-        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+%        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+%        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+%        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
         %
         %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
         %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
@@ -470,6 +703,33 @@ Given that the ribosome
     }
     \label{fig:ribo:CCsPmuY}
 \end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_overview_means.pdf}
+    \caption{ 
+        \textbf{Population mean values of different parameters measured in different strains and conditions.}
+%        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+%        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+%        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %
+        %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        C: giu_asc1058_M9_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        D: giu_asc976_TY_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        E: giu_asc976_TY_steady_antibiotics, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        F: giu_asc976_M9_steadymw_asc976_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
+        %        
+    }
+    \label{fig:ribo:CCsPmuY}
+\end{figure}
+
+
+
+    
 
 % Branches for ASC968andASC976 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -524,105 +784,14 @@ Given that the ribosome
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Switch experiment figures
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%% Scatter plots
-\begin{figure}
-    \centering    
-    \includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    %\includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%% General trend of signals
-\begin{figure}
-    \centering    
-    \includegraphics[width=0.3\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_fluorTrend.pdf}
-    \includegraphics[width=0.3\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_fluorTrend.pdf} \\
-    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_fluorTrend} % added
-    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_fluorTrend}
-    \includegraphics[width=0.3\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_fluorTrend}            
-    \caption{ 
-        \textbf{Fluorescence intensity for switch from clean medium to medium supplemental with antibiotics.}
-        Red dots show single cell obsvervations, the black line indicates the colony average.
-        (Top left) L31-R strain. 
-        (Top right) L31-C strain.
-        (Bottom three) All are rrsa-C strains.      
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%% Scatter plots
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:scatter1}
-\end{figure}
 
 			
 
 \begin{table}                       
 \begin{tabular}{ l l l l }
     \centering
-    subunit & gene name & operon & fluorescent label \\ 
+    r-protein & Gene name & Operon & Fluorescent label \\ 
     \hline
     L31 & rpmE & none & Cerulean, mCherry \\ 
     L19 & rplS & rpsP-rimM-trmD-rplS & Cerulean, mCherry \\ 
@@ -630,7 +799,7 @@ Given that the ribosome
     S2 & rpsB & ttf-rpsB-tsf & Venus\\ 
 
 \end{tabular}
-    \caption{Ribosomal subunits that we have labeled.} \label{tab:ribosubunits}
+    \caption{Ribosomal proteins that we have labeled.} \label{tab:ribolabeledprots}
 \end{table}
 
 
@@ -662,7 +831,14 @@ Given that the ribosome
 
 
 
-\subsection{Acknowledgements}
+\section*{Acknowledgements}
+
+%I am indebted to Noreen Walker and Giulia Bergamaschi regarding this chapter.
+%
+I am thankful to Noreen Walker, who fostered the ribosome project for 4 years, for her collaboration and input regarding these additional experiments.
+%
+Much of the data shown in this chapter were taken by Giulia Bergamaschi, master student in the Tans lab at that time. I am thankful for her hard work. 
+
 Molecular graphics and analyses 
 % addition MW
 of crystal structures
@@ -707,7 +883,7 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
 (a) 
 (b) would be nice to re-run some of noreen's analyses with the script that creates the controls.
 
-
+(z) mention the order in which ribosomes are formed \cite{Chen2013}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Notes to self
@@ -727,8 +903,8 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
         \item \textit{(The following two articles talk about the ribosomal RNA deletion strains, also surprising interactions with antibiotics. Of main importance is the observation that mainly tRNA seems to be limiting. See also unpublished \cite{Quan2013}.)} Bollenbach, T., Quan, S., Chait, R., and Kishony, R. (2009). Nonoptimal Microbial Response to Antibiotics Underlies Suppressive Drug Interactions. Cell 139, 707–718. \cite{Bollenbach2009} AND 1. Quan, S., Skovgaard, O., McLaughlin, R.E., Buurman, E.T., and Squires, C.L. (2015). Markerless Escherichia coli rrn Deletion Strains for Genetic Determination of Ribosomal Binding Sites. G3 Genes|Genomes|Genetics 5, 2555–2557. \cite{Quan2015} \textit{Quan et al. also refer to Orelle et al. 2013; Polikanov et al. 2014b; Orelle et al. 2015.}
         \item \textit{(This article details the rRNA regulation.)} Schneider, D.A., Ross, W., and Gourse, R.L. (2003). Control of rRNA expression in Escherichia coli. Curr. Opin. Microbiol. 6, 151–156. \cite{Schneider2003} 
         \item \textit{(These two article with description of the structures generated from rRNA genes, also mention the cleavage of the RNA genes.)}  Kaczanowska, M., and Ryden-Aulin, M. (2007). Ribosome Biogenesis and the Translation Process in Escherichia coli. Microbiol. Mol. Biol. Rev. 71, 477–494. \cite{Kaczanowska2007} AND Shajani, Z., Sykes, M.T., and Williamson, J.R. (2011). Assembly of bacterial ribosomes. Annu. Rev. Biochem. 80, 501–26. \cite{Shajani2011}
-        \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.
         NOTE that \cite{Chen2013} has also a picture of biogenesis and assembly.
+        \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.        
         \cite{Shachrai2010}
         \item Maaloe1979 and Scott2010 (see Hui2015) which claims that ribosomes operate at "saturated translational capacity".
     \end{itemize} 
