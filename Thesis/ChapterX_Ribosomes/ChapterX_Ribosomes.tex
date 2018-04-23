@@ -26,6 +26,7 @@
         bind to the 16S rRNA to form the small subunit, and proteins labeled L1-L36 and the 5S rRNA bind to the 23S rRNA to form the large subunit \cite{Keseler2017}.
         The Ecocyc database lists 58 ribsomal proteins, though also different numbers of ribosomal proteins are listed (ref. \cite{Chen2013} e.g. talks about 54 ribosomal proteins).
         % The 5S rRNA also binds to the large subunit.
+        Interestingly, the ribosomal RNA constitutes 73-80\% of the total RNA found in an \textit{E. coli} cell (mRNA constitutes 3-4.5\% and tRNA 15-20\%) \cite{Norris1972}.
         Assembly of the ribosome also requires many co-factors \cite{Chen2013}. % note also DnaK is required.
         %
         This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
@@ -97,12 +98,12 @@ Such concerted concentration fluctuations are also referred to as extrinsic nois
 
 In a previous thesis from the Tans lab, Noreen Walker 
 % In previous work from our lab, Walker et al. 
-quantified the dynamic relationship between single cell ribosomal expression fluctuations and growth in steady state growth conditions \cite{Walker2016t}.
+quantified the dynamic relationship between single cell ribosomal expression fluctuations and growth in steady state conditions \cite{Walker2016t}.
 %
 The experiments involved presented many challenges, 
 of which a number is described in her thesis.
 %
-The results from these experiments were rather inconclusive.
+% The results from these experiments were rather inconclusive.
 %
 Given previously described central role of the ribosome, 
 it was hypothesized that the stochastically fluctuating concentration of ribosomes might be limiting, 
@@ -110,8 +111,11 @@ meaning that ribosomal fluctuations might result in growth rate fluctuations.
 %
 In single cell time lapse experiments, no clear indications were found to support this hypothesis.
 %
-Instead, mCherry-labeled L31 and L19 subunits (L31-R and L19-R) showed expression-growth cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
-mCerulean labeled L31 (L31-C) showed expression-growth CCs with small correlations around zero delay 
+Instead, 
+ribosomal proteins L19 and L31 that were labeled with mCherry (L31-R and L19-R)
+% mCherry-labeled L31 and L19 subunits (L31-R and L19-R) 
+showed expression-growth cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
+mCerulean labeled L31 ribosomal protein (L31-C) showed expression-growth CCs with small correlations around zero delay 
 % at positive delays 
 %between expression and growth 
 in minimal medium.
@@ -130,7 +134,7 @@ In an attempt to force the cell in a scenario where ribosomes are limiting, expe
 %
 Though also interesting in itself, the outcome of such an experiment could serve as a reference to interpret other experiments.
 %
-In rich medium, both for the L31-R and the rrn-G reporter, the antibiotic did not lead to more positive correlations.
+In rich medium, both for the L31-R and the rrn-G reporter, the antibiotic did not result in more limiting behaviour, i.e. correlations did not become more positive.
 %
 Given the disparate observations, both between reporters and conditions, 
 and the absence of a point of reference,
@@ -160,9 +164,54 @@ Since this is an ongoing project, this chapter will be more succinct than previo
 
 \subsection*{Additional strains}
 
-\red{
-pn25 both L and rna, refer to table;
-elf strain}
+\begin{table}[h]
+    \begin{tabularx}{\textwidth}{llXl}
+        %
+        \textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
+        \hline
+        ASC976  &	Prrna-C, pn25-Y	&	Δphp::pn25-mVenus-cmR, Δche::Prrsa-mCerulean-kanR. (Kanamycin and chloramphenicol resistance.)  & VS \\
+        %     
+        ASC968	& L19-C, pn25-Y	& L19-gc-mCerulean-kanR (GC linker), Δ(…)::pn25-mVenus-cmR.	(Kanamycin and chloramphenicol resistance.)	& VS \\
+        %
+        ASC1058	& L9-R, S2-Y	& Also known as JE202. rplI-mCherry-KanR (L9), rpsB-venus-CmR (S2). (Kanamycin and chloramphenicol resistance.) Gift from Johan Elf lab. & \cite{Wallden2016} \\
+        \hline
+        %
+        % ASC631 & pn25-R, lacA-G & $\Delta$lacA::gfp-cat, $\Delta$php::pn25-mCherry-kanR & \cite{Kiviet2014} \\
+        ASC666 & L31-R, gltA-G  & L31::mCherry-kanR, gltA::gfpA206K-cat & \cite{Kiviet2014} \\
+        ASC810	& L31-C & L31-gc-mCerulean-kanR (GC linker). (Kanamycin resistant.) & NW, VS \\
+        \hline
+    \end{tabularx}
+    \caption{\textbf{Strains used in this work.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab. ASC stands for AMOLF strain collection. Note that Y, C, G and R indicate yellow, cyan, green and red fluorescent reporters, respectively.}
+    \label{table:ribostrains1}
+\end{table}
+
+To be able to further explore the interaction of ribosomal expression with cellular dynamics, 
+we produced additional strains.
+%
+Importantly, we were interested in the effect fluctuations in ribosomal expression would have on single cell protein production.
+%
+We therefore created two dual-label strains that both carried ribosomal reporter constructs, as well as constitutively expressed fluorescent reporters.
+%
+In the first strain, we fused the mCerulean fluorescent reporter sequence to the ribosomal RNA promoter (rrsa), and additionally inserted an mVenus sequence to the constitutive pn25 promoter. Both were chromosomally inserted.
+%
+The pn25-mVenus reporter serves as a readout for fluctuations in protein production that likely affect all proteins that are produced in the cell. 
+% a proxy for protein production in general.
+%
+In the second strain, we introduced an mCerulean sequence behind the chromosomal L19 ribosomal protein sequence, thus creating a strain that produces L19 ribosomal proteins that are fused to mCerulean fluorescent labels.
+We also introduced the constitutive pn25-mVenus reporter to this strain.
+%
+These strains, the Prrna-C, pn25-Y strain and the L19-C, pn25-Y strain are listed in table \ref{table:ribostrains1}.
+
+Furthermore, because the ribosome consists of so many ribosomal proteins, we wanted to be able to confirm 
+potentially observed dynamics for one labeled ribosomal protein, also for other labeled ribosomal proteins.
+%
+% potential observations in a strain that had other ribosomal proteins labeled.
+For this purpose, we requested a strain from the Elf lab which had both the L9 and S2 ribosomal proteins labeled by the mCherry and Venus fluorescent proteins, respectively \cite{Wallden2016}.
+This strain was kindly supplied by the Elf lab, and is also listed in table \ref{table:ribostrains1} with the shorthand notation L9-R, S2-Y.
+
+%\red{
+%pn25 both L and rna, refer to table;
+%elf strain}
 
 %\subsection*{An attempt to create a limiting situation}
 \subsection*{Antibiotic shift experiments to create limiting situations}
@@ -176,22 +225,42 @@ We therefore attempted to device an experiment which would lead to a situation w
 We did this by growing cells in minimal medium in our microfluidic device 1 for a few hours, and then switching to minimal medium supplemented with antibiotics (see chapter \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
 %We did this by growing cells in minimal medium in our microfluidic device 1 (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
 %
-We hypothesized that right after the medium has switched, cells in the population --- which at that point is calibrated for growth in minimal medium --- that happen to express more ribosomes have a growth advantage.
+We hypothesized that right after the medium has switched, cells in the population --- which at that point are calibrated for growth in minimal medium --- that happen to express more ribosomes have a growth advantage.
 %
-To analyse whether this was indeed the case, we made scatter plots for any point in time during the experiment for measured single cell growth versus concentration values.
-We further analysed these plots by calculating the slope and correlation of these scatter plots for each point in time.
+To analyse whether this was indeed the case, we made growth-concentration scatter plots for multiple points in time during the experiment.
 %
-One experiment like this was already conducted Tans lab alumni Sarah Boulinea for the L31-R, gltA-G strain \ref{table:ribostrains1}, previously mentioned analysis was also run on this data.
-Two additional experiments were conducted, one with the L31-C strain where one microcolony was followed, and one with the rrsa-C, pn25-Y strain, where three microcolonies were followed.
+We further analysed these measurements by calculating the slope and correlation of these scatter plots for each point in time.
+
+Some data involving an antibiotic switch was already gathered
+%One experiment like this was already conducted 
+by Tans lab alumni Sarah Boulinea for the L31-R, gltA-G strain (see table \ref{table:ribostrains1}); 
+we also ran our analysis on this dataset.
+Also, two additional experiments were conducted, one with the L31-C strain where one microcolony was analyzed, 
+and one with the rrsa-C, pn25-Y strain, where three microcolonies were analyzed.
 %
-The trends in fluor concentration for all these five datasets are shown in figure \ref{fig:ribo:scatter1}.
+Before looking at the scatter plots, we first look at the 
+trends in fluor concentration for all these five datasets, which are shown in figure \ref{fig:ribo:scatter1}.
 This figure shows that for the Prrna-C strain datasets, the signal goes up after the switch to medium with antibiotics, as is expected.
 However, for both for the L31-R and L31-C datasets, the signal appears to be going down after the shift (though pre-shift fluctuations on the population average level of the L31-R data make it unclear what is exactly going on).
 It is unclear why this happens, since ribosome inhibition should increase relative ribosomal demand \cite{You2013}.
 %
-As mentioned, we created scatter plots for all of these datasets, and for brevity we only show the representative series of scatter plots that relates to the L31-C dataset, see figure \ref{fig:ribo:scatter1}. 
-This figure shows that there is no clear change in the shape of the cloud visible by eye after the switch.
+We now turn to the scatter plots.
+%As mentioned, we created growth-expression scatter plots for each time point within the dataset, for all of these datasets, and f
+For brevity we only show the representative series of scatter plots that relates to the L31-C dataset, see figure \ref{fig:ribo:scatter1}. 
+This figure shows that there is no clear change in correlation visible by eye after the switch to medium with antibiotics.
 %
+As mentioned however, we further quantified the data by calculating both the slope (least square fit by Matlab's \texttt{polyfit} function) and correlation coefficient for each of the scatter plots.
+%
+This is shown in figures \ref{fig:ribo:switch1}-\ref{fig:ribo:switch5}.
+%
+The L31-R dataset (figure \ref{fig:ribo:switch1}) arguably shows a small increase in correlation, but the correlation also decreases swiftly after that.
+The L31-Y dataset (figure \ref{fig:ribo:switch2}) is difficult to interpret, 
+likely the positive correlations before the switch are caused by chance as there are only a few cells in the microcolony at those points in time.
+%
+The first Prrsa-Y dataset (figure \ref{fig:ribo:switch3}) shows a change in signal right after the switch, but this is not seen in the two other Prrs-Y datasets (\ref{fig:ribo:switch4}-\ref{fig:ribo:switch5}).
+%
+%These figures show that there is no clear change in correlation observed after the switch.
+In conclusion, it is difficult to interpret these datasets, as the different datasets show different trends.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,143 +359,37 @@ This figure shows that there is no clear change in the shape of the cloud visibl
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Higher throughput determination of additional cross-correlations}
+\subsection*{Higher throughput and additional cross-correlations}
 
+\subsubsection*{Many experiments in one}
+
+One reason that it is hard to analyze the data from the antibiotic switch experiments using microfluidic device 1, 
+is
+that the size of the microcolony starts out small, which leads to a 
+high variability of the observables during the first part of the experiment.
 %
-
-
-\subsubsection*{Increased data throughput: many experiments in one}
-
-Additionally, the use of the microfluidic device 2 allowed us to increase the throughput of the experiments, and allowed us to also measure steady state expression-growth cross-correlation curves by prolonged multi-hour experiments.
+To produce a dataset with a constant large amount of cells, we performed additional antibiotic switch experiments in microfluidic device 2.
 %
-For example, table \ref{table:ribosomes:typicaldevice2experiment} shows the setup of a typical experiment.
-For example, the experimental design for measurements on the L19-R pn25-Y strain, included the following sequence of supplemented medium: \textit{6 hours TY, 6 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 6 hours M9, 6 hours M9 + TET, 2 hours M9, 2 hours M9 + TET, 2 hours M9, 2 hours M9 + TET}. (M9 indicates M9 minimal medium here, supplemented with lactose, uracil and tween20; see chapter \ref{chapter:filarecovery} for further description of used media). 
+Conveniently, microfluidic device 2 allows for multi-day experiments, which allowed us 
+%to increase the throughput of the experiments, and allowed us 
+to also measure additional steady state expression-growth cross-correlation curves. % by prolonged multi-hour experiments.
 %
-By analyzing the last two hours of the 6hr sequences, we could investigate the steady state behavior of the population.
-The many switches would allow us to investigate the behavior in the case of switches.
-
-\subsubsection*{bla}
-
-L19-gc-mCerulean-kanR (GC linker) 
-and one constitutive reporter, Δ(…)::pn25-mVenus.
-the medium flown through might 
-
-
-
-
-
-\subsubsection{Conclusion of the shift experiment}
-
-DISCUSS GIULIA FIRST, THEN SARAH
-
-
-\subsubsection*{More stuff}
-
-It might be the case that ribosomes are regulated in such a way that 
-THEY ARE NOT LIMITING
-SO WE NEED POSITIVE CONTROL WHERE IT IS LIMITING TO CONTRAST IT WITH
-
-\subsection*{Bla}
-
-inconclusive
-like this chapter too,
-nevertheless
+Importantly, we performed these additional experiments with the new Prrna-C, pn25-Y and L19-C, pn25-Y strains, to investigate the effect of ribosomal fluctuations on protein production rates with the pn25-mVenus reporter.
 %
-In this chapter, we will describe a number of additional experiments that have been conducted to 
-
-> focus on pn25
-> repeat experiments to get more data
-> measure in switch condition
-
-\subsubsection*{bla}
-
-
-
-\section{Structure of the ribosome}
-
-Nowadays, the structure of the ribosome has been unraveled.
-
-It is known that the ribosome consists of 3 RNA molecules and 54 proteins \cite{Chen2013}.%, Lodish2003}.
-
-% about the structure
-% AA, B0 and 
-structure retrieved from
-http://www.rcsb.org/pdb/explore.do?structureId=4v4a
-structure visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}).
+%For example, table \ref{table:ribosomes:typicaldevice2experiment} shows the setup of a typical experiment.
+An example of a typical 
+%For example, the 
+experimental design is given by the measurements we performed on the L19-R pn25-Y strain, which involved the following sequence of supplied medium: \textit{6 hours TY, 6 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 6 hours M9, 6 hours M9 + TET, 2 hours M9, 2 hours M9 + TET, 2 hours M9, 2 hours M9 + TET}. (M9 indicates M9 minimal medium here, supplemented with lactose, uracil and tween20; see chapter \ref{chapter:filarecovery} for further description of used media). 
+%
+%By analyzing the last two hours of the 6hr sequences, we could investigate the steady state behavior of the population.
+%The many switches would allow us to investigate the behavior in the case of switches.
 
 
-
-% effects on ribosomes 
-% > regulation by? 
-% > find out if there are global regulators
-% 
-% effects of ribosomes
-% > they build themselves
-% > they build anything in the cell
-
-%\begin{figure}
-%    \centering
-%    \includegraphics[width=0.9\textwidth]{riboFig1.pdf}
-%    \caption{ 
-%        (A) \red{XXX ribosome} 
-%    }
-%    \label{fig:modeldrawing}
-%\end{figure}
-
-
-\section{The Ribosome}
-
-
-
-
-
-The ribosome is a vast RNA-protein complex. 
-This complex is responsible for translating messenger RNA (mRNA) to proteins.
-
-
-When expressed, any of \textit{E. coli}'s approximately 4288 genes \cite{Blattner1997} is first converted in messenger RNA (mrNA), and then into protein.
-Despite this fact, only 3-4.5\% of the cell's RNA is mRNA.
-%(organized into 2584 operons)
-
-
-3-4.5\% mRNA
-73-80\% rRNA
-15-20\% tRNA
-
-\cite{Norris1972}
-
-%(For 55 minutes: 80\% and 15\%)
-
-\section{Labeling proteins of the ribosome}
-
-Table \ref{tab:ribosubunits} shows a list of the subunits we have currently labeled.
-
-Given that the ribosome
 
 
 
 \section{First some material}
 
-\begin{table}[h]
-    \begin{tabularx}{\textwidth}{llXl}
-        %
-        \textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
-        \hline
-        ASC976  &	Prrna-C, pn25-Y	&	Δphp::pn25-mVenus-cmR, Δche::Prrsa-mCerulean-kanR. (Kanamycin and chloramphenicol resistance.)  & VS \\
-        %     
-        ASC968	& L19-C, pn25-Y	& L19-gc-mCerulean-kanR (GC linker), Δ(…)::pn25-mVenus-cmR.	(Kanamycin and chloramphenicol resistance.)	& VS \\
-        %
-        ASC1058	& L9-R, S2-Y	& Also known as JE202. rplI-mCherry-KanR (L9), rpsB-venus-CmR (S2). (Kanamycin and chloramphenicol resistance.) Gift from Johan Elf lab. & \cite{Wallden2016} \\
-        \hline
-        %
-        % ASC631 & pn25-R, lacA-G & $\Delta$lacA::gfp-cat, $\Delta$php::pn25-mCherry-kanR & \cite{Kiviet2014} \\
-        ASC666 & L31-R, gltA-G  & L31::mCherry-kanR, gltA::gfpA206K-cat & \cite{Kiviet2014} \\
-        ASC810	& L31-C & L31-gc-mCerulean-kanR (GC linker). (Kanamycin resistant.) & NW, VS \\
-        \hline
-\end{tabularx}
-\caption{\textbf{Strains used in this work.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab.}
-\label{table:ribostrains1}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dataset w/ pn25 reporters
