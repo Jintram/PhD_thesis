@@ -181,20 +181,23 @@ Since this is an ongoing project, this chapter will be more succinct than previo
         ASC810	& L31-C & L31-gc-mCerulean-kanR (GC linker). (Kanamycin resistant.) & NW, VS \\
         \hline
     \end{tabularx}
-    \caption{\textbf{Strains used in this work.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab. ASC stands for AMOLF strain collection. Note that Y, C, G and R indicate yellow, cyan, green and red fluorescent reporters, respectively.}
+    \caption{\textbf{Strains used in this chapter.} Strain ASC1058 was a kind gift from the Johan Elf lab. VS indicates these strains were created by Vanda Sunderlikova, technician in the Tans lab. ASC stands for AMOLF strain collection. Note that Y, C, G and R indicate yellow, cyan, green and red fluorescent reporters, respectively. The first two strains in this table were specifically created for experiments described in this chapter, and the third strain was requested specifically for work described in this chapter. The last two strains in the table were created earlier.}
     \label{table:ribostrains1}
 \end{table}
 
-To be able to further explore the interaction of ribosomal expression with cellular dynamics, 
+%To be able to further explore the interaction of ribosomal expression with cellular dynamics, 
+To be able to further explore the implications of ribosomal fluctuations, 
 we produced additional strains.
 %
-Importantly, we were interested in the effect fluctuations in ribosomal expression would have on single cell protein production.
+Importantly, we were interested in the effect fluctuations in ribosomal expression would have on 
+the single cell capacity to produce proteins.
+%single cell protein production.
 %
 We therefore created two dual-label strains that both carried ribosomal reporter constructs, as well as constitutively expressed fluorescent reporters.
 %
 In the first strain, we fused the mCerulean fluorescent reporter sequence to the ribosomal RNA promoter (rrsa), and additionally inserted an mVenus sequence to the constitutive pn25 promoter. Both were chromosomally inserted.
 %
-The pn25-mVenus reporter serves as a readout for fluctuations in protein production that likely affect all proteins that are produced in the cell. 
+The pn25-mVenus reporter served as a readout for fluctuations in protein production that likely affect all proteins that are produced in the cell. 
 % a proxy for protein production in general.
 %
 In the second strain, we introduced an mCerulean sequence behind the chromosomal L19 ribosomal protein sequence, thus creating a strain that produces L19 ribosomal proteins that are fused to mCerulean fluorescent labels.
@@ -208,6 +211,11 @@ potentially observed dynamics for one labeled ribosomal protein, also for other 
 % potential observations in a strain that had other ribosomal proteins labeled.
 For this purpose, we requested a strain from the Elf lab which had both the L9 and S2 ribosomal proteins labeled by the mCherry and Venus fluorescent proteins, respectively \cite{Wallden2016}.
 This strain was kindly supplied by the Elf lab, and is also listed in table \ref{table:ribostrains1} with the shorthand notation L9-R, S2-Y.
+
+Thus, we expanded our ability to track ribosomal dynamics by 
+expanding our collection of ribosomal reporters, 
+%obtaining more strains with ribosomal reporters, and additionally 
+and introduced a way to probe the effect of ribosomal fluctuations on protein expression by the introduction of the pn25 reporter.
 
 %\red{
 %pn25 both L and rna, refer to table;
@@ -382,7 +390,10 @@ An example of a typical
 experimental design is given by the measurements we performed on the L19-R pn25-Y strain, which involved the following sequence of supplied medium: \textit{6 hours TY, 6 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 2 hours TY + TET, 2 hours TY, 6 hours M9, 6 hours M9 + TET, 2 hours M9, 2 hours M9 + TET, 2 hours M9, 2 hours M9 + TET}. (M9 indicates M9 minimal medium here, supplemented with lactose, uracil and tween20; see chapter \ref{chapter:filarecovery} for further description of used media). 
 %
 %By analyzing the last two hours of the 6hr sequences, we could investigate the steady state behavior of the population.
-%The many switches would allow us to investigate the behavior in the case of switches.
+%The many switches would allow us to investigate the behavior in the case of switches. XXXXXX
+
+Thus, to recapitulate, each experiment with microfluidic device 2 can potentially give (1) data on the ribosome-growth dynamics during antibiotic shifts, (2) data on ribosome-protein expression dynamics during antibiotic shifts, (3) additional CCs regarding ribosome-growth dynamics to characterize steady state relationships, and (4) CCs of previously uncharacterised ribosome-protein expression dynamics. 
+Additionally, we could also analyse the response growth medium shifts and the response to medium shifts that occur at high frequency, but we will not focus on this here.
 
 
 \subsubsection*{Results of the experiments}
@@ -391,9 +402,9 @@ The large amount of data generated by microfluidic device 2 is both an advantage
 %
 We will not go into technical details here, but both the amount of data and also the nature of the growth in the wells present the computer analysis with new challenges.
 %
-We therefore only analysed parts of the data that was produced by these experiments at this point.
+We therefore only analysed parts of the data that was produced by these experiments at this moment.
 %
-We chose to first analyse the data where we assumed cells had reached steady state; and where we can perform cross-correlation analyses.
+We chose to first analyse the data where we assumed cells had reached steady state; and where we can perform cross-correlation analyses (i.e. analyses mentioned in points 3 and 4 in the previous paragraph).
 Additional data recorded at the times of the switches exists but has not been fully analysed yet.
 %This selection of the data did not include the parts were switches were performed, 
 %but only the data were we assumed cells had reached steady state growth.
@@ -406,7 +417,9 @@ could perhaps further refine the analyses that we show here.
 %
 For example, some of the tracked lineages show unrealistic fluctuations which might be due to artefacts in the computer analysis and might be removed or corrected (see supplemental figures \ref{fig:ribo:branchesXXXX}), and also the analysis now only takes into account a selection of the total amount of imaged cells, this selection could be extended to obtain more data.
 
-\subsubsection*{\red{Expression-growth CCs of constitutive reporter are consistent with dilution mode}}
+%\subsubsection*{\red{Expression-growth CCs of constitutive reporter are consistent with dilution mode}}
+%\subsubsection*{Results from ribosome and constitutive dual reporter strains}
+\subsubsection*{Results from strains with ribosome and constitutive reporters}
 
 At any rate, figures \ref{fig:ribo:CCsEmuYpn25}-\ref{fig:ribo:CCsPmuYpn25Ribo} show data obtained from the Prrna-C, pn25-Y and L19-C, pn25-Y strains.
 %
@@ -422,15 +435,54 @@ The CCs we observe here could be consistent with that transmission mode.
 %
 Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rrna and L19).
 The CC in panel A does not show a clear trend.
-The CCs in panels B-D however, which show the behaviour of the rrna reporter, also show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
+The CCs in panels B-D however, which show the behaviour of the rrna reporter for different conditions, all show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
 %
-Note here that the rrna reporter might not capture all ribosomal RNA fluctuations, since it is by its nature not a translational fusion reporter such as the other ribosomal reporters.
+It is striking that there are no noticeable differences in the rrna expression growth dynamics between different conditions.
 %
+One explanation might be that the rrna reporter might not capture all ribosomal RNA fluctuations, since it is by its nature not a translational fusion reporter such as the other ribosomal reporters.
 
 
 
-\section{First some material}
+The dual reporter strains with both ribosomal and pn25 constitutive reporters were constructed to allow us to not only study ribosome-growth dynamics, but also allow us to study the impact of ribosomal fluctuations and protein expression.
+%
+%We now turn to the question we can address with the ribosomal and constitutive reporter strains:
+To understand whether ribosomes indeed have an effect on protein production, we look at the CCs between ribosomal concentration and constitutive reporter concentration, shown in figure \ref{fig:ribo:CCsEERiboPn25}, and CCs between ribosomal production rate and constitutive production rate, as shown in figure \ref{fig:ribo:CCsPPRiboPn25}.
+%
+The L19-C, pn25-Y concentration-concentration CC shows a very unclear pattern, 
+but the other concentration-concentration CCs show a clear positive peak around $\tau = 0$ delay, indicating concerted fluctuations.
+%
+This is expected, since concerted fluctuations were observed earlier for a pair of two constitutive reporters \cite{Elowitz2002}, for groups of proteins \cite{Stewart-Ornstein2012} and in general is expected for any two proteins because of the existence of extrinsic noise \cite{Chalancon2012}.
+%Thus, a positive correlations between expression is expected to be found for any two proteins in the cells, and also for our ribosomal and constitutive protein reporter pair.
+%
+However, here we look at two proteins of which one reports for ribosomal concentration, which might have an impact on protein production itself.
+This might change the dynamics.
+%
+Additional features in the CC on top of the positive peak at 0 delay might tell us something about the ribosome-protein expression dynamics.
+For example, more pronounced correlations at positive delays could indicate that transmission of fluctuations occurs from ribosomes to protein expression.
+%
+However, The Prrna-C, pn25-Y concentration correlation for M9 medium (figure \ref{fig:ribo:CCsEERiboPn25}.B) seems to show the opposite: there is a positive correlation at negative delays.
+This implies that ribosome concentration fluctuations correlates with past protein concentration fluctuations.
+%
+The two reporters might have different maturation times, which could lead to artificial correlations negative delay.
+%
+Maturation times are however in the order of tens of minutes \cite{Iizuka2011, Walker2016t}, and a discrepancy between the two is thus not expected to cause such a big effect as observed here.
+%
+Hypothetically, % when ribosomes are not limiting to protein production,
+fluctuations in protein abundance might positively regulate ribosomal production,
+which might help the cell anticipate ribosomal demand;
+though very speculative, 
+this might explain the correlation at negative delays.
 
+In TY medium (figure \ref{fig:ribo:CCsEERiboPn25}.C), the CC does not show a stronger correlation at negative delays.
+%
+One could speculate this is because ribosomes become more limiting here, thus shifting the balance from negative delays in M9 medium to positive delays in TY medium.
+%
+The CC in TY medium with antibiotics (figure \ref{fig:ribo:CCsEERiboPn25}.D) shows a strong background signal.
+The second peak in correlation at negative delays might be an artefact of insufficient data.
+We do not have further interpretations of this shape.
+
+The production-production CCs (figure \ref{fig:ribo:CCsPPRiboPn25}) all appear to show peaks at 0 delay, that are rather symmetrical around the y-axis, and appear to not show additional features.
+This is consistent with aforementioned concerted protein expression fluctuations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dataset w/ pn25 reporters
@@ -544,7 +596,7 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
         %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
         %        
     }
-    \label{fig:ribo:CCsEmuYpn25Ribo}
+    \label{fig:ribo:CCsEERiboPn25}
 \end{figure}
 
 \begin{figure}
@@ -563,7 +615,7 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
         %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
         %        
     }
-    \label{fig:ribo:CCsPmuYpn25Ribo}
+    \label{fig:ribo:CCsPPRiboPn25}
 \end{figure}
 
 
@@ -573,6 +625,9 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
 % Dataset with Elf dual reporter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Results from strains with two ribosomal reporters}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -661,7 +716,7 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
         %        
     }
-    \label{fig:ribo:CCsEmuYRiboribo}
+    \label{fig:ribo:CCsEEYRiboribo}
 \end{figure}
 
 \begin{figure}
@@ -673,7 +728,7 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
         %        
     }
-    \label{fig:ribo:CCsPmuYRiboribo}
+    \label{fig:ribo:CCsPPYRiboribo}
 \end{figure}
 
 
@@ -785,8 +840,21 @@ Note here that the rrna reporter might not capture all ribosomal RNA fluctuation
 
 \subsection*{Discussion and conclusion}
 
+(a) ribosomes are big and it is different to pick exactly what to label
+(b) it is difficult to label RNA properly
+(c) when we "stress" the ribosomes a new equilibrium sets in
+(d) would be nice to be able to titrate the ribosomes as we did with lac --> introduce new constructs
+    (-) either key protein
+    (-) or rip out whole r-RNA parts and fill up again
+
+(.) we need C-p correlations to check effect ribo flucs on production of proteins..
+
 (a) 
 (b) would be nice to re-run some of noreen's analyses with the script that creates the controls.
+
+(c) point out that ribosome might adapt itself to circumstances by regulation, and so it is logical that dynamic fluctuations have similar effects in different conditions
+(d) take the gel pad as reference and point out that it would be nice to lower negative controls to the same level
+
 
 (z) mention the order in which ribosomes are formed \cite{Chen2013}
 
