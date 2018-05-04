@@ -889,6 +889,13 @@ We do not observe further noteworthy features in these CCs.
 
 \section{Discussion and conclusion}
 
+% PART 1
+%(-) summarize conclusions
+%(-) compare conclusions between different ribosomal reporters
+%(.) we need C-p correlations to check effect ribo flucs on production of proteins..
+
+\subsection{Antibiotic shift experiments on device 1}
+
 In conclusion, we have used different single cell approaches in an attempt to further understand the ribosome.
 %
 We first performed an experiment using our microfluidic device 1 to subject cells to a switch from growth in minimal medium to growth in minimal medium with antibiotics.
@@ -905,7 +912,7 @@ A second reporter we used, a ribosomal RNA promoter fused to the cyan fluorescen
 %
 The results from these experiments regarding single cell growth advantage however were inconclusive, they neither showed a clear absence nor a clear presence of an increased correlation after the switch.
 
-
+\subsection{Single cell ribosome expression and growth}
 
 To follow up on these experiments, we performed experiments using microfluidic device 2, which allows for measurements that are longer, thus allow for more switches, and enable tracking more cells. 
 %
@@ -933,47 +940,169 @@ Hence, contrary to what the r-RNA data indicated, this data suggested that ribos
 Similar experiments were described earlier by Noreen Walker \cite{Walker2016t}, 
 we briefly summarized her experimental observations in section \ref{section:ribos:walker}.
 %
-Some of the experiments involving L19 and L31 reporters that she used showed dilution mode behavior in M9 minimal medium, similar to our observations, some experiments however did not. (This depended on the reporter involved, mCherry or mCerulean, respectively.)
+Observations by Walker on a strain with a ribosomal RNA reporter in medium M9 medium supplemented with acetate (our lactose-supplemented M9 sustains a higher growth rate) or defined rich medium did not show dilution mode behaviour, which could mean ribosomal RNA shows different dynamics in different media.
 %
-Observations by Walker on a strain with a ribosomal RNA reporter in medium M9 medium supplemented with acetate (our lactose-supplemented M9 sustains a higher growth rate) or rich medium did not show dilution mode behavior, which could be due to the medium.
+Some of the experiments involving L19 and L31 reporters that she used showed dilution mode behavior in M9 minimal medium, similar to our observations on the labeled S2 and L9 ribosomal proteins in minimal medium, but some of her experiments did not. (This depended on the reporter involved, mCherry or mCerulean, respectively.)
 %
+Walker also performed CC analyses of steady state growth in rich medium supplemented in antibiotics, which resulted only in subtle changes in the dynamics for an labelled L31 ribosomal protein and a ribosomal RNA promoter reporter construct.
+It is unclear how these results in different medium connect to our results.
 
-PERHAPS SAY SOMETHING ABOUT THE EFFECT OF ADDING ANTIBIOTICS BY NOREEN
+\subsection{Single cell ribosome expression and protein expression}
+
+In this work, we performed experiments on strains that carried both a reporter for ribosomal expression, and a constitutive reporter.
+This latter reporter was intended to probe the effect of ribosomal expression fluctuations on the cells ability to produce proteins.
+%
+We observed positive correlations in the CCs between the concentrations of these two reporters. 
+%
+The positive correlations were however hard to interpret since 
+%
+%The positive correlations in the CCs between the concentrations of these two reporters were hard to interpret since 
+they are expected between the expression of any two proteins, 
+and thus do not necessarily imply that there is an effect of ribosomal expression fluctuations on protein production in the cell.
+%
+We did observe additional features in the CCs, 
+these depended on the medium in which the cells were growing.
+%
+In most media, these features were not consistent with an effect of ribosomal fluctuations on protein production,
+except in TY.
+%
+In TY medium we observed additional correlations between constitutive protein expression and past ribosome expression,
+which is consistent with an effect of ribosomal fluctuations on protein production rates.
+%
+TY medium sustains the fastest bacterial growth rate, 
+which could explain an increased sensitivity to ribosomal fluctuations.
 
 
-
-\subsection{Structure}
-
-
-SAY SOMETHING ABOUT HOW THIS COMPARES TO NOREEN'S EXPERIMENTS
-
-SAY SOMETHING ABOUT PN25
-
-%We started this chapter by emphasizing the central role of the ribosome in life.
-%%
-%Not only is the ribosome important, it is also an immensely complex structure.
-%%
-
-\subsection{Structure}
-
-(-) summarize conclusions
-(-) compare conclusions between different ribosomal reporters
-(d) take the gel pad as reference and point out that it would be nice to lower negative controls to the same level
-(.) we need C-p correlations to check effect ribo flucs on production of proteins..
+To shed further light on these matters, one could look at the cross-correlation between
+the concentration of the ribosomal reporter and the production of the constitutive reporter.
+%
+This would require a rather straightforward extension of our analysis scripts.
 
 
+\subsection{The ribosome is a complex structure}
+
+% PART 2
 % measuring the ribosome is not simple ... 
-(a) ribosomes are big and it is difficult to pick exactly what to label
-(b) it is difficult to label RNA properly
-(z) mention the order in which ribosomes are formed \cite{Chen2013}
+%(a) ribosomes are big and it is difficult to pick exactly what to label
+%(b) it is difficult to label RNA properly
+%(z) mention the order in which ribosomes are formed \cite{Chen2013} 
+% 		<---> perhaps not required for my story to mention this? Chen2013 was cited anyways, which should be the case
 
-(c) when we "stress" the ribosomes a new equilibrium sets in
-    (c) point out that ribosome might adapt itself to circumstances by regulation, and so it is logical that dynamic fluctuations have similar effects in different conditions
-(d) would be nice to be able to titrate the ribosomes as we did with lac --> introduce new constructs
-    (-) either key protein
-    (-) or rip out whole r-RNA parts and fill up again
+We have discussed many experiments, which employed different ribosomal labels and probed dynamics in different conditions.
+%
+Different conditions sometimes showed different results.
+%
+Often however, results also depended on which ribosomal protein was tracked.
+%
+One explanation for that observation is that ribosomal subunits have their own dynamics.
+%
+Though the ribosome is often viewed as a complex that has a fixed composition, 
+recent discoveries in eukaryotes show that this might actually not be the case \cite{Preiss2016, Slavov2015}.
+%
+Purification and mass-spectrometry of ribosomes in yeast and mouse embryonic stem cells showed that 
+pools of ribosomes with different ribosomal protein composition exist, which could also be linked to functional properties \cite{Slavov2015}.
+%
+This raised the suggestion that the cell can modulate expression of ribosomal proteins separately, 
+to achieve specific regulatory goals.
+%
+It is not infeasible this is also the case in \ecoli, and this would explain why experiments tracking different ribosomal proteins show different dynamics.
+%
+This potential added layer of regulation makes it more difficult to understand the effect of ribosomal concentration fluctuations.
+Coincidentally, for eukaryotes, it has been observed that especially ribosomal surface proteins vary -- which are also convenient targets for labelling.
+In fact, the L9, S2 and L19 proteins that we  labelled are also on the surface of the ribosome, see figure \ref{fig:ribo:labelsPicGiulia}.
+Also the L31 protein that we labelled is only loosely attached to the ribosome \cite{Walker2016t}.
+%
+Consistent with the view that the ribosomal proteins are not expressed equally for functional reasons, 
+not all operons from which the ribosomal proteins are expressed are regulated by exactly the same regulators \cite{Keseler2017}.
+%
+Additionally, some ribosomal subunits are observed to be essential, whilst others are not (i.e. some respective null mutants are viable, whilst others are not).
+This further illustrates that different ribosomal proteins might have different functional roles.
+%
+From the proteins that we labelled, L9 and L31 are non-essential, and S2 and L19 are essential.
+%
+This suggests that it could be that 
+single cell fluctuations in different ribosomal proteins might thus have a different effects on growth rates.
+%
+This is consisent with our observations that the shape of CCs sometimes depended on which ribosomal protein was labelled.
+%
+Understanding ribosomal dynamics based on labelling ribosomal proteins might thus prove a challenging task.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.70\textwidth]{riboLabelsGiuliaCombined.png}
+    % \includegraphics[width=0.49\textwidth]{ribosomes_L19.png}
+    \caption{ 
+        \textbf{Some of the ribosomal proteins that were labeled for experiments in this chapter.}
+        The structure of the ribosome is displayed twice in grey, with on the left the L19 ribosomal protein highlighted in red, and on the right the L9 and S2 ribosomal subunits highlighted in red and yellow, respectively.
+        This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
+        visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}). These two visualizations were made by Giulia Bergamaschi.
+        %        Giulia's text with this figure:
+        %         Label location on the ribosomes; the fluorescent reporters were attached to the colored
+        %         proteins. Left: labelling in strain asc1058: the L9 (red) protein has been tagged with mCherry in the
+        %         large subunit, while S2 (yellow) has been labelled with mVenus in the small one. Right: labelled
+        %         protein L19 (mCerulean) in strain asc968 in blue (created with UCSF Chimera visualisation software,
+        %         www.cgl.ucsf.edu/chimera).
+        %        
+    }
+    \label{fig:ribo:labelsPicGiulia}
+\end{figure}
 
 
+\subsection{Making ribosomes limiting}
+
+% PART 3
+%(c) when we "stress" the ribosomes a new equilibrium sets in
+%    (c) point out that ribosome might adapt itself to circumstances by regulation, and so it is logical that dynamic fluctuations have similar effects in different conditions
+%(d) would be nice to be able to titrate the ribosomes as we did with lac --> introduce new constructs
+%    (-) either key protein
+%    (-) or rip out whole r-RNA parts and fill up again
+
+%> making limiting is desired
+%> just stressing is probably not useful
+%  ^>  new equilibrium
+%> instead perhaps rna plasmid construct
+
+As mentioned in the results section, it can sometimes be very useful to create an extreme situation to better understand the dynamics of a system.
+%
+Thus, creating a situation where ribosomes are limiting in single cells, i.e. a situation in which single cell growth rates correlate strongly with ribosomal expression, might allow us to better understand ribosomal dynamics.
+%
+We think it is not straightforward to create such a situation.
+%
+For example, whilst it might be a sensible idea that adding sub-inhibitory concentrations of antibiotics to the cellular growth medium might cause translational stress and 
+thus more limiting behaviour of ribosomes,
+the addition of antibiotics to growth medium was observed to have limited consequences in experiments.
+%
+This might be explained by a scenario where the population reacts to an antibiotic disturbance by altering its ribosomal expression level to cope with the translational stress,
+but where deviations from that new expression level show similar dynamics as deviations from the original situation with the lower ribosomal expression level
+% in the original situation.
+
+%It might be that 
+%disturbances that affect ribosomes at the population level 
+%elicit a population wide response.
+%%
+%Such a response might lead to a new average ribosomal expression level that addresses the disturbance.
+%However, it might be that 
+%
+%something affecting whole population 
+%ribosomal regulation responds
+%This might be explained by 
+%because xx.
+
+Xx future experiments could overcome xx.
+
+
+\subsection{Structure}
+These observations emphasize the complexity of the ribosomal dynamics.
+%
+Given the central role of the ribosome in the cell, and the extensive biochemical structure with many proteins and RNA molecules involved, 
+this complexity is perhaps not surprising.
+%
+
+
+
+
+% DISCARDED conclusions
+% (d) take the gel pad as reference and point out that it would be nice to lower negative controls to the same level
 % (b) would be nice to re-run some of noreen's analyses with the script that creates the controls.
 
 
