@@ -1066,29 +1066,95 @@ As mentioned in the results section, it can sometimes be very useful to create a
 %
 Thus, creating a situation where ribosomes are limiting in single cells, i.e. a situation in which single cell growth rates correlate strongly with ribosomal expression, might allow us to better understand ribosomal dynamics.
 %
+This topic is also discussed in the previously mentioned thesis by Walker \cite{Walker2016t}. 
+%
 We think it is not straightforward to create such a situation.
 %
 For example, whilst it might be a sensible idea that adding sub-inhibitory concentrations of antibiotics to the cellular growth medium might cause translational stress and 
 thus more limiting behaviour of ribosomes,
 the addition of antibiotics to growth medium was observed to have limited consequences in experiments.
 %
-This might be explained by a scenario where the population reacts to an antibiotic disturbance by altering its ribosomal expression level to cope with the translational stress,
-but where deviations from that new expression level show similar dynamics as deviations from the original situation with the lower ribosomal expression level
+% This could be explained when 
+One explanation for this 
+might be that a population of cells reacts to an antibiotic disturbance by altering its ribosomal expression level 
+in such a way that local deviations from the newly established level have similar effects as deviations from the original expression level.
+%This might be explained by a scenario where the population reacts to an antibiotic disturbance by altering its ribosomal expression level to cope with the translational stress,
+%but where deviations from that new expression level show similar dynamics as deviations from the original situation with the lower ribosomal expression level
 % in the original situation.
-
-%It might be that 
-%disturbances that affect ribosomes at the population level 
-%elicit a population wide response.
-%%
-%Such a response might lead to a new average ribosomal expression level that addresses the disturbance.
-%However, it might be that 
+How this might work is depicted in figure \ref{fig:ribo:optimumCartoon}.
 %
-%something affecting whole population 
-%ribosomal regulation responds
-%This might be explained by 
-%because xx.
+Different stressors instead of antibiotics might be used to put the cell under translational duress.
+%
+To create an alternative situation where ribosomal capacity is challenged, 
+we constructed strain ASC1088 (see table \ref{table:ribo:strains2}) which carries a plasmid that expresses the mCherry protein at a high expression level.
+%
+Similar to the antibiotic treatment, protein over-expression might also have put a large burden on ribosomal capacity, thus increasing the effect ribosomal fluctuations have on growth rate (see Walker's thesis for a longer discussion on this topic \cite{Walker2016t}).
+%
+However, 
+as we suspected that experiments with over-expression might yield similar results as the antibiotic experiments, 
+we abandoned experiments with this strain.
 
-Xx future experiments could overcome xx.
+% Xx future experiments could overcome xx.
+%There might be ideas for future experiments to force ribosomes to become limiting.
+Future experiments might be devised in which ribosomes are forced to become limiting.
+%
+As also mentioned by Walker \cite{Walker2016t}, previously constructed \textit{rrs} null mutants \cite{Condon1993, Condon1995, Quan2015, Bollenbach2009} might provide a venue towards this aim.
+%
+Given the role of the ribosomal RNA as backbone for the ribosome, shortages in ribosomal RNA content might have profound effects on the cellular growth rate.
+%
+Ribosomal RNA is expressed from multiple partially redundant operons, as shown in figure \ref{fig:ribo:tabledeltarrn}. 
+%
+% The null mutants previsouly created by 
+Bollenbach et al. \cite{Bollenbach2009} created several null mutants which had more and more of these operons removed, as also shown in figure \ref{fig:ribo:tabledeltarrn}. 
+%
+
+\subsection{TODO}
+
+> just explain idea briefly
+> move details to small supplement (use word doc)
+
+COMPLICATIONS:
+Maeda2015 shows different expression strengths of operons
+Quan2015 shows especially tRNA might be limiting, and also shows growth rate defect is limited
+Quan2013 already published a plasmid that expresses the rrnB operon
+Kaczanowska2007 provides a detailed map of the rrnB operon
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{optimum_figure.pdf}
+    % \includegraphics[width=0.49\textwidth]{ribosomes_L19.png}
+    \caption{ 
+        \textbf{Cartoon of how ribosomal expression might affect growth rate.}
+        Ribosomal expression in single cell deviates from the population average. 
+        Both the average and single cell expression levels might not lie exactly at the optimum.
+        Low expression might lead to slower growth because ribosomes become limiting.
+        High expression might decrease growth rate because resources to produce these ribosomes are drawn from other essential cellular processes.
+        Panel (a) shows how the expression-growth relationships in single cells might relate between cells not exposed to antibiotics (black line) and cells exposed to antibiotics (red line). Panel (b) shows that these relationships might be similar if we consider only the deviations from the population averages (which are here assumed to coincide with optimal expression levels). $R$ and $\mu$ respectively indicate ribosomal expression and growth rate, $\Delta{R}$ and $\Delta{\mu}$ indicate mean-subtracted respective values.%these respective values after the average value has been subtracted.
+    }
+    \label{fig:ribo:optimumCartoon}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{tableRrna.png}
+    \caption{ 
+        \textbf{Table showing the \textit{rrn} operons in \ecoli with cartoon overlay indicating different \textit{rrn} null mutant strains created by Bollenbach et al..}
+        %Information on operon structure was obtained from ref. \cite{Keseler2017}, \textit{rrn} null mutants where published in ref. \cite{Bollenbach2009}.
+        Ribosomal RNA in \ecoli is expressed from multiple partially overlapping operons. 
+        Operons contain different ribosomal parts (and tRNA molecules). 
+        \textit{rrs} encodes 16S rRNA, \textit{rrl} encodes 23S rRNA, and \textit{rrf} encodes 5S rRNA.
+        Other abbreviations indicate respective gene encodes a tRNA molecule.
+        This is also indicated in the second line of the "ribosomal parts" column. 
+        Symbols indicate equivalence between the operons.
+        The last column indicates by regulators of the operons, symbols in brackets indicate evidence is not definitive.
+        (This information was obtained from the online database Ecocyc \cite{Keseler2017}).
+        The overlayed crosses and circles indicate the null mutants that were constructed by Bollenbach et al. \cite{Bollenbach2009}.
+        Each column of crosses corresponds to one strain, a cross indicates that the respective strain lacks the operon indicated. A circle indicates additional tRNA was expressed from a plasmid.
+        These strains were also referred to as $\Delta$1-6, where the number corresponds to the number of operons that were removed.
+    }
+    \label{fig:ribo:tabledeltarrn}
+\end{figure}
+
 
 
 \subsection{Structure}
@@ -1142,21 +1208,22 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
         \textbf{ASC number}	& \textbf{Shorthand} & \textbf{Description} & \textbf{Source}		\\
         \hline
         %      									
-        asc656	& L31-R & L31-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
-        asc657	& L19-R & L19-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
-        asc680	& L31-R, Prrn-G & L31-mCherry-kanR (no linker), Δ(cheZ)::Prrn-GFP-catR. (Kanamycin and chloramphenicol resistant.)	& NW, VS \\
-        asc779	& Prrn-G& Δ(cheZ)::Prrn-GFP, rrsa promoter. (No resistance.) &	NW, VS \\
+        ASC656	& L31-R & L31-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
+        ASC657	& L19-R & L19-mCherry-kanR (no linker).	(Kanamycin resistant.) & NW, VS \\
+        ASC680	& L31-R, Prrn-G & L31-mCherry-kanR (no linker), Δ(cheZ)::Prrn-GFP-catR. (Kanamycin and chloramphenicol resistant.)	& NW, VS \\
+        ASC779	& Prrn-G& Δ(cheZ)::Prrn-GFP, rrsa promoter. (No resistance.) &	NW, VS \\
         
         \hline										
         & L19-C & 	L19-mCerulean L19-gc-mCerulean-kanR (GC linker)	(Kanamycin resistance.)	& VS \\
         & Prrn-C & 	Δ(cheZ)::Prrn-mCerulean-kanR	(Kanamycin resistance)	& VS \\
         \hline
-        asc1088 & mCherry+
+        ASC1088 & mCherry+
         % L19-C, pn25-Y, p-pn25-R 
-        &	asc968 + high copy plasmid w. pn25-mCherry (Resistances: kanamycin, chloramphenicol, ampicilin.) & VS \\
+        &	ASC968 + high copy plasmid w. pn25-mCherry (Resistances: kanamycin, chloramphenicol, ampicilin.) & VS \\
         \hline
     \end{tabularx}
     \caption{\textbf{Strains used in previous work and miscellaneous strains.} NW indicates these strains were used in Noreen Walker's thesis \cite{Walker2016t}. VS indicates these strains are created by Vanda Sunderlikova.}
+    \label{table:ribo:strains2}
 \end{table}
 
 
