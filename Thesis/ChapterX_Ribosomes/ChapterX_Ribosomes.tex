@@ -205,6 +205,7 @@ In the second strain, we introduced an mCerulean sequence behind the chromosomal
 We also introduced the constitutive pn25-mVenus reporter to this strain.
 %
 These strains, the Prrna-C, pn25-Y strain and the L19-C, pn25-Y strain are listed in table \ref{table:ribostrains1}.
+Additionally, supplementary table \ref{tab:ribolabeledprots} gives an overview of the operons in which the ribosomal proteins are encoded.
 
 Furthermore, because the ribosome consists of so many ribosomal proteins, we wanted to be able to confirm 
 potentially observed dynamics for one labeled ribosomal protein, also for other labeled ribosomal proteins.
@@ -224,6 +225,7 @@ and introduced a way to probe the effect of ribosomal fluctuations on protein ex
 
 %\subsection{An attempt to create a limiting situation}
 \subsection{Antibiotic shift experiments to create limiting situations}
+\label{section:ribo:shiftexperiments}
 
 %\subsubsection{The shift experiment}
 
@@ -436,13 +438,15 @@ The production rate-growth curves do not show clear trends.
 We saw earlier (see chapter \ref{chapter:CRP}) that constitutive reporters often show dilution mode dynamics.
 The CCs we observe here could be consistent with that transmission mode.
 %
-Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rrna and L19).
-The CC in panel A does not show a clear trend.
+Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rrna or L19).
+The CCs for the labeled L19 protein (panel A both in figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo}) do not show a clear trend.
 The CCs in panels B-D however, which show the behaviour of the rrna reporter for different conditions, all show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
 %
 It is striking that there are no noticeable differences in the rrna expression growth dynamics between different conditions.
 %
-One explanation might be that the rrna reporter might not capture all ribosomal RNA fluctuations, since it is by its nature not a translational fusion reporter such as the other ribosomal reporters.
+One explanation might be that 
+the promoter--reporter construct does not fully capture the dynamics of ribosomal RNA expression, as the construct does not directly label ribosomal RNA (which is something that can only be done for proteins).
+%the rrna reporter might not capture all ribosomal RNA fluctuations, since it is by its nature not a translational fusion reporter such as the other ribosomal reporters.
 
 
 
@@ -452,29 +456,30 @@ The dual reporter strains with both ribosomal and pn25 constitutive reporters we
 To understand whether ribosomes indeed have an effect on protein production, we look at the CCs between ribosomal concentration and constitutive reporter concentration, shown in figure \ref{fig:ribo:CCsEERiboPn25}, and CCs between ribosomal production rate and constitutive production rate, as shown in figure \ref{fig:ribo:CCsPPRiboPn25}.
 %
 The L19-C, pn25-Y concentration-concentration CC shows a very unclear pattern, 
-but the other concentration-concentration CCs show a clear positive peak around $\tau = 0$ delay, indicating concerted fluctuations.
+but the Prrna-C, pn25-Y concentration-concentration CCs show a positive peak around $\tau = 0$ delay in various conditions, indicating concerted fluctuations.
 %
-This is expected, since concerted fluctuations were observed earlier for a pair of two constitutive reporters \cite{Elowitz2002}, for groups of proteins \cite{Stewart-Ornstein2012} and in general is expected for any two proteins because of the existence of extrinsic noise \cite{Chalancon2012}.
+Positive correlations are expected, since concerted fluctuations were observed earlier for a pair of two constitutive reporters \cite{Elowitz2002}, for groups of proteins \cite{Stewart-Ornstein2012} and in general is expected to some extent for any two proteins because of the existence of extrinsic noise \cite{Chalancon2012}.
 %Thus, a positive correlations between expression is expected to be found for any two proteins in the cells, and also for our ribosomal and constitutive protein reporter pair.
 %
 However, here we look at two proteins of which one reports for ribosomal concentration, which might have an impact on protein production itself.
 This might change the dynamics.
 %
 Additional features in the CC on top of the positive peak at 0 delay might tell us something about the ribosome-protein expression dynamics.
-For example, more pronounced correlations at positive delays could indicate that transmission of fluctuations occurs from ribosomes to protein expression.
+For example, more pronounced correlations at positive delays could indicate transmission of fluctuations from ribosomes to protein expression.
 %
-However, The Prrna-C, pn25-Y concentration correlation for M9 medium (figure \ref{fig:ribo:CCsEERiboPn25}.B) seems to show the opposite: there is a positive correlation at negative delays.
+However, The Prrna-C, pn25-Y concentration correlation for M9 medium (figure \ref{fig:ribo:CCsEERiboPn25}.B) seems to show the opposite: there is more positive correlation at negative delays.
 This implies that ribosome concentration fluctuations correlates with past protein concentration fluctuations.
 %
 The two reporters might have different maturation times, which could lead to artificial correlations negative delay.
 %
 Maturation times are however in the order of tens of minutes \cite{Iizuka2011, Walker2016t}, and a discrepancy between the two is thus not expected to cause such a big effect as observed here.
 %
-Hypothetically, % when ribosomes are not limiting to protein production,
+%Hypothetically, % when ribosomes are not limiting to protein production,
+A very speculative hypothesis is that 
 fluctuations in protein abundance might positively regulate ribosomal production,
-which might help the cell anticipate ribosomal demand;
-though very speculative, 
-this might explain the correlation at negative delays.
+which might help the cell anticipate ribosomal demand.%;
+%though very speculative, 
+%this might explain the correlation at negative delays.
 
 In TY medium (figure \ref{fig:ribo:CCsEERiboPn25}.C), the CC does not show a stronger correlation at negative delays.
 %
@@ -482,9 +487,11 @@ One could speculate this is because ribosomes become more limiting here, thus sh
 %
 The CC in TY medium with antibiotics (figure \ref{fig:ribo:CCsEERiboPn25}.D) shows a strong background signal.
 The second peak in correlation at negative delays might be an artefact of insufficient data.
-We do not have further interpretations of this shape.
+%We do not have further interpretations for these conditions.
+More data is required to draw any conclusions for this condition. 
 
-The production-production CCs (figure \ref{fig:ribo:CCsPPRiboPn25}) all appear to show peaks at 0 delay, that are rather symmetrical around the y-axis, and appear to not show additional features.
+
+The production-production CCs for the same conditions (figure \ref{fig:ribo:CCsPPRiboPn25}) all appear to show peaks at 0 delay, that are rather symmetrical around the y-axis, and appear to not show additional features.
 This is consistent with aforementioned concerted protein expression fluctuations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -660,22 +667,35 @@ This is consistent with aforementioned concerted protein expression fluctuations
 
 \subsubsection{Results from strains with two ribosomal reporters}
 
-As mentioned, to get a full picture of ribosomal dynamics, we employed a strain which has labels on additional ribosomal proteins. This train has a red fluorescent reporter on the L9 ribosomal protein, and a yellow reporter on the S2 ribosomal protein.
+As mentioned, to get a wider view on ribosomal dynamics, we employed a strain which has labels on additional ribosomal proteins. 
 %
-We performed measurements on this strain that provide additional information on the single cell dynamics between ribosomal expression and growth.
-Additionally, the presence of two ribosomal reporters in one strain allows us to investigate the interaction between them.
+This L9-R, S2-Y strain has a red fluorescent reporter on the L9 ribosomal protein, and a yellow reporter on the S2 ribosomal protein, see table \ref{table:ribostrains1}.
 %
-We analysed strain L9-R, S2-Y 
+We performed measurements on this strain 
+%that provide additional information 
+to obtain additional data 
+on the single cell dynamics between ribosomal expression and growth.
+%
+Furthermore, the presence of two ribosomal reporters in one strain allowed us to investigate the interaction between them.
+%
+To investigate the effect of ribosomal stress on ribosomal dynamics, 
+we analysed strain L9-R, S2-Y 
 % We show analyses from experiments with this L9-R, S2-Y strain 
-growing in steady state both in M9 minimal medium with and without sub-inhibitory doses of tetracycline (\red{0.5 $\upmu$M}).
+growing in steady state both in M9 minimal medium and M9 minimal medium with sub-inhibitory doses of the translational inhibitory antibiotic tetracycline (0.5 $\upmu$M).
 %
-To see whether these reporters behaved as expected, we first looked at the response of the reporter concentration to the presence of antibiotics.
+To check the validity of the reporters, 
+%To see whether these reporters behaved as expected, 
+we first looked at the population level response of the reporter concentration to the presence of antibiotics.
 Figure \ref{fig:ribo:meansRR} shows that due to the presence of antibiotics, the population average growth rate decreased by 12\%, whilst the concentration of ribosomal reporter more than doubles.
 %
 Such large increases of ribosomal concentration are consistent with earlier observations of growth in the presence of antibiotics, although in earlier observations this large increase was accompanied by a larger decrease in growth rate \cite{Hui2015}.
 %
+Nevertheless, earlier ribosomal labels even showed a decrease in concentration with increasing growth rate (see section \ref{section:ribo:shiftexperiments}), 
+so these labels show behavior that is much more consistent with expectations.
+%
 Figures \ref{fig:ribo:CCsEmuS2} and \ref{fig:ribo:CCsPmuS2} show CCs from the S2 r-protein expression-growth dynamics, and 
 figures \ref{fig:ribo:CCsEmuL9} and \ref{fig:ribo:CCsPmuL9} show CCs from the L9 r-protein expression-growth dynamics.
+Furthermore, figures \ref{fig:ribo:CCsEERiboribo} and \ref{fig:ribo:CCsPPRiboribo} show expression--expression CCs between the ribosomal labels.
 %
 Like the strains discussed earlier, the CCs showed high correlations in the negative control correlations.
 This indicates that more experiments are required to make claims about this data.
@@ -685,30 +705,36 @@ This indicates that more experiments are required to make claims about this data
 
 Nevertheless, we can try to interpret the current data.
 %
-The left panel in figure \ref{fig:ribo:CCsEmuS2}.A shows the S2 reporter concentration-growth CC for cells growing in M9 minimal medium, which shows negative correlations consistent with dilution.
-We ignore the right panel, given the pattern observed in the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A, which will be discussed later.
+The left panel in figure \ref{fig:ribo:CCsEmuS2}.A shows the S2 reporter concentration-growth CC for cells growing in M9 minimal medium, 
+which shows negative correlations consistent with the dilution mode of noise transmission \cite{Kiviet2014}.
 %
-Interestingly, figure \ref{fig:ribo:CCsEmuS2}.B, which shows S2 reporter concentration-growth CC for cells growing in the same medium supplemented with antibiotics, does not show these negative delays. 
+We ignore the right panel, given the pattern observed in later experiments (see the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A), as will be discussed later.
+%
+Interestingly, 
+% figure \ref{fig:ribo:CCsEmuS2}.B, which shows 
+the S2 reporter concentration-growth CC for cells growing in the same M9 medium supplemented with antibiotics, does not show these negative delays, see figure \ref{fig:ribo:CCsEmuS2}.B. 
 This could be indicative of a situation where ribosomes are more limiting due to the antibiotic stress, and fluctuations transmit from ribosomal fluctuations to the growth rate of the cell.
 %
-Production rate-growth CCs of the S2 reporter, shown in figure \ref{fig:ribo:CCsPmuS2} are harder to interpret, but not inconsistent with the earlier observations and interpretation.
+Production rate-growth CCs of the S2 reporter, shown in figure \ref{fig:ribo:CCsPmuS2}, are harder to interpret, both for M9 medium and M9 medium with antibiotics.
+They are however not inconsistent with the earlier observations and interpretation.
 
-
-The negative concentration-growth CCs of the L9 reporter in M9 medium --- where we again only consider the the left panel in figure \ref{fig:ribo:CCsEmuL9}.A --- are consistent with the negative concentration growth CCs of the S2 reporter.  
-The dynamics in M9 medium plus antibiotics again seem different, as negative correlations now manifest as positive delays (instead of at negative delays).
-The negative correlations are however different from the positive correlations we saw for the S2 reporter in the same condition.
+Next, let's see whether the other ribosomal reporter in this strain shows similar behaviour.
+Firstly, the negative concentration-growth CCs of the L9 reporter in M9 medium --- where we again only consider the the left panel in figure \ref{fig:ribo:CCsEmuL9}.A --- are consistent with the negative concentration growth CCs of the S2 reporter.  
+The dynamics in M9 medium plus antibiotics again seem different compared to the experiment without antibiotics, as negative correlations now manifest as positive delays (instead of at negative delays).
+The negative correlations are however different from the positive correlations we saw for the S2 reporter in the same experiment.
 %
 This indicates that either repetitions of these experiments might yield different results, or one of the labels does not appropriately reflect ribosomal concentration, or different ribosomal proteins might have their own dynamics.
 %
 Production-growth CCs of the L9 reporter (figure \ref{fig:ribo:CCsPmuL9}) are again hard to interpret, although the condition with antibiotic stress shows a distinct peak around zero delay.
 
-Aside from expression-growth dynamics, we can additionally look at the interaction between expression of the two ribosomal proteins. 
+Aside from expression-growth dynamics, we can additionally look at the interaction between expression of the two ribosomal proteins in this strain. 
 % 
-Firstly, the right panel in figure \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC; which shows a shape that we have not observed before and is inconsistent with the left panel in the same figure. Correlations seem to increase for longer delays. 
-Taken together, we think data from this experiment should be disregarded; as indicated earlier for this condition.
+Firstly, the right panel in figure \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC; which shows a shape that we have not observed before and is inconsistent with the other experimental data in the same condition (left panel in the same figure). 
+%Correlations seem to increase for longer delays. 
+Taken together, we think data from this specific experiment should be disregarded until more experiments are performed; as indicated earlier for this condition.
 (This implies not taking into account all the right panels in figures \ref{fig:ribo:CCsEmuS2}.A, \ref{fig:ribo:CCsPmuS2}.A, \ref{fig:ribo:CCsEmuL9}.A and \ref{fig:ribo:CCsPmuL9}.A.)
 %
-In any case, for other panels, since we expect both reporters to represent the ribosomal concentration we expect the CCs to show positive correlations that are symmetrical around zero delay.
+In any case, for the other panels, we expect the CCs to show positive correlations that are symmetrical around zero delay, since we expect both reporters to represent the ribosomal concentration.
 %
 The left panel in \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC for growth in M9 minimal medium, which is --- against expectations --- not symmetric.
 The S2-L9 concentration-concentration CC for growth in M9 minimal medium supplemented with antibiotics is different, but also not symmetric (figure \ref{fig:ribo:CCsEERiboribo}.B).
@@ -720,7 +746,7 @@ repetitions of these experiments might yield different results, or one of the la
 
 
 Furthermore, the CCs between the production rates of the S2 and L9 labels (figure \ref{fig:ribo:CCsEERiboribo}) do seem symmetric in both the M9 minimal medium and M9 minimal medium with antibiotics, which is consistent with aforementioned expectations.
-We do not observe further noteworthy features in these CCs.
+We do not observe further noteworthy features in the production--production CCs.
 
 
 
@@ -856,37 +882,6 @@ We do not observe further noteworthy features in these CCs.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
-
-    
-
-
-
-
-
-
-			
-
-\begin{table}                       
-\begin{tabular}{ l l l l }
-    \centering
-    r-protein & Gene name & Operon & Fluorescent label \\ 
-    \hline
-    L31 & rpmE & none & Cerulean, mCherry \\ 
-    L19 & rplS & rpsP-rimM-trmD-rplS & Cerulean, mCherry \\ 
-    L9 & rplI & rpsF-priB-rpsR-rplI & mCherry \\ 
-    S2 & rpsB & ttf-rpsB-tsf & Venus\\ 
-
-\end{tabular}
-    \caption{Labeld ribosomal proteins in the Tans lab. 
-    %    Ribosomal proteins that we have labeled.
-    } \label{tab:ribolabeledprots}
-\end{table}
-
-
-
 \section{Discussion and conclusion}
 
 % PART 1
@@ -901,31 +896,39 @@ In conclusion, we have used different single cell approaches in an attempt to fu
 We first performed an experiment using our microfluidic device 1 to subject cells to a switch from growth in minimal medium to growth in minimal medium with antibiotics.
 Based on extensive previous work, we expected that cells needed a higher concentration of ribosomes in the second condition (see e.g. ref. \cite{You2013}), and thus that single cells that expressed more ribosomes relative to the population average right before the switch would benefit shortly after the switch.
 %
-If we would be able to observe single cell growth advantages, this would imply limiting behaviour of ribosomes in this scenario and serve as positive control and point of reference for other experiments. 
+If we would be able to observe such single cell growth advantages, this would imply 
+ribosomes are limiting in this scenario and their behaviour can serve 
+%limiting behaviour of ribosomes in this scenario and serve 
+as positive control and point of reference for other experiments. 
 %
-The results, to our surprise, showed that some of our reporters (specifically, for the L31 ribosomal protein) did not displayed the expected increased concentration during exposure to antibiotics.
+The results, to our surprise, showed that the L31 reporters did not display the expected increased concentration during exposure to antibiotics after the switch.
 %
-This was also observed before \cite{Walker2016t}, and it
+This was also observed before \cite{Walker2016t} for this particular ribosomal protein, and it
 raises the question how representative the L31 reporter is for the ribosomal concentration.
 %
-A second reporter we used, a ribosomal RNA promoter fused to the cyan fluorescent reporter protein, did show the expected increase of ribosomal concentration after the switch to medium supplemented with antibiotics.
+A second reporter we used, a ribosomal RNA promoter fused to a cyan fluorescent reporter protein, did show the expected increase of ribosomal concentration after the switch to medium supplemented with antibiotics.
 %
-The results from these experiments regarding single cell growth advantage however were inconclusive, they neither showed a clear absence nor a clear presence of an increased correlation after the switch.
+The results from these experiments regarding single cell growth advantage were however inconclusive, they neither showed a clear absence nor a clear presence of an increased correlation after the switch.
 
 \subsection{Single cell ribosome expression and growth}
 
-To follow up on these experiments, we performed experiments using microfluidic device 2, which allows for measurements that are longer, thus allow for more switches, and enable tracking more cells. 
+To follow up on these experiments, we performed experiments using microfluidic device 2, which allows for measurements that are longer and thus allows for more switches, and additionally enables tracking a higher and constant number of cells. 
 %
-This set of experiments would have provided additional information on the ribosomal behavior during switches from medium that requires less ribosomal expression to medium that requires more ribosomal expression, such as medium with sub-inhibitory concentrations antibiotics.
+This set of experiments would have provided additional information on the ribosomal behavior during switches from medium that requires less ribosomal expression to medium that requires more ribosomal expression.%, such as medium with sub-inhibitory concentrations antibiotics.
 Additionally, the long time lapse capabilities of the device would allow us to record data in steady state.
 On top of this, we used newly constructed strains in these experiments that allowed us to measure the effect of ribosomal fluctuations on single cell protein expression, as the strains also contained a constitutive pn25 reporter construct.
 %
-However, The analysis of data in this device presented additional challenges for the analysis.
+However, the analysis of data in this device presented additional challenges for the analysis.
 %The large amount of data, different cellular movements during growth in the wells and image features of cells in this device are slightly different in this device, presenting additional challenges during the analysis.
 %
-We therefore only analysed a subselection of the steady state data that was acquired during the experiments performed with microfluidic device 2.
+We therefore only analysed a subselection of the data 
+and focused on analyses of steady state behaviour.
+%that was acquired during the experiments performed with microfluidic device 2.
 
-On top of this, the data that we did analyse showed a very high background signal, which indicated that more experiments are needed to draw definitive conclusions.
+On top of this, the data that we did analyse showed a very high background signal, which indicated that 
+more data needs to be analysed or additional experiments are required
+% more experiments are needed 
+to draw definitive conclusions.
 %
 Nevertheless, we made several observations regarding the interaction between single cell ribosomal fluctuations and single cell growth rate fluctuations.
 %
@@ -935,33 +938,34 @@ This would be consistent with the idea that ribosomal RNA does not affect growth
 %
 Secondly, in experiments in M9 minimal medium involving labeled ribosomal proteins (L9 and S2), we also saw cross-correlations that might be consistent with dilution mode dynamics.
 However, when this strain grew on M9 minimal medium supplemented with antibiotics, cross-correlations were less consistent with dilutions mode dynamics.
-Hence, contrary to what the r-RNA data indicated, this data suggested that ribosomal fluctuations could become more consequential for the cell due to translational stress.
+Hence, contrary to what the r-RNA data indicated, this data suggested that ribosomal fluctuations could become more consequential for the cell when it experiences translational stress.
 
 Similar experiments were described earlier by Noreen Walker \cite{Walker2016t}, 
-we briefly summarized her experimental observations in section \ref{section:ribos:walker}.
+we briefly summarized her experimental observations in section \ref{section:ribos:walker} of this chapter.
 %
 Observations by Walker on a strain with a ribosomal RNA reporter in medium M9 medium supplemented with acetate (our lactose-supplemented M9 sustains a higher growth rate) or defined rich medium did not show dilution mode behaviour, which could mean ribosomal RNA shows different dynamics in different media.
 %
-Some of the experiments involving L19 and L31 reporters that she used showed dilution mode behavior in M9 minimal medium, similar to our observations on the labeled S2 and L9 ribosomal proteins in minimal medium, but some of her experiments did not. (This depended on the reporter involved, mCherry or mCerulean, respectively.)
+Some of the experiments involving L19 and L31 reporters that she used showed dilution mode behavior in M9 minimal medium, similar to our observations on the labeled S2 and L9 ribosomal proteins in minimal medium, but some of her experiments did not. (This depended on the fluorescent label that was used, mCherry or mCerulean respectively.)
 %
-Walker also performed CC analyses of steady state growth in rich medium supplemented in antibiotics, which resulted only in subtle changes in the dynamics for an labelled L31 ribosomal protein and a ribosomal RNA promoter reporter construct.
+Walker also performed CC analyses of steady state growth in rich medium supplemented with antibiotics, which resulted only in subtle changes in the dynamics, both for a labelled L31 ribosomal protein and for a ribosomal RNA promoter reporter construct.
 It is unclear how these results in different medium connect to our results.
 
 \subsection{Single cell ribosome expression and protein expression}
 
-In this work, we performed experiments on strains that carried both a reporter for ribosomal expression, and a constitutive reporter.
-This latter reporter was intended to probe the effect of ribosomal expression fluctuations on the cells ability to produce proteins.
+In this chapter, we performed experiments on strains that carried both a ribosomal expression reporter and a constitutive reporter.
+The latter reporter was intended to probe the effect of ribosomal expression fluctuations on the cell's ability to produce proteins.
 %
 We observed positive correlations in the CCs between the concentrations of these two reporters. 
 %
-The positive correlations were however hard to interpret since 
+Such correlations are however 
+%The positive correlations were however hard to interpret since 
 %
-%The positive correlations in the CCs between the concentrations of these two reporters were hard to interpret since 
-they are expected between the expression of any two proteins, 
+%they are 
+expected between the expression of any two proteins, 
 and thus do not necessarily imply that there is an effect of ribosomal expression fluctuations on protein production in the cell.
 %
-We did observe additional features in the CCs, 
-these depended on the medium in which the cells were growing.
+We did observe additional features in the CCs. 
+These depended on the medium in which the cells were growing.
 %
 In most media, these features were not consistent with an effect of ribosomal fluctuations on protein production,
 except in TY.
@@ -971,9 +975,11 @@ which is consistent with an effect of ribosomal fluctuations on protein producti
 %
 TY medium sustains the fastest bacterial growth rate, 
 which could explain an increased sensitivity to ribosomal fluctuations.
+%
+As mentioned however, more experiments are needed to draw definitive conclusions.
 
 
-To shed further light on these matters, one could look at the cross-correlation between
+To shed further light on these matters, one could additionally look at the cross-correlation between
 the concentration of the ribosomal reporter and the production of the constitutive reporter.
 %
 This would require a rather straightforward extension of our analysis scripts.
@@ -1016,16 +1022,18 @@ Consistent with the view that the ribosomal proteins are not expressed equally f
 not all operons from which the ribosomal proteins are expressed are regulated by exactly the same regulators \cite{Keseler2017}.
 %
 Additionally, some ribosomal subunits are observed to be essential, whilst others are not (i.e. some respective null mutants are viable, whilst others are not).
-This further illustrates that different ribosomal proteins might have different functional roles.
+This further illustrates that different ribosomal proteins might have different functional expression profiles.
 %
 From the proteins that we labelled, L9 and L31 are non-essential, and S2 and L19 are essential.
 %
-This suggests that it could be that 
-single cell fluctuations in different ribosomal proteins might thus have a different effects on growth rates.
+%This suggests that it could be that 
+%single cell fluctuations in different ribosomal proteins might thus have a different effects on growth rates.
+This distinction might also be reflected in different relationships between expression and growth rate for the different ribosomal proteins, 
+though our data might be too limited to draw conclusions about this.
 %
-This is consisent with our observations that the shape of CCs sometimes depended on which ribosomal protein was labelled.
+%This is consisent with our observations that the shape of CCs sometimes depended on which ribosomal protein was labelled.
 %
-Understanding ribosomal dynamics based on labelling ribosomal proteins might thus prove a challenging task.
+Concluding, understanding ribosomal dynamics based on labelling ribosomal proteins might prove a challenging task.
 
 \begin{figure}
     \centering
@@ -1034,7 +1042,7 @@ Understanding ribosomal dynamics based on labelling ribosomal proteins might thu
     \caption{ 
         \textbf{Some of the ribosomal proteins that were labeled for experiments in this chapter.}
         The structure of the ribosome is displayed twice in grey, with on the left the L19 ribosomal protein highlighted in red, and on the right the L9 and S2 ribosomal subunits highlighted in red and yellow, respectively.
-        This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
+        This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files were downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
         visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}). These two visualizations were made by Giulia Bergamaschi.
         %        Giulia's text with this figure:
         %         Label location on the ribosomes; the fluorescent reporters were attached to the colored
@@ -1064,7 +1072,9 @@ Understanding ribosomal dynamics based on labelling ribosomal proteins might thu
 
 As mentioned in the results section, it can sometimes be very useful to create an extreme situation to better understand the dynamics of a system.
 %
-Thus, creating a situation where ribosomes are limiting in single cells, i.e. a situation in which single cell growth rates correlate strongly with ribosomal expression, might allow us to better understand ribosomal dynamics.
+For ribosomal dynamics, an extreme situation might be one where ribosomes are limiting, 
+%Thus, creating a situation where ribosomes are limiting in single cells, 
+i.e. a situation in which single cell growth rates correlate strongly with ribosomal expression.%, might allow us to better understand ribosomal dynamics.
 %
 This topic is also discussed in the previously mentioned thesis by Walker \cite{Walker2016t}. 
 %
@@ -1081,44 +1091,10 @@ in such a way that local deviations from the newly established level have simila
 %This might be explained by a scenario where the population reacts to an antibiotic disturbance by altering its ribosomal expression level to cope with the translational stress,
 %but where deviations from that new expression level show similar dynamics as deviations from the original situation with the lower ribosomal expression level
 % in the original situation.
-How this might work is depicted in figure \ref{fig:ribo:optimumCartoon}.
+This idea is further illustrated by the cartoon in 
+%How this might work is depicted in 
+figure \ref{fig:ribo:optimumCartoon}.
 %
-Different stressors instead of antibiotics might be used to put the cell under translational duress.
-%
-To create an alternative situation where ribosomal capacity is challenged, 
-we constructed strain ASC1088 (see table \ref{table:ribo:strains2}) which carries a plasmid that expresses the mCherry protein at a high expression level.
-%
-Similar to the antibiotic treatment, protein over-expression might also have put a large burden on ribosomal capacity, thus increasing the effect ribosomal fluctuations have on growth rate (see Walker's thesis for a longer discussion on this topic \cite{Walker2016t}).
-%
-However, 
-as we suspected that experiments with over-expression might yield similar results as the antibiotic experiments, 
-we abandoned experiments with this strain.
-
-% Xx future experiments could overcome xx.
-%There might be ideas for future experiments to force ribosomes to become limiting.
-Future experiments might be devised in which ribosomes are forced to become limiting.
-%
-As also mentioned by Walker \cite{Walker2016t}, previously constructed \textit{rrs} null mutants \cite{Condon1993, Condon1995, Quan2015, Bollenbach2009} might provide a venue towards this aim.
-%
-Given the role of the ribosomal RNA as backbone for the ribosome, shortages in ribosomal RNA content might have profound effects on the cellular growth rate.
-%
-Ribosomal RNA is expressed from multiple partially redundant operons, as shown in figure \ref{fig:ribo:tabledeltarrn}. 
-%
-% The null mutants previsouly created by 
-Bollenbach et al. \cite{Bollenbach2009} created several null mutants which had more and more of these operons removed, as also shown in figure \ref{fig:ribo:tabledeltarrn}. 
-%
-
-\subsection{TODO}
-
-> just explain idea briefly
-> move details to small supplement (use word doc)
-
-COMPLICATIONS:
-Maeda2015 shows different expression strengths of operons
-Quan2015 shows especially tRNA might be limiting, and also shows growth rate defect is limited
-Quan2013 already published a plasmid that expresses the rrnB operon
-Kaczanowska2007 provides a detailed map of the rrnB operon
-
 \begin{figure}
     \centering
     \includegraphics[width=1.0\textwidth]{optimum_figure.pdf}
@@ -1133,46 +1109,57 @@ Kaczanowska2007 provides a detailed map of the rrnB operon
     }
     \label{fig:ribo:optimumCartoon}
 \end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\textwidth]{tableRrna.png}
-    \caption{ 
-        \textbf{Table showing the \textit{rrn} operons in \ecoli with cartoon overlay indicating different \textit{rrn} null mutant strains created by Bollenbach et al..}
-        %Information on operon structure was obtained from ref. \cite{Keseler2017}, \textit{rrn} null mutants where published in ref. \cite{Bollenbach2009}.
-        Ribosomal RNA in \ecoli is expressed from multiple partially overlapping operons. 
-        Operons contain different ribosomal parts (and tRNA molecules). 
-        \textit{rrs} encodes 16S rRNA, \textit{rrl} encodes 23S rRNA, and \textit{rrf} encodes 5S rRNA.
-        Other abbreviations indicate respective gene encodes a tRNA molecule.
-        This is also indicated in the second line of the "ribosomal parts" column. 
-        Symbols indicate equivalence between the operons.
-        The last column indicates by regulators of the operons, symbols in brackets indicate evidence is not definitive.
-        (This information was obtained from the online database Ecocyc \cite{Keseler2017}).
-        The overlayed crosses and circles indicate the null mutants that were constructed by Bollenbach et al. \cite{Bollenbach2009}.
-        Each column of crosses corresponds to one strain, a cross indicates that the respective strain lacks the operon indicated. A circle indicates additional tRNA was expressed from a plasmid.
-        These strains were also referred to as $\Delta$1-6, where the number corresponds to the number of operons that were removed.
-    }
-    \label{fig:ribo:tabledeltarrn}
-\end{figure}
-
-
-
-\subsection{Structure}
-These observations emphasize the complexity of the ribosomal dynamics.
 %
-Given the central role of the ribosome in the cell, and the extensive biochemical structure with many proteins and RNA molecules involved, 
-this complexity is perhaps not surprising.
+Different stressors instead of antibiotics might be used to put the cell under translational duress.
+%
+To create an alternative situation where ribosomal capacity is challenged, 
+we constructed strain ASC1088 (see table \ref{table:ribo:strains2}) which carries a plasmid that expresses the mCherry protein at a high expression level.
+%
+Similar to the antibiotic treatment, protein over--expression might also put a large burden on ribosomal capacity, thus increasing the effect ribosomal fluctuations have on growth rate (see Walker's thesis for a longer discussion on this topic \cite{Walker2016t}).
+%
+However, partially based on earlier observations of the limited effect of unneeded protein expression \cite{Shachrai2010},
+we suspected that experiments with over-expression might yield similar results as the antibiotic experiments, 
+we abandoned experiments with this strain.
+
+% Xx future experiments could overcome xx.
+%There might be ideas for future experiments to force ribosomes to become limiting.
+Future experiments might be devised in which ribosomes are forced to become limiting.
+%
+As also mentioned by Walker \cite{Walker2016t}, previously constructed \textit{rrs} null mutants \cite{Condon1993, Condon1995, Quan2015, Bollenbach2009, Gyorfy2015} might provide a venue towards this aim.
+%
+Given the role of the ribosomal RNA as backbone for the ribosome, shortages in ribosomal RNA content might have profound effects on the cellular growth rate.
+%
+Ribosomal RNA is expressed from multiple partially redundant operons labelled \textit{rrna} up to \textit{rrnh}, as shown in supplementary figure \ref{fig:ribo:tabledeltarrn}. 
+%
+% The null mutants previsouly created by 
+Bollenbach et al. \cite{Bollenbach2009} created several null mutants which had more and more of these operons removed, as also shown in supplementary figure \ref{fig:ribo:tabledeltarrn}. 
+%
+In these null mutants, ribosomal RNA fluctuations might have a large effect on growth rate.
+Ribosomal proteins on the other hand might still be expressed at normal levels, and thus would be present at plentiful levels.
+Hence, the concentration of ribosomal RNA might be limiting, whilst the concentration of ribosomal proteins is not.
+The expression of ribosomal RNA is however hard to track directly.
+%
+One way for future experiments to get around this might be a plasmid that expresses ribosomal RNA and a reporter simultaneously.
+%
+A fluorescent reporter sequence (and ribosome binding site) could be fused at the end of an \textit{rrn} operon sequence, which could be expressed from a plasmid in one of the deletion strains.
+%
+This would result in both rRNA and coding RNA being expressed simultaneously, and thus allow for a way to track whether 
+fluctuations in ribosomal content can affect single cell growth rate.
+%
+Some research on how such a construct should look was already performed and can be found in supplementary note I (section \ref{supp:ribo:1}) to this chapter.
 %
 
 
 
+
+% FINAL CONCLUSIONS
 
 % DISCARDED conclusions
 % (d) take the gel pad as reference and point out that it would be nice to lower negative controls to the same level
 % (b) would be nice to re-run some of noreen's analyses with the script that creates the controls.
 
-
-
+% LITERATURE CURRENTLY NOT CITED:
+% Schneider2003: rRNA regulation -- Schneider, D. A., Ross, W., & Gourse, R. L. (2003). Control of rRNA expression in Escherichia coli. Current Opinion in Microbiology, 6(2), 151–156. http://doi.org/10.1016/S1369-5274(03)00038-9      
 
 \section{Acknowledgements}
 
@@ -1200,7 +1187,117 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
 \FloatBarrier
 \clearpage
 
+\section{Supplementary note I}
+\label{supp:ribo:1}
+
+\subsection{Making rRNA concentration limiting and traceable}
+%\subsection{Creating a limiting rRNA concentration that can be tracked}
+%\subsection{A strain in which rRNA concentration is limiting and can be tracked}
+%\subsection{Creating a strain where rRNA is limiting and can be tracked}
+
+%\subsection{Introduction}
+
+%As mentioned in the main text, 
+%ribosomal RNA components are the backbone of the ribosome. There are three of these RNA components in the ribosome, which are 16S (part of the small ribosomal subunit), 23S and 5S in size (both part of the large ribosomal subunit), respectively encoded by the rrs, rrl and rrf genes. The genes that produce these RNA components occur in multiple copies, and are organized into multiple (seven) operons that always contain the genes for these three RNA components, and additionally also copies of tRNA genes. The seven RNA operons are referred to as rrnX, with X a label ranging from A to H. See also supplementary figure \ref{fig:ribo:tabledeltarrn}.
+%%
+%Previously, strains with knockouts of these RNA genes have been made to investigate the properties of the operons. These knockouts had one up to six copies of the rrn operons lacking; in the cases where 5 or 6 operons were removed, additional tRNA genes expressed from plasmids were introduced to ensure viability of these strains.
+
+In this section, we aim to show how one could create an artificially limiting situation involving ribosomal genes and also track ribosomal expression to show this. 
+Or in other words, how to create a strain in which single cell ribosomal RNA fluctuations have an effect on the growth rate. 
+%
+%\subsection{Possible method}
+%
+As briefly described in the main text, the $\Delta$\textit{rrn} strains created by Bollenbach et al. \cite{Bollenbach2009} could experience ribosomal RNA limitations.
+%
+One could introduce a plasmid containing a ribosomal RNA operon sequence, followed by a ribosomal binding site sequence and fluorescent reporter sequence, 
+to investigate correlations between additional ribosomal RNA expression (from the plasmid) and single cellular growth rate.
+%
+To achieve this, one could either use the pK4--16 plasmid constructed by Quan et al. \cite{Quan2013} --- which contains the \textit{rrnb} operon --- as a starting point, or clone the \textit{rrnb} operon into another vector (for which one could use primers sequences for \textit{rrnb} also published by Quan et al \cite{Quan2013}).
+%
+The new vector should have a low copy number and its antibiotic resistance module should not be the same as the modules used in strains the vector might be introduced to (ampicilin might be a convenient choice, but not streptavadin or chloramphenicol).
+%
+To add the fluorescent reporter (e.g. mCerulean2.0) to the \textit{rrnb} operon, one could insert it after the coding sequences and accompanying RNA cleavage sites, but before the operon's terminator sites.
+%
+The structure of the operon and the cleavage and terminator sites are described in Kaczanowska et al. \cite{Kaczanowska2007} (see also Shajani et al. \cite{Shajani2011}),
+%
+and terminator sites are also annotated in the Ecocyc database\footnote{In the \ecoli genome, the region with the terminators lies between nucleotide 4171756 and 4171760, and an annotated sequence can be found via \texttt{https://ecocyc.org/ECOLI/select-gen-el}.} \cite{Keseler2017}.
+%
+In addition to a fluorescent protein sequence itself, the reporter sequence would also have to contain a ribosome binding site, which could be synthetically made using the Salislab ribosome binding site (RBS) calculator\footnote{Using \texttt{https://salislab.net/software/} and the mCerulean2.0 sequence, an RBS sequence might look like: \newline\texttt{CTTTCAATCAATTCGTAATTTTAGATAAATAATAAGGAGGTCTCTAA}.} \cite{Salis2009, Salis2011}. 
+Furthermore, to prevent interference with ribosomal RNA maturation, a linker could be introduced between the ribosomal RNA sequences and the reporter sequence.
+%
+The resulting plasmid could be introduced in strain $\Delta$2 (also known as CGSC 12340 and SQ40), which lacks the \textit{rrne} and \textit{rrng} operons that are both similar to \textit{rrnb}, see table \ref{fig:ribo:tabledeltarrn}.
+%
+The copy number of a low copy number plasmid would likely be variable in single cells, which aids towards the goal of investigating the effect of different single cell expression levels of the ribosomal RNA.
+
+\subsection{Additional considerations}
+
+An additional consideration might be the strength of the \textit{rrn} promoters.
+These are different per operon, the \textit{rrne} is by far the strongest \cite{Maeda2015}.
+The \textit{rrnb} promoter strength is two to several times less depending on the condition.
+This very compatible with our aim to keep ribosomal RNA expression limited.
+
+A challenge to this strategy might be that 
+%There are several challenges that can be identified in pursuing this strategy.
+%Firstly, a study by Quan et al. \cite{Quan2015} showed that 
+tRNA turns out to be limiting, as suggested by Quan et al. \cite{Quan2015}.
+tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mistaking tRNA limitations for ribosomal limitations, additional artificial tRNA expression (e.g. from a plasmid) could be a tool to make sure this is not the case.
+
+
+
+%\subsection{more stuff}
+%additionally add some mrna sequence??
+%
+%COMPLICATIONS:
+%% Maeda2015 shows different expression strengths of operons
+%Quan2015 shows especially tRNA might be limiting, and also shows growth rate defect is limited
+%Quan2013 already published a plasmid that expresses the rrnB operon
+%Kaczanowska2007 provides a detailed map of the rrnB operon
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{tableRrna.png}
+    \caption{ 
+        \textbf{Table showing the \textit{rrn} operons in \ecoli with cartoon overlay indicating different \textit{rrn} null mutant strains created by Bollenbach et al..}
+        %Information on operon structure was obtained from ref. \cite{Keseler2017}, \textit{rrn} null mutants where published in ref. \cite{Bollenbach2009}.
+        Ribosomal RNA in \ecoli is expressed from multiple partially overlapping operons. 
+        Operons contain different ribosomal parts (and tRNA molecules). 
+        \textit{rrs} encodes 16S rRNA, \textit{rrl} encodes 23S rRNA, and \textit{rrf} encodes 5S rRNA.
+        Other abbreviations indicate genes that encode tRNA molecules.
+        This is also indicated in the second line of the "ribosomal parts" column. 
+        Symbols in the third column indicate equivalence between the operons.
+        The last column indicates regulators of the operons, symbols in brackets indicate evidence is not definitive.
+        (This information was obtained from the online database Ecocyc \cite{Keseler2017}).
+        The overlayed crosses and circles indicate the null mutants that were constructed by Bollenbach et al. \cite{Bollenbach2009}.
+        Each column of crosses corresponds to one strain, a cross indicates that the respective strain lacks the operon indicated. A circle indicates additional tRNA was expressed from a plasmid.
+        These strains were also referred to as $\Delta$1-6, where the number corresponds to the number of operons that were removed.
+    }
+    \label{fig:ribo:tabledeltarrn}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MORE SUPPLEMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\FloatBarrier
+\clearpage
+
 \section{Supplemental figures and tables}
+\FloatBarrier
+
+\begin{table}
+    \begin{tabular}{ l l l l }
+        \centering
+        r-protein & Gene name & Operon & Fluorescent label \\ 
+        \hline
+        L31 & rpmE & none & Cerulean, mCherry \\ 
+        L19 & rplS & rpsP-rimM-trmD-rplS & Cerulean, mCherry \\ 
+        L9 & rplI & rpsF-priB-rpsR-rplI & mCherry \\ 
+        S2 & rpsB & ttf-rpsB-tsf & Venus\\ 
+    \end{tabular}
+    \caption{Labeld ribosomal proteins in the Tans lab. 
+        %    Ribosomal proteins that we have labeled.
+    } \label{tab:ribolabeledprots}
+\end{table}
 
 \begin{table}[h]
     \begin{tabularx}{\textwidth}{llXl}
@@ -1283,29 +1380,29 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Notes to self
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\clearpage
-
-{\color{red}
-    \section{Misc. todo's etc}
-    
-    References that might be convenient:
-    \begin{itemize}
-        \item Bosdriesz E, Molenaar, D., Teusink, B., and Bruggeman, F.J. CHAPTER 6 How fast-growing bacteria robustly tune their ribosome concentration to approximate growth rate maximisation. Manuscr. Accept. Publ. FEBS J., 119–153.
-        \cite{BosdrieszE}
-        \item Maeda, M., Shimada, T., and Ishihama, A. (2015). Strength and Regulation of Seven rRNA Promoters in Escherichia coli. PLoS One 10, 1–19. \cite{Maeda2015}
-        \item Gyorfy, Z., Draskovits, G., Vernyik, V., Blattner, F.F., Gaal, T., and Posfai, G. (2015). Engineered ribosomal RNA operon copy-number variants of E. coli reveal the evolutionary trade-offs shaping rRNA operon number. Nucleic Acids Res. 43, 1783–1794. \cite{Gyorfy2015}
-        \item \textit{(The following two articles talk about the ribosomal RNA deletion strains, also surprising interactions with antibiotics. Of main importance is the observation that mainly tRNA seems to be limiting. See also unpublished \cite{Quan2013}.)} Bollenbach, T., Quan, S., Chait, R., and Kishony, R. (2009). Nonoptimal Microbial Response to Antibiotics Underlies Suppressive Drug Interactions. Cell 139, 707–718. \cite{Bollenbach2009} AND 1. Quan, S., Skovgaard, O., McLaughlin, R.E., Buurman, E.T., and Squires, C.L. (2015). Markerless Escherichia coli rrn Deletion Strains for Genetic Determination of Ribosomal Binding Sites. G3 Genes|Genomes|Genetics 5, 2555–2557. \cite{Quan2015} \textit{Quan et al. also refer to Orelle et al. 2013; Polikanov et al. 2014b; Orelle et al. 2015.}
-        \item \textit{(This article details the rRNA regulation.)} Schneider, D.A., Ross, W., and Gourse, R.L. (2003). Control of rRNA expression in Escherichia coli. Curr. Opin. Microbiol. 6, 151–156. \cite{Schneider2003} 
-        \item \textit{(These two article with description of the structures generated from rRNA genes, also mention the cleavage of the RNA genes.)}  Kaczanowska, M., and Ryden-Aulin, M. (2007). Ribosome Biogenesis and the Translation Process in Escherichia coli. Microbiol. Mol. Biol. Rev. 71, 477–494. \cite{Kaczanowska2007} AND Shajani, Z., Sykes, M.T., and Williamson, J.R. (2011). Assembly of bacterial ribosomes. Annu. Rev. Biochem. 80, 501–26. \cite{Shajani2011}
-        NOTE that \cite{Chen2013} has also a picture of biogenesis and assembly.
-        \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.        
-        \cite{Shachrai2010}
-        \item Maaloe1979 and Scott2010 (see Hui2015) which claims that ribosomes operate at "saturated translational capacity".
-    \end{itemize} 
-    
-\clearpage    
-}
+%
+%\clearpage
+%
+%{\color{red}
+%    \section{Misc. todo's etc}
+%    
+%    References that might be convenient:
+%    \begin{itemize}
+%        \item Bosdriesz E, Molenaar, D., Teusink, B., and Bruggeman, F.J. CHAPTER 6 How fast-growing bacteria robustly tune their ribosome concentration to approximate growth rate maximisation. Manuscr. Accept. Publ. FEBS J., 119–153.
+%        \cite{BosdrieszE}
+%        \item Maeda, M., Shimada, T., and Ishihama, A. (2015). Strength and Regulation of Seven rRNA Promoters in Escherichia coli. PLoS One 10, 1–19. \cite{Maeda2015}
+%        \item Gyorfy, Z., Draskovits, G., Vernyik, V., Blattner, F.F., Gaal, T., and Posfai, G. (2015). Engineered ribosomal RNA operon copy-number variants of E. coli reveal the evolutionary trade-offs shaping rRNA operon number. Nucleic Acids Res. 43, 1783–1794. \cite{Gyorfy2015}
+%        \item \textit{(The following two articles talk about the ribosomal RNA deletion strains, also surprising interactions with antibiotics. Of main importance is the observation that mainly tRNA seems to be limiting. See also unpublished \cite{Quan2013}.)} Bollenbach, T., Quan, S., Chait, R., and Kishony, R. (2009). Nonoptimal Microbial Response to Antibiotics Underlies Suppressive Drug Interactions. Cell 139, 707–718. \cite{Bollenbach2009} AND 1. Quan, S., Skovgaard, O., McLaughlin, R.E., Buurman, E.T., and Squires, C.L. (2015). Markerless Escherichia coli rrn Deletion Strains for Genetic Determination of Ribosomal Binding Sites. G3 Genes|Genomes|Genetics 5, 2555–2557. \cite{Quan2015} \textit{Quan et al. also refer to Orelle et al. 2013; Polikanov et al. 2014b; Orelle et al. 2015.}
+%        \item \textit{(This article details the rRNA regulation.)} Schneider, D.A., Ross, W., and Gourse, R.L. (2003). Control of rRNA expression in Escherichia coli. Curr. Opin. Microbiol. 6, 151–156. \cite{Schneider2003} 
+%        \item \textit{(These two article with description of the structures generated from rRNA genes, also mention the cleavage of the RNA genes.)}  Kaczanowska, M., and Ryden-Aulin, M. (2007). Ribosome Biogenesis and the Translation Process in Escherichia coli. Microbiol. Mol. Biol. Rev. 71, 477–494. \cite{Kaczanowska2007} AND Shajani, Z., Sykes, M.T., and Williamson, J.R. (2011). Assembly of bacterial ribosomes. Annu. Rev. Biochem. 80, 501–26. \cite{Shajani2011}
+%        NOTE that \cite{Chen2013} has also a picture of biogenesis and assembly.
+%        \item \textit{(Following article measures burden on ribosome and effect on growth in a dynamic environment.)} Shachrai, I., Zaslaver, A., Alon, U., and Dekel, E. (2010). Cost of Unneeded Proteins in E. coli Is Reduced after Several Generations in Exponential Growth. Mol. Cell 38, 758–767.        
+%        \cite{Shachrai2010}
+%        \item Maaloe1979 and Scott2010 (see Hui2015) which claims that ribosomes operate at "saturated translational capacity".
+%    \end{itemize} 
+%    
+%\clearpage    
+%}
 
 
 
