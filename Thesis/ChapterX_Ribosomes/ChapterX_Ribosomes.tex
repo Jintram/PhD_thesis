@@ -27,7 +27,7 @@
         The Ecocyc database lists 58 ribsomal proteins, though also different numbers of ribosomal proteins are listed (ref. \cite{Chen2013} e.g. talks about 54 ribosomal proteins).
         % The 5S rRNA also binds to the large subunit.
         Interestingly, the ribosomal RNA constitutes 73-80\% of the total RNA found in an \textit{E. coli} cell (mRNA constitutes 3-4.5\% and tRNA 15-20\%) \cite{Norris1972}.
-        Assembly of the ribosome also requires many co-factors \cite{Chen2013}. % note also DnaK is required.
+        Assembly of the ribosome requires many co-factors \cite{Chen2013}. % note also DnaK is required.
         %
         This image is based on x-ray crystallography (PDB ID: 4v4q, \cite{Schuwirth2005}). Pdb files downloaded from \texttt{www.rcsb.org} \cite{Berman2000} 
         visualized with UCSF Chimera (version 1.11.2, build 41376, \cite{pettersen2004}).
@@ -56,7 +56,7 @@ This dogma relates immediately to some of the features that are said to define l
 the capability to store information and 
 the regeneration of components from scratch \cite{Lawrence2005, Koshland2002}.
 %
-Also around that time, 
+%Also around that time, 
 Slightly earlier, in 1955, "new cytoplasmic components" were already discovered under an electron microscope \cite{Palade1955}.
 These components turned out to be the components in the cell that perform the last step of the central dogma: 
 the synthesis of proteins using mRNA molecules as templates; also known as transcription.
@@ -65,11 +65,11 @@ The components became known as ribosomes.
 % Given the central place of the ribosome, in the circle of life, and 
 Given the idea that early life consisted only of RNA molecules that could catalyze other reactions (the "RNA world" \cite{Campbell2002}), it is not surprising that the ribosomes 
 % these components of the cell
-consist of both catalytic RNA and proteins,
+consist of both catalytic RNA molecules and (many) proteins,
 as shown in figure \ref{fig:ribo:pictureofribo}.
 %
 %As such, it is not only an embodiment of the central dogma, but also the exception to the rule.
-As such, we can say ribosomes are a key element of life.
+Given these facts, we can say ribosomes are (a key element of) life.
 
 % life
 % Lawrence: information storage, catalysts, energy relation environment, grow and reproduce, respond stimuli
@@ -78,7 +78,7 @@ As such, we can say ribosomes are a key element of life.
 \subsection{Understanding the role of ribosomes in protein fluctuations}
 
 In this thesis, 
-we have been trying to further 
+we have been trying to 
 % When we want to understand the cell, ribosomes are a good starting point.
 %It is our aim to better 
 understand % cellular dynamics.
@@ -90,9 +90,9 @@ these fluctuations are a result of the intrinsic stochastic nature of chemical p
 %
 Given the central role of the ribosome in the cell that was just discussed, ribosomes might play a big role in such fluctuations.
 %Since ribosomes are key components in the cell, 
-Indeed, it is often suggested that fluctuations in ribosomal concentration could result in cell-wide protein concentration fluctuations \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
+Indeed, it is often suggested that fluctuations in ribosomal concentration could lead to in cell-wide protein concentration fluctuations \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
 %
-Such concerted concentration fluctuations are also referred to as extrinsic noise (as opposed to intrinsic noise, fluctuations that only occur in one cellular species) \cite{Elowitz2002}.
+Such concerted concentration fluctuations are also referred to as extrinsic noise (as opposed to intrinsic noise, which refers to fluctuations that only occur in one cellular species) \cite{Elowitz2002}.
 
 \subsection{Quantifying ribosomal dynamics}
 \label{section:ribos:walker}
@@ -102,7 +102,7 @@ In a previous thesis from the Tans lab, Noreen Walker
 quantified the dynamic relationship between single cell ribosomal expression fluctuations and growth in steady state conditions \cite{Walker2016t}.
 %
 The experiments involved presented many challenges, 
-of which a number is described in her thesis.
+of which a number are described in her thesis.
 %
 % The results from these experiments were rather inconclusive.
 %
@@ -115,7 +115,7 @@ In single cell time lapse experiments, no clear indications were found to suppor
 Instead, 
 ribosomal proteins L19 and L31 that were labeled with mCherry (L31-R and L19-R)
 % mCherry-labeled L31 and L19 subunits (L31-R and L19-R) 
-showed expression-growth cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics). 
+showed expression-growth cross-correlations (CCs) indicative of dilution-scenario behaviour in minimal medium, or none at all in rich medium (see chapters \ref{chapter:literaturereview} and \ref{chapter:CRP} for discussions about the use of cross-correlations to interpret dynamics, and also Kiviet et al. \cite{Kiviet2014}). 
 mCerulean labeled L31 ribosomal protein (L31-C) showed expression-growth CCs with small correlations around zero delay 
 % at positive delays 
 %between expression and growth 
@@ -143,12 +143,12 @@ the nature of the ribosomal dynamics remained fairly elusive; it was concluded t
 
 \subsection{New work}
 
-In this chapter, we will describe a few additional experiments that were aimed at gaining further insights in the ribosomal dynamics.
+In this chapter, we will describe additional experiments that were aimed at gaining further insights in the ribosomal dynamics.
 Specifically, we tried to understand whether fluctuations in ribosomal concentration could have cell-wide implications.
 %
 To answer this question, we tried both new experiments as well increase the throughput of existing experiments.
 %
-Since this is an ongoing project, this chapter will be more succinct than previous ones.
+Since this is an ongoing project, some sections in this chapter will be more succinct.
 
 \section{Results}
 % > looked at dual reporters with pn25 reporter to assess effect from ribosomal concentration > protein production
@@ -196,10 +196,10 @@ the single cell capacity to produce proteins.
 %
 We therefore created two dual-label strains that both carried ribosomal reporter constructs, as well as constitutively expressed fluorescent reporters.
 %
-In the first strain, we fused the mCerulean fluorescent reporter sequence to the ribosomal RNA promoter (rrsa), and additionally inserted an mVenus sequence to the constitutive pn25 promoter. Both were chromosomally inserted.
-%
-The pn25-mVenus reporter served as a readout for fluctuations in protein production that likely affect all proteins that are produced in the cell. 
+The constitutive reporter served as a readout for fluctuations in protein production that likely affect all proteins that are produced in the cell. 
 % a proxy for protein production in general.
+%
+In the first strain, we fused the mCerulean fluorescent reporter sequence to the ribosomal RNA promoter (rrsa), and additionally inserted an mVenus sequence to the constitutive pn25 promoter. Both were chromosomally inserted.
 %
 In the second strain, we introduced an mCerulean sequence behind the chromosomal L19 ribosomal protein sequence, thus creating a strain that produces L19 ribosomal proteins that are fused to mCerulean fluorescent labels.
 We also introduced the constitutive pn25-mVenus reporter to this strain.
@@ -208,7 +208,7 @@ These strains, the Prrna-C, pn25-Y strain and the L19-C, pn25-Y strain are liste
 Additionally, supplementary table \ref{tab:ribolabeledprots} gives an overview of the operons in which the ribosomal proteins are encoded.
 
 Furthermore, because the ribosome consists of so many ribosomal proteins, we wanted to be able to confirm 
-potentially observed dynamics for one labeled ribosomal protein, also for other labeled ribosomal proteins.
+dynamics observed for one labeled ribosomal protein, also for other labeled ribosomal proteins.
 %
 % potential observations in a strain that had other ribosomal proteins labeled.
 For this purpose, we requested a strain from the Elf lab which had both the L9 and S2 ribosomal proteins labeled by the mCherry and Venus fluorescent proteins, respectively \cite{Wallden2016}.
@@ -233,7 +233,7 @@ To understand the dynamics of a process, it is often convenient to grasp what ha
 %
 We therefore attempted to device an experiment which would lead to a situation where single cells that expressed more ribosomes than the population average would have a growth advantage, thus forcing a "limiting" situation.
 % 
-We did this by growing cells in minimal medium in our microfluidic device 1 for a few hours, and then switching to minimal medium supplemented with antibiotics (see chapter \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
+We did this by growing cells in minimal medium in our microfluidic device 1 for a few hours, and then switching to minimal medium supplemented with antibiotics (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
 %We did this by growing cells in minimal medium in our microfluidic device 1 (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
 %
 We hypothesized that right after the medium has switched, cells in the population --- which at that point are calibrated for growth in minimal medium --- that happen to express more ribosomes have a growth advantage.
@@ -250,21 +250,24 @@ Also, two additional experiments were conducted, one with the L31-C strain where
 and one with the rrsa-C, pn25-Y strain, where three microcolonies were analyzed.
 %
 Before looking at the scatter plots, we first look at the 
-trends in fluor concentration for all these five datasets, which are shown in figure \ref{fig:ribo:scatter1}.
-This figure shows that for the Prrna-C strain datasets, the signal goes up after the switch to medium with antibiotics, as is expected.
+trends in fluor concentration for all these five datasets, which are shown in figure \ref{fig:ribo:fluorsignals}. 
+This figure shows that for the Prrna-C strain datasets, the signal goes up after the switch to antibiotics supplemented medium.
 However, for both for the L31-R and L31-C datasets, the signal appears to be going down after the shift (though pre-shift fluctuations on the population average level of the L31-R data make it unclear what is exactly going on).
-It is unclear why this happens, since ribosome inhibition should increase relative ribosomal demand \cite{You2013}.
+It is unclear why this happens, since ribosome inhibition should increase ribosomal demand and accordingly, expression \cite{You2013}.
 %
 We now turn to the scatter plots.
 %As mentioned, we created growth-expression scatter plots for each time point within the dataset, for all of these datasets, and f
 For brevity we only show the representative series of scatter plots that relates to the L31-C dataset, see figure \ref{fig:ribo:scatter1}. 
 This figure shows that there is no clear change in correlation visible by eye after the switch to medium with antibiotics.
 %
-As mentioned however, we further quantified the data by calculating both the slope (least square fit by Matlab's \texttt{polyfit} function) and correlation coefficient for each of the scatter plots.
+%As mentioned however, 
+We further quantified the data by calculating both the slope (least square fit by Matlab's \texttt{polyfit} function) and correlation coefficient for each of the scatter plots.
 %
-This is shown in figures \ref{fig:ribo:switch1}-\ref{fig:ribo:switch5}.
+The analyses for all five datasets are 
+%This is 
+shown in figures \ref{fig:ribo:switch1}-\ref{fig:ribo:switch5}.
 %
-The L31-R dataset (figure \ref{fig:ribo:switch1}) arguably shows a small increase in correlation, but the correlation also decreases swiftly after that.
+The L31-R dataset (figure \ref{fig:ribo:switch1}) arguably shows a small increase in correlation approximately 200 minutes after the switch, but the correlation also decreases swiftly after that.
 The L31-Y dataset (figure \ref{fig:ribo:switch2}) is difficult to interpret, 
 likely the positive correlations before the switch are caused by chance as there are only a few cells in the microcolony at those points in time.
 %
@@ -292,7 +295,8 @@ In conclusion, it is difficult to interpret these datasets, as the different dat
         Red dots show single cell obsvervations, the black line indicates the colony average.
         (Top left) L31-R strain. 
         (Top right) L31-C strain.
-        (Bottom three) All are rrsa-C strains.      
+        (Bottom three) All are rrsa-C strains.  
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.    
     }
     \label{fig:ribo:fluorsignals}
 \end{figure}
@@ -305,6 +309,9 @@ In conclusion, it is difficult to interpret these datasets, as the different dat
     %\includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
     \caption{ 
         \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        Growth (doublings per hour) is shown on the y axes, and ribosome concentration (a.u.) is shown on the x axis.
+        Data shown here is from the L31-C ribosomal reporter strain. It was first grown in M9 medium (indicated by red scatter plots), and then in M9 medium plus 0.5 $\upmu$M tetracycline (indicated by blue scatter plots).     
+        The labels additionally indicate the correlation $R$, and the time $t$ (in minutes).
         %
         %        
     }
@@ -313,60 +320,98 @@ In conclusion, it is difficult to interpret these datasets, as the different dat
 
 %%%%%%%%%%%%%%%%%%%% Summary plots for shift experiments
 \begin{figure}
-    \centering    
+    \begin{minipage}[c]{0.7\textwidth}
+    %\centering    
     %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \includegraphics[width=0.99\textwidth]{pdf_2012-11-15_pos5_L31-mCherry_summaryPlot.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
     \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
+        \textbf{Quantification of the correlation between growth and ribosomal expression in the antibiotics switch experiment.}
+        Data from the L31-R strain. The number of cells gradually increased over the course of the experiment (A), whilst growth rate decreased after the switch (B).
+        The dynamics of growth and expression were quantified by the slope (C) and correlation coefficient (D) of the growth-expression scatter plots at each point in time.
+        Data displayed in black is based on the whole colony, blue symbols indicate single cell data.
         %
         %        
     }
     \label{fig:ribo:switch1}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}
+    \begin{minipage}[c]{0.7\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_summaryPlot.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \caption{ 
+            \textbf{Quantification of the correlation between growth and ribosomal expression in the antibiotics switch experiment.}
+            Data from the L31-C strain. The number of cells gradually increased over the course of the experiment (A), whilst growth rate decreased after the switch (B).
+            The dynamics of growth and expression were quantified by the slope (C) and correlation coefficient (D) of the growth-expression scatter plots at each point in time.
+            Data displayed in black is based on the whole colony, blue symbols indicate single cell data.
+            %
+            %        
+        }
+        \label{fig:ribo:switch2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}
+    \begin{minipage}[c]{0.7\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \caption{ 
+            \textbf{Quantification of the correlation between growth and ribosomal expression in the antibiotics switch experiment.}
+            Data from the Prrsa-C, pn25-Y strain. The number of cells gradually increased over the course of the experiment (A), whilst growth rate decreased after the switch (B).
+            The dynamics of growth and expression were quantified by the slope (C) and correlation coefficient (D) of the growth-expression scatter plots at each point in time.
+            Data displayed in black is based on the whole colony, blue symbols indicate single cell data.
+            %
+            %        
+        }
+        \label{fig:ribo:switch3}
+    \end{minipage}
 \end{figure}
 \begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:switch2}
+    \begin{minipage}[c]{0.7\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \caption{ 
+            \textbf{Quantification of the correlation between growth and ribosomal expression in the antibiotics switch experiment.}
+            Data from the Prrsa-C, pn25-Y strain. The number of cells gradually increased over the course of the experiment (A), whilst growth rate decreased after the switch (B).
+            The dynamics of growth and expression were quantified by the slope (C) and correlation coefficient (D) of the growth-expression scatter plots at each point in time.
+            Data displayed in black is based on the whole colony, blue symbols indicate single cell data.
+            %
+            %        
+        }
+        \label{fig:ribo:switch4}
+    \end{minipage}
 \end{figure}
 \begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos1_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:switch3}
+    \begin{minipage}[c]{0.7\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.3\textwidth}
+        \caption{ 
+            \textbf{Quantification of the correlation between growth and ribosomal expression in the antibiotics switch experiment.}
+            Data from the Prrsa-C, pn25-Y strain. The number of cells gradually increased over the course of the experiment (A), whilst growth rate decreased after the switch (B).
+            The dynamics of growth and expression were quantified by the slope (C) and correlation coefficient (D) of the growth-expression scatter plots at each point in time.
+            Data displayed in black is based on the whole colony, blue symbols indicate single cell data.
+            %
+            %        
+        }
+        \label{fig:ribo:switch5}
+    \end{minipage}
 \end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos2_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:switch4}
-\end{figure}
-\begin{figure}
-    \centering    
-    %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-    \includegraphics[width=0.8\textwidth]{pdf_2016-09-20_pos3_prrsa-mCerulean_pn25-yfp_summaryPlot.pdf}
-    \caption{ 
-        \textbf{Scatter plots for switch from clean medium to medium supplemental with antibiotics.}
-        %
-        %        
-    }
-    \label{fig:ribo:switch5}
-\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -377,7 +422,7 @@ In conclusion, it is difficult to interpret these datasets, as the different dat
 One reason that it is hard to analyse the data from the antibiotic switch experiments using microfluidic device 1, 
 is
 that the size of the microcolony starts out small, which leads to a 
-high variability of the observables during the first part of the experiment.
+high variability of the correlation during the first part of the experiment.
 %
 To produce a dataset with a constant large amount of cells, we performed additional antibiotic switch experiments in microfluidic device 2.
 %
@@ -403,9 +448,9 @@ Additionally, we could also analyse the response growth medium shifts and the re
 
 The large amount of data generated by microfluidic device 2 is both an advantage and a disadvantage.
 %
-We will not go into technical details here, but both the amount of data and also the nature of the growth in the wells present the computer analysis with new challenges.
+We will not go into technical details here, but both the amount of data and also the nature of the growth in the wells presented the computer analysis with new challenges.
 %
-We therefore only analysed parts of the data that was produced by these experiments at this moment.
+We therefore only analysed parts of the data that was produced by these experiments.% at this moment.
 %
 We chose to first analyse the data where we assumed cells had reached steady state; and where we can perform cross-correlation analyses (i.e. analyses mentioned in points 3 and 4 in the previous paragraph).
 Additional data recorded at the times of the switches exists but has not been fully analysed yet.
@@ -418,7 +463,8 @@ additional manual corrections
 % (on top of those already performed) 
 could perhaps further refine the analyses that we show here. 
 %
-For example, some of the tracked lineages show unrealistic fluctuations which might be due to artefacts in the computer analysis and might be removed or corrected (see supplemental figures \ref{fig:ribo:branchesXXXX}), and also the analysis now only takes into account a selection of the total amount of imaged cells, this selection could be extended to obtain more data.
+For example, some of the tracked lineages show unrealistic fluctuations which might be due to artefacts in the computer analysis and might be removed or corrected (see supplemental figures \ref{fig:ribo:branchesASC968andASC976} and \ref{fig:ribo:branchesASC1058}), % YYYYY
+and also the analysis now only takes into account a selection of the total amount of imaged cells, this selection could be extended to obtain more data.
 
 %\subsubsection{\red{Expression-growth CCs of constitutive reporter are consistent with dilution mode}}
 %\subsubsection{Results from ribosome and constitutive dual reporter strains}
@@ -433,16 +479,20 @@ and further emphasizes caution is required when interpreting this data.
 %
 Nevertheless, figures \ref{fig:ribo:CCsEmuYpn25} and \ref{fig:ribo:CCsPmuYpn25} show the CCs calculated for the pn25 constitutive expression-growth relationship for growth in minimal medium, TY medium, and TY medium supplemented with sub-inhibitory concentration of the antibiotic tetracycline (0.5 $\upmu$M).
 %
-Most of the correlation-growth curves show negative correlation values for negative delays.
+Most of the concentration-growth curves show negative correlation values for negative delays.
 The production rate-growth curves do not show clear trends.
 We saw earlier (see chapter \ref{chapter:CRP}) that constitutive reporters often show dilution mode dynamics.
 The CCs we observe here could be consistent with that transmission mode.
 %
-Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rrna or L19).
+Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rRNA or L19).
 The CCs for the labeled L19 protein (panel A both in figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo}) do not show a clear trend.
-The CCs in panels B-D however, which show the behaviour of the rrna reporter for different conditions, all show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
+The CCs for
+the behaviour of the \textit{rrna} reporter for all measured conditions 
+(shown in panels \ref{fig:ribo:CCsEmuYRibo}B-D and \ref{fig:ribo:CCsPmuYRibo}.B-D), %, which show 
+%all 
+show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
 %
-It is striking that there are no noticeable differences in the rrna expression growth dynamics between different conditions.
+It is striking that there are no noticeable differences in the rRNA expression growth dynamics between different conditions.
 %
 One explanation might be that 
 the promoter--reporter construct does not fully capture the dynamics of ribosomal RNA expression, as the construct does not directly label ribosomal RNA (which is something that can only be done for proteins).
@@ -461,7 +511,7 @@ but the Prrna-C, pn25-Y concentration-concentration CCs show a positive peak aro
 Positive correlations are expected, since concerted fluctuations were observed earlier for a pair of two constitutive reporters \cite{Elowitz2002}, for groups of proteins \cite{Stewart-Ornstein2012} and in general is expected to some extent for any two proteins because of the existence of extrinsic noise \cite{Chalancon2012}.
 %Thus, a positive correlations between expression is expected to be found for any two proteins in the cells, and also for our ribosomal and constitutive protein reporter pair.
 %
-However, here we look at two proteins of which one reports for ribosomal concentration, which might have an impact on protein production itself.
+However, here, we look at two proteins of which one reports for ribosomal concentration, which might have an impact on protein production itself.
 This might change the dynamics.
 %
 Additional features in the CC on top of the positive peak at 0 delay might tell us something about the ribosome-protein expression dynamics.
@@ -509,6 +559,10 @@ This is consistent with aforementioned concerted protein expression fluctuations
     \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_overview_means.pdf}
     \caption{ 
         \textbf{Population mean values of different parameters measured in different strains and conditions.}
+        In the labels, (A) indicates the L19-C, pn25-Y strain and (B) the Prrna-C, pn25-Y strain.
+        Growth media are indicated between brackets. 
+        M9 indicates M9 minimal medium, TY indicates TY medium and TY+AB indicates TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         %        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
         %        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
@@ -541,6 +595,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -560,6 +615,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -585,6 +641,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -604,6 +661,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -628,6 +686,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -647,6 +706,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
@@ -705,10 +765,13 @@ This indicates that more experiments are required to make claims about this data
 
 Nevertheless, we can try to interpret the current data.
 %
-The left panel in figure \ref{fig:ribo:CCsEmuS2}.A shows the S2 reporter concentration-growth CC for cells growing in M9 minimal medium, 
-which shows negative correlations consistent with the dilution mode of noise transmission \cite{Kiviet2014}.
+The S2 reporter concentration-growth CC for cells growing in M9 minimal medium (left panel in figure \ref{fig:ribo:CCsEmuS2}.A) 
+shows negative correlations consistent with the dilution mode of noise transmission \cite{Kiviet2014}.
 %
-We ignore the right panel, given the pattern observed in later experiments (see the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A), as will be discussed later.
+We ignore the right panel, 
+given a later analysis of this experiment 
+% given the pattern observed in later experiments
+(see the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A), which will be discussed later.
 %
 Interestingly, 
 % figure \ref{fig:ribo:CCsEmuS2}.B, which shows 
@@ -758,7 +821,9 @@ We do not observe further noteworthy features in the production--production CCs.
     \centering
     \includegraphics[width=0.8\textwidth]{pdf_riboASC1058_overview_means.pdf}
     \caption{ 
-        \textbf{Population mean values of different parameters measured in different strains and conditions.}
+        \textbf{Population mean values of different parameters measured in L9-R, S2-Y strain experiments.}
+        Shown are data from growth in M9 minimal medium ("M9") versus growth in M9 minimal medium supplemented with antibiotics ("M9+AB").
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         %        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
         %        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
@@ -788,6 +853,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between the concentration of the S2 ribosomal protein and growth.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
 %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
 %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
@@ -802,6 +868,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between the production rate of the S2 ribosomal protein and growth.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
 %
 %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
 %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
@@ -825,6 +892,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between the concentration of the L9 ribosomal protein and growth.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
 %
 %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
 %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
@@ -840,6 +908,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between the production rate of the L9 ribosomal protein and growth.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
 %
 %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
 %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
@@ -861,6 +930,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between concentrations of two ribosomal proteins.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %        
     }
     \label{fig:ribo:CCsEERiboribo}
@@ -873,6 +943,7 @@ We do not observe further noteworthy features in the production--production CCs.
         \textbf{Cross-correlations between production rates of two ribosomal proteins.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+        "C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %        
     }
     \label{fig:ribo:CCsPPRiboribo}
@@ -894,14 +965,15 @@ We do not observe further noteworthy features in the production--production CCs.
 In conclusion, we have used different single cell approaches in an attempt to further understand the ribosome.
 %
 We first performed an experiment using our microfluidic device 1 to subject cells to a switch from growth in minimal medium to growth in minimal medium with antibiotics.
-Based on extensive previous work, we expected that cells needed a higher concentration of ribosomes in the second condition (see e.g. ref. \cite{You2013}), and thus that single cells that expressed more ribosomes relative to the population average right before the switch would benefit shortly after the switch.
+Based on literature, we expected that cells needed a higher concentration of ribosomes when they were exposed to translational antibiotics (see e.g. ref. \cite{You2013}), and thus that single cells that expressed more ribosomes relative to the population average would benefit shortly after the switch.
 %
 If we would be able to observe such single cell growth advantages, this would imply 
-ribosomes are limiting in this scenario and their behaviour can serve 
+ribosomes are limiting in this scenario.
+Their behaviour could then serve 
 %limiting behaviour of ribosomes in this scenario and serve 
 as positive control and point of reference for other experiments. 
 %
-The results, to our surprise, showed that the L31 reporters did not display the expected increased concentration during exposure to antibiotics after the switch.
+To our surprise, the L31 reporter did not show the expected increased concentration during exposure to antibiotics after the switch.
 %
 This was also observed before \cite{Walker2016t} for this particular ribosomal protein, and it
 raises the question how representative the L31 reporter is for the ribosomal concentration.
@@ -914,7 +986,7 @@ The results from these experiments regarding single cell growth advantage were h
 
 To follow up on these experiments, we performed experiments using microfluidic device 2, which allows for measurements that are longer and thus allows for more switches, and additionally enables tracking a higher and constant number of cells. 
 %
-This set of experiments would have provided additional information on the ribosomal behavior during switches from medium that requires less ribosomal expression to medium that requires more ribosomal expression.%, such as medium with sub-inhibitory concentrations antibiotics.
+This set of experiments could have provided additional information on the ribosomal behavior during switches from medium that requires less ribosomal expression to medium that requires more ribosomal expression.%, such as medium with sub-inhibitory concentrations antibiotics.
 Additionally, the long time lapse capabilities of the device would allow us to record data in steady state.
 On top of this, we used newly constructed strains in these experiments that allowed us to measure the effect of ribosomal fluctuations on single cell protein expression, as the strains also contained a constitutive pn25 reporter construct.
 %
@@ -945,14 +1017,15 @@ we briefly summarized her experimental observations in section \ref{section:ribo
 %
 Observations by Walker on a strain with a ribosomal RNA reporter in medium M9 medium supplemented with acetate (our lactose-supplemented M9 sustains a higher growth rate) or defined rich medium did not show dilution mode behaviour, which could mean ribosomal RNA shows different dynamics in different media.
 %
-Some of the experiments involving L19 and L31 reporters that she used showed dilution mode behavior in M9 minimal medium, similar to our observations on the labeled S2 and L9 ribosomal proteins in minimal medium, but some of her experiments did not. (This depended on the fluorescent label that was used, mCherry or mCerulean respectively.)
+Some of the experiments involving L19 and L31 reporters that she performed showed dilution mode behavior in M9 minimal medium, similar to our observations on the labeled S2 and L9 ribosomal proteins in minimal medium, but some of her experiments did not. (This depended on the fluorescent label that was used, mCherry or mCerulean respectively.)
 %
 Walker also performed CC analyses of steady state growth in rich medium supplemented with antibiotics, which resulted only in subtle changes in the dynamics, both for a labelled L31 ribosomal protein and for a ribosomal RNA promoter reporter construct.
-It is unclear how these results in different medium connect to our results.
+%
+It is unclear how these results obtained in different media connect to our results.
 
 \subsection{Single cell ribosome expression and protein expression}
 
-In this chapter, we performed experiments on strains that carried both a ribosomal expression reporter and a constitutive reporter.
+In this chapter, we also performed experiments on strains that carried both a ribosomal expression reporter and a constitutive reporter.
 The latter reporter was intended to probe the effect of ribosomal expression fluctuations on the cell's ability to produce proteins.
 %
 We observed positive correlations in the CCs between the concentrations of these two reporters. 
@@ -973,7 +1046,7 @@ except in TY.
 In TY medium we observed additional correlations between constitutive protein expression and past ribosome expression,
 which is consistent with an effect of ribosomal fluctuations on protein production rates.
 %
-TY medium sustains the fastest bacterial growth rate, 
+TY medium sustains very fast bacterial growth rate, 
 which could explain an increased sensitivity to ribosomal fluctuations.
 %
 As mentioned however, more experiments are needed to draw definitive conclusions.
@@ -1008,13 +1081,14 @@ recent discoveries in eukaryotes show that this might actually not be the case \
 Purification and mass-spectrometry of ribosomes in yeast and mouse embryonic stem cells showed that 
 pools of ribosomes with different ribosomal protein composition exist, which could also be linked to functional properties \cite{Slavov2015}.
 %
-This raised the suggestion that the cell can modulate expression of ribosomal proteins separately, 
+This raised the suggestion that the cell can modulate expression of different ribosomal proteins separately, 
 to achieve specific regulatory goals.
 %
 It is not infeasible this is also the case in \ecoli, and this would explain why experiments tracking different ribosomal proteins show different dynamics.
 %
 This potential added layer of regulation makes it more difficult to understand the effect of ribosomal concentration fluctuations.
-Coincidentally, for eukaryotes, it has been observed that especially ribosomal surface proteins vary -- which are also convenient targets for labelling.
+Coincidentally, for eukaryotes, it has been observed that especially ribosomal surface proteins vary.
+Surface proteins are also convenient targets for labelling.
 In fact, the L9, S2 and L19 proteins that we  labelled are also on the surface of the ribosome, see figure \ref{fig:ribo:labelsPicGiulia}.
 Also the L31 protein that we labelled is only loosely attached to the ribosome \cite{Walker2016t}.
 %
@@ -1055,6 +1129,7 @@ Concluding, understanding ribosomal dynamics based on labelling ribosomal protei
     \label{fig:ribo:labelsPicGiulia}
 \end{figure}
 
+\section{Outlook}
 
 \subsection{Making ribosomes limiting}
 
@@ -1139,20 +1214,20 @@ Ribosomal proteins on the other hand might still be expressed at normal levels, 
 Hence, the concentration of ribosomal RNA might be limiting, whilst the concentration of ribosomal proteins is not.
 The expression of ribosomal RNA is however hard to track directly.
 %
-One way for future experiments to get around this might be a plasmid that expresses ribosomal RNA and a reporter simultaneously.
+One way for future experiments to get around this might be the creation of a plasmid that expresses ribosomal RNA and a reporter simultaneously.
 %
 A fluorescent reporter sequence (and ribosome binding site) could be fused at the end of an \textit{rrn} operon sequence, which could be expressed from a plasmid in one of the deletion strains.
 %
 This would result in both rRNA and coding RNA being expressed simultaneously, and thus allow for a way to track whether 
 fluctuations in ribosomal content can affect single cell growth rate.
 %
-Some research on how such a construct should look was already performed and can be found in supplementary note I (section \ref{supp:ribo:1}) to this chapter.
-%
+Some research on how such a construct could look was already performed and can be found in supplementary note I (section \ref{supp:ribo:1}) to this chapter.
 
 
+% FINAL CONCLUSIONS / OUTLOOK
 
+Furthermore, single cell methods are developing rapidly, and future advances might help us to further understand the complex dynamics between the ribosome, protein production and cellular growth rate.
 
-% FINAL CONCLUSIONS
 
 % DISCARDED conclusions
 % (d) take the gel pad as reference and point out that it would be nice to lower negative controls to the same level
@@ -1160,6 +1235,20 @@ Some research on how such a construct should look was already performed and can 
 
 % LITERATURE CURRENTLY NOT CITED:
 % Schneider2003: rRNA regulation -- Schneider, D. A., Ross, W., & Gourse, R. L. (2003). Control of rRNA expression in Escherichia coli. Current Opinion in Microbiology, 6(2), 151–156. http://doi.org/10.1016/S1369-5274(03)00038-9      
+
+\section{Methods}
+
+Where minimal medium is mentioned, this refers to M9 minimal medium (also described in chapter \ref{chapter:filarecovery}).
+%
+Minimal medium in this chapter was always supplemented with uracil (0.2 mM), lactose (0.1\% g/mL).
+TY medium is described in chapter \ref{chapter:filarecovery}.
+%
+During time lapse experiments under the microscope, tween20 (0.001\% g/mL) was added to the medium additionally.
+%
+When antibiotics are mentioned, this refers to tetracycline, which was used at a concentration of 0.5 $\upmu$M.
+%
+All experiments were conducted as described in the methods section of chapter \ref{chapter:filarecovery}.
+See also chapter \ref{chapter:methods} for further information.
 
 \section{Acknowledgements}
 
@@ -1202,8 +1291,8 @@ were performed with the UCSF Chimera package (production version 1.11.2, build 4
 %%
 %Previously, strains with knockouts of these RNA genes have been made to investigate the properties of the operons. These knockouts had one up to six copies of the rrn operons lacking; in the cases where 5 or 6 operons were removed, additional tRNA genes expressed from plasmids were introduced to ensure viability of these strains.
 
-In this section, we aim to show how one could create an artificially limiting situation involving ribosomal genes and also track ribosomal expression to show this. 
-Or in other words, how to create a strain in which single cell ribosomal RNA fluctuations have an effect on the growth rate. 
+In this supplementary section, we aim to show how one could create an artificially limiting situation involving ribosomal genes and also track ribosomal expression to show this. 
+Or in other words, how to create a strain in which traceable ribosomal RNA fluctuations have an effect on the growth rate. 
 %
 %\subsection{Possible method}
 %
@@ -1216,7 +1305,10 @@ To achieve this, one could either use the pK4--16 plasmid constructed by Quan et
 %
 The new vector should have a low copy number and its antibiotic resistance module should not be the same as the modules used in strains the vector might be introduced to (ampicilin might be a convenient choice, but not streptavadin or chloramphenicol).
 %
-To add the fluorescent reporter (e.g. mCerulean2.0) to the \textit{rrnb} operon, one could insert it after the coding sequences and accompanying RNA cleavage sites, but before the operon's terminator sites.
+To track rRNA expression one could add a 
+%To add the 
+fluorescent reporter (e.g. mCerulean2.0) to the \textit{rrnb} operon, 
+which could be inserted after the coding sequences and accompanying RNA cleavage sites, but before the operon's terminator sites.
 %
 The structure of the operon and the cleavage and terminator sites are described in Kaczanowska et al. \cite{Kaczanowska2007} (see also Shajani et al. \cite{Shajani2011}),
 %
@@ -1234,13 +1326,13 @@ The copy number of a low copy number plasmid would likely be variable in single 
 An additional consideration might be the strength of the \textit{rrn} promoters.
 These are different per operon, the \textit{rrne} is by far the strongest \cite{Maeda2015}.
 The \textit{rrnb} promoter strength is two to several times less depending on the condition.
-This very compatible with our aim to keep ribosomal RNA expression limited.
+This is compatible with our aim to keep ribosomal RNA expression limited.
 
 A challenge to this strategy might be that 
 %There are several challenges that can be identified in pursuing this strategy.
 %Firstly, a study by Quan et al. \cite{Quan2015} showed that 
 tRNA turns out to be limiting, as suggested by Quan et al. \cite{Quan2015}.
-tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mistaking tRNA limitations for ribosomal limitations, additional artificial tRNA expression (e.g. from a plasmid) could be a tool to make sure this is not the case.
+tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mistaking tRNA limitations for ribosomal limitations, additional artificial tRNA expression (for example from plasmid ptRNA67 described in Zaporojets et al. \cite{Zaporojets2003,Quan2015}) could be a tool to make sure this is not the case.
 
 
 
@@ -1319,7 +1411,8 @@ tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mi
         &	ASC968 + high copy plasmid w. pn25-mCherry (Resistances: kanamycin, chloramphenicol, ampicilin.) & VS \\
         \hline
     \end{tabularx}
-    \caption{\textbf{Strains used in previous work and miscellaneous strains.} NW indicates these strains were used in Noreen Walker's thesis \cite{Walker2016t}. VS indicates these strains are created by Vanda Sunderlikova.}
+    %Strains used in previous work and 
+    \caption{\textbf{Miscellaneous strains.} NW indicates these strains were used in Noreen Walker's thesis \cite{Walker2016t}. VS indicates these strains are created by Vanda Sunderlikova.}
     \label{table:ribo:strains2}
 \end{table}
 
@@ -1332,12 +1425,13 @@ tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mi
     \includegraphics[width=0.8\textwidth]{pdf_ASC968andASC976_branches_muP9_fitNew_cycCor.pdf}
     \caption{ 
         \textbf{Growth of single cells of the different strain populations in the different conditions.}
-        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
-        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+%        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+%        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
         (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %"C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
         %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
@@ -1360,10 +1454,11 @@ tRNA is also expressed from the \textit{rrn} operons. To make sure we are not mi
         \textbf{Growth of single cells of the different strain populations in the different conditions.}
         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
-        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
-        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
-        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+%        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
+%        (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+%        (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+        %"C", "Y" and "R" indicate the color of the fluorescent labels: cyan, yellow and red respectively.
         %
         %       A: giu_asc968_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
         %        B: giu_asc1058_M9_steady, dY5_divAreaPx_cycCor_muP9_fitNew_atdY5_cycCor
