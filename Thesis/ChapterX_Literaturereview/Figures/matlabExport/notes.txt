@@ -1,0 +1,26 @@
+
+
+For catabolic mode:
+parameters = 
+
+  struct with fields:
+
+              enzymeTarget: 2000
+                       mu0: 1
+                   lambda0: 0.6931
+          lambda0perminute: 0.0116
+               production0: 23.1049
+               metabolism0: 0
+    dampingTimeNoiseLambda: 60
+           noiseSizeLambda: 0
+     dampingTimeProduction: 60
+       noiseSizeProduction: 4.8068
+        dampingTimeGeneral: 60
+          noiseSizeGeneral: 0
+          dampingNoiseOnly: Inf
+        transmissionCommon: 0
+           transmissionEmu: 1.0000e-03
+            transmissionEE: 0
+
+For common mode:
+

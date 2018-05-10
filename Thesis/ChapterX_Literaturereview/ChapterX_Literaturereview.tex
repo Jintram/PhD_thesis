@@ -1,4 +1,136 @@
-\chapter{Stochasticity in cellular metabolism and growth: approaches and consequences}
+\chapter{Stochasticity in cellular metabolism and growth: Approaches and consequences}
 \label{chapter:literaturereview}
 
-\red{[Contents of the Wehrens et al. manuscript will be put here.]s}
+% Pay attention to key of citation: Iyer-Biswas2014a 
+
+\blfootnote{The contents of this chapter have been published as Wehrens, M., Buke, F., Nghe, P., \& Tans, S. J. (2018). \textit{Stochasticity in cellular metabolism and growth: Approaches and consequences.} Current Opinion in Systems Biology, 8, 131–136. http://doi.org/10.1016/J.COISB.2018.02.006. \cite{Wehrens2018}}
+
+\section*{Abstract}
+\textit{
+Advances in our ability to zoom in on single cells has revealed striking heterogeneity within isogenic populations. Attention has so far focussed predominantly on underlying stochastic variability in regulatory pathways and downstream differentiation events. In contrast, the role of stochasticity in metabolic processes and networks has long remained unaddressed. Here we review recent studies that have begun to overcome key technical challenges in addressing this issue. First findings have already demonstrated that metabolic networks are stochastic in nature, and highlight the plethora of cellular processes that are critically affected by it.
+}
+
+\section*{Highlights}
+\begin{itemize}[itemsep=1pt,parsep=1pt]
+\item Single cell data shows that metabolism undergoes stochastic fluctuations.
+\item They produce fluctuations in cellular growth, gene expression, and other phenotypes.
+\item They can be detrimental to populations, but also beneficial.
+\item They raise new questions on the interplay between different enzymes and fluxes.
+\end{itemize}
+
+\section{Stochasticity and metabolism}
+Elucidating the role of molecular stochasticity in metabolic processes is a central issue in cellular physiology. It is key to understanding cellular homeostasis, and could help explaining heterogeneous phenotypes ubiquitously observed across all domains of life, ranging from persistence to cancer \cite{Walsh2015, Radzikowski2016}. Stochasticity in metabolism could underlie bet-hedging strategies, in which distinct sub-populations anticipate future environmental change \cite{Kussell2005, Acar2008}. On the other hand, metabolic stochasticity could limit optimal growth and require regulatory mechanisms to ensure homeostasis \cite{Wang2011}. More generally, as metabolism ultimately drives all cellular processes, fluctuations and instability could impact a myriad of phenomena ranging from the cell cycle to differentiation events. So far however, stochastic variability is commonly considered to have negligible effects in metabolic networks, as reflected by current theoretical models \cite{Herrgard2004}. Indeed, metabolic fluctuations may be insignificant because of averaging over the many reaction events underlying metabolism in cells, chemical equilibration, metabolite secretion, or a lack of limiting steps within metabolic pathways \cite{Herrgard2004, Neidhardt1990, Rodriguez2005, Hart2011, Klumpp2009, Yun1996, El-Mansi1989, Wilson2010}. 
+
+At the practical level, quantifying any type of metabolic fluctuations comes with its own specific challenges. In contrast to regulatory proteins within signalling networks, which can be tagged fluorescently, metabolites are difficult to visualize at the single-cell level. Metabolites can be quantified by single-cell mass spectrometry \cite{Esaki2015}, but so far not dynamically in time. Spectroscopic methods can follow metabolite abundance in time, but only for specific highly abundant molecules such as lipids \cite{Yue2016}. FRET and fluorescent sensors hold a lot of promise, but remain limited to some metabolites and cannot yet quantify stochastic fluctuations \cite{Nakai2001, Nagai2001, Yaginuma2014, Imamura2009, Klarenbeek2015}. 
+
+Recently, important progress has been made in developing novel approaches that circumvent these limitations. In this review, we will examine these new efforts, their first findings, as well as related theoretical modelling. We will also cover recent work that is addressing the impact metabolic variability has on other cellular phenomena.
+
+\section{Enzyme expression generates metabolic noise}
+Early single-cell experiments showed how the expression of transcription factors fluctuate and propagate to downstream genes \cite{Dunlop2008, Munsky2008, Pedraza2005}. Similarly, such expression noise in key metabolic enzymes could generate variations in the flux of the reaction they catalyse, even if reaction-event noise averages out \cite{Chubukov2014}. Moreover, if these flux variations propagate down-stream along the pathway, they could produce variations in the rate of cellular growth. A recent study by Kiviet et al \cite{Kiviet2014} was based on this premise. While such an approach presents the challenge of quantifying enzyme expression and cellular growth with high accuracy, it avoids the need to measure fluctuations in metabolite concentrations.
+
+Growth was quantified by following the size of individual cells by time-lapse microscopy. Specifically, using the known overall shape of E. coli - a rod capped with half-domes - its length could be determined to below the diffraction limit, which may be compared to how fluorophores are positioned in super-resolution microscopy \cite{Kiviet2014}. Currently, a range of different single-cell image analysis approaches are available \cite{Stylianidou2016, Paintdakhi2016, Kaiser2016, Sachs2016, Nobs2014, Sliusarenko2011, Sadanandan2016, Chowdhury2013}, including ones utilizing machine learning \cite{VanValen2016, VanHeerden2017, Arganda-Carreras2017}. Cellular growth has also been quantified by measuring cellular dry mass \cite{Mir2011}, and by using AFM-like cantilevers \cite{Son2012}, as will be discussed more exhaustively below.
+
+The data on the instantaneous cellular growth rate appeared correlated with the expression of metabolic enzymes \cite{Kiviet2014}. However, such correlations could signal that growth fluctuations perturb expression, rather than the other way around. Time dependent correlation analysis can be used to address this issue \cite{Dunlop2008, Munsky2008} (Fig. \ref{fig:literature:fig1}). This approach showed that the correlations were on average stronger after a certain delay, consistent with enzyme production fluctuations happening first, and growth fluctuations happening some time later (Fig 1a). In line with the idea that enzyme (expression) fluctuations affect the flux of the reaction they catalyze, this delay was observed only for genes that were considered limiting, such as gltA and icd in acetate media, and pfkA and icd in lactose media.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.84\textwidth]{figure1_v2_2.pdf}
+    \caption{ 
+        \textbf{Fluctuations from enzyme expression to metabolism, and from metabolism to enzyme expression.}           
+        Expression measurements of a single metabolic enzyme and growth rates in individual cells can be used to reveal metabolic stochasticity. Two key modes of noise transmission have been observed, which can act both individually and jointly, and may interact. (a) Noise in the expression of a single enzyme (blue trace), result in fluctuations in metabolic flux that are transmitted through the metabolic network and affect growth with some time delay (orange trace). The delay can be quantified by cross-correlation analysis. The cross-correlation curve illustrates that on average, current enzyme expression correlates better with growth some time later, as illustrated by the expression-growth scatter plots. Note that the sources of expression noise here are not only intrinsic, or caused by molecular processes specific to one gene. They also include extrinsic or transmitted noise from other processes, such as transcription factor, polymerase, or metabolic factors such as amino acid abundance, which may affect expression but not growth.  Noise sources that affect both expression and growth are discussed in panel b.  (b) Noise sources within the metabolic network that perturb both expression (green trace) and growth (orange trace). Fluctuations in components that affect both expression and growth, such as ATP and other central metabolites, could define such sources of noise. In contrast to panel a, the cross-correlation here is symmetric because expression and growth respond approximately equally fast to the fluctuations. Note that the resulting expression noise may affect growth (panel a), or may not (this panel) - for instance because the expressed enzyme is not metabolically active or because it is abundant and hence does not limit growth.             
+    }
+    \label{fig:literature:fig1}
+\end{figure}
+
+Interestingly, even when considering non-limiting genes, the expression rate was still strongly correlated with growth – however the correlations were now instantaneous and did not show a delay (Fig. \ref{fig:literature:fig1}b). It suggested that more generally, proteins are expressed significantly faster in cells that transiently grow faster, which is actually not unreasonable given that some cells grow twice as fast others for almost a full generation, and expression needs diverse metabolites. Put differently, fluctuations in growth-controlling factors, which may be anything from ribosomes to ATP, are also a source of gene expression noise \cite{Tsuru2009}. In turn, metabolic fluctuations may thus affect processes that are controlled by gene expression, such as differentiation events \cite{Balazsi2011, Maamar2005}. Metabolic noise can be compared to other noise sources such as transcription factors \cite{Elowitz2002} and the cell cycle \cite{Walker2016}, which can also affect more than one gene or process and hence may be considered as extrinsic noise sources. A picture thus emerges of a system as a cycle of reciprocally interacting sources of extrinsic noise: metabolic fluctuations simultaneously affecting the expression of multiple genes, including transcription factors, polymerases, and metabolic enzymes, and conversely, noise in the latter resulting in fluctuations in metabolic fluxes. At the same time, the precise relations between noisy signals, and hence their ultimate mechanistic origin remains largely unresolved. For instance, it is unclear whether different pathways fluctuate independently, or alternatively, whether observed fluctuations result from a continuous dynamic interplay between them. Overall, the data so far shows that expression and growth are tightly intertwined, not only in terms of their mean levels when comparing different media \cite{Scott2010}, but also dynamically within constant external conditions. 
+
+\section{(Mis)matching pathways}
+The notion that metabolic pathways are stochastic raises questions about the dynamic interaction between them. For instance, it is thought that cells co-regulate functionally related genes to balance their overall input and output fluxes \cite{Hui2015, Chubukov2014}. In yeast, genes related to either stress response, mitochondria or amino acid biosynthesis were found to fluctuate jointly in response to general regulators \cite{Stewart-Ornstein2012}. Mismatches between (parts) of the cellular pathways can have large effects. Specifically, it was observed that metabolic imbalance within glycolysis can amplify non-genetic variability within the population \cite{vanHeerden2014}. When the upper and lower parts of this central pathway are not well matched, glycolytic intermediates can accumulate while ATP levels are reduced, thus strongly affecting cellular physiology. Expression variability has also been suggested to drive changes in flux partitioning \cite{Murima2016}. These studies underscore the importance of further dissecting how cells coordinate different cellular processes in the face of the random fluctuations of its components, and which regulatory mechanisms they employ.
+
+\section{Metabolism at the center}
+Metabolism and growth ultimately power all cellular activity. A fluctuating or unstable metabolism thus could have wide-ranging effects. For instance, perturbations of metabolic homeostasis may cause fluxes to collapse and metabolite pools to deplete, which in turn can induce persistence \cite{Radzikowski2016}. Metabolic heterogeneity has been suggested to affect the synchronization of metabolic oscillations observed in dense yeast populations, and hence the communication between cells \cite{Gustavsson2015}, while a recent study revealed a coupling between metabolic oscillations and the cell cycle in yeast \cite{Papagiannakis2017}. Strikingly, it has recently been reported that slow-growing yeast sub populations display downregulated ribosomal activity and upregulated stress response genes, increased RNA polymerase error rates and indications of DNA damage, which may be explained  by oxidative stress \cite{VanDijk2015}.
+
+One may also expect that metabolic and growth fluctuations impact cell size. Bacteria grow in exponential fashion - increases in growth rate could thus produce large increases in cell size, which could be further amplified and diverge in subsequent cycles because larger cells effectively grow faster. Some answers to how cells deal with this issue are already emerging. First, the timescale of growth fluctuations in E. coli was found to be just below that of the cell cycle for a range of growth media \cite{Kiviet2014}. Cells thus inherit faster growth for just one or two generations, which limits amplifying effects. Second, while the molecular mechanism is unclear, it has been found that cells compensate for growth variability \cite{Adiciptaningrum2015, Iyer-Biswas2014a, Kennard2016, Osella2017, Wallden2016, Taheri-Araghi2014, Campos2014}. Cells that grow faster on average have a smaller interdivision time, thus yielding similar sizes at division as slow-growing cells (Fig. \ref{fig:literature:fig2}a). Moreover, faster-growing cells were also found to initiate DNA replication earlier, providing a further indication of underlying regulatory compensations \cite{Adiciptaningrum2015, Wallden2016}. These findings support the suggestion that the cells compensate for growth variability by measuring size rather than time. 
+
+\begin{figure}[t]
+    \begin{minipage}{0.73\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{figure2_v2.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}{0.27\textwidth}
+        \caption{ 
+            \textbf{Impact on cell cycle and population structure.}            
+            (a) Cell cycle compensations. Recent work has shown that spontaneously faster growing cells initiate DNA replication earlier, and divide earlier, than slower-growing cells in the population. Such compensations limit the effects of heterogeneity in growth rate on cell size. (b) Effects on population structure. Faster-growing and faster-dividing cells increase their frequency within the population. As a result, growth noise can result in population growth rates that are higher than the average cellular growth rate within a lineage.               
+        }
+        \label{fig:literature:fig2}
+    \end{minipage}
+\end{figure}
+
+\section{Benefits of metabolic fluctuations}
+Stochasticity of growth and expression is directly observed within individual cells, but it can also affect the composition of the population in non-trivial ways. This issue has been studied theoretically and in experiments \cite{Tanase-Nicola2008, Cerulus2016, Hashimoto2016}. Counter-intuitively, analysis showed that growth rate distribution along a single a lineage is not necessarily equal to the distribution within the population at a single time point \cite{Hashimoto2016}. The cause however is actually quite simple: faster growing phenotypes produce more offspring, and hence become overrepresented within the population (Fig. \ref{fig:literature:fig2}b). The effects are most striking when the mean concentration of a growth-controlling enzyme is suboptimal, as gene expression noise and resulting growth noise can then increase the growth rate of the population as a whole \cite{Tanase-Nicola2008}. Such sub-optimal regulation of enzyme expression has been observed experimentally (e.g. \cite{Towbin2017}), and in one direct study, population growth rates were found to be almost 10\% faster than the average single-cell growth rate \cite{Hashimoto2016}.  A similar study in yeast showed a 4-7\% increase in growth rate for the population as a whole \cite{Cerulus2016}. Additionally, an artificial reduction of gene expression noise in catabolic networks decreased heterogeneity in cellular division times \cite{Cerulus2016}, consistent with noise in metabolic enzymes controlling growth \cite{Kiviet2014}. 
+The advantage of fluctuating gene expression in variable environments was studied earlier in a synthetic system, in which bistable switching allowed cells to be prepared for environmental change \cite{Kashiwagi2006}. The idea of "stochastic sensing" has been addressed theoretically \cite{Kussell2005} and observed in metabolic networks \cite{New2014, Boulineau2013, Miot2015}. It has been proposed that the regulatory control of metabolic genes constrains the space of possible random metabolic phenotypes, and hence come with entropic energy costs \cite{Martino2016}. Overall, noise in metabolic systems thus may not exclusively limit optimal growth, but can also be beneficial. This point is further illustrated by observed evolutionary adaptation towards more heterogeneous phenotypes \cite{Schreiber2016, Metzger2015, Mars2015, Beaumont2009, VanDijk2015}. 
+
+\section{An expanding array of experimental approaches}
+Tracking cell size and fluorescence has already led to surprising insights to the dynamics of cellular physiology. Novel approaches will open up additional possibilities.  Fluorescence methods have been used to detect the synthesis of single proteins in eukaryotic cells \cite{Morisaki2016}. The growth rates of eukaryotic cells are difficult to measure using time-lapse microscopy, given their complex three-dimensional shapes. A recent technique overcomes this problem, by quantifying how the cell volume reduces the abundance of fluophores in the surrounding medium \cite{Cadart2017}. The accuracy of gene expression measurements is also improving. Single proteins could be visualized in E. coli cells by slowing down their diffusion \cite{Okumus2016}. Measuring metabolite concentrations would allow direct access to fluxes. Concentrations of FAD and NADH can be measured using auto fluorescence \cite{Georgakoudi2012, Gustavsson2015}, while FRET sensors have already been developed for calcium \cite{Nakai2001, Nagai2001}, ATP \cite{Yaginuma2014, Imamura2009} and cAMP \cite{Klarenbeek2015}. Additionally, it is possible to obtain single cell Raman spectra, which allow for determination of concentrations of certain abundant metabolites \cite{Yue2016}. Together, these novel and existing approaches will be central to arrive at a dynamic view of physiology at the single-cell level.  
+
+\section{Concluding remarks}
+In this review, we have discussed recent studies that have revealed the stochastic nature of metabolism and its interplay with gene expression and other cellular processes. The results press the notion of cells as autocatalytic and stochastic systems engaged in a dynamic equilibrium, with metabolism and enzyme expression as two fluctuating and interdependent processes.  One may expect other processes to be in similar dynamic equilibria, and it will be intriguing to decipher how the result can be stable and robust. In recent decades, growth has not been considered as an important piece of the cellular puzzle. This new wave of experiments is revising this view, and re-affirms metabolism and growth at the center of cellular activity and dynamics. 
+
+
+
+
+\section*{Citations of outstanding interest}
+\begin{itemize}
+\item Kiviet et al. (2014) \cite{Kiviet2014}:
+Stochastic fluctuations in the concentration of a single enzyme can correlate with future cellular growth rates, indicating transmission of noise through cellular networks. Fluctuations in growth rate can also affect enzyme expression, showing the interdependence of these parameters.
+\item Hashimoto et al. (2016) \cite{Hashimoto2016}:
+Experimentally measured discrepancies between single cell growth rate distributions and population growth rate distributions can be understood theoretically, and show that single cell growth noise can be beneficial to population growth.
+\item Cerulus et al. (2016) \cite{Cerulus2016}:
+Experiments show that population growth can benefit from growth noise on the single cell level, and stochastic catabolic gene expression can contribute to single cell growth noise.
+\end{itemize}
+
+\section*{Citations of interest}
+\begin{itemize}
+    \item Van Valen et al. (2016) \cite{VanValen2016}:
+    Machine learning algorithms are applied to segment time-lapse movies of single cells.
+    \item Walker et al. (2016) \cite{Walker2016}:
+    Volume increase and gene duplication during replication during the cell cycle both affect gene expression, leading to non-genetic cellular heterogeneity.
+    \item Van Dijk et al. (2015) \cite{Van Dijk2015}:
+    Sub-populations of slow-growing cells are analyzed and found to have distinct phenotypes that also have higher mutation rates.
+    \item Adiciptaningrum et al. (2015) \cite{Adiciptaningrum2015}:
+    Replication and division timing compensate for both growth rate variability and cell size variability in single cells.
+    \item Towbin et al. (2017) \cite{Towbin2017}:
+    Metabolic enzyme expression is optimized for most conditions, but not all.
+    \item Schreiber et al. (2016) \cite{Schreiber2016}:
+    Phenotypic heterogeneity is increased in response to nitrogen limitation, and benefit thereof is experimentally shown.
+    \item Morisaki et al. (2016) \cite{Morisaki2016}:
+    A smart combination of fluorescent techniques allows probing of single-molecule translation events and mRNA translation kinetics.
+\end{itemize}
+
+
+
+\section{Acknowledgements}
+Work in the group of S.J.T. is supported by the Netherlands Organization for Scientific Research (NWO).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
