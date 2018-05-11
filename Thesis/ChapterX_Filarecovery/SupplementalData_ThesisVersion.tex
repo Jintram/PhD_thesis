@@ -1,0 +1,258 @@
+
+\FloatBarrier
+\clearpage
+
+\section{Supplemental Data}
+
+
+%
+%\documentclass[]{article}
+%
+%\usepackage{graphicx} 
+%\usepackage{caption}
+%%\usepackage[CaptionAfterwards]{fltpage}
+%
+%\usepackage{geometry}
+%%\geometry{textwidth=17.4cm, textheight=26.22cm}
+%\geometry{textwidth=17.4cm, textheight=25.4cm}
+%
+%%\usepackage{textcomp}
+%\usepackage{upgreek}
+%\usepackage{amsmath}
+%
+%\pagenumbering{gobble}
+%
+%\def\itemnb[#1]#2{\item[{\rm #1}]#2}
+%
+%\begin{document}
+%	% If you want headings on subsequent pages,
+%	% remove the ``%'' on the next line:
+%	% \pagestyle{headings}
+	
+\noindent 
+\begin{minipage}{\linewidth}
+    \centering
+    \begin{tabular}[center]{p{.6\textwidth} p{.3\textwidth}}
+        \textit{Reaction scheme} & \textit{Rate constants} \\
+        \hline 	
+        Dynamics of membrane associated FtsZ:
+        \newline
+        \strut
+        \(\frac{{\partial F}}{{\partial t}} = {\rho _F}f\frac{{{F^2} + {\sigma _F}}}{{1 + {k_F}{F^2}}} - {\mu _F}F - {\mu _{DF}}DF + {D_F}\frac{{{\partial ^2}F}}{{\partial {x^2}}}\)
+        \newline
+        \strut
+        Dynamics of freely diffusible cytosol FtsZ:
+        \newline
+        \strut
+        \(\frac{{\partial f}}{{\partial t}} = {\sigma _f} - {\rho _F}f\frac{{{F^2} + {\sigma _F}}}{{1 + {k_F}{F^2}}} - {\mu _f}f + {D_f}\frac{{{\partial ^2}f}}{{\partial {x^2}}}\)
+        &	\({\mu _F} = {\rho _F} = \;0.004\);
+        \({k_F} = 0\); \({\sigma _F} = 0.1\);
+        \({\mu _{DF}} = 0.002\); \({D_F} = 0.002\);
+        \({\sigma _f} = 0.006;\;{\mu _f} = \;0.002\);
+        \({D_f} = 0.2\).	\\
+        \hline
+        Dynamics of membrane associated MinD:
+        \newline
+        \strut
+        \(\frac{{\partial D}}{{\partial t}} = {\rho _D}d\left( {{D^2} + {\sigma _D}} \right) - {\mu _D}D - \;{\mu _{DE}}DE + {D_D}\frac{{{\partial ^2}D}}{{\partial {x^2}}}\)
+        \newline
+        \strut
+        Dynamics of freely diffusible cytosol MinD:
+        \newline
+        \strut
+        \(\frac{{\partial d}}{{\partial t}} = {\sigma _d} - \;{\rho _D}d\left( {{D^2} + {\sigma _D}} \right) - {\mu _d}d + \;{D_d}\frac{{{\partial ^2}d}}{{\partial {x^2}}}\)
+        &	\({\mu _D} = {\rho _D} = \;0.002\);
+        \({\sigma _D} = 0.05\); \({\mu _{DE}} = 0.0004\);
+        \({D_D} = 0.02\); \({\sigma _D} = 0.0035\);
+        \({\mu _d} = 0\); \({D_d} = 0.2\).	\\
+        \hline
+        Dynamics of membrane association of MinE:
+        \newline
+        \strut	
+        \(\frac{{\partial E}}{{\partial t}} = {\rho _E}e\frac{D}{{\left( {1 + {k_{DE}}{D^2}} \right)}}\frac{{\left( {{E^2} + {\sigma _E}} \right)}}{{\left( {1 + {k_E}{E^2}} \right)}} - {\mu _E}E + {D_E}\frac{{{\partial ^2}E}}{{\partial {x^2}}}\)
+        \newline
+        \strut
+        Dynamics of membrane associated MinD:
+        \newline
+        \strut
+        \(\frac{{\partial e}}{{\partial t}} = {\sigma _e} - \;{\rho _E}e\frac{D}{{\left( {1 + {k_{DE}}{D^2}} \right)}}\frac{{\left( {{E^2} + {\sigma _E}} \right)}}{{\left( {1 + {k_E}{E^2}} \right)}} - {\mu _e}e + {D_e}\frac{{{\partial ^2}e}}{{\partial {x^2}}}\)
+        &		\({\mu _E} = {\rho _E} = \;0.0005\);
+        \({k_{DE}} = 0.5\); \({\sigma _E} = 0.1\);
+        \({k_E} = 0.02\); \({D_E} = 0.0004\);
+        \({\sigma _e} = 0.002;\;{\mu _e} = \;0.0002\);
+        \({D_E} = 0.2\).	\\
+        \hline
+    \end{tabular}
+    \captionof{table}{\label{table:filarecovery:tsupp1}
+        \textbf{%Table S1.             
+            Related to Figure \ref{fig:filarecovery:fig4}.} Reaction rules used in the Meinhardt and De Boer \cite{Meinhardt2001} simulations, see main text for a description.}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hfill
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\hfill
+
+\noindent 
+\begin{minipage}{\linewidth}
+    \centering
+    \begin{tabular}[center]{p{.6\textwidth} p{.3\textwidth}} %{p{8.5cm} p{8.5cm}}
+        \textit{Reaction scheme}	&	\textit{Rate Constants}	\\
+        \hline
+        \(MinD_{cyt}^{ATP}\mathop  \to \limits^{{k_d}} Min{D_{mem}}\)	&		\({k_d} = 0.0125\;\mu {m^{ - 1}}{s^{ - 1}}\)	\\
+        \hline
+        \(MinD_{cyt}^{ATP} + Min{D_{mem}}\mathop  \to \limits^{{k_{dD}}} 2Min{D_{mem}}\)	&		\({k_{dD}} = 9\cdot{10^6}\;{M^{ - 1}}{s^{ - 1}}\) \\
+        \hline
+        \(MinE + Min{D_{mem}}\mathop  \to \limits^{{k_{de}}} MinDE\)	&	\({k_{de}} = 5.56\cdot{10^7}\;{M^{ - 1}}{s^{ - 1}}\)	\\
+        \hline
+        \(MinDE\mathop  \to \limits^{{k_e}} MinD_{cyt}^{ADP} + MinE\)	&		\({k_e} = 0.7\;{s^{ - 1}}\)	\\
+        \hline
+        \(MinD_{cyt}^{ADP}\mathop  \to \limits^{{k^{ADP \to ATP}}} MinD_{cyt}^{ATP}\)	&		\({k^{ADP \to ATP}} = 0.5\;{s^{ - 1}}\)	\\
+        \hline
+    \end{tabular}
+    \captionof{table}{\label{table:filarecovery:tsupp2} % \ref{table:filarecovery:tsupp2}
+        \textbf{%Table S2.             
+            Related to Figure \ref{fig:filarecovery:fig4}.} Reaction rules used in the Huang et al./Fange et al. \cite{Huang2003,Fange2006} stochastic MesoRD model of the Min system, see main text for a description.}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%17.4cm
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{S1_figure_v2}
+	\clearpage % insert a page break
+	\label{fig:s1}
+\end{figure}	
+	
+	\clearpage
+	
+	\captionof{figure}{    
+        \label{fig:filarecovery:figsupp1}
+\textbf{%Figure S1. 
+    Division sites in filamentous \textit{E. coli}. Related to Figure \ref{fig:filarecovery:fig1}.} (A) Three phases of the filamentation experiments: the pre-exposure phase during which cells grow normally; the exposure phase with filamentation-inducing stress; the recovery phase when stress is removed. Time $t = 0$ is the moment when stress is switched off; time $T_\text{rec}$ is time when the growth rate recovers to the half of its initial pre-exposure value. (B) Schematics of the flow cell set-up. Medium is exchanged through inlets, and diffuses to cells through the acryl-amide membrane, which also holds the cells in place. (C) Schematics of the pad set-up, during which the medium is constant. The acryl-amide pad is soaked in the medium of interest and is kept in a windowed glass slide sandwiched between a normal glass slide and a glass coverslip. (D) Cellular width. Grey dots show bacterial width, determined as the cell area divided by the cell length, black dots the average width per length-bins. Red line is an estimate for the area divided by length, assuming a width of 0.74 $\upmu$m and rounded caps of the rod-shaped bacteria, using that a
+ bacterium of size $L$ and width $W$ has an area of $W{\cdot}L$ $\upmu\text{m}^2$ minus 
+$((0.74\text{ }\upmu\text{m})^2 - \pi(0.74\text{ }\upmu\text{m}/2)^2)$. 
+  (E) Growth rate of cells before, during, and after tetracycline exposure. Growth rates were determined by fitting time evolution of single cell lengths to $L_0 2^{\mu t}$, and averaging over multiple cells in five datasets. 
+  (F) The time to recover to half the growth rate after removal of tetracycline for different tetracycline concentrations $C_\text{tet}$ (see Fig. S1D). The star indicates that cells did not grow or filament at this tetracycline concentration. Error bars are SD.
+  (G) The time to recover to half the growth rate after removal of tetracycline for different tetracycline exposure times $T_\text{exp}$. The star indicates that cells did show filamentous growth, but failed to recover from the exposure and/or lysed. Error bars are SD.
+  (H) Filamentation induced by growing cells at 42C. When temperature was decreased to 37C, divisions resumed and relative division locations are displayed for each division. When the time since the last division is $<20$ minutes, division events are marked by open circles. n=404 division events are shown. 
+  (I) Filamentation induced by overexpression of the division-inhibitory protein SulA. n=494 division events are shown.
+  (J,K) Filamentation induced by 2 $\upmu$M (J) or 10 $\upmu$M 
+  (K) tetracycline. 
+  (L) Each dot shows the relative division location within a single cell against the time it took place. Different panels respectively correspond to the three conditions: recovery of filamentation after tetracycline exposure, 42C heat shock, or overexpression of division inhibitory protein SulA.
+  Colors correspond to different datasets. 
+  (Respectively n=4108, n=404 and n=494 division events are shown.) 
+}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{S2_figure_v3}
+\end{figure}	
+
+\clearpage
+
+\captionof{figure}{
+    \label{fig:filarecovery:figsupp2}
+    \textbf{%Figure S2. 
+        Timing, length changes, and nucleoid imaging. Related to Figure \ref{fig:filarecovery:fig2}.} 
+(A,D) Single cell lengths versus time during recovery from temperature (A) or SulA (D). Grey dots represent the length of a single cell at a specific point in time. Colored lines trace example cell lineages, where drops in length correspond to divisions. Black squares indicate where measurements ended. (Respectively N=409 and N=499 cells were analyzed.) 
+(B,E) Time between two subsequent divisions against birth size, for recovery from temperature (B) or SulA (E). The colored dots show average interdivision times ($\pm$ SEM, respectively n=404 and  n=494 division events). 
+(C,F) Dots corresponds to a single cell, and shows how much length that cell added in between two divisions, versus birth size; again either for temperature (C) or SulA (F). Lines indicate averages ($\pm$ SEM). 
+(G) The top panel: data from Fig. 2B, Fig. S2B and S2E shown for comparison. Bottom panel: Corresponding Kernel Density Estimates per length bin. Stars indicate significant difference (two-sample t-test, p=0.05) compared to the tetracycline data set. For bins with n$<$11 points, single points are shown. 
+(H) The distribution of newborn cell sizes observed in the tetracycline recovery experiment. The inset shows the distribution for the window 1-3 $\upmu$m, with a smaller bin width. The red line indicates the maximum value at 1.78 $\upmu$m (N=4108). 
+(I) Derivative of cell length over time ($dL/dt$) for different lengths, as determined from every two consecutive frames, for in the tetracycline dataset, showing larger cells add more length per unit time. Error bars are SEM.
+(J) Grey dots: area A under the cell-length vs. time data, for the tetracycline dataset. Black dots: average values. These data agree with expectations for the adder behavior, in which A depends on added length ${\Delta}L$ and growth rate $\mu$ as $A= \Delta L/(\mu \cdot log(2))$  (see dotted line, using ${\Delta}L$ of 1.6 $\upmu$m).  
+(K) Nucleoid location. Black denotes signal from a HupA-mCherry fusion construct that labels the chromosome, plotted against cell size. Data is for growing filamenting cells. %Some exceptional divisions were observed. 
+Fluorescence profiles along the cell axis were averaged within cell length bins of 1 $\upmu$m. n = 5382 fluorescent profiles from $\text{N}_\text{c}$ = 286 unique cells. Top panel: number of unique cells per bin. White dotted lines: $2^m$ multiples of cell birth length (1.8 $\upmu$m), at which the number of nucleoids is expected to double if the concentration of nucleoids would be constant. 
+(L) The number of nucleoids $N_n$ (Matlab peakfinder algorithm) plotted against cell length $L$ ($n = 5382$ observations). The ratio between these quantities remains approximately constant within the filamented regime, as shown by the line (which has a slope corresponding to $2.25 \upmu$m/nucleoid). This is also reflected by the probability distributions $P_{N_n}(L/N_n)$, which show overlapping distributions of the cell lengths divided by the number of nucleoids, per number of nucleoids observed. 
+%The deviation of $P_{N_n=1}$ is expected 
+%%%%%%%%%%
+%even for the simplest model: 
+%Say a filamentous cell is the equivalent of multiple $N_c$ merged normal sized cells (with length $L=N_c\cdot L_c$). % with generation time $\tau$,
+%Then, when we observe a cell with a specific number of nucleoids this corresponds to $N_g$ generations of merged normal-sized cells that are in their B or C cell cycle period.
+%However, when we assume DNA replication ends before the end of a generation, as is the case for normal-sized cells, this means a cell with a specific number of nucleoids could also correspond to $N_g-1$ generations of merged normal-sized cells that are in their "D" period (we use quotes since divisions of course do not take place).
+%Such a model predicts that distributions of $L/N_n$ are equal except for $N_n=1$, since the merged normal-sized cells in D periods of a generation before are non-existent
+%for $N_n=1$.
+%%%%%%%%%%%%%%
+% at the lower bound of the nucleoid number.
+%%%%%%%%%%%%%%
+%since $N_n=1$ is the lower bound of the nucleoid number.
+%%%%%%%%%%%%%%
+(M) Growth rates (db/hr) vs. cell length, color coded for time after removal of stress. Panels indicate recovery from tetracycline, high temperature (42C), SulA overexpression, respectively. Number of cells: N=4134, N=409 and N=499. Number of data points n=129722, n=11049 and n=7304, respectively. 
+(N) Interdivision time vs. birth length for \textit{minCDE} null strains. Orange dots are averages, bars are SEM. Purple points: data from 1996 Donachie and Begg paper \cite{Donachie1996}, showing data sets are consistent.
+(O) Added size between divisions for \textit{minCDE} null strains. Orange dots are averages, bars are SEM. 
+(P) As panel G, but in addition, now also data from the \textit{minCDE} null strains is shown (orange).}
+
+
+
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{S3_figure}
+\end{figure}	
+\clearpage
+\captionof{figure}{
+    \label{fig:filarecovery:figsupp3}
+	\textbf{%Figure S3. 
+        Division ring imaging. Related to Figure \ref{fig:filarecovery:fig3}.}
+(A) Fts ring localization in cells filamentous at 42C. Kymographs of sYFP2-FtsA intensity along the cellular axis over time. Each panel corresponds to an individual cell in between two divisions. The top three panels show cells growing during exposure to 42C, the bottom two panels show cell born small after temperature was lowered to 37C. (B) Intensity of sYFP2-FtsA ring and probability of division at this ring. About $35\%$  of observed divisions occurred at the brightest FtsA ring, showing no clear preference for dividing at the brightest ring. }
+
+
+\newpage
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{S4_figure_v2}
+	\caption{
+        \label{fig:filarecovery:figsupp4}
+		\textbf{%Figure S4. 
+            Min patterns. Related to Figure \ref{fig:filarecovery:fig4}.} 
+		(A) Results of stochastic simulations using the Huang et al. model implemented by Fange et al. \cite{Huang2003, Fange2006}. Heat maps show the membrane concentration of MinD for cells of different lengths. Data is consistent with division rules (left). (B) YFP-MinD fluorescence for cells filamented in the presence of 1 $\upmu$M of tetracycline. Three cells of different lengths representing different division windows are shown. Cells of different lengths are shown, corresponding to division regimes with respectively 1, 3 and 4 division sites. 
+	}	
+\end{figure}	
+%\clearpage
+%\captionof*{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%\section*{Supplemental References}
+%
+%\begin{description}
+%	\itemnb[{[S1]}] % \cite{Donachie1996}
+%	Donachie, W.D., and Begg, K.J. (1996). “Division potential” in Escherichia coli. J. Bacteriol. 178, 5971–5976.
+%	
+%	\itemnb[{[S2]}] % \cite{Huang2003}  % 2-3. \cite{Huang2003, Fange2006}
+%	%[S3] 
+%	Huang, K.C., Meir, Y., and Wingreen, N.S. (2003). Dynamic structures in Escherichia coli: Spontaneous formation of MinE rings and MinD polar zones. Proc. Natl. Acad. Sci. 100, 12724–12728.
+%	
+%	\itemnb[{[S3]}] % \cite{Fange2006}
+%	%[S4] 
+%	Fange, D., and Elf, J. (2006). Noise-induced Min phenotypes in E. coli. PLoS Comput. Biol. 2, 637–648.
+%	
+%	\itemnb[{[S4]}] % \cite{Meinhardt2001}
+%	%[S2] 
+%	Meinhardt, H., and de Boer, P.A.J. (2001). Pattern formation in Escherichia coli: A model for the pole-to-pole oscillations of Min proteins and the localization of the division site. Proc. Natl. Acad. Sci. U. S. A. 98, 14202–14207.
+%	
+%\end{description}
+
+%A: \cite{Meinhardt2001};
+%B: \cite{Huang2003,Fange2006};
+%
+%\bibliographystyle{plain}
+%\bibliography{libraryFilamentation}{}
+
+%\end{document}
