@@ -73,6 +73,9 @@
 % needed for list item separation
 \usepackage{enumitem}
 
+% hopefully to support dutch hyphenation correctly
+\usepackage[dutch,english]{babel}
+
 % .tif images cannot be read, but we can automatically have them converted
 % (This also needs \usepackage{epstopdf})
 %\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
@@ -90,6 +93,7 @@
 % Note that also Noreen added additional commands, see above at PackagesNewCommands/packages_newcommands
 
 \begin{document}
+\selectlanguage{english}
 
 %%%%%%% TITLE
 
@@ -142,7 +146,8 @@
 %\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 %\include{ChapterX_Notes/ChapterX_Notes}
 \include{ChapterX_Conclusion/ChapterX_Conclusion}
-\include{ChapterX_Summary/summary_samenvatting}
+\include{ChapterX_Summary/summary}
+\include{ChapterX_Summary/samenvatting}
 
 %%%%%%% MISC OTHER PARTS AT THE END OF THE THESIS
 
