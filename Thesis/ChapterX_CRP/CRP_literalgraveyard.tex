@@ -3,6 +3,354 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EDITS TO MAIN TEXT ST FEEDBACK
+
+
+
+
+We created scatter plots and  protein production and growth  
+both for the metabolic and constitutive reporter (supplemental figure \ref{fig:CRP:fig2sup}).
+%
+the scatter plots for the relationships between production rate and growth rate are shown in supplemental figure \ref{fig:CRP:fig2sup}
+(note that earlier, we determined relationships between the production and growth for the population average values, see section \ref{CRP:txt:notsoaveragecell} and supplementary figure \ref{fig:CRP:averagerelations2}, bottom panels).
+%
+This model also predicts the algebraic curve that describes the relationship between metabolic reporter production and constitutive reporter production 
+and the algebraic curve that describes the relationships between reporter production growth (supplementary note I).
+%
+%
+%
+%Note that it is convenient to place these scatter plots in the context of the expected population average relationships (figure \ref{fig:CRP:averagerelations2}), 
+%since these reveal that this relationship can be described by an algebraic curve, 
+%which can map a production rate to two values.
+%
+%a specific production rates can map to two growth rate values.
+% on the algebraic curves.
+%
+We calculated the cross-correlation between the metabolic reporter ($p_M$) and the growth rate $\mu$,
+i.e. $R_{p_M,\mu}$,
+for both the wild type and $\Delta$cAMP strain.
+%
+%We used the production rates of the metabolic reporter ($p_M$) and the growth rate $\mu$ to 
+%When we use the production rates of the metabolic reporter ($p_M$) 
+%to calculate $R_{p_M,\mu}$ cross-correlations.
+%
+Both show positive values, 
+but the correlations at positive delays are more pronounced in the $\Delta$cAMP strain.
+%
+%These 
+%also show a difference between the wild type cells and the $\Delta$cAMP cells; 
+%the latter shows stronger correlations than the former.
+%
+%show a similar difference between wild type cells and $\Delta$cAMP cells as in the $R_{C_M,\mu}$ curves:
+%the wild type cells show more correlation on the left side of the y-axis (albeit slightly positive correlations), whilst the $\Delta$cAMP cells show more correlation on the right side of the y-axis.
+%
+This indicates the production of metabolic reporter (and thus metabolic enzymes)
+correlates more with future growth rates in the $\Delta$cAMP strain.
+%
+This again indicates there is a difference in dynamics between the wild type cells with feedback and the feedbackless cells.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The population average behaviour of the constitutive reporter growth rates is expected to show a concave relationship with reporter concentration (supplementary notes) similar to the metabolic reporter,
+but the single cell data does not follow this relationship at all, see figure \ref{fig:CRP:fig2}.B. 
+
+
+
+
+
+
+
+
+
+
+\subsection{PARAGRAPH THAT CAN BE LARGELY REMOVED}
+\red{
+    If there were a post-translational role for cAMP, then the concentration of cAMP should show a more consistent relation with growth rate than the concentration of metabolic reporter.
+    %
+    %The concentration of CRP.cAMP should be proportional with the cAMP concentration, and so should the production of our metabolic reporter.
+    The production rate of our metabolic reporter should be proportional to the cAMP concentration, 
+    so the metabolic reporter production rate could serve as a proxy for cAMP concentration.
+    %
+    However, this production rate also depends on the growth rate of the cell, and might do so in a non-trivial manner.
+    Indeed, it is difficult to find a straightforward explanation for the relationship between production and growth over time, as shown in supplemental figure \ref{fig:CRP:productiontimeevolutions}.
+    Only when the metabolic production is normalized against a second reporter with a constitutive promoter (see figure \ref{fig:CRP:fig0sup}.B) as a reference, do we see that most traces overlap.
+    %
+    (Such a normalization could also be done for the concentration, which appears to make the traces slightly more reproducible, but not substantially different.)
+    %
+    The larger overlap in the normalized production vs growth time trace (compared to the concentration of metabolic reporter vs. growth) offers some support for a post-translational role of cAMP.
+    %
+    In \ecoli however, cAMP is usually described as an activator of the translational regulator CRP protein only \cite{gorke2008, keseler2017}.
+}
+
+
+
+
+
+
+
+
+\subsection{UNCLEAR PARAGRAPH THAT SHOULD BE REWRITTEN}
+\red{
+    The most left green square in this figure indicates a switch to a low cAMP concentration, and the part of the time trace that starts at this square shows that as the metabolic reporter concentration goes down, the growth rate first goes up, and then comes down again. 
+    This is consistent with the idea that metabolic enzyme concentration has an optimal value above and below which the cell grows worse \cite{Jensen1993, Dekel2005, Berkhout2013, Ray2016, Towbin2017}.
+    %earlier observations which show that the relationship between growth rate and metabolic enzyme concentration shows an optimum concentration above and below which the cell grows worse.
+    %
+    The idea of an optimum metabolic enzyme concentration is also confirmed when we plot growth rate against the metabolic reporter concentration, as shown in supplemental figure \ref{fig:CRP:scatterspulsing}. 
+    %
+    Conversely, looking at the part of the trace that starts at the leftmost red square, the reporter concentration appears not to be affected, but the growth rate does go up.
+    %
+    The rest of the trace is then consistent with traversing on the right part of an optimum curve.
+    %
+    An explanation for this part of the trace not overlapping with the earlier discussed part of the trace, and the quick growth rate response without concentration change, 
+    could be that cAMP also has some post-translational roles in the cell. 
+    This would explain the quick responses both in the fast-pulsing regime and the quick response to an upshift of cAMP.
+}
+
+
+
+
+
+
+
+% PREVIOUS VERSION AND SCRIBBLES
+************************************************************************************
+CONTINUE EDITING ABOVE
+************************************************************************************
+
+However, the growth rate behaviour showed some puzzling features. 
+%
+Firstly, in the fast pulse regime (where cAMP concentration was changed every hour), it seems that after a switch to the high cAMP concentration 
+a sustained higher growth rate is reached within 20 minutes (the time between two data points).
+%Firstly, in the fast regime, within 20 minutes (the time between two data points) after a pulse to a high cAMP concentration there seems to be a sustained faster growth rate.
+% Firstly, it appeared that in the fast pulse regime the high cAMP concentration resulted in a sustained faster growth rate within 20 minutes .
+%
+The sustained higher growth rate is unexpected, as too much metabolic enzyme expression is expected to 
+be detrimental (see figure \ref{fig:CRP:ocurvePlatereader} and citations \cite{Towbin2017, Ray2016}).
+% come with the cost of superfluous protein production, and might even lead to a detrimental unbalanced ratio of fluxes in the cell \cite{Ray2016}.
+%
+However, when looking at the switch to high cAMP concentration in the slower pulse regime (with pulses every 5 hours) 
+we see that the signal does goes down after approximately two hours. 
+%
+% MARK
+We can further investigate this seemingly erratic behaviour by plotting a time trace of the growth rate against the concentration of metabolic reporter.
+%
+This trace is shown in figure \ref{fig:CRP:fig1}.C. 
+%
+We can understand certain features in this curve.
+%The different parts of this trace show features we understand.
+%
+During the fast pulse regime, generally, when CRP reporter concentration goes up, growth rate goes down, and vice versa (figure \ref{fig:CRP:fig1}.C, left panel).
+This could indicate that the amount of metabolic enzymes is above the optimum value, 
+leading to a further decrease in growth rate when CRP activity goes up,
+or a decrease when CRP activity goes down.
+%
+What is also noticeable, is that the 
+
+
+At the end of the last 1 hour interval, which had a high cAMP concentration,
+the growth rate is 0.74 doublings per hour.
+%
+Then, right after switching to the first long interval of 5 hours, which has a low cAMP concentration,
+the first datapoint immediately shows a sharp decrease in growth rate
+
+, right before switching to the first long interval of 5 hours, the 
+At the end of the fast pulsing regime the concentration of cAMP is high and the growth rate is 0.74 mass doublings/hr,
+
+
+
+
+The first datapoint of the slow pulsing regime,
+
+the first five hours at low cAMP concentration in th
+
+Right at the start of the first five hours at low cAMP concentration in the slow pulsing regime
+
+does the concentration 
+During the first five hours at low cAMP concentration in the slow pulsing regime both the concentration 
+(figure \ref{fig:CRP:fig1}.C, arrow 8 in the right panel).
+
+****************************************
+I WAS EDITING HERE, CONTINUE TEXT ABOVE, SEE ALSO NOTES BELOW
+****************************************
+
+WHAT DO I WANT TO SAY
+> we can now relate the behavior to the optimum curve
+
+
+REPORTER OTHER TIMESCALE THAN ENZYMES/PROCESSES IN THE CELL THAT RESPOND TO CAMP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% ANOTHER VERSION
+CRP is allosterically activated by the small signaling molecule cyclic adenosine monophosphate (cAMP), 
+which is produced from ATP by the enzyme adenylate cyclase (CyaA).
+%
+The cell can also control cAMP concentration by active degradation, 
+which is catalyzed by the 
+% An important other way by which the cell controls the cAMP concentrations is active degradation by the 
+cAMP phosphodiesterase (CpdA) enzyme\footnote{It is sometimes mentioned in literature that cAMP is also actively exported from the cell by the membrance channel protein TolC, but the primary publication that made this claim has been retracted \cite{Hantke2011}.}.
+%
+cAMP production by adenylate cyclase is thought to be inhibited by $\upalpha$-ketoacids, such as oxaloacetate (OAA), $\upalpha$-ketoglutarate ($\upalpha$-KG) and pyruvate (PYR) \cite{You2013}.
+(Previously, also the phosphorylated enzyme IIA of the phosphotransferase system was thought to activate adenylate cyclase \cite{Keseler2017, Deutscher2008, Gorke2008}, but it has now been suggested that the role of $\upalpha$-ketoacids feedback is bigger \cite{You2013}.)
+%
+Thus, the CRP-cAMP regulation is wired such that metabolites from the TCA cycle and glycolysis pathway provide negative feedback on metabolic enzyme expression, see also figure \ref{fig:CRP:fig0}.A. 
+%
+%%%%%%%%%%%
+The relationship between the cellular cAMP concentration and growth was quantified for growth on different sugar sources \cite{Towbin2017}.
+%
+For each sugar, there appeared to be a specific optimal concentration of cAMP, consistent with the idea that
+% concentrations above or below this concentration lead to lower growth rates.
+%
+too low enzyme concentrations curb metabolite fluxes, and too high concentrations draw resources from other cellular processes 
+\cite{Jensen1993, Dekel2005, Berkhout2013, Ray2016, Towbin2017, You2013}.
+%
+This leads to a concentration-growth relationship with a clear optimum, sometimes referred to as the optimum curve \cite{Towbin2017}, as illustrated in figure \ref{fig:CRP:fig0}.B.
+%%%%%%%%%%%
+% END OF VERSION
+
+
+
+
+
+
+An enzyme concentration that is too high or too low leads to lower growth rates.
+This is shown by experiments that have quantified 
+%as shown by experiments in which 
+the relationship between cAMP and cellular growth for different sugar sources. 
+For each  relationship is concave with a clear optimum, and hence is also referred to as the optimum curve \cite{Towbin2017}.
+
+%ALSO EDIT THE OPTIMUM CURVE INTO THIS TEXT --- TRY TO BE BRIEF --- SEE ALSO BELOW
+%> a sugar corresponds to a specific optimum curve
+%> CRP regulation makes sure the respective optimum is reached
+%
+%\red
+
+
+
+
+% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+The constitution of the proteome can change extensively in response to growth conditions, 
+
+This can involve large scale proteome composition changes, 
+as illustrated by experiments where 40\% of the proteome changes in response to growth conditions,
+as illustrated by titration experiments where 40\% of the proteome changes in response to growth conditions,
+and 
+
+
+******************************************************
+This regulation has large implications for the proteome composition,
+which was for example observed to very 
+In one set of experiments, proteins related to metabolism were observed to 
+
+This regulation has large implications for the proteome and is vital for the cell,
+25\% of the proteome is comprised of metabolic 
+as the concentration of metabolic enzymes is 
+
+
+REGULATION VITAL FOR CELL AS ILLUSTRATED
+REGULATION INVOLVES LARGE PROTEOME CHANGES
+TOO HIGH OR TOO LOW IS BAD FOR THE CELL
+
+
+The concentration of genes controlled by CRP can change tenfold, 
+******************************************************
+
+% XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+% INTRODUCTION
+%Studies often focus on how the biochemical network is designed to deal with either one or the other of these two types of dynamics.
+%Studies often investigate network architecture in only one of these contexts.
+%Studies often investigate network architecture in only an "environmental" context or only in a "stochastic fluctuation" context.
+Studies often investigate network architecture only in the context of environmental inputs. %, or only in the context of "stochastic fluctuation" inputs.
+%
+However, any regulatory interaction in the cell is also faced with stochastic inputs.
+%However, any regulatory interaction in the cell is faced with both an environmental and  contexts.
+Studies often focus on network architecture in the context of environmental inputs,
+
+%
+%It is unclear to what extend regulatory interactions that are known to help the cell deal with a changing environment are affected by stochastic concentration fluctuations
+This might have large implications for the optimal network architecture.
+%
+%In this work, we address the open question that connects these two contexts:
+In this work, we investigate the link between environmental and stochastic regulation for the first time in a native cellular control circuit. % by asking
+%
+%are 
+Specifically, we ask:
+are regulatory interactions that are known for their role in adaptation to environmental changes also 
+%affected 
+activated 
+by concentration fluctuations in the intracellular environment due to noise?
+
+
+
+
+
+%More specifically, to maximize growth rate, the cell needs to properly allocate its protein pool among different generic activities such as catabolism, anabolism, protein production, and replication of DNA \cite{Hui2015}.
+%The negative feedback loop is thought to enable the cell to estimate what the best concentration of metabolic enzymes is under most conditions
+%and set enzyme expression accordingly \cite{Towbin2017}, see also figure \ref{fig:CRP:fig0}.A.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODEL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

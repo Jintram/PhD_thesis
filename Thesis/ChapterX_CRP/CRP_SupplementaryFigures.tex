@@ -9,8 +9,7 @@
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-figXsup_overviewRegulationTCA.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:figOverviewTCARegulation}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -28,9 +27,29 @@
 	The boxes are also color-coded according to abundance of the enzymes.
 	The diagram is based on EcoCyc \cite{Keseler2017}. 
 	From top to bottom, clockwise, enzymes abbreviations stand for glucose 6-phosphate, fructose 6-phosphate, fructose 1,6-biphosphate, glyceraldehyde 3-phosphate, 1,3-biphospho-D-glycerate, 3-phospho-glycerate, 2-phospho-glycerate, phosphoenolpyruvate, pyruvate, acetyl coenzyme A, citrate, cis-aconitate, d-threo-isocitrate, (succinate, glyoxalate, acetyl-CoA), 2-oxo-glutarate, succinyl-CoA, succinate, fumarate, malate, oxaloacetate.
+    \label{fig:CRP:figOverviewTCARegulation}
 	% See also: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=TCA
 	% And: https://biocyc.org/ECOLI/NEW-IMAGE?type=PATHWAY&object=GLYCOLYSIS
 }%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cAMP optimality curve me & Benjamin
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{pdf_optimalityCurve.pdf}
+    \caption{ 
+        \textbf{Growth rates in minimal medium supplemented with lactose at different cAMP concentrations.}
+        Measured exponential phase growth rates of $\Delta$cAMP cells at different concentrations of cAMP as measured in a platereader.
+        Method 1 refers to a procedure where the fit range was manually chosen, whereas in method 2 the fits were made inbetween certain OD values.
+        Also, this figure shows data from a similar experiment performed by Towbin et al. \cite{Towbin2017}.
+        %        1 is manual selection of data that fit is bas
+    }
+    \label{fig:CRP:ocurvePlatereader}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cartoons of constructs
 
 \begin{figure}
     \centering
@@ -57,46 +76,66 @@
     \label{fig:CRP:fig0sup}
 \end{figure}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Pulsing dynamics
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_4.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_2.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_averagetimetraces_5.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:fig1sup}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
+	\includegraphics[width=9cm]{png_averagetimetraces_4.png} 
+	\includegraphics[width=9cm]{png_averagetimetraces_2.png}
+	\includegraphics[width=9cm]{png_averagetimetraces_5.png}
+	%\clearpage % insert a page break
+%\end{figure}	
+%
+%\clearpage
+%
+%\captionof{figure}{ 
+\caption{   
 	\textbf{Additional time traces from the cAMP pulsing experiment.} 
 	This figure displays additional data for figure \ref{fig:CRP:fig1}. 
 	It shows time traces for parameters measured in a population of $\Delta$cAMP cells (blue dots are single cell measurements, the black line is the population average) that were grown alternately in minimal medium supplemented with 43 $\upmu$M cAMP and minimal medium supplemented with 2100 $\upmu$M cAMP.
 	Red and green dotted lines indicate times where the concentration was switched, as indicated in the legend.
 	For this experiment, also the production rate of the metabolic reporter was determined (top panel).	
 	Furthermore, also the production rate and concentration of a constitutive reporter where determined (bottom two panels), see main text for more on these quantities.	
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   	\label{fig:CRP:fig1sup}
+}
+%}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Figure plotting cAMP input signal vs. growth
+    \centering
+    \includegraphics[width=12cm]{pdf_cAMPvsGrowth.pdf}
+    \caption{ 
+        \textbf{Growth rates during the pulsing experiment against cAMP concentration}. 
+        This plot shows the population average growth rate of $\Delta$cAMP cells during the pulsing experiment (see main text).
+        In the left panel the growth rates are shown from the regime where the cAMP concentration in the medium was switched every hour between low and high concentrations (43 and 2100 $\upmu$M respectively), 
+        and in the right panel data is shown from the regime where the cAMP concentration switched every five hours.
+        Note that these cells are not in steady state. 
+        Growth rates are not only determined by the cAMP concentration, 
+        but also by the history of the population.
+    }
+    \label{fig:CRP:pulsingCAMPVsMu}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
 	\includegraphics[width=0.75\textwidth]{pdf_timeevolution_2.pdf}	
 	\includegraphics[width=0.75\textwidth]{pdf_timeevolution_3.pdf}
 	\includegraphics[width=0.75\textwidth]{pdf_timeevolution_4.pdf}	
-	\clearpage % insert a page break
-	\label{fig:CRP:productiontimeevolutions}
-\end{figure}
-
-\clearpage
-
-\captionof{figure}{    
+	%\clearpage % insert a page break	
+%\clearpage
+\caption{%of{figure}{    
 		\textbf{Time evolution of production versus growth rate during block pulses of high and low cAMP concentrations.}
 		(Top) The production rate of the CRP reporter plotted against growth rate, color coded for time. Production is determined here by the difference in absolute signal between two timepoints, divided by the amount of time inbetween these two points and divided by the area of the cell. Note that the production rate might also depends on the growth rate, as does the final concentration of the protein. This makes this data not trivial to interpret.
 		(Middle) Similar to top panel, but production rate is divided by growth rate, since production rates might be more faitfully represented as fractions of the growth rate.
 		(Bottom) Similar to top panel, but production rate is divided by the production rate of the constitutively expressed label, which serves a reference for the total production rate capacity of the cell.
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \label{fig:CRP:productiontimeevolutions}
+}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
 	\centering
@@ -113,8 +152,8 @@
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCATTERS f(CRP,MU) and f(const, mu)
 	\centering
-	\includegraphics[width=0.37\textwidth]{pdf_scattersoftraces_1.pdf}
-	\includegraphics[width=0.37\textwidth]{pdf_scattersoftraces_2.pdf}	
+	\includegraphics[width=0.37\textwidth]{png_scattersoftraces_1.png}
+	\includegraphics[width=0.37\textwidth]{png_scattersoftraces_2.png}	
 	\caption{ 
 		\textbf{Scatter plots of growth rate versus metabolic and constitutive reporter from single cell measurements.}
 		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration.
@@ -133,31 +172,16 @@
 	\includegraphics[width=0.75\textwidth]{pdf_timetracesinglecell13.pdf}
 	\includegraphics[width=0.75\textwidth]{pdf_timetracesinglecell49.pdf}
 	\includegraphics[width=0.75\textwidth]{pdf_timetracesinglecell144.pdf}
-	\clearpage % insert a page break
+%	\clearpage % insert a page break
 	\label{fig:CRP:timevolutionCRPgrowthsinglecell}
-\end{figure}	
-
-\clearpage
-
-\captionof{figure}{    
+%\clearpage
+%\captionof{figure}{
+    \caption{    
 	\textbf{Time evolution of growth rate and metabolic reporter concentration for single cells.}
 	Each panel is identical to main figure \ref{fig:CRP:fig1}.C, except that each panel corresponds to the behavior of a lineage of single cells.
-}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}
+\end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% cAMP optimality curve me & Benjamin
-\begin{figure}
-    \centering
-    \includegraphics[width=0.49\textwidth]{pdf_optimalityCurve.pdf}
-    \caption{ 
-        \textbf{Growth rates in minimal medium supplemented with lactose at different cAMP concentrations.}
-        Measured exponential phase growth rates of $\Delta$cAMP cells at different concentrations of cAMP as measured in a platereader.
-        Method 1 refers to a procedure where the fit range was manually chosen, whereas in method 2 the fits were made inbetween certain OD values.
-        Also, this figure shows data from a similar experiment performed by Towbin et al. \cite{Towbin2017}.
-%        1 is manual selection of data that fit is bas
-    }
-    \label{fig:CRP:ocurvePlatereader}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Overview (grey bars) with summary parameters from different conditions
 % Figure with floating caption
@@ -165,8 +189,7 @@
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_means.pdf}
-	\clearpage % insert a page break
-	\label{fig:CRP:overviewsummaryparams}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -179,6 +202,7 @@
 	No FB stands for no feedback, indicating the $\Delta$cAMP cells that also carry the metabolic and constitutive reporter constructs.
 	Low, med and high correspond to extracellularly provided cAMP concentrations of 80, 800 and 5000 $\upmu$M cAMP respectively.
 	Bars are averages over multiple experiments, and each open circle corresponds to a value observed in one experiment.
+    \label{fig:CRP:overviewsummaryparams}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -192,7 +216,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of production
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{CRP-fig2sup.pdf}
+	\includegraphics[width=1.0\textwidth]{CRP-fig2sup_v2.pdf}
 	\caption{ 
 	\textbf{Scatter plots of production rates against growth rate.}
 	(A) Colored dots show single cell growth rate values plotted against respective single cell production rates of metabolic reporter, which is a proxy for the production rate of metabolic enzymes. 	
@@ -210,8 +234,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of conc-conc and prod-prod
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.pdf}
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1prime_overview_custom_scatter_rateVsRateYC.pdf}	
+	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.png}
+	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_rateVsRateYC.png}	
 	\caption{ 
 		\textbf{Concentration-concentration and production-production relationships between metabolic and constitutive reporters.}
 		This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
@@ -261,8 +285,8 @@ This section contains additional supplemental figures that were not referenced i
 % Dynamic behavior against itself.
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case1.pdf}
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case2.pdf}	
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case1.png}
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case2.png}	
 	\caption{ 
 		\textbf{Scatter plots for growth versus production, with selection on the high/low condition.}
 		In these scatter plots, the production of the metabolic (left plots) or constitutive (right plots) reporter is plotted against growth rate, where in the top plots only data from the low cAMP condition is shown and in the bottom plot only data from the high cAMP condition is shown. The gray lines are the exception, they show the average values from the high condition in the plot for the low condition, and vice versa.		
@@ -272,8 +296,8 @@ This section contains additional supplemental figures that were not referenced i
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case3.pdf}
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case4.pdf}	
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case3.png}
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case4.png}	
 	\caption{ 
 		\textbf{Scatter plots for growth versus concentration, with selection on the high/low condition.}
 		This plot is similar to supplemental figure \ref{fig:CRP:highlowproductionscatters}, but deals with concentration instead of production rates.
@@ -284,8 +308,8 @@ In these scatter plots, the concentration of the metabolic (left plots) or const
 
 \begin{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\centering
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case5.pdf}
-	\includegraphics[width=0.49\textwidth]{pdf_highlowplots_case6.pdf}	
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case5.png}
+	\includegraphics[width=0.49\textwidth]{png_highlowplots_case6.png}	
 	\caption{ 
 		\textbf{Scatter plots for metabolic reporter versus constitutive reporter, with selection on the high/low condition.}
 		In these plots, concentration-concentration (left) or production-production (right) scatter plots are presented for the metabolic versus the constitutive reporters.
@@ -303,8 +327,7 @@ In these scatter plots, the concentration of the metabolic (left plots) or const
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_Y6_mean_cycCor_muP9_fitNew_cycCor}
-	\clearpage % insert a page break
-	\label{fig:CRP:CCsRCy}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -320,6 +343,7 @@ In these scatter plots, the concentration of the metabolic (left plots) or const
 	(C) $R_{M,\mu}(\tau)$ for the $\Delta$cAMP cells, with 800 $\upmu$M cAMP supplemented to the growth medium.
 	(D) $R_{M,\mu}(\tau)$ for the $\Delta$cAMP cells, with 5000 $\upmu$M cAMP supplemented to the growth medium.
 	(In the y-axis label, "Y" stands for the yellow fluorescent reporter concentration that was tracked here.)
+    \label{fig:CRP:CCsRCy}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -329,8 +353,7 @@ In these scatter plots, the concentration of the metabolic (left plots) or const
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dY5_cycCor_muP9_fitNew_atdY5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:CRP:CCRdCy}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -347,6 +370,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 (C) $R_{p_M,\mu}(\tau)$ for the $\Delta$cAMP cells, with 800 $\upmu$M cAMP supplemented to the growth medium.
 (D) $R_{p_M,\mu}(\tau)$ for the $\Delta$cAMP cells, with 5000 $\upmu$M cAMP supplemented to the growth medium.
 (In the y-axis label, "Y" stands for the yellow fluorescent reporter production that was tracked here.)
+\label{fig:CRP:CCRdCy}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -356,8 +380,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_C6_mean_cycCor_muP9_fitNew_cycCor}
-	\clearpage % insert a page break
-	\label{fig:CRP:CCRCc}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -374,6 +397,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 (C) $R_{Q,\mu}(\tau)$ for the $\Delta$cAMP cells, with 800 $\upmu$M cAMP supplemented to the growth medium.
 (D) $R_{Q,\mu}(\tau)$ for the $\Delta$cAMP cells, with 5000 $\upmu$M cAMP supplemented to the growth medium.
 (In the y-axis label, "C" stands for the cyan fluorescent reporter concentration that was tracked here.)
+\label{fig:CRP:CCRCc}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -383,8 +407,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{pdf_chromo1_CCs_dC5_cycCor_muP9_fitNew_atdC5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:CRP:CCRdCq}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -401,6 +424,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 (C) $R_{p_Q,\mu}(\tau)$ for the $\Delta$cAMP cells, with 800 $\upmu$M cAMP supplemented to the growth medium.
 (D) $R_{p_Q,\mu}(\tau)$ for the $\Delta$cAMP cells, with 5000 $\upmu$M cAMP supplemented to the growth medium.
 (In the y-axis label, "C" stands for the cyan fluorescent reporter production that was tracked here.)
+\label{fig:CRP:CCRdCq}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -409,9 +433,8 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_muP9_fitNew_cycCor}
+	\includegraphics[width=1.0\textwidth]{png_chromo1_branches_muP9_fitNew_cycCor}
 	\clearpage % insert a page break
-	\label{fig:CRP:growthratetraces}
 \end{figure}	
 
 \clearpage
@@ -420,6 +443,7 @@ The black CCs here correspond to the shaded CCs that are shown in other figures 
 	\textbf{Growth rate for all cell lineages per conditions per microcolony.}
 Each panel corresponds to a microcolony, letters indicate conditions. The gray lines show single lineage traces, the black lines the population average. Colored lines highlight example single lineage traces to illustrate single cell behavior. Dashed and dotted lines indicate $2\cdot\sigma$ and $5\cdot\sigma$ boundaries from the overall mean respectively.
 As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP cells growing on 80 $\upmu$M cAMP, (C) $\Delta$cAMP cells growing on 800 $\upmu$M cAMP and (D) $\Delta$cAMP cells growing on 5000 $\upmu$M cAMP.
+\label{fig:CRP:growthratetraces}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -428,9 +452,8 @@ As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP ce
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_Y6_mean_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
+	\includegraphics[width=1.0\textwidth]{png_chromo1_branches_Y5_mean_cycCor}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -439,6 +462,7 @@ As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP ce
 	\textbf{Metabolic reporter concentrations for all cell lineages per conditions per microcolony.}
 Each panel corresponds to a microcolony, letters indicate conditions. The gray lines show single lineage traces, the black lines the population average. Colored lines highlight example single lineage traces to illustrate single cell behavior. Dashed and dotted lines indicate $2\cdot\sigma$ and $5\cdot\sigma$ boundaries from the overall mean respectively.
 As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP cells growing on 80 $\upmu$M cAMP, (C) $\Delta$cAMP cells growing on 800 $\upmu$M cAMP and (D) $\Delta$cAMP cells growing on 5000 $\upmu$M cAMP.
+\label{fig:XXX:XXX}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -447,9 +471,8 @@ As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP ce
 
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{pdf_chromo1_branches_dY5_cycCor}
-	\clearpage % insert a page break
-	\label{fig:XXX:XXX}
+	\includegraphics[width=1.0\textwidth]{png_chromo1_branches_dY5_divAreaPx_cycCor}
+	\clearpage % insert a page break	
 \end{figure}	
 
 \clearpage
@@ -458,6 +481,7 @@ As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP ce
 	\textbf{Metabolic reporter production rates for all cell lineages per conditions per microcolony.}
 Each panel corresponds to a microcolony, letters indicate conditions. The gray lines show single lineage traces, the black lines the population average. Colored lines highlight example single lineage traces to illustrate single cell behavior. Dashed and dotted lines indicate $2\cdot\sigma$ and $5\cdot\sigma$ boundaries from the overall mean respectively.
 As before, the displayed conditions are (A) wild type cells, (B) $\Delta$cAMP cells growing on 80 $\upmu$M cAMP, (C) $\Delta$cAMP cells growing on 800 $\upmu$M cAMP and (D) $\Delta$cAMP cells growing on 5000 $\upmu$M cAMP.
+\label{fig:XXX:XXX}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

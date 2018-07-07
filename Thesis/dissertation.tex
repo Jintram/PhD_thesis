@@ -76,6 +76,9 @@
 % hopefully to support dutch hyphenation correctly
 \usepackage[dutch,english]{babel}
 
+% For hyphenation of words that already contain a hyphen
+\usepackage[shortcuts]{extdash} % Use Example\=/McExampleface to introduce "uncounted" hyphen
+
 % .tif images cannot be read, but we can automatically have them converted
 % (This also needs \usepackage{epstopdf})
 %\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
@@ -137,15 +140,15 @@
 %\include{ChapterX_Filarecovery/SupplementalData_ThesisVersion}
 
 % CRP chapter
-%\include{ChapterX_CRP/CRP_main} %\label{chapter:CRP}
-%\include{ChapterX_CRP/CRP_SupplementaryNotes1}
-%\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
-%\include{ChapterX_CRP/CRP_SupplementaryNotes3}
-%\include{ChapterX_CRP/CRP_SupplementaryFigures}
-%\include{ChapterX_CRP/CRP_SupplementaryTables}
+\include{ChapterX_CRP/CRP_main} %\label{chapter:CRP}
+\include{ChapterX_CRP/CRP_SupplementaryNotes1}
+\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
+\include{ChapterX_CRP/CRP_SupplementaryNotes3}
+\include{ChapterX_CRP/CRP_SupplementaryFigures}
+\include{ChapterX_CRP/CRP_SupplementaryTables}
 
 % More chapters
-\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
+%\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 %\include{ChapterX_Conclusion/ChapterX_Conclusion}
 
 

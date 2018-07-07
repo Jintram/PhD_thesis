@@ -13,20 +13,20 @@ The equations are the following:
 
 \begin{align}
 	\label{eq:TB:dotM}
-	\dot{M} & = \mu ( \frac{k_f}{k_f+x} - M) ,\\
+	\dot{C_M} & = \mu ( \frac{k_f}{k_f+x} - C_M) ,\\
 %\end{align}
 %\begin{align}
 	\label{eq:TB:dotx}
-	\dot{x} & = \frac{\alpha}{k_2} \left(    \beta f_M(M) \frac{k_1}{x+k_1}  -    \mu    \right) ,\\
+	\dot{x} & = \frac{\alpha}{k_2} \left(    \beta f_M(C_M) \frac{k_1}{x+k_1}  -    \mu    \right) ,\\
 %\end{align}
 % renamed p_BT to alpha
 %\begin{align}
 	\label{eq:TB:mu}
-	\mu & =\gamma(1-M) \frac{x}{x+k_2}
+	\mu & =\gamma(1-C_M) \frac{x}{x+k_2}
 	.
 \end{align}
 
-Here, $M$ represents the metabolic enzyme expression, $x$ the pool of carbon metabolites which give feedback to the CRP system, and $\mu$ the cellular growth rate.
+Here, $C_M$ represents the metabolic enzyme expression, $x$ the pool of carbon metabolites which give feedback to the CRP system, and $\mu$ the cellular growth rate.
 %
 Furthermore, $k_1$, $k_2$, and $k_f$ are Michaelis Menten rate constants, where $k_1$ pertains to carbon import (which is self-inhibited), $k_2$ to biomass production and $k_3$ to feedback by metabolites.
 %
@@ -38,9 +38,11 @@ and $\gamma$ the maximum catalytic rate of ribosomes.
 %$\alpha$ is a constants, which set the conversion ratio between metabolite consumption and growth, and $\beta$ is a constant that sets the maximum import rate of metabolites.
 % which determine the conversion rate from metabolites to biomass.
 %
+$f_M(C_M)$ is a function of $C_M$, which describes \lq{the regulation of the limiting enzyme for carbon uptake and catabolism by CRP}\rq{} \cite{Towbin2017}. 
+%
 The left and right terms (within brackets) in Eq. \ref{eq:TB:dotM} relate to production and dilution and in Eq. \ref{eq:TB:dotx} the left and right terms in brackets relate to import and consumption.
 %
-The growth rate is a function of metabolite consumption and ribosome concentration $R=1-M$.
+The growth rate is a function of metabolite consumption and ribosome concentration $C_R=1-C_M$.
 
 \subsubsection*{Graphic representations of the model}
 
@@ -51,10 +53,10 @@ The contributions of the left and right terms can be plotted separately to under
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
 	\centering
-	\includegraphics[width=0.5\textwidth]{CRP-figXsup_BenjaminInteractions.pdf}
+	\includegraphics[width=0.5\textwidth]{CRP-figXsup_BenjaminInteractions_v2.pdf}
 	\caption{ 
 		\textbf{Diagram of Towbin et al. ODE model.}
-		This diagram shows how the parameters in the Towbin et al. model relate to each other. $M$ and $x$ are the metabolic enzyme and metabolite concentration respectively, which are both modeled using differential equations. The ribsome concentration is only implicitly present as $R=1-M$. Metabolic enzyme production $p_m$, growth rate $\mu$, metabolite production/import rate $p_x$ and metabolite consumption are all terms that are part of these differential equations.
+		This diagram shows how the parameters in the Towbin et al. model relate to each other. $C_M$ and $x$ are the metabolic enzyme and metabolite concentration respectively, which are both modeled using differential equations. The ribosome concentration is only implicitly present as $C_R=1-C_M$. Metabolic enzyme production $p_m$, growth rate $\mu$, metabolite production/import rate $p_x$ and metabolite consumption are all terms that are part of these differential equations.
 	}
 	\label{fig:CRP:benjamin_ODEs_diagram}
 \end{figure}
