@@ -4,7 +4,10 @@
 
 \subsubsection*{The equations}
 
+
 This supplementary note offers a brief overview of the formulae used in Towbin et al. to describe the CRP regulation system, and its relation to metabolite concentrations and growth.
+%
+This is meant as a reference, to allow comparison between the linearized noise model that was used in this chapter to model the dynamics of metabolism and growth (described in supplementary note II), and a more sophisticated model of the biochemical network that is aimed to model the population average response to changes in the extracellular environment. 
 %
 These equations are directly taken from the supplementary notes of Towbin et al. (Equations 7-9), except that some parameter symbols have been changed to match our notation \cite{Towbin2017}.
 %
@@ -13,20 +16,23 @@ The equations are the following:
 
 \begin{align}
 	\label{eq:TB:dotM}
-	\dot{C_M} & = \mu ( \frac{k_f}{k_f+x} - C_M) ,\\
+	\dot{C_M} & = \lambda ( \frac{k_f}{k_f+x} - C_M) ,\\
 %\end{align}
 %\begin{align}
 	\label{eq:TB:dotx}
-	\dot{x} & = \frac{\alpha}{k_2} \left(    \beta f_M(C_M) \frac{k_1}{x+k_1}  -    \mu    \right) ,\\
+	\dot{x} & = \frac{\alpha}{k_2} \left(    \beta f_M(C_M) \frac{k_1}{x+k_1}  -    \lambda    \right) ,\\
 %\end{align}
 % renamed p_BT to alpha
 %\begin{align}
 	\label{eq:TB:mu}
-	\mu & =\gamma(1-C_M) \frac{x}{x+k_2}
+	\lambda & =\gamma(1-C_M) \frac{x}{x+k_2}
 	.
 \end{align}
 
-Here, $C_M$ represents the metabolic enzyme expression, $x$ the pool of carbon metabolites which give feedback to the CRP system, and $\mu$ the cellular growth rate.
+Here, $C_M$ represents the metabolic enzyme expression, $x$ the pool of carbon metabolites which give feedback to the CRP system, and $\lambda$ the cellular growth rate\footnote{
+    In this chapter, we use both the symbols $\lambda$ and $\mu$ to indicate growth rate,
+    $\lambda$ when the units are $/\text{min}$ and
+    $\mu$ when the units are $\text{doublings}/\text{hour}$.}.
 %
 Furthermore, $k_1$, $k_2$, and $k_f$ are Michaelis Menten rate constants, where $k_1$ pertains to carbon import (which is self-inhibited), $k_2$ to biomass production and $k_3$ to feedback by metabolites.
 %
@@ -48,7 +54,7 @@ The growth rate is a function of metabolite consumption and ribosome concentrati
 
 The relationships that are set in the differential equations are presented in a diagram in figure \ref{fig:CRP:benjamin_ODEs_diagram}.
 %
-The contributions of the left and right terms can be plotted separately to understand the dynamic behavior of the system when these terms change independently.
+The contributions of the left and right terms can be plotted separately to understand the dynamic behavior of the system when these terms change independently, see figure \ref{fig:CRP:benjamin_ODEs}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}
@@ -56,7 +62,7 @@ The contributions of the left and right terms can be plotted separately to under
 	\includegraphics[width=0.5\textwidth]{CRP-figXsup_BenjaminInteractions_v2.pdf}
 	\caption{ 
 		\textbf{Diagram of Towbin et al. ODE model.}
-		This diagram shows how the parameters in the Towbin et al. model relate to each other. $C_M$ and $x$ are the metabolic enzyme and metabolite concentration respectively, which are both modeled using differential equations. The ribosome concentration is only implicitly present as $C_R=1-C_M$. Metabolic enzyme production $p_m$, growth rate $\mu$, metabolite production/import rate $p_x$ and metabolite consumption are all terms that are part of these differential equations.
+		This diagram shows how the parameters in the Towbin et al. model relate to each other. $C_M$ and $x$ are the metabolic enzyme and metabolite concentration respectively, which are both modeled using differential equations. The ribosome concentration is only implicitly present as $C_R=1-C_M$. Metabolic enzyme production $p_m$, growth rate $\lambda$, metabolite production/import rate $p_x$ and metabolite consumption are all terms that are part of these differential equations.
 	}
 	\label{fig:CRP:benjamin_ODEs_diagram}
 \end{figure}

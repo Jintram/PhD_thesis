@@ -38,10 +38,23 @@
     \centering
     \includegraphics[width=0.49\textwidth]{pdf_optimalityCurve.pdf}
     \caption{ 
-        \textbf{Growth rates in minimal medium supplemented with lactose at different cAMP concentrations.}
-        Measured exponential phase growth rates of $\Delta$cAMP cells at different concentrations of cAMP as measured in a platereader.
-        Method 1 refers to a procedure where the fit range was manually chosen, whereas in method 2 the fits were made inbetween certain OD values.
-        Also, this figure shows data from a similar experiment performed by Towbin et al. \cite{Towbin2017}.
+        \textbf{Optimum curve based on bulk measurements.}
+%        \textbf{Growth rates in minimal medium supplemented with lactose at different cAMP concentrations.}
+        The black line with solid black squares indicates
+        exponential phase growth rates of $\Delta$cAMP cells at different concentrations of cAMP as measured in a platereader that measured bacterial density over time.
+        %
+        The growth rate was determined by an exponential fit, based on a manually selected part of the bacterial density curve that displayed exponential growth.
+        %
+        We also used an alternative method to determine growth rates (gray dashed line), were we 
+        fitted an exponential to part of the bacterial density curve that fell between two threshold values.
+        We consider this less reliable, as growth is not guaranteed to be exponential.
+        %
+        We also show the optimum curve as measured by Towbin et al \cite{Towbin2017} (dashed blue line),
+        who calculated growth rate based on an exponential fit to a two hour window,
+        which was selected by an algorithm that looked for the longest period of stable growth rate.        
+        %
+%        Method 1 refers to a procedure where the fit range was manually chosen, whereas in method 2 the fits were made inbetween certain OD values.
+%        Also, this figure shows data from a similar experiment performed by Towbin et al. \cite{Towbin2017}.
         %        1 is manual selection of data that fit is bas
     }
     \label{fig:CRP:ocurvePlatereader}
@@ -156,7 +169,10 @@
 	\includegraphics[width=0.37\textwidth]{png_scattersoftraces_2.png}	
 	\caption{ 
 		\textbf{Scatter plots of growth rate versus metabolic and constitutive reporter from single cell measurements.}
-		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration.
+        These plots relate to the pulsing experiment with \dcamp cells, figure \ref{fig:CRP:fig1} in the main text.
+		Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration
+        that was made during a time series of pulses of high and low concentrations of cAMP.
+%        Note that these points come from a time series where the concentration of extracellular cAMP was not constant.
 		On the left, growth rate plotted against the concentration of the metabolic reporter.
 		On the right, growth rate plotted against the concentration of a constitutive reporter based on the same lac metabolic reporter but with the CRP binding site replaced by a $\upsigma$70 consensus binding site.
 		The black lines indicate the average signal for corresponding concentrations and standard deviations.
@@ -195,7 +211,7 @@
 \clearpage
 
 \captionof{figure}{    
-	\textbf{Comparison of summary parameters in different experimental conditions.} 
+	\textbf{Comparison of population averages of different parameters in different experimental conditions.} 
 	This figure shows growth rates (doublings per hour), production rates (a.u./(px min)), concentrations (a.u./px) and coefficients of variations (CV). 
 	C is the abbreviation used for the constitutive reporter (which uses a cyan mCerulean label), and Y is the abbreviation used for the metabolic reporter (which uses a yellow mVenus label).
 	WT stands for wild type, indicating wild type cells except the addition of our metabolic and constitutive reporter constructs.
@@ -222,9 +238,9 @@
 	(A) Colored dots show single cell growth rate values plotted against respective single cell production rates of metabolic reporter, which is a proxy for the production rate of metabolic enzymes. 	
 	Dots correspond to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP 
 	(colored blue, and red, green and orange, respectively).
+    The white lines show predicted population average behavior based on a model described in supplementary note I.
 	The black lines show the average growth rate for cells that are binned according to production rates, and the black isolines reflect kernel density estimates of the probability distribution (using the matlab function \texttt{kde2d} \cite{Botev2010}).
 	The circles with thick black edges show population average values per experiment.
-	Note that the trends in population average values are explained in Supplemental note I at the end of this chapter.
 	(B) As panel A, except that this panel shows the relationship between growth and the production rate of a constitutive reporter. 	
 	}
 	\label{fig:CRP:fig2sup}
@@ -234,14 +250,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Scatters of conc-conc and prod-prod
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC.png}
-	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_rateVsRateYC.png}	
+	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_concentrationVsConcentrationYC_withAvgLine.png}
+	\includegraphics[width=1.0\textwidth]{png_chromo1prime_overview_custom_scatter_rateVsRateYC_withAvgLine.png}	
 	\caption{ 
 		\textbf{Concentration-concentration and production-production relationships between metabolic and constitutive reporters.}
-		This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
-		Panels show: (Top) scatter plots for concentration of metabolic (CRP) reporter against the concentration of constitutive (s70) reporter; 
-		(Bottom) scatter plots for production rate of metabolic (CRP) reporter against the production rate of constitutive (s70) reporter.
-		Blue, red, green and orange dots again correspond respectively to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP.
+    	This figure is similar to Figure \ref{fig:CRP:fig2sup}, except that the relationships plotted are different.
+      	Blue, red, green and orange dots again correspond respectively to data points from WT cells with endogenous negative metabolic feedback, and $\Delta$cAMP cells which have been grown at concentrations of 80, 800 and 5000 $\upmu$M cAMP.
+		(Top panel) Scatter plots for concentration of metabolic (CRP) reporter against the concentration of constitutive reporter.
+        The white line reflects the fact that the sum of the concentrations of the two reporters remains constant 
+        (not that the axes are log-log scale; this line would be straight on a linear scale).
+		(Bottom panel) Scatter plots for production rate of metabolic reporter against the production rate of constitutive reporter.
+        The white line is based on the optimum curve and a simple model describing the relationship between production rate, concentration and growth, 
+        see supplementary note I.
 	}
 	\label{fig:CRP:fig3scatters_CC_pp}
 \end{figure}
@@ -289,6 +309,10 @@ This section contains additional supplemental figures that were not referenced i
 	\includegraphics[width=0.49\textwidth]{png_highlowplots_case2.png}	
 	\caption{ 
 		\textbf{Scatter plots for growth versus production, with selection on the high/low condition.}
+        These plots relate to the pulsing experiment with \dcamp cells, figure \ref{fig:CRP:fig1} in the main text.
+        Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration
+        that was made during a time series of pulses of high and low concentrations of cAMP.
+        %
 		In these scatter plots, the production of the metabolic (left plots) or constitutive (right plots) reporter is plotted against growth rate, where in the top plots only data from the low cAMP condition is shown and in the bottom plot only data from the high cAMP condition is shown. The gray lines are the exception, they show the average values from the high condition in the plot for the low condition, and vice versa.		
 	}
 	\label{fig:CRP:highlowproductionscatters}
@@ -300,7 +324,14 @@ This section contains additional supplemental figures that were not referenced i
 	\includegraphics[width=0.49\textwidth]{png_highlowplots_case4.png}	
 	\caption{ 
 		\textbf{Scatter plots for growth versus concentration, with selection on the high/low condition.}
-		This plot is similar to supplemental figure \ref{fig:CRP:highlowproductionscatters}, but deals with concentration instead of production rates.
+%        These plots relate to the pulsing experiment with \dcamp cells, figure \ref{fig:CRP:fig1} in the main text.
+%        Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration
+%        that was made during a time series of pulses of high and low concentrations of cAMP.
+        %
+		This figure is similar to supplemental figure \ref{fig:CRP:highlowproductionscatters}, but deals with concentration instead of production rates.
+        These plots relate to the pulsing experiment with \dcamp cells, figure \ref{fig:CRP:fig1} in the main text.
+        Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration
+        that was made during a time series of pulses of high and low concentrations of cAMP.
 In these scatter plots, the concentration of the metabolic (left plots) or constitutive (right plots) reporter is plotted against growth rate, where in the top plots only data from the low cAMP condition is shown and in the bottom plot only data from the high cAMP condition is shown. The gray lines are the exception, they show the average values from the high condition in the plot for the low condition, and vice versa.
 	}
 	\label{fig:CRP:highlowpconcentrationscatters}
@@ -312,9 +343,14 @@ In these scatter plots, the concentration of the metabolic (left plots) or const
 	\includegraphics[width=0.49\textwidth]{png_highlowplots_case6.png}	
 	\caption{ 
 		\textbf{Scatter plots for metabolic reporter versus constitutive reporter, with selection on the high/low condition.}
+        This figure is similar to 
+        %		Like previous supplemental 
+        figures \ref{fig:CRP:highlowproductionscatters} and \ref{fig:CRP:highlowpconcentrationscatters}.
+                These plots relate to the pulsing experiment with \dcamp cells, figure \ref{fig:CRP:fig1} in the main text.
+        Every point in these plots corresponds to a single cell observation on growth rate and fluorescent label concentration
+        that was made during a time series of pulses of high and low concentrations of cAMP.
 		In these plots, concentration-concentration (left) or production-production (right) scatter plots are presented for the metabolic versus the constitutive reporters.
-		Like previous supplemental figures \ref{fig:CRP:highlowproductionscatters} and \ref{fig:CRP:highlowpconcentrationscatters}, the top and bottom plots again 
-		in the top plots only data from the low cAMP condition is shown and in the bottom plot only data from the high cAMP condition is shown. 
+		In in the top plots only data from the low cAMP condition is shown and in the bottom plot only data from the high cAMP condition is shown. 
 		The gray lines are the exception, they show the average values from the high condition in the plot for the low condition, and vice versa.		
 	}
 	\label{fig:CRP:highlowconcconcprodprod}

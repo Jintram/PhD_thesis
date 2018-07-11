@@ -34,6 +34,7 @@ Generally, the change in metabolic protein concentration $C_M$ ($\text{a.u}/(\te
 \end{align}
 % 
 where $p_M$ is the production rate ($\text{a.u}/(\text{px min})$) of metabolic protein and $\lambda$ ($/\text{min}$) the growth rate of the cell.
+(We use the symbol $\lambda$ here for growth rate instead of $\mu$ to be able to distinguish the units used; we use $\mu$ for growth rates which are expressed in $\text{doublings}/\text{hour}$.) 
 %Our single cell experiments allow the independent measurement of all these three parameters.
 We can determine all these three parameters from our single cell experiments.
 Following Towbin et al. \cite{Towbin2017}, we additionally propose $p_M = \phi_M(\text{cAMP}) \lambda$, where $\phi_M$ ($\text{a.u}/(\text{px})$) is a function of the concentration of cAMP and scales proportionally to it; the fractional production $\phi_M$ sets the production rate $p_M$ as a fraction of $\lambda$.
@@ -70,7 +71,7 @@ Surprisingly, equation \ref{eq:CRP:sumconstant} implies that this is not the cas
 %
 In any case, the steady state condition implies that $\phi_M(\text{cAMP}) = C_M$ (equation \ref{eq:CRP:odeM}), and thus that we can set the concentration of $C_M$ directly by adjusting the supplied cAMP concentration.
 In other words: $C_M \propto \text{cAMP}$.
-Furthermore, Towbin et al. observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the optimality curve, or "O-curve" \cite{Towbin2017}.
+Furthermore, Towbin et al. observed a concave relationship between the CRP concentration and growth rate $\lambda$, which they call the "O-curve" (where the O stands for "open loop" \cite{Towbin2017}) and we call the optimum curve.
 We indeed observe a similar relationship, as shown in figure \ref{fig:CRP:averagerelations1}. 
 Towbin et al. derive a functional form for this relationship, but for simplicity we have fitted a 3rd degree polynomial to this O-curve, i.e.
 \begin{align}
@@ -123,7 +124,7 @@ In conclusion, three ingredients determine the steady state relationships betwee
 %
 For a more extensive treaty and mathematical description of the steady-state CRP regulation the reader is referred to Towbin et al. \cite{Towbin2017}.
 %
-The relationships presented here are considered sufficient to put the dynamic relationships in this chapter in context.
+%The relationships presented here are considered sufficient to put the dynamic relationships in this chapter in context.
 
 
 
@@ -136,10 +137,15 @@ The relationships presented here are considered sufficient to put the dynamic re
 	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_Y_mu.pdf}		
 	\caption{ 
 		\textbf{Fitted relationships between concentration, production rate and growth rate.}
-		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
+		Circles 
+        are based on population means of microcolonies of 
+        wild type cells (blue circles) or $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow circles respectively),
+        were grown on gel pads with lactose-supplemented minimal medium; 
+        this data was also used for the scatter plots (figures \ref{fig:CRP:fig2}, \ref{fig:CRP:fig2sup}, \ref{fig:CRP:fig3scatters_CC_pp}).
+        %
 		(Top) Concentration is predicted to equal production rate divided by growth rate. Though there is a minor offset to the line x=y (solid black line) as shown by the fits (dashed and dotted lines), this prediction seems approximately correct. (The dotted line only is based on the average offset, whereas the dashed line is a polynomial fit.)
 		(Bottom left) This panel shows that the sum of the metabolic and constitutive reporter concentrations remains approximately equal. The mean sum is 445 a.u./px.
-		(Bottom right) This panel shows the concave relationship between growth and the metabolic reporter concentration. The dashed line shows a third degree polynomial fit to the data points. The fitted parameters (equation \ref{eq:CRP:muwithCRP}) are $a=-4.38\cdot10^{-7}$, $b=2.55\cdot10^{-4}$ and $c=-0.0276$.
+		(Bottom right) This panel shows the concave relationship between growth and the metabolic reporter concentration. The dashed line shows a second degree polynomial fit to the data points, which describes the optimum curve. The fitted parameters (equation \ref{eq:CRP:muwithCRP}) are $a=-4.38\cdot10^{-7}$, $b=2.55\cdot10^{-4}$ and $c=-0.0276$.
 	}
 	\label{fig:CRP:averagerelations1}
 \end{figure}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +159,13 @@ The relationships presented here are considered sufficient to put the dynamic re
 	\includegraphics[width=0.39\textwidth]{pdf_relationsAverages_pC_mu.pdf}	
 	\caption{ 
 		\textbf{Observed and predicted (not fitted) relationships.}
-		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
+        As figure \ref{fig:CRP:averagerelations1}, circles 
+        are based on population means of microcolonies of 
+        wild type cells (blue circles) or $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow circles respectively),
+        were grown on gel pads with lactose-supplemented minimal medium; 
+        this data was also used for the scatter plots (figures \ref{fig:CRP:fig2}, \ref{fig:CRP:fig2sup}, \ref{fig:CRP:fig3scatters_CC_pp}).
+        %
+%		Circles correspond to steady state observations in wild type cells (blue) and $\Delta$cAMP cells supplied with 80, 800 and 2000 $\upmu$M cAMP (red, green and yellow respectively).
 		(Top left) The observed and predicted (equation \ref{eq:CRP:muwithQ}) relationship between the constitutive reporter production and growth rate.
 		(Top right) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the constitutive and metabolic production rates.
 		(Bottom left) The observed and predicted (equation \ref{eq:CRP:pmu}) relationship between the metabolic production rate and growth rate.

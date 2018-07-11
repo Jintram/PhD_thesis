@@ -8,7 +8,11 @@
 
 In these notes I discuss a model which models how noise originates and transmits from and between observables respectively. I will discuss the model proposed by Philippe Nghe in the work by Kiviet et al. \cite{Kiviet2014}, and also possible extensions and modifications to this model.
 
-Parameters that are considered in general are the number of enzymes ($C$), the rate at which these enzymes are made ($p$), and the growth rate of the cell ($\lambda$). There is also the parameter $x$, which can be interpreted as a general noise source or the concentration of metabolites. Typically, enzymes disappear by dilution due to growth. Furthermore, there are noise sources, which add noise to these parameters. Depending on how they are implemented these source appear as $N_x$, $N_\lambda$ and $N_p$ or $\Gamma_x$, $\Gamma_\lambda$ and $\Gamma_p$, the subscripts indicate to which parameter the noise source adds noise.
+Parameters that are considered in general are the number of enzymes ($C$), the rate at which these enzymes are made ($p$), and the growth rate of the cell ($\lambda$)\footnote{
+    In this chapter, we use both the symbols $\lambda$ and $\mu$ to indicate growth rate,
+    $\lambda$ when the units are $/\text{min}$ and
+    $\mu$ when the units are $\text{doublings}/\text{hour}$.}.
+There is also the parameter $x$, which can be interpreted as a general noise source or the concentration of metabolites. Typically, enzymes disappear by dilution due to growth. Furthermore, there are noise sources, which add noise to these parameters. Depending on how they are implemented these source appear as $N_x$, $N_\lambda$ and $N_p$ or $\Gamma_x$, $\Gamma_\lambda$ and $\Gamma_p$, the subscripts indicate to which parameter the noise source adds noise.
 
 The goal of this model is to interpret the cross-correlations between $\lambda$, $C$ and $p$ --- $R_{C,\lambda}(\tau)$, $R_{p,\lambda}(\tau)$ --- that are obtained from experimental data.
 
@@ -17,14 +21,21 @@ The goal of this model is to interpret the cross-correlations between $\lambda$,
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{model_nghe_v2.png}
+	\includegraphics[width=0.9\textwidth]{model_nghe_v3.pdf}
 	\caption{ 
-		(A) Original diagram as printed in Kiviet et al. \cite{Kiviet2014}.
-		(B) More technical diagram stating the relations between parameters of interest (gray boxes), and noise sources $N_P$, $N_x$, and $N_\lambda$. Arrows indicate how ODEs or functions that describe the parameters of interest are coupled. 
-		Arrows that go trough the red dashed box correspond to terms that not only couple the two parameters connected by the arrow, but also make up the parameter $P$ (see also main text).
-		Arrows that go through the grey box are arrows which are thought to be biologically connected to the metabolism.
-		(C) An alternative version of the model with more parameters modelled explicitly. Noise sources are printed white in this diagram since they are not described by separate ODEs, which was the case in Kiviet et al. \cite{Kiviet2014}. 
-        \red{Todo: update this figure with correct letters.}
+		(A) Original diagram as printed in Kiviet et al. \cite{Kiviet2014}, except that we updated the symbols to match our notation. 
+        $p$ is production rate, $C$ is the concentration of the protein of interest, and $\lambda$ the growth rate.
+%        In Kiviet et al, the letter $E$ (for enzyme) was used for the concentration of the protein of interest instead of the more general letter $C$ (for concentration) that we use here. $p$ stands for production rate and $\lambda$ for growth rate.
+		(B) More technical diagram that describes the relations between parameters that are described by ODEs (boxes with solid outlines), and noise sources $N_p$, $N_x$, and $N_\lambda$, as they were modeled in Kiviet et al. 
+        $C$ stands for the concentration of the protein of interest, $\lambda$ for growth rate. 
+        Arrows indicate how ODEs or functions that describe the parameters of interest are coupled. 
+		Arrows that go trough the dashed box labeled $p$ correspond to terms that not only couple the two parameters connected by the arrow, but also make up the production rate parameter $p$ (see also main text).
+		Arrows that go through the dashed box labeled $x$ are arrows which are thought to be biologically connected to the metabolism.
+        Compared to the model used in this manuscript, which describes all four parameters $p$, $C$, $\lambda$ and $x$ by ODEs (see also figure \ref{fig:CRP:fig4}.A), 
+        Kiviet et al. model less parameters by ODEs \cite{Kiviet2014}.
+%        there are less parameters that are explicitly modeled by ODEs. 
+%		(C) An alternative version of the model with more parameters modelled explicitly. Noise sources are printed white in this diagram since they are not described by separate ODEs, which was the case in Kiviet et al. \cite{Kiviet2014}. 
+%        \red{Todo: update this figure with correct letters.}
 	}
 	\label{fig:modeldrawing}
 \end{figure}
@@ -33,7 +44,7 @@ A straight forward way to model a system with these parameters, is writing down 
 %
 The Nghe model takes a somewhat different approach (it is more concise), which will be discussed later.
 %
-The ODEs below relate to the cartoon in Fig. \ref{fig:modeldrawing}.C
+The ODEs below relate to the cartoon in Fig. \ref{fig:CRP:fig4}.A
 and describe the dynamics per parameter:
 %
 \begin{align}
@@ -55,18 +66,18 @@ and describe the dynamics per parameter:
 %
 \begin{align}
 \label{mythirdequation}
-\dot{P} = & - \frac{(P-P_0)}{\tau_P} \nonumber \\ 
+\dot{p} = & - \frac{(p-p_0)}{\tau_p} \nonumber \\ 
 		 & + c_p \cdot \Gamma_p \nonumber \\ 
-         & + T_{P\leftarrow x} \cdot c_P' \cdot (\frac{x}{x_0}-1)  \nonumber \\ 
-         & + R_{P\leftarrow x} \cdot c_P' \cdot (\frac{x}{x_0}-1)
+         & + T_{p\leftarrow x} \cdot c_p' \cdot (\frac{x}{x_0}-1)  \nonumber \\ 
+         & + R_{p\leftarrow x} \cdot c_p' \cdot (\frac{x}{x_0}-1)
 \end{align}
 %
 \begin{align}
 \label{mylastequation}
-\dot{C} = P - \lambda C
+\dot{C} = p - \lambda C
 \end{align}
 %
-Where $x$ describes the state of the metabolism, $\lambda$ is the growth rate, $P$ is the production rate, $C$ is the amount of enzyme, $\tau$ is a dampening term ($X_0$ is the equilibrium value), $T_{X \leftarrow Y}$ is the noise transmission constant from $X$ towards $Y$, $c_X$ and $c_X'$ are constants that set the size of the fluctuations, $\Gamma_X$ is a white noise source.
+Where $x$ describes the state of the metabolism, $\lambda$ is the growth rate, $p$ is the production rate, $C$ is the amount of enzyme, $\tau$ is a dampening term ($X_0$ is the equilibrium value), $T_{X \leftarrow Y}$ is the noise transmission constant from $X$ towards $Y$, $c_X$ and $c_X'$ are constants that set the size of the fluctuations, $\Gamma_X$ is a white noise source.
 $R_{X \leftarrow Y}$ indicates a regulatory interaction, an addition to the model, but this notation is just cosmetic, as $T_\text{effective}=T+R$.
 %
 This model assumes all parameters have an average value from which fluctuations deviate, but always return. Hence the dampening terms.
@@ -74,8 +85,8 @@ With respect to transmission, I furthermore rescale the absolute value of the no
 
 This is similar to the model that Philipe Nghe suggested in Kiviet et al. \cite{Kiviet2014}, which was inspired by Dunlop et al. \cite{Dunlop2008} (see supplement of that manuscript for a description of the Dunlop model).
 %
-A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\mu_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. Nghe also takes the latter approach, see below.
-% dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\mu_E$ parameter (see later for a more involved discussion on these parameters)}.
+A difference between my equations, the Nghe equations and the Dunlop equations lies in the dampening terms (those containing $\tau$, $\beta$ or $\lambda_E$). In my model noise is effected through the ODE, and dampening occurs on the parameter of interest. In Dunlop et al., there are two dampening terms, one specifically dampening the noise and a second term dampening the parameters of interest. Nghe also takes the latter approach, see below.
+% dampening being effected through the $(-\beta_X \cdot N_X)$ term and the $\lambda_E$ parameter (see later for a more involved discussion on these parameters)}.
 
 Analytical expressions for the correlations between these equations can be found by linearizing them, writing the correlations in Fourier space, and back-transforming them using residue integration techniques. 
 %\red{These notes do} not fully explores this, but \red{this will partially be discussed later}.
@@ -90,7 +101,7 @@ The script \texttt{growthnoisepropagatorv2.m} that numerically solves the equati
 For the dilution mode: 
 \begin{gather*}
 C_0= 2000,
-\mu_0= 1,
+\lambda_0= 1,
 %\lambda_0= 0.6931,
 \lambda_0= 0.0116, 
 \nonumber \\ p_0= 23.1049, 
@@ -116,7 +127,7 @@ T_{\lambda\rightarrow{C}}= -1;
 For the catabolic mode: 
 \begin{gather*}
 C_0= 2000,
-\mu_0= 1,
+\lambda_0= 1,
 %\lambda_0= 0.6931,
 \lambda_0= 0.0116,
 \nonumber \\ p_0= 23.1049,
@@ -140,7 +151,7 @@ T_{\lambda\rightarrow{C}}= -1;
 For the common mode: 
 \begin{gather*}
 C_0= 2000,
-\mu_0= 1,
+\lambda_0= 1,
 %\lambda_0= 0.6931,
 \lambda_0= 0.0116,
 \nonumber \\p_0= 23.1049,
@@ -164,7 +175,7 @@ T_{\lambda\rightarrow{C}}= -1;
 For the combined scenario: 
 \begin{gather*}
 C_0= 2000,
-\mu_0= 1,
+\lambda_0= 1,
 %\lambda_0= 0.6931,
 \lambda_0= 0.0116,
 \nonumber \\p_0= 23.1049,
@@ -225,7 +236,7 @@ The starting point,
 %
 \begin{align}
 \label{eq:Nghe1}
-\dot{C} = P - \lambda C
+\dot{C} = p - \lambda C
 ,
 \end{align}
 %
@@ -236,15 +247,15 @@ is the same in my model, but after linearization (defined as $X=X_0+\delta X$) t
 %
 \begin{align}
 \label{eq:ODEElinearized}
-\frac{ \delta{\dot{C}} }{C_0 \mu_0} 
+\frac{ \delta{\dot{C}} }{C_0 \lambda_0} 
 + \frac{\delta C}{C_0} 
 %& = 
 %\left[
 % T_{C \leftarrow C} \frac{\delta C}{C_0} + T_{C \leftarrow G} N_G + N_E 
 % \right]
-% + T_{C \leftarrow \mu} \frac{\delta \mu}{\mu_0} \nonumber \\
+% + T_{C \leftarrow \lambda} \frac{\delta \lambda}{\lambda_0} \nonumber \\
 & =
-\frac{\delta p}{C_0 \mu_0} + T_{C \leftarrow \mu} \frac{\delta \mu}{\mu_0}
+\frac{\delta p}{C_0 \lambda_0} + T_{C \leftarrow \lambda} \frac{\delta \lambda}{\lambda_0}
 .
 \end{align}
 %
@@ -253,15 +264,15 @@ Noise terms are introduced with ODEs that are also shown above in Eq. \ref{eq:ge
 %
 \begin{align}
 \label{eq:Nghe3}
-\frac{\delta\mu}{\mu_0} = T_{\mu \leftarrow C} \frac{\delta C}{C_0} + T_{\mu \leftarrow G} N_G + N_\mu
+\frac{\delta\lambda}{\lambda_0} = T_{\lambda \leftarrow C} \frac{\delta C}{C_0} + T_{\lambda \leftarrow G} N_G + N_\lambda
 \end{align}
 %
-simply defines the evolution of $\delta \mu$.
+simply defines the evolution of $\delta \lambda$.
 There is also a similar equation for $\delta p$:
 %
 \begin{align}
 \label{eq:Nghe4}
-\frac{\delta{p}}{C_0 \mu_0} = T_{C \leftarrow C} \frac{\delta C}{C_0} + T_{C \leftarrow G} N_G + N_E
+\frac{\delta{p}}{C_0 \lambda_0} = T_{C \leftarrow C} \frac{\delta C}{C_0} + T_{C \leftarrow G} N_G + N_E
 ,
 \end{align}
 %
@@ -271,13 +282,13 @@ Indeed, plugging Eq. \ref{eq:Nghe4} into Eq. \ref{eq:ODEElinearized} leads to eq
 %
 \begin{align}
 \label{eq:Nghe5}
-\frac{ \delta{\dot{C}} }{C_0 \mu_0} 
+\frac{ \delta{\dot{C}} }{C_0 \lambda_0} 
 + \frac{\delta C}{C_0} 
 & = 
 \left[
  T_{C \leftarrow C} \frac{\delta C}{C_0} + T_{C \leftarrow G} N_G + N_E 
  \right]
- + T_{C \leftarrow \mu} \frac{\delta \mu}{\mu_0} 
+ + T_{C \leftarrow \lambda} \frac{\delta \lambda}{\lambda_0} 
 \end{align}
 %
 which corresponds to equation 5 in the Kiviet et al. \cite{Kiviet2014} manuscript.
@@ -287,7 +298,7 @@ This is also the reason why $p$ is depicted as a red dashed box in Fig. \ref{fig
 Note that dampening terms can be implicitly present in the Nghe model, in the form of a transmission from the parameter to itself.
 Specifically, $T_{C \leftarrow C}$ can fulfill this role. % when it is negative and $<1$. 
 Second order dampening can also occur, 
-as is pointed out in the Kiviet et al. supplementary information, which states that the time scale of the $C$ fluctuations is set by the term $\mu_0(1-T_{C \leftarrow \mu}T_{\mu \leftarrow C}-T_{C \leftarrow C})$.
+as is pointed out in the Kiviet et al. supplementary information, which states that the time scale of the $C$ fluctuations is set by the term $\lambda_0(1-T_{C \leftarrow \lambda}T_{\lambda \leftarrow C}-T_{C \leftarrow C})$.
 
 % I previously thought that dampening was not present in the Nghe model, but this is not the case.
 % Here the previous text:
@@ -295,7 +306,7 @@ as is pointed out in the Kiviet et al. supplementary information, which states t
 %%non-steady state behavior of the parameters.
 %unstable behavior of the parameters.
 %The term $X/\tau$ could be added to each of the equations to resolve this issue; the term $-N_X/\tau$ from the noise ODEs could then be dropped.
-%{\color{red}Note that a $\mu_E$ term appears eventually in Nghe's equations, which might play the role of a second dampening term.}
+%{\color{red}Note that a $\lambda_E$ term appears eventually in Nghe's equations, which might play the role of a second dampening term.}
 
 
 
