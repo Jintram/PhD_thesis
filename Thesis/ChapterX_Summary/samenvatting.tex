@@ -1,3 +1,6 @@
+% Texstudio Spellchecker language
+% !TeX spellcheck = nl_NL
+
 \chapter*{Samenvatting}
 \addcontentsline{toc}{chapter}{Samenvatting}
 \setheader{Samenvatting}
@@ -25,7 +28,9 @@ In \textbf{hoofdstuk \ref{chapter:filarecovery}} beschrijven we nieuwe inzichten
 %
 In plaats van cellen te laten groeien in gunstige condities, wat meestal gedaan wordt in het lab, hebben we cellen laten groeien in ongunstige condities.
 %
-Deze condities, namelijk blootstelling aan antibiotica en hoge temperaturen, kunnen cellen ook in de echte wereld tegenkomen.
+Deze condities, namelijk blootstelling aan antibiotica en hoge temperaturen, 
+komen cellen in de echte wereld ook vaak tegen. 
+%kunnen cellen ook in de echte wereld tegenkomen.
 %
 De cellen reageren op deze ongunstige condities door te stoppen met delen terwijl ze wel blijven groeien. 
 %
@@ -35,11 +40,11 @@ en leidt tot zeer lange cellen.
 Wanneer we overschakelden naar gunstige groeicondities, 
 herstelden de cellen zich door weer te gaan delen.
 %
-Tijdens dit proces verplaatsten de cellen hun potentiele delingsplekken (Fts ringen) continu.
+Tijdens dit proces verplaatsten de cellen hun potentiële delingsplekken (Fts ringen) continu.
 %
 De plaatsing van de Fts ringen hing af van de lengte van de bacterie en werd bepaald door regulatie door Min eiwitten.
 %
-De Min eiwitten bleken te functioneren als waren zij een dynamische lineaal.
+De Min eiwitten bleken te functioneren als waren zij een dynamische liniaal
 %
 Dit resulteerde
 in zeer precieze regulatie van waar
@@ -56,16 +61,106 @@ en duiden op een bredere relevantie van het
 \textit{adder} principe en werpen een nieuw licht  
 op de functies van het Fts en Min systeem.
 
-\red{Wellicht handig eerst even feedback af te wachten alvorens vertaling af te maken.}
 
 
 
+In de hoofdstukken \ref{chapter:literaturereview}-\ref{chapter:ribosomes} onderzoeken we hoe heterogeniteit in populaties ontstaat.
+%
+Zoals beschreven in hoofdstuk \ref{chapter:introduction}, laten zelfs genetisch identieke individuele bacteriën in een constante omgeving verschillend gedrag zien.
+%
+%Uiteindelijk komt dit doordat er een zekere mate van willekeur wordt geïntroduceerd door de chemische reacties die plaatsvinden in bacteriën.
+Uiteindelijk komt dat door het stochastische (willekeurige) karakter van de chemische reacties die plaatsvinden in de bacteriën.
+%
+Onderzoek naar heterogeniteit focust vaak 
+óf op processen waarin waar fenotypische effecten direct kunnen worden verbonden aan een bron van stochasticiteit,
+óf op hoe biochemische beslissingsnetwerken robuust kunnen zijn ondanks ruis die ontstaat door stochastische fluctuaties.
+%
+Hoe ruis zich voortplant in grote biochemische netwerken, en wat de effecten zijn op de staat van de cel, wordt minder vaak onderzocht.
+%
+\textbf{Hoofdstuk \ref{chapter:literaturereview}} geeft een literatuuroverzicht over deze laatste vragen.
+%
+We leggen hierin een focus op het metabolisme, aangezien dit een essentieel biochemisch netwerk in de cel is.
+%
+In \textbf{hoofdstuk \ref{chapter:CRP}} onderzochten we de rol van regulatienetwerken in heterogeniteit.
+%
+Om deze rol verder te begrijpen keken we naar het 
+cAMP recepter eiwit (CRP), een \textit{master} regulatie eiwit dat de expressie van metabole enzymen reguleert.
+%
+Metabole enzymen zetten koolwaterstofmoleculen (zoals suikers) om in kleinere metabolieten. 
+Dit dient ook om de cel van energie te voorzien.
+%
+Sommige van deze metabolieten remmen CRP regulatie.
+%
+Deze negatieve feedback is eerder onderzocht, en 
+er wordt gedacht dat deze interactie ertoe leidt dat
+het expressieniveau van metabole enzymen optimaal is.
+%
+In hoofdstuk \ref{chapter:literaturereview} stellen we echter dat de concentraties van metabolieten wellicht continu fluctueren door stochastische ruis in de cel.
+%
+Dat zou betekenen dat het CRP systeem constant verschillende inputs krijgt, 
+zelfs in een constante omgeving, 
+en hier wellicht op reageert.
+%
+Om deze hypothese te testen gebruikten we een eerder gemaakte
+genetisch gemanipuleerde \ecoli stam die deze metabole feedback niet heeft.
+%
+Eerst gaven we op een artificiële manier alternerend hoge en lage signalen als input aan het CRP regulatiesysteem in deze stam.
+%
+We alterneerden dit signaal redelijk snel (elk uur), 
+omdat stochastische fluctuaties waarschijnlijk ook op snelle tijdschalen plaatsvinden,
+en we wilden testen of bacteriën überhaupt op dergelijke tijdschalen kunnen reageren.
+%
+De snelle reactie van de bacteriën op deze signalen liet zien dat ze in principe in staat zijn 
+te reageren op dergelijke snelle signaalwisselingen.
+%
+%Stochastische fluctuaties hebben ook vaak zulke snelle tijdschalen, maar dit laat zien dat de cel hier in
+%die wellicht ook veroorzaakt worden door stochastische fluctuaties.
+%
+Daarna onderzochten we het verschil in de dynamiek van de CRP regulatie in een wild type \ecoli stam (waarin het feedback systeem intact is) en de \ecoli stam zonder feedback.
+%
+Met behulp van een cross-correlatie analyse van de expressie-groei dynamica en wiskundige modellen van de dynamica, konden we laten zien dat deze verschillen er zijn en hier een interpretatie aan geven.
+%
+De analyse suggereerde dat het regulatienetwerk inderdaad reageert op stochastische fluctuaties in de cel.
+Daarnaast waren de resultaten consistent met een interpretatie van de dynamica waarin de regulatie er voor zorgde dat ruis zich minder goed kon voortplanten.
+%
+In bredere zin zou dit erop kunnen duiden dat regulatienetwerken in cellen in een continu veranderende staat zijn, doordat zij continu reageren op stochastische fluctuaties en daaropvolgende effecten.
 
 
-
-
+Ten slotte onderzoeken we de rol van ribosomen in cellulaire heterogeniteit in \textbf{hoofdstuk \ref{chapter:ribosomes}}.
+%
+%Vaak wordt gesuggereerd
+%Een idee dat vaak wordt genoemd in de 
+%Een vaak genoemd idee in de 
+Een hypothese die vaak genoemd wordt in de 
+literatuur is dat stochastische fluctuaties in de concentratie van ribosomen leiden tot 
+simultane fluctuaties in genexpressie. 
+%
+Aangezien de productie van eiwitten een essentiële 
+rol heeft in cel groei,
+hadden we tevens de hypothese dat op het niveau van één cel fluctuaties in ribosoomconcentraties wellicht ook een effect zouden hebben op de groeisnelheid van de cel.
+%
+In dit hoofdstuk hebben we deze twee hypotheses onderzocht.
+% 
+We hebben de dynamica van ribosomen onderzocht met behulp van fluorescent gelabelde ribosomale eiwitten en fluorescente reporters voor de expressie van ribosomaal RNA.
+%
+Daarnaast hebben we een fluorescent eiwit ingebracht dat constant tot expressie werd gebracht.
+%
+Dit eiwit hebben we gebruikt om het verband te onderzoeken tussen de ribosoomconcentratie en eiwitproductie.
+%
+We hebben de expressie van deze reporters en de groeisnelheden gemeten in individuele cellen in verschillende groeimedia, en hebben daarnaast condities onderzocht waarin de cellen waren blootgesteld aan sub-letale concentraties translatie inhiberende antibiotica.
+%
+Ook hier hebben we cross-correlatie analyses uitgevoerd, 
+maar we hebben onvoldoende bewijs gevonden om aan te tonen
+dat er transmissie plaatsvindt van ribosomale fluctuaties 
+naar eiwitexpressie of groeisnelheid.
+%
+We eindigen dit hoofdstuk \ref{chapter:ribosomes} met de vraag of een label aan een enkel ribosomaal eiwit een goede weergave is van de concentratie van compleet geassembleerde ribosomen; elk van de 58 ribosomale eiwitten heeft wellicht zijn eigen dynamica.
+%
+Daarnaast stellen we voor hoe de rol van fluctuaties in ribosomale RNA concentraties verder onderzocht kan worden.
 
 
 
 % SWITCH LANGUAGE BACK TO ENGLISH!
 \selectlanguage{english}
+
+
