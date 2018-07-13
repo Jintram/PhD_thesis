@@ -1,0 +1,257 @@
+
+% Texstudio Spellchecker language
+% !TeX spellcheck = nl_NL
+
+\chapter*{Introductie (NL)}
+\addcontentsline{toc}{chapter}{Introductie (NL)}
+\setheader{Introductie (NL)}
+
+% SWITCH LANGUAGE TO DUTCH FOR HYPHENATION
+\selectlanguage{dutch}
+
+
+% Who should understand this? Rob, Karin, my mother to some extend...
+
+\section*{De kracht van getallen}
+
+De wereld om ons heen beschrijven met behulp van getallen is niet slechts een hobby voor getallenfetisjisten.
+Kwantitatieve beschrijven van fenomenen kunnen inzichten geven waar men anders niet toe gekomen was.
+%
+Ook in de biologie zijn hier voorbeelden van.
+%
+Zoals het Lotka-Volterra model uit de vroege 20e eeuw \cite{Lotka1920,Volterra1928}, dat fluctuaties in de hoeveelheden roofdieren en prooien verklaart met behulp van differentiaalvergelijkingen.
+%
+Of het wiskundige reactie-diffusiemodel van Alan Turing,
+dat verklaart hoe ruimtelijke heterogeniteit spontaan kan ontstaan uit moleculen die 
+interageren volgens simpele regels \cite{Turing1952}.
+%
+Deze principes zijn bijvoorbeeld extreem belangrijk tijdens de embryogenese, wanneer cellen moeten bepalen tot welk deel van het lichaam zij zich zullen ontwikkelen.
+%
+Echter,
+wellicht deels vanwege een terughoudendheid bij biologen  \cite{Lazebnik2003} en deels door een gebrek aan de juiste onderzoeksmiddelen \cite{Kitano2002, Wollman2018}, 
+zijn dit soort kwantitatieve methoden nooit breed gebruikt in de biologie.
+%
+Maar sinds het nieuwe millennium heeft kwantitatieve biologie
+een enorme vlucht genomen.
+%
+Ik hoop dat het werk dat beschreven wordt in deze thesis ook spannende voorbeelden geeft van nieuwe inzichten die verkregen zijn met deze nieuwe golf van kwantitatieve onderzoeken.
+
+
+
+
+\section{Prying in the lives of single cells}
+
+%
+%In the Tans lab, we use a microscope and a computer to make time lapse movies of living and growing bacteria.
+%
+%Until recently, bacterial researchers were not able perform experiments on a specimen of their organism of interest.
+%Until recently
+Before the onset of techniques that allowed high throughput quantitative measurements, bacterial researchers usually did not perform studies on individual specimens of their organism of interest.
+%
+Experiments 
+%to learn about bacterial behaviour 
+were conducted in test tubes on millions of individual cells at once.
+%
+While this gives great information about the average behaviour of bacteria, 
+which filled text-books with the detailed workings of bacteria,
+it does not allow one to learn everything about how a bacterium works.
+%
+% An example of this is given in chapter \ref{chapter:filarecovery}.
+%
+New techniques now allow us to better probe the life of single cells.
+%
+Where a century ago people had to observe tiny bacterial colonies by eye through the microscope, painstakingly draw them, and quantify division times manually \cite{Kelly1932},
+we can now do the same using a computer and 
+% our computerized analysis of the data allows us to 
+thoroughly track the lives of thousands of individual cells in a few days work, as described in chapter \cite{chapter:methods} of this thesis.
+%
+Figure \ref{fig:intro:bacs}.A shows an example of a snapshot of a microcolony of the rod-shaped \textit{Escherichia coli} bacterium, acquired by one of our microscopes.
+%
+This computerized approach gives new insights, as illustrated by chapter \ref{chapter:filarecovery}.
+%
+During single cell experiments in the Tans lab that probed the effect of antibiotics on \ecoli bacteria \cite{RozendaalVerslagXXX} we noticed a peculiarity.
+%
+Bacteria stop dividing in this condition, but continue elongating, leading to so-called filamentous phenotypes with an elongated morphology, see also figure \ref{fig:intro:bacs}.B.
+%
+When antibiotic stress was removed, and \ecoli with elongated morphologies started dividing again, 
+we noticed that 
+they always divided at very defined relative positions.
+%
+Before these observations, it was thought that filamentous bacteria behave as if they were a string of multiple bacteria merged together.
+%
+But our measurement showed that instead of following rules according to that principle, 
+bacteria followed another set of rules.
+%
+This required an unexpected and not previously observed mobility 
+of bacterial division site structures.
+% in the placement of their potential division sites.
+It also revealed that 
+one of the bacterial regulation systems for division site placement
+ % division regulation system has 
+has a previously unrecognised functionality when cells are in their filamentous state.
+%
+Aside from these two novel observations, 
+the results implied that bacterial cells carefully regulate their size,
+even in this elongated morphology.
+%far beyond often observed bacillary form (the short rod-like shape).
+%
+%Conditions that induce t
+This morphology is not often studied in the lab, 
+but is very relevant in daily life where bacteria might for example survive antibiotic treatments or cold conditions (fridges) by adopting this filamentous form.
+%for example proliferation of undesired food-borne or pathogenic bacterial is combated exactly by exposing to bacteria to harsh conditions like heat, cold, or antibiotics.
+%
+%Concluding, chapter \ref{chapter:filarecovery} illustrates both the importance of investigating individual bacteria and the importance of investigating other conditions other than standard lab growth conditions. 
+
+\begin{figure}
+    \begin{minipage}[c]{0.5\textwidth}
+        %\centering    
+        %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
+        \includegraphics[width=0.99\textwidth]{figure_bacterial_colonies.pdf}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.5\textwidth}
+        \caption{ 
+            \textbf{Bacterial colonies.}
+            These pictures were taken with a microscope in the Tans lab, and show a growing microcolony of bacteria in favorable conditions (A) and (part of) a colony of bacteria that are exposed to a sub-lethal dosis of the antibiotic tetracycline (B). This colony in panel B shows a so-called filamentous morphology, because under the influence of certain stresses bacteria can stop dividing but continue elongating. 
+            % 1uM TET, note that information on this dataset can be found in the script 
+            % ershovwehrensallfigures
+            %
+            %        
+        }
+        \label{fig:intro:bacs}
+    \end{minipage}
+\end{figure}
+
+
+\section{Single cells are different} 
+
+Single cell experiments also allow us to probe the differences between individual bacteria.
+%Another interesting question when probing single bacteria is asking to what extent individuals are different.
+%But observing bacteria does not only give insights about behaviour that is (to an extent) identical in all bacteria.
+%
+In a pioneering study in 1976, 
+%
+% As observed in a pioneering study by 
+Spudich and Koshland \cite{Spudich1976} found that genetically identical individual bacteria can still show different food-searching behaviour. 
+% despite being genetically identical.
+In brief, some bacterial individuals favoured swimming straight for long stretches in search of food, 
+whilst others preferred to re-orient their direction more often to create a more winding search pattern for food. 
+%some bacteria favoured swimming longer distances, whilst others favoured more careful sensing of gradients.
+%
+This was attributed to \lq{chance occurrences [in their] internal processes}\rq.
+%
+It is now clear that in general,
+%In other words, 
+the biochemical reactions that finally lead to bacterial decision making do not always have the same outcome.
+%
+It is thought that the origin of this stochasticity can be traced back to reactions that involve a small number of molecules in a relatively large volume.
+Since reactants need to find each other by diffusion, this introduces a component of chance.
+%
+This stochasticity can also be observed in gene expression.
+Even with precisely the same amount of activation by regulatory molecules, gene expression will fluctuate over time and differ between individuals \cite{Elowitz2002}.
+%
+This implies that protein concentrations in bacterial cells fluctuate constantly,
+which in turn must affect all cellular processes.
+%
+Indeed, it has been suggested that even fluctuations in single enzymes can result in fluctuations in single cell elongation rates (i.e. growth rates) \cite{Kiviet2014}.
+%
+We review literature about the consequences of stochasticity on the bacterial metabolism, and subsequent effects on single cell growth and population dynamics in chapter \ref{chapter:literaturereview}.
+
+\section{Regulation and stochasticity}
+
+One could ask to what extent these stochastic fluctuations disturb the cellular regulatory networks.
+%
+In chapter \ref{chapter:CRP} we show that an important metabolic regulatory protein not only responds to the cellular environment,
+but can also respond to stochastic fluctuations that occur inside the cell itself.
+%
+This suggests that a stochastic protein concentration fluctuation occurring somewhere in the cell (e.g. in single a metabolic enzyme),
+might be followed by a fluctuation in the concentration of a specific metabolite, in turn leading to a regulatory response, 
+leading for example to the production of additional proteins, which consequently triggers again different responses, etcetera.
+%
+Fluctuations might thus have cell-wide consequences, for example on cellular growth rate, mediated by regulatory interactions.
+%
+This implies that cells might not exist in a well-defined average state,
+but instead by nature have an ever-changing state.
+%
+%Indeed, we show in chapter \ref{chapter:CRP} that a model in which the expression proteins and cellular growth rate 
+%are continuously subject to fluctuations and also can interact continuously,
+%
+%In chapter \ref{chapter:CRP} we expand a previous model \cite{Kiviet2014} in which the expression proteins and cellular growth rate 
+%are continuously subject to fluctuations and also can interact continuously.
+%%
+%This model offers an interpretation to the relationships between single cell growth and metabolic regulatory activity that we experimentally measure.
+%%
+%To show that 
+%
+This chapter % perhaps 
+indicates that asking to what extent stochastic fluctuations disturb regulatory networks might in fact be the wrong question,
+and instead one should be asking to what extent fluctuations are an integral component of regulatory networks \cite{Wollman2018}.
+
+\section{Sources of cellular individuality}
+
+In the final chapter of this thesis, chapter \ref{chapter:ribosomes}, we try to further understand cellular individuality.
+%
+We focus on the ribosome.
+%
+As a general rule, 
+with a few exceptions, all components of the cell either are proteins, or are produced by reactions that are catalyzed by proteins.
+%
+Proteins themselves are also produced by complexes (i.e. superstructures) of many proteins, which are called ribosomes.
+%
+Ribosomes are also an exception to aforementioned general rule, 
+as they also contain RNA.
+%an exceptional cellular structure, 
+%%to the rule 
+%as also RNA is a key compoonent. % contain RNA.
+%%
+Ribosomes could be major contributors to cellular individuality,
+as they are often cited as a cellular component that can result in cell-wide protein fluctuations \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
+%
+The idea is that when the concentration of ribosomes fluctuates in a cell, 
+the production rates of all proteins that are being produced in that cell also fluctuate simultaneously.
+%
+These cell-wide fluctuations could potentially have implications on all cellular processes,
+including behaviour and growth. 
+%
+We investigated this hypothesis, but could neither validate nor disprove it.
+%
+This might be because the ribosome is such a complex structure,
+of which the different components that we are able to track experimentally might show different dynamics.
+%
+This final chapter therefore illustrates that there are still many open questions 
+in our understanding of cellular individuality.
+
+% SWITCH LANGUAGE BACK TO ENGLISH!
+\selectlanguage{english}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
