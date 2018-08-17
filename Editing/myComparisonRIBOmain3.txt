@@ -1,0 +1,522 @@
+diff --git a/Thesis/ChapterX_Ribosomes/ChapterX_Ribosomes.tex b/Thesis/ChapterX_Ribosomes/ChapterX_Ribosomes.tex
+index daac826..17cdabe 100644
+--- a/Thesis/ChapterX_Ribosomes/ChapterX_Ribosomes.tex
++++ b/Thesis/ChapterX_Ribosomes/ChapterX_Ribosomes.tex
+@@ -48,7 +48,8 @@ Ribosomes are life.
+ %
+ In 1958, Francis Crick, who discovered the structure of DNA with James Watson and Rosalind Franklin,
+ formulated what is called the central dogma of molecular biology.
+-This states 
++%This 
++It states 
+ % declares 
+ that DNA holds the amino acid sequence information required to build a protein, and that this sequence information is first translated to RNA, which is then transcribed into a protein \cite{Crick1958}.
+ % 
+@@ -106,7 +107,7 @@ of which a number are described in her thesis.
+ %
+ % The results from these experiments were rather inconclusive.
+ %
+-Given previously described central role of the ribosome, 
++Given the previously described central role of the ribosome, 
+ it was hypothesized that the stochastically fluctuating concentration of ribosomes might be limiting, 
+ meaning that ribosomal fluctuations might result in growth rate fluctuations.
+ %
+@@ -129,6 +130,9 @@ a GFP reporter under the control of one of the ribosomal RNA promoters was also
+ Like the L31-C reporter, the dynamics of this rrna-G reporter showed positive correlations in minimal medium and only very small correlations in rich medium.
+ % an additional reporter was used which consisted of the ribosomal RNA promoter 
+ %
++It remained unclear whether the differences between these observations were due to physical effects 
++or due to day-to-day experimental variation. 
++%
+ Also growth-expression scatter plots were used, to investigate possible interesting shapes of growth-expression relationships, but this yielded no noteworthy shapes.
+ 
+ In an attempt to force the cell in a scenario where ribosomes are limiting, experiments were conducted where cells were grown in the presence of sub-inhibitory concentrations of tetracycline, an antibiotic.
+@@ -139,7 +143,7 @@ In rich medium, both for the L31-R and the rrn-G reporter, the antibiotic did no
+ %
+ Given the disparate observations, both between reporters and conditions, 
+ and the absence of a point of reference,
+-the nature of the ribosomal dynamics remained fairly elusive; it was concluded that ribosomal fluctuations perhaps do not have a pivotal role in steady state cellular growth dynamics.
++the nature of the ribosomal dynamics remained elusive; it was concluded that ribosomal fluctuations perhaps do not have a pivotal role in steady state cellular growth dynamics.
+ 
+ \subsection{New work}
+ 
+@@ -172,7 +176,7 @@ Since this is an ongoing project, some sections in this chapter will be more suc
+         \hline
+         ASC976  &	Prrna-C, pn25-Y	&	Δphp::pn25-mVenus-cmR, Δche::Prrsa-mCerulean-kanR. (Kanamycin and chloramphenicol resistance.)  & VS \\
+         %     
+-        ASC968	& L19-C, pn25-Y	& L19-gc-mCerulean-kanR (GC linker), Δ(…)::pn25-mVenus-cmR.	(Kanamycin and chloramphenicol resistance.)	& VS \\
++        ASC968	& L19-C, pn25-Y	& L19-gc-mCerulean-kanR (GC linker), Δphp::pn25-mVenus-cmR.	(Kanamycin and chloramphenicol resistance.)	& VS \\
+         %
+         ASC1058	& L9-R, S2-Y	& Also known as JE202. rplI-mCherry-KanR (L9), rpsB-venus-CmR (S2). (Kanamycin and chloramphenicol resistance.) Gift from Johan Elf lab. & \cite{Wallden2016} \\
+         \hline
+@@ -190,7 +194,7 @@ Since this is an ongoing project, some sections in this chapter will be more suc
+ To be able to further explore the implications of ribosomal fluctuations, 
+ we produced additional strains.
+ %
+-Importantly, we were interested in the effect fluctuations in ribosomal expression would have on 
++Importantly, we were interested in the effect that fluctuations in ribosomal expression would have on 
+ the single cell capacity to produce proteins.
+ %single cell protein production.
+ %
+@@ -207,7 +211,7 @@ We also introduced the constitutive pn25-mVenus reporter to this strain.
+ These strains, the Prrna-C, pn25-Y strain and the L19-C, pn25-Y strain are listed in table \ref{table:ribostrains1}.
+ Additionally, supplementary table \ref{tab:ribolabeledprots} gives an overview of the operons in which the ribosomal proteins are encoded.
+ 
+-Furthermore, because the ribosome consists of so many ribosomal proteins, we wanted to be able to confirm 
++Furthermore, as the ribosome consists of many ribosomal proteins, we wanted to be able to confirm 
+ dynamics observed for one labeled ribosomal protein, also for other labeled ribosomal proteins.
+ %
+ % potential observations in a strain that had other ribosomal proteins labeled.
+@@ -231,7 +235,7 @@ and introduced a way to probe the effect of ribosomal fluctuations on protein ex
+ 
+ To understand the dynamics of a process, it is often convenient to grasp what happens in extreme cases.
+ %
+-We therefore attempted to device an experiment which would lead to a situation where single cells that expressed more ribosomes than the population average would have a growth advantage, thus forcing a "limiting" situation.
++We therefore attempted to device an experiment which would lead to a situation where single cells that expressed more ribosomes than the population average would have a growth advantage, thus possibly forcing a "limiting" situation.
+ % 
+ We did this by growing cells in minimal medium in our microfluidic device 1 for a few hours, and then switching to minimal medium supplemented with antibiotics (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
+ %We did this by growing cells in minimal medium in our microfluidic device 1 (see chapters \ref{chapter:methods} and \ref{chapter:filarecovery} for a description of the microfluidics device).
+@@ -470,25 +474,45 @@ and also the analysis now only takes into account a selection of the total amoun
+ %\subsubsection{Results from ribosome and constitutive dual reporter strains}
+ \subsubsection{Results from strains with ribosome and constitutive reporters}
+ 
+-At any rate, figures \ref{fig:ribo:CCsEmuYpn25}-\ref{fig:ribo:CCsPmuYpn25Ribo} show data obtained from the Prrna-C, pn25-Y and L19-C, pn25-Y strains.
++%At any rate, 
++Figures \ref{fig:ribo:CCsEmuYpn25}-\ref{fig:ribo:CCsPRiboPn25} show cross-correlation functions obtained from the Prrna-C, pn25-Y and L19-C, pn25-Y strains.
++%
++We also generated negative control cross-correlations 
++% are generated 
++%by correlating time traces from different lineages; 
++%by correlating time traces between randomly paired lineages; 
++by correlating the time trace from one lineage branch with the time trace from another randomly selected lineage branch; 
++%different 
++%these
++random pairs of branches should not correlate for steady state measurements with a sufficient sample size.
++%
++This procedure is also described in section \ref{sec:methods:CCs} in the methods chapter, under subheading "Controls". 
+ %
+-Most of these CCs show large error bars, and often fall inside the range of the negative control.
+-This indicates that more data is required to draw definitive conclusions.
+-Furthermore, figure \ref{fig:ribo:meansPn25R} shows that the concentration of ribosomal RNA reporters is quite low in comparison to other reporters. This might be due a weak ribosomal binding site, 
++The mean and maximum correlations of 50 of such randomly generated negative control curves are also plotted in figures \ref{fig:ribo:CCsEmuYpn25}-\ref{fig:ribo:CCsPRiboPn25}.
++%
++Most of the Prrna-C, pn25-Y and L19-C, pn25-Y cross-correlations show 
++%Most of these CCs show 
++large error bars, and often the values are in the same range as negative control values (figures \ref{fig:ribo:CCsEmuYpn25}-\ref{fig:ribo:CCsPRiboPn25}). 
++%
++%and often fall inside the range of the negative control.
++%The large errors and negative control values indicate 
++This indicates 
++that more data is required to draw definitive conclusions.
++Furthermore, figure \ref{fig:ribo:meansPn25R} shows that the concentration of ribosomal RNA reporters was quite low in comparison to other reporters. This might be due a weak ribosomal binding site, 
+ and further emphasizes caution is required when interpreting this data.
+ %
+ Nevertheless, figures \ref{fig:ribo:CCsEmuYpn25} and \ref{fig:ribo:CCsPmuYpn25} show the CCs calculated for the pn25 constitutive expression-growth relationship for growth in minimal medium, TY medium, and TY medium supplemented with sub-inhibitory concentration of the antibiotic tetracycline (0.5 $\upmu$M).
+ %
+-Most of the concentration-growth curves show negative correlation values for negative delays.
+-The production rate-growth curves do not show clear trends.
++Most of the pn25 concentration-growth curves show negative correlation values for negative delays (figure \ref{fig:ribo:CCsEmuYpn25}).
++The production rate-growth curves do not show clear trends (figure \ref{fig:ribo:CCsPmuYpn25}).
+ We saw earlier (see chapter \ref{chapter:CRP}) that constitutive reporters often show dilution mode dynamics.
+ The CCs we observe here could be consistent with that transmission mode.
+ %
+-Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the CCs for the ribosomal reporters (rRNA or L19).
+-The CCs for the labeled L19 protein (panel A both in figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo}) do not show a clear trend.
+-The CCs for
+-the behaviour of the \textit{rrna} reporter for all measured conditions 
+-(shown in panels \ref{fig:ribo:CCsEmuYRibo}B-D and \ref{fig:ribo:CCsPmuYRibo}.B-D), %, which show 
++Furthermore, figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} show data from the same strains, but show the expression-growth CCs for the ribosomal reporters (rRNA or L19).
++The concentration-growth and production-growth CCs for the labeled L19 protein (panel A in figures \ref{fig:ribo:CCsEmuYRibo} and \ref{fig:ribo:CCsPmuYRibo} respectively) do not show a clear trend.
++The concentration-growth and production-growth CCs for
++the behaviour of the \textit{rrna} reporter 
++(shown in panels \ref{fig:ribo:CCsEmuYRibo}B-D and \ref{fig:ribo:CCsPmuYRibo}.B-D respectively), %, which show 
+ %all 
+ show behaviour that also might be consistent with dilution mode transmission of noise; negative concentration-growth at negative delays correlations are seen both for M9 and TY medium, and also for the condition where antibiotic was added to the medium.
+ %
+@@ -503,10 +527,10 @@ the promoter--reporter construct does not fully capture the dynamics of ribosoma
+ The dual reporter strains with both ribosomal and pn25 constitutive reporters were constructed to allow us to not only study ribosome-growth dynamics, but also allow us to study the impact of ribosomal fluctuations and protein expression.
+ %
+ %We now turn to the question we can address with the ribosomal and constitutive reporter strains:
+-To understand whether ribosomes indeed have an effect on protein production, we look at the CCs between ribosomal concentration and constitutive reporter concentration, shown in figure \ref{fig:ribo:CCsEERiboPn25}, and CCs between ribosomal production rate and constitutive production rate, as shown in figure \ref{fig:ribo:CCsPPRiboPn25}.
++To understand whether ribosomes indeed have an effect on protein production, we look at the CCs between ribosomal concentration and constitutive reporter concentration, and CCs between ribosomal production rate and constitutive production rate.
+ %
+-The L19-C, pn25-Y concentration-concentration CC shows a very unclear pattern, 
+-but the Prrna-C, pn25-Y concentration-concentration CCs show a positive peak around $\tau = 0$ delay in various conditions, indicating concerted fluctuations.
++The L19-C, pn25-Y concentration-concentration CC shows a very unclear pattern (figure \ref{fig:ribo:CCsEERiboPn25}.A), 
++but the Prrna-C, pn25-Y concentration-concentration CCs show a positive peak around $\tau = 0$ delay in various conditions, indicating concerted fluctuations (figure \ref{fig:ribo:CCsPPRiboPn25}.B-D).
+ %
+ Positive correlations are expected, since concerted fluctuations were observed earlier for a pair of two constitutive reporters \cite{Elowitz2002}, for groups of proteins \cite{Stewart-Ornstein2012} and in general is expected to some extent for any two proteins because of the existence of extrinsic noise \cite{Chalancon2012}.
+ %Thus, a positive correlations between expression is expected to be found for any two proteins in the cells, and also for our ribosomal and constitutive protein reporter pair.
+@@ -515,7 +539,9 @@ However, here, we look at two proteins of which one reports for ribosomal concen
+ This might change the dynamics.
+ %
+ Additional features in the CC on top of the positive peak at 0 delay might tell us something about the ribosome-protein expression dynamics.
+-For example, more pronounced correlations at positive delays could indicate transmission of fluctuations from ribosomes to protein expression.
++%
++For example, if we were to observe more pronounced correlations at positive delays 
++this could indicate transmission of fluctuations from ribosomes to protein expression.
+ %
+ However, The Prrna-C, pn25-Y concentration correlation for M9 medium (figure \ref{fig:ribo:CCsEERiboPn25}.B) seems to show the opposite: there is more positive correlation at negative delays.
+ This implies that ribosome concentration fluctuations correlates with past protein concentration fluctuations.
+@@ -531,12 +557,15 @@ which might help the cell anticipate ribosomal demand.%;
+ %though very speculative, 
+ %this might explain the correlation at negative delays.
+ 
+-In TY medium (figure \ref{fig:ribo:CCsEERiboPn25}.C), the CC does not show a stronger correlation at negative delays.
++For TY medium (figure \ref{fig:ribo:CCsEERiboPn25}.C), the CC does not show a stronger correlation at negative delays.
+ %
+ One could speculate this is because ribosomes become more limiting here, thus shifting the balance from negative delays in M9 medium to positive delays in TY medium.
+ %
+-The CC in TY medium with antibiotics (figure \ref{fig:ribo:CCsEERiboPn25}.D) shows a strong background signal.
+-The second peak in correlation at negative delays might be an artefact of insufficient data.
++The CC for TY medium with antibiotics (figure \ref{fig:ribo:CCsEERiboPn25}.D) shows multiple peaks, 
++but 
++the negative control CCs also shows high correlation values.
++%
++This indicates the second peak in the cross correlation curve at negative delays might be an artefact of insufficient data.
+ %We do not have further interpretations for these conditions.
+ More data is required to draw any conclusions for this condition. 
+ 
+@@ -562,7 +591,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
+         In the labels, (A) indicates the L19-C, pn25-Y strain and (B) the Prrna-C, pn25-Y strain.
+         Growth media are indicated between brackets. 
+         M9 indicates M9 minimal medium, TY indicates TY medium and TY+AB indicates TY medium supplemented with antibiotics.
+-        "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.        
+         %        (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         %        (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+         %        (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+@@ -583,7 +612,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-% Constitutive reporters 
++% Constitutive reporters CCs
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{figure}
+@@ -592,10 +621,14 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between concentration of constitutive reporter and growth.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.         
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).        
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
++%        All experiments in this chapter were done using microfluidic device 2, except the experiment relating to the left plot in panel B, which was performed on a gel pad.  
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -612,10 +645,13 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between production rate of constitutive reporter and growth.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.        
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).        
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -629,7 +665,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-% Ribosomal reporters
++% Ribosomal reporters CCs
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{figure}
+@@ -638,10 +674,13 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between concentration of ribosomal reporter and growth.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.        
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -658,10 +697,13 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between production rate of ribosomal reporter and growth.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.        
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -683,10 +725,13 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between concentration of ribosomal reporter and concentration of pn25 reporter.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.        
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -703,10 +748,13 @@ This is consistent with aforementioned concerted protein expression fluctuations
+     \caption{ 
+         \textbf{Cross-correlations between production rate of ribosomal reporter and production rate of pn25 reporter.}
+         (A) L19-C, pn25-Y strain. Grown in M9 minimal medium.
+-        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.
++        (B) Prrna-C, pn25-Y strain. Grown in M9 minimal medium.        
+         (C) Prrna-C, pn25-Y strain. Grown in TY medium.
+         (D) Prrna-C, pn25-Y strain. Grown in TY medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        Except for the left panel in panel B, which is based on a gel pad experiment, all data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+         %        (A) giu_asc968_M9_steady						L19-mCerulean, 	 pn25-mVenus
+         %        (B) giu_asc976_M9_steady mw_asc976_M9_steady	Prrna-mCerulean, pn25-mVenus
+@@ -714,7 +762,7 @@ This is consistent with aforementioned concerted protein expression fluctuations
+         %        (D) giu_asc976_TY_steady_antibiotics			Prrna-mCerulean, pn25-mVenus
+         %        
+     }
+-    \label{fig:ribo:CCsPPRiboPn25}
++    \label{fig:ribo:CCsPRiboPn25}
+ \end{figure}
+ 
+ 
+@@ -757,7 +805,12 @@ Figures \ref{fig:ribo:CCsEmuS2} and \ref{fig:ribo:CCsPmuS2} show CCs from the S2
+ figures \ref{fig:ribo:CCsEmuL9} and \ref{fig:ribo:CCsPmuL9} show CCs from the L9 r-protein expression-growth dynamics.
+ Furthermore, figures \ref{fig:ribo:CCsEERiboribo} and \ref{fig:ribo:CCsPPRiboribo} show expression--expression CCs between the ribosomal labels.
+ %
+-Like the strains discussed earlier, the CCs showed high correlations in the negative control correlations.
++Just as we did for the strains discussed earlier, 
++we also generated negative control CCs for these datasets
++%, CCs that were generated as negative control for these datasets 
++using randomly combined time traces. 
++These negative controls again
++showed high correlations (grey areas in figures \ref{fig:ribo:CCsEmuS2}-\ref{fig:ribo:CCsPPRiboribo}) instead of very low values as expected for steady state experiments with sufficient amounts of data.
+ This indicates that more experiments are required to make claims about this data.
+ 
+ 
+@@ -765,42 +818,68 @@ This indicates that more experiments are required to make claims about this data
+ 
+ Nevertheless, we can try to interpret the current data.
+ %
+-The S2 reporter concentration-growth CC for cells growing in M9 minimal medium (left panel in figure \ref{fig:ribo:CCsEmuS2}.A) 
+-shows negative correlations consistent with the dilution mode of noise transmission \cite{Kiviet2014}.
++The S2 reporter concentration-growth cross correlation for cells growing in M9 minimal medium (left panel in figure \ref{fig:ribo:CCsEmuS2}.A) 
++shows negative correlations.
++Negative correlations at negative delays are consistent with the dilution mode of noise transmission \cite{Kiviet2014}, 
++but this curve also shows negative correlations at positive delays, which is not consistent with that mode of noise transmission.
+ %
+-We ignore the right panel, 
+-given a later analysis of this experiment 
++%The right panel shows less pronounced negative correlations.  
++The CC of second experiment with this strain in the same conditions (right panel in figure \ref{fig:ribo:CCsEmuS2}.A) shows less pronounced negative correlations, 
++but we also note that cross correlation analysis of other parameters from this experiment showed indications of poor data quality (as discussed later, see also figure \ref{fig:ribo:CCsEERiboribo}.A). % AAA
++%
++%We ignore the right panel, 
++%given a later analysis of this experiment 
+ % given the pattern observed in later experiments
+-(see the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A), which will be discussed later.
++%(see the right panel of figure \ref{fig:ribo:CCsEERiboribo}.A), which will be discussed later.
+ %
+ Interestingly, 
+ % figure \ref{fig:ribo:CCsEmuS2}.B, which shows 
+-the S2 reporter concentration-growth CC for cells growing in the same M9 medium supplemented with antibiotics, does not show these negative delays, see figure \ref{fig:ribo:CCsEmuS2}.B. 
++the S2 reporter concentration-growth CC for cells growing in the same M9 medium supplemented with antibiotics, does not show these negative correlations, see figure \ref{fig:ribo:CCsEmuS2}.B. 
+ This could be indicative of a situation where ribosomes are more limiting due to the antibiotic stress, and fluctuations transmit from ribosomal fluctuations to the growth rate of the cell.
+ %
+ Production rate-growth CCs of the S2 reporter, shown in figure \ref{fig:ribo:CCsPmuS2}, are harder to interpret, both for M9 medium and M9 medium with antibiotics.
+ They are however not inconsistent with the earlier observations and interpretation.
+ 
+-Next, let's see whether the other ribosomal reporter in this strain shows similar behaviour.
+-Firstly, the negative concentration-growth CCs of the L9 reporter in M9 medium --- where we again only consider the the left panel in figure \ref{fig:ribo:CCsEmuL9}.A --- are consistent with the negative concentration growth CCs of the S2 reporter.  
+-The dynamics in M9 medium plus antibiotics again seem different compared to the experiment without antibiotics, as negative correlations now manifest as positive delays (instead of at negative delays).
++%Next, let's see whether the other ribosomal reporter in this strain shows similar behaviour.
++Next, using the same experimental data, 
++we calculated the CCs for the other ribosomal reporter in this strain to see whether it shows similar behaviour.
++%
++The first experiment (in M9 medium) also showed
++negative concentration-growth CCs of the L9 reporter (figure \ref{fig:ribo:CCsEmuL9}.A, left panel), consistent with the CCs of the S2 reporter.
++%
++Yet, the CC from the second experiment in M9 medium shows a different pattern; 
++though we note that cross-correlation analysis of other parameters from this experiment showed indications of poor data quality (as discussed later, see also figure \ref{fig:ribo:CCsEERiboribo}.A). % AAA
++%
++% --- where we again only consider the the left panel in figure \ref{fig:ribo:CCsEmuL9}.A --- are consistent with the negative concentration growth CCs of the S2 reporter.  
++%
++The dynamics in M9 medium plus antibiotics again seemed different compared to the experiment without antibiotics (figure \ref{fig:ribo:CCsEmuL9}.B), as negative correlations now manifest as positive delays (instead of at negative delays).
+ The negative correlations are however different from the positive correlations we saw for the S2 reporter in the same experiment.
+ %
+ This indicates that either repetitions of these experiments might yield different results, or one of the labels does not appropriately reflect ribosomal concentration, or different ribosomal proteins might have their own dynamics.
+ %
+ Production-growth CCs of the L9 reporter (figure \ref{fig:ribo:CCsPmuL9}) are again hard to interpret, although the condition with antibiotic stress shows a distinct peak around zero delay.
+ 
+-Aside from expression-growth dynamics, we can additionally look at the interaction between expression of the two ribosomal proteins in this strain. 
++Aside from expression-growth dynamics, we can additionally look at the interaction between expression of the two ribosomal proteins in the experiments with this strain. 
++%
++In general, we expect CCs for this interaction to show positive correlations that are symmetrical around zero delay, since we expect both reporters to represent the ribosomal concentration.
+ % 
+-Firstly, the right panel in figure \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC; which shows a shape that we have not observed before and is inconsistent with the other experimental data in the same condition (left panel in the same figure). 
++The first experiment (in M9 medium) showed an S2-L9 concentration-concentration CC that is --- against expectations --- not symmetric (left panel in figure \ref{fig:ribo:CCsEERiboribo}.A).
++%
++%The left panel in \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC for growth in M9 minimal medium, which is --- against expectations --- not symmetric.
++%
++The second experiment in the same condition (M9 medium)
++%We first note that one of the experiments 
++%Firstly, the right panel in figure \ref{fig:ribo:CCsEERiboribo}.A 
++showed an S2-L9 concentration-concentration CC that has a shape that we 
++cannot interpret in our current framework (figure \ref{fig:ribo:CCsEERiboribo}.A, right panel).
++The correlations in this CC also do not go to zero for large delays, which is indicative for poor data quality.
++If data quality is indeed poor for this experiment, this might also have implications for other CCs based on this experiment (all the right panels in figures \ref{fig:ribo:CCsEmuS2}.A, \ref{fig:ribo:CCsPmuS2}.A, \ref{fig:ribo:CCsEmuL9}.A and \ref{fig:ribo:CCsPmuL9}.A.)
++%have not observed before and is inconsistent with the other experimental data in the same condition (left panel in the same figure). 
+ %Correlations seem to increase for longer delays. 
+-Taken together, we think data from this specific experiment should be disregarded until more experiments are performed; as indicated earlier for this condition.
+-(This implies not taking into account all the right panels in figures \ref{fig:ribo:CCsEmuS2}.A, \ref{fig:ribo:CCsPmuS2}.A, \ref{fig:ribo:CCsEmuL9}.A and \ref{fig:ribo:CCsPmuL9}.A.)
++%Taken together, we think data from this specific experiment should be disregarded until more experiments are performed; as indicated earlier for this condition.
++%(This implies not taking into account all the right panels in figures \ref{fig:ribo:CCsEmuS2}.A, \ref{fig:ribo:CCsPmuS2}.A, \ref{fig:ribo:CCsEmuL9}.A and \ref{fig:ribo:CCsPmuL9}.A.)
+ %
+-In any case, for the other panels, we expect the CCs to show positive correlations that are symmetrical around zero delay, since we expect both reporters to represent the ribosomal concentration.
+-%
+-The left panel in \ref{fig:ribo:CCsEERiboribo}.A shows the S2-L9 concentration-concentration CC for growth in M9 minimal medium, which is --- against expectations --- not symmetric.
+-The S2-L9 concentration-concentration CC for growth in M9 minimal medium supplemented with antibiotics is different, but also not symmetric (figure \ref{fig:ribo:CCsEERiboribo}.B).
++Furthermore, the S2-L9 concentration-concentration CC for the experiment with this strain in M9 minimal medium supplemented with antibiotics is different, but also not symmetric (figure \ref{fig:ribo:CCsEERiboribo}.B).
+ %
+ This asymmetry is consistent with the earlier differences in expression growth CCs between the two labels.
+ Again, it might be that 
+@@ -843,7 +922,7 @@ We do not observe further noteworthy features in the production--production CCs.
+ \end{figure}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-% S2-Y ribosomal reporter
++% S2-Y ribosomal reporter CCs
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{figure}
+@@ -854,6 +933,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+         %
+ %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+ %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+@@ -869,6 +951,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+ %
+ %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+ %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+@@ -882,7 +967,7 @@ We do not observe further noteworthy features in the production--production CCs.
+ 
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-% L9-R ribosomal reporter
++% L9-R ribosomal reporter CCs
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{figure}
+@@ -893,6 +978,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+ %
+ %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+ %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+@@ -909,6 +997,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics. 
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+ %
+ %        (A) A: giu_asc1058_M9_steady, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+ %        (B) B: giu_asc1058_M9_steady_antibiotics, dR5_divAreaPx_cycCor_muP9_fitNew_atdR5_cycCor
+@@ -920,7 +1011,7 @@ We do not observe further noteworthy features in the production--production CCs.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-% Correlations between ribosomal expression r-protein1 and r-protein2
++% Correlations between ribosomal expression r-protein1 and r-protein2 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ \begin{figure}
+@@ -931,6 +1022,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+         %        
+     }
+     \label{fig:ribo:CCsEERiboribo}
+@@ -944,6 +1038,9 @@ We do not observe further noteworthy features in the production--production CCs.
+         (A) L9-R, S2-Y strain. Grown in in M9 minimal medium.
+         (B) L9-R, S2-Y strain. Grown in in M9 minimal medium supplemented with antibiotics.
+         "C", "Y" and "R" indicate the fluorescent labels by their colors: mCerulean (cyan), mVenus (yellow) and mCherry (red) respectively.
++        Both the black and red curves show the cross-correlation, based on two different calculation methods (see section \ref{sec:methods:CCs}).
++        Grey areas and blue lines indicate respectively the range and mean of negative control curves (see text for discussion).
++        All data is based on experiments with microfluidic device 2 (see also methods section).
+         %        
+     }
+     \label{fig:ribo:CCsPPRiboribo}
+@@ -967,7 +1064,7 @@ In conclusion, we have used different single cell approaches in an attempt to fu
+ We first performed an experiment using our microfluidic device 1 to subject cells to a switch from growth in minimal medium to growth in minimal medium with antibiotics.
+ Based on literature, we expected that cells needed a higher concentration of ribosomes when they were exposed to translational antibiotics (see e.g. ref. \cite{You2013}), and thus that single cells that expressed more ribosomes relative to the population average would benefit shortly after the switch.
+ %
+-If we would be able to observe such single cell growth advantages, this would imply 
++If we would be able to observe such single cell growth advantages, this might imply 
+ ribosomes are limiting in this scenario.
+ Their behaviour could then serve 
+ %limiting behaviour of ribosomes in this scenario and serve 
+@@ -1084,7 +1181,7 @@ pools of ribosomes with different ribosomal protein composition exist, which cou
+ This raised the suggestion that the cell can modulate expression of different ribosomal proteins separately, 
+ to achieve specific regulatory goals.
+ %
+-It is not infeasible this is also the case in \ecoli, and this would explain why experiments tracking different ribosomal proteins show different dynamics.
++It is not impossible this is also the case in \ecoli, and this would explain why experiments tracking different ribosomal proteins show different dynamics.
+ %
+ This potential added layer of regulation makes it more difficult to understand the effect of ribosomal concentration fluctuations.
+ Coincidentally, for eukaryotes, it has been observed that especially ribosomal surface proteins vary.
+@@ -1247,7 +1344,9 @@ During time lapse experiments under the microscope, tween20 (0.001\% g/mL) was a
+ %
+ When antibiotics are mentioned, this refers to tetracycline, which was used at a concentration of 0.5 $\upmu$M.
+ %
+-All experiments were conducted as described in the methods section of chapter \ref{chapter:filarecovery}.
++All experiments were conducted using microfluidic device 2 as described in the methods section of chapter \ref{chapter:filarecovery},
++except for one experiment (this is indicated in the figure caption), which was performed using a gel pad (see also chapter \ref{chapter:filarecovery}).
++%
+ See also chapter \ref{chapter:methods} for further information.
+ 
+ \section{Acknowledgements}
