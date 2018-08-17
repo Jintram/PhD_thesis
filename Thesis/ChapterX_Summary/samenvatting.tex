@@ -9,9 +9,9 @@
 \selectlanguage{dutch}
 
 
-In dit proefschrift onderzoeken we individuele bacteriecellen.
+In dit proefschrift beschrijven we onderzoek naar individuele bacteriecellen.
 We proberen hiermee meer inzicht te krijgen in het proces van celdeling tijdens ongunstige condities en
-het fenomeen van heterogeniteit in populaties beter te begrijpen.
+het fenomeen van heterogeniteit in cellulaire populaties beter te begrijpen.
 
 
 In \textbf{hoofdstuk \ref{chapter:introduction}} geven we een overzicht van de onderwerpen in dit proefschrift,
@@ -20,16 +20,17 @@ alsook context voor de leek.
 In \textbf{hoofdstuk \ref{chapter:methods}} beschrijven we vervolgens hoe we huidige methoden hebben uitgebreid om het gedrag van 
 individuele \textit{Escherichia coli} cellen te kunnen bestuderen.
 %
-We bespreken een PDMS \textit{microfluidics} opstelling die we gebruiken om microcolonies van bacteriecellen bloot te stellen aan veranderingen in groeimedium en te observeren, 
-software uitbreidingen die onze analyse van individuele cellen faciliteren,
+We bespreken een PDMS \textit{microfluidics} opstelling die we gebruiken om microcolonies van bacteriecellen bloot te stellen aan veranderingen in groeimedium en te observeren. 
+Daarnaast bespreken we software-uitbreidingen die onze analyse van individuele cellen faciliteren,
 en hoe we cross-correlaties kunnen toepassen op onze datastructuur (cross-correlaties zijn relevant in onze studie naar heterogeniteit).
 
 In \textbf{hoofdstuk \ref{chapter:filarecovery}} beschrijven we nieuwe inzichten aangaande celdeling in ongunstige condities.
 %
-In plaats van cellen te laten groeien in gunstige condities, wat meestal gedaan wordt in het lab, hebben we cellen laten groeien in ongunstige condities.
+In plaats van cellen te laten groeien in gunstige condities, wat meestal gedaan wordt in het lab, hebben we cellen laten groeien in ongunstige condities, 
 %
-Deze condities, namelijk blootstelling aan antibiotica en hoge temperaturen, 
-komen cellen in de echte wereld ook vaak tegen. 
+%Deze condities, 
+namelijk blootstelling aan antibiotica en hoge temperaturen, 
+Deze komen cellen in de echte wereld ook vaak tegen. 
 %kunnen cellen ook in de echte wereld tegenkomen.
 %
 De cellen reageren op deze ongunstige condities door te stoppen met delen terwijl ze wel blijven groeien. 
@@ -40,25 +41,25 @@ en leidt tot zeer lange cellen.
 Wanneer we overschakelden naar gunstige groeicondities, 
 herstelden de cellen zich door weer te gaan delen.
 %
-Tijdens dit proces verplaatsten de cellen hun potentiële delingsplekken (Fts ringen) continu.
+Tijdens dit proces verplaatsten de cellen hun potentiële delingsplekken (Fts-ringen) continu.
 %
-De plaatsing van de Fts ringen hing af van de lengte van de bacterie en werd bepaald door regulatie door Min eiwitten.
+De plaatsing van de Fts-ringen hing af van de lengte van de individuele bacterie en werd bepaald door regulatie door Min-eiwitten.
 %
-De Min eiwitten bleken te functioneren als waren zij een dynamische liniaal
+De Min-eiwitten bleken te functioneren als waren zij een dynamische liniaal
 %
 Dit resulteerde
 in zeer precieze regulatie van waar
 daadwerkelijke celdelingen plaatsvonden.
 %
-We laten in dit hoofdstuk ook zien dat de timing van de delingen plaatsvond volgens het zogenaamde \textit{adder} principe (letterlijk vertaald: toevoeger principe). 
+We laten in dit hoofdstuk ook zien dat de timing van de delingen plaatsvond volgens het zogenaamde \textit{adder}-principe (letterlijk vertaald: toevoeger-principe). 
 Dit dicteert dat cellen gemiddeld delen wanneer zij met een specifieke volume gegroeid zijn.
 %
-Deze observaties aangaande het Min systeem en het \textit{adder} principe zijn opzienbarend, 
+Deze observaties aangaande het Min systeem en het \textit{adder}-principe zijn opzienbarend, 
 aangezien deze systemen tot nu toe vooral beschouwd waren in de context van cellen met een normale morfologie.
 %
 De resultaten in dit hoofdstuk laten zien dat \ecoli cellen continu hun lengte meten om hun grootte te controleren,
 en duiden op een bredere relevantie van het 
-\textit{adder} principe en werpen een nieuw licht  
+\textit{adder}-principe en werpen een nieuw licht  
 op de functies van het Fts en Min systeem.
 
 
@@ -72,7 +73,7 @@ Zoals beschreven in hoofdstuk \ref{chapter:introduction}, laten zelfs genetisch 
 Uiteindelijk komt dat door het stochastische (willekeurige) karakter van de chemische reacties die plaatsvinden in de bacteriën.
 %
 Onderzoek naar heterogeniteit focust vaak 
-óf op processen waarin waar fenotypische effecten direct kunnen worden verbonden aan een bron van stochasticiteit,
+óf op processen waarin fenotypische effecten direct kunnen worden verbonden aan een bron van stochasticiteit,
 óf op hoe biochemische beslissingsnetwerken robuust kunnen zijn ondanks ruis die ontstaat door stochastische fluctuaties.
 %
 Hoe ruis zich voortplant in grote biochemische netwerken, en wat de effecten zijn op de staat van de cel, wordt minder vaak onderzocht.
@@ -84,14 +85,14 @@ We leggen hierin een focus op het metabolisme, aangezien dit een essentieel bioc
 In \textbf{hoofdstuk \ref{chapter:CRP}} onderzochten we de rol van regulatienetwerken in heterogeniteit.
 %
 Om deze rol verder te begrijpen keken we naar het 
-cAMP recepter eiwit (CRP), een \textit{master} regulatie eiwit dat de expressie van metabole enzymen reguleert.
+cAMP recepter-eiwit (CRP), een \textit{master} regulatie-eiwit dat de expressie van metabole enzymen reguleert.
 %
 Metabole enzymen zetten koolwaterstofmoleculen (zoals suikers) om in kleinere metabolieten. 
 Dit dient ook om de cel van energie te voorzien.
 %
 Sommige van deze metabolieten remmen CRP regulatie.
 %
-Deze negatieve feedback is eerder onderzocht, en 
+Deze negatieve feedback is eerder onderzocht, 
 er wordt gedacht dat deze interactie ertoe leidt dat
 het expressieniveau van metabole enzymen optimaal is.
 %
@@ -116,14 +117,14 @@ te reageren op dergelijke snelle signaalwisselingen.
 %Stochastische fluctuaties hebben ook vaak zulke snelle tijdschalen, maar dit laat zien dat de cel hier in
 %die wellicht ook veroorzaakt worden door stochastische fluctuaties.
 %
-Daarna onderzochten we het verschil in de dynamiek van de CRP regulatie in een wild type \ecoli stam (waarin het feedback systeem intact is) en de \ecoli stam zonder feedback.
+Daarna onderzochten we het verschil in de dynamiek van de CRP regulatie in een wild type \ecoli stam (waarin het feedbacksysteem intact is) en de \ecoli stam zonder feedback.
 %
 Met behulp van een cross-correlatie analyse van de expressie-groei dynamica en wiskundige modellen van de dynamica, konden we laten zien dat deze verschillen er zijn en hier een interpretatie aan geven.
 %
 De analyse suggereerde dat het regulatienetwerk inderdaad reageert op stochastische fluctuaties in de cel.
 Daarnaast waren de resultaten consistent met een interpretatie van de dynamica waarin de regulatie er voor zorgde dat ruis zich minder goed kon voortplanten.
 %
-In bredere zin zou dit erop kunnen duiden dat regulatienetwerken in cellen in een continu veranderende staat zijn, doordat zij continu reageren op stochastische fluctuaties en daaropvolgende effecten.
+In bredere zin zou dit erop kunnen duiden dat regulatienetwerken in cellen in een continu veranderende staat zijn doordat zij continu reageren op stochastische fluctuaties en daaropvolgende effecten.
 
 
 Ten slotte onderzoeken we de rol van ribosomen in cellulaire heterogeniteit in \textbf{hoofdstuk \ref{chapter:ribosomes}}.
@@ -136,7 +137,7 @@ literatuur is dat stochastische fluctuaties in de concentratie van ribosomen lei
 simultane fluctuaties in genexpressie. 
 %
 Aangezien de productie van eiwitten een essentiële 
-rol heeft in cel groei,
+rol heeft in celgroei,
 hadden we tevens de hypothese dat op het niveau van één cel fluctuaties in ribosoomconcentraties wellicht ook een effect zouden hebben op de groeisnelheid van de cel.
 %
 In dit hoofdstuk hebben we deze twee hypotheses onderzocht.
@@ -147,7 +148,7 @@ Daarnaast hebben we een fluorescent eiwit ingebracht dat constant tot expressie 
 %
 Dit eiwit hebben we gebruikt om het verband te onderzoeken tussen de ribosoomconcentratie en eiwitproductie.
 %
-We hebben de expressie van deze reporters en de groeisnelheden gemeten in individuele cellen in verschillende groeimedia, en hebben daarnaast condities onderzocht waarin de cellen waren blootgesteld aan sub-letale concentraties translatie inhiberende antibiotica.
+We hebben de expressie van deze reporters en de groeisnelheden gemeten in individuele cellen in verschillende groeimedia en hebben daarnaast condities onderzocht waarin de cellen waren blootgesteld aan subletale concentraties translatie inhiberende antibiotica.
 %
 Ook hier hebben we cross-correlatie analyses uitgevoerd, 
 maar we hebben onvoldoende bewijs gevonden om aan te tonen
