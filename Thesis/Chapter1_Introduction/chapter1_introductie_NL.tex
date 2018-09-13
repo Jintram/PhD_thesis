@@ -19,30 +19,31 @@ Kwantitatieve beschrijvingen van fenomenen kunnen inzichten geven waar men ander
 %
 Ook in de biologie zijn hier voorbeelden van.
 %
-Zoals het Lotka-Volterra model uit de vroege 20e eeuw \cite{Lotka1920,Volterra1928}, dat fluctuaties in de hoeveelheden roofdieren en prooien verklaart met behulp van differentiaalvergelijkingen.
+Zoals het Lotka-Volterra model uit de vroege 20e eeuw \cite{Lotka1920,Volterra1928}, dat fluctuaties in hoeveelheden roofdieren en prooien verklaart met behulp van differentiaalvergelijkingen.
 %
 Of het wiskundige reactie-diffusiemodel van Alan Turing,
 dat verklaart hoe ruimtelijke heterogeniteit spontaan kan ontstaan uit moleculen die 
 interageren volgens simpele regels \cite{Turing1952}.
 %
-Deze principes zijn bijvoorbeeld extreem belangrijk tijdens de embryogenese, wanneer cellen moeten bepalen tot welk deel van het lichaam zij zich zullen ontwikkelen.
+Dit principe is bijvoorbeeld extreem belangrijk tijdens de embryogenese, wanneer cellen moeten bepalen tot welk deel van het lichaam zij zich zullen ontwikkelen.
 %
 Echter,
 wellicht deels vanwege een terughoudendheid bij biologen  \cite{Lazebnik2003} en deels door een gebrek aan de juiste onderzoeksmiddelen \cite{Kitano2002, Wollman2018}, 
 zijn dit soort kwantitatieve methoden nooit breed toegepast in de biologie.
 %
-Maar sinds het nieuwe millennium heeft kwantitatieve biologie
-een enorme vlucht genomen.
+Sinds het nieuwe millennium heeft kwantitatieve biologie echter 
+een enorme vlucht genomen. 
 %
 Ik hoop dat het werk dat beschreven wordt in deze thesis ook spannende voorbeelden geeft van nieuwe inzichten die verkregen zijn met deze nieuwe golf van kwantitatieve onderzoeken.
 
 
 
 
-\section{Prying in the lives of single cells}
+%\section{Prying in the lives of single cells}
+\section*{Het leven van individuele cellen bespieden}
 
 Voordat \textit{high troughput} methoden werden uitgevonden, 
-bestudeerden bacteriële onderzoekers doorgaans geen individuele exemplaren van hun onderzoeksobjecten. 
+bestudeerden bacteriële onderzoekers doorgaans geen individuele exemplaren van het organisme waar ze in geïnteresseerd waren. 
 %
 Metingen werden gedaan aan reageerbuizen met miljoenen bacteriële cellen.
 %
@@ -60,58 +61,67 @@ natekenen
 om delingstijden (een maat voor de groeisnelheid) van individuele bacteriën te bepalen \cite{Kelly1932}.
 %
 Tegenwoordig
-kunnen we hetzelfde hetzelfde doen met een computer, 
+kunnen we hetzelfde doen met een computer, 
 en het leven van duizenden bacterien in kaart brengen in slechts een paar dagen werk.
-Zie ook hoofdstuk \ref{chapter:methods} van deze thesis.
 %
-Figuur \ref{fig:intro:bacs}.A laat een voorbeeld zien van een microscoop-opname van een microkolonie van de staafvormige \textit{Escherichia coli} bacterie,
+Figuur \ref{fig:intro:bacs}.A laat een voorbeeld zien van een microscoopopname van een microkolonie van de staafvormige bacterie \textit{Escherichia coli} (\ecoli),
 verkregen met een van onze microscopen.
 %
+Zie hoofdstuk \ref{chapter:methods} van deze thesis voor meer over hoe wij metingen verrichten. 
+%
 Een dergelijke geautomatiseerde aanpak 
-om individuele cellen (\text{single cells}) te bestuderen 
+om individuele cellen (\textit{single cells}) te bestuderen 
 geeft nieuwe inzichten,  
 %
 zoals bijvoorbeeld beschreven in hoofdstuk \ref{chapter:filarecovery}.
 %
 Hierin beschrijven we dat 
 toen we de effecten van antibiotica op individuele cellen wilden onderzoeken, 
-ons iets eigenaardigs opviel \cite{RozendaalVerslagXXX}.
+ons iets eigenaardigs opviel. % \cite{RozendaalVerslagXXX}.
 %viel ons iets eigenaardigs op.
 %
 De bacteriën stopten met delen door de antibiotica, 
 maar bleven wel groeien,
 waardoor zogeheten gefilamenteerde bacterien ontstonden.
 %
-Deze bacteriën hebben een sterk verlengde morfologie,
+Deze bacteriën hebben een sterk verlengd uiterlijk,
 zie ook figuur \ref{fig:intro:bacs}.B.
 %
-Wanneer de antibiotica verwijderd werd, en de \ecoli met de verlengde morfologieën weer startten met delen, 
+Wanneer de antibiotica verwijderd werden, en de \ecoli met de verlengde morfologieën weer startten met delen, 
 zagen we dat ze altijd deelden op zeer bepaalde relatieve posities.
 %
-Voor deze observaties dacht men dat gefilamenteerde bacteriën zich gedroegen als een ketting van samengevoegde bacteriën.
+Voorheen dacht men dat gefilamenteerde bacteriën zich gedroegen als een ketting van samengevoegde bacteriën.
 %
 Maar in plaats van te delen volgens regels zoals je die op basis van deze aanname zou verwachten,
 volgden de bacteriën een heel andere set regels.
 %
-Dit vereiste een onverwachte en niet eerder geziene mobiliteit van de bacteriële delingsstructuren.
+Dit vereist een onverwachte en niet eerder geziene mobiliteit van de bacteriële delingsstructuren.
 %
-Het liet ook zien dat bacteriële regulatiesystemen die de delingsstructuren plaatsen een functionaliteit hebben in de filamenteuze bacteriën, die eerder niet onderkend werd. 
+Dit onderzoek liet ook zien dat bacteriële regulatiesystemen die de delingsstructuren plaatsen een functionaliteit hebben in de filamenteuze bacteriën.
+Dit werd eerder niet onderkend. % die eerder niet onderkend werd. 
 %
-Daarnaast impliceren de resultaten dat bacteriën hun grootte nauwkeurig reguleren, zelfs als ze een geprolongeerde morfologie hebben. 
+Daarnaast impliceren de resultaten dat bacteriën hun grootte nauwkeurig reguleren, zelfs als ze een 
+verlengd uiterlijk hebben. 
+%geprolongeerde morfologie hebben. 
 %
-De filamenteuze morfologie wordt niet vaak in het lab bestudeerd, maar is wel relevant in de praktijk, waar bacteriën bijvoorbeeld antibiotica kuren of koude condities (in de koelkast) overleven door een gefilamenteerde vorm aan te nemen.
+Deze filamenteuze morfologie wordt niet vaak in het lab bestudeerd, maar is wel relevant in de praktijk, waar bacteriën bijvoorbeeld antibioticakuren of koude condities (zoals in koelkasten) overleven door een gefilamenteerde vorm aan te nemen.
 
 
 \begin{figure}
     \begin{minipage}[c]{0.5\textwidth}
         %\centering    
         %\includegraphics[width=1.0\textwidth]{pdf_2016-02-17_pos2_L31-mCerulean_clouds.pdf}
-        \includegraphics[width=0.99\textwidth]{figure_bacterial_colonies.pdf}
+        \includegraphics[width=0.99\textwidth]{figure_bacterial_colonies_v2.pdf}
     \end{minipage}\hfill
     \begin{minipage}[c]{0.5\textwidth}
         \caption{ 
-            \textbf{Bacterial colonies.}
-            These pictures were taken with a microscope in the Tans lab, and show a growing microcolony of bacteria in favorable conditions (A) and (part of) a colony of bacteria that are exposed to a sub-lethal dosis of the antibiotic tetracycline (B). This colony in panel B shows a so-called filamentous morphology, because under the influence of certain stresses bacteria can stop dividing but continue elongating. 
+            \textbf{Bacteriekolonies.}
+            Deze twee foto's zijn genomen met de microscopen van het Tans lab, en laten een groeiende microkolonie van bacteriën zien in 
+            gunstige condities (A), en (een deel van) een bacteriële microkolonie die is blootgesteld aan een niet-dodelijke concentratie van het antibioticum tetracycline (B). De bacteriën in de kolonie in figuur \ref{fig:intro:bacs}.B laten een gefilamenteerd uiterlijk zien doordat zij zijn gestopt met delen maar nog wel groeien. Dit is een reactie op stresscondities, waaronder blootstelling aan antibiotica.
+            %            
+%            \textbf{Bacterial colonies.}
+%            These pictures were taken with a microscope in the Tans lab, and show a growing microcolony of bacteria in favorable conditions (A) and (part of) a colony of bacteria that are exposed to a sub-lethal dosis of the antibiotic tetracycline (B). This colony in panel B shows a so-called filamentous morphology, because under the influence of certain stresses bacteria can stop dividing but continue elongating. 
+%            %
             % 1uM TET, note that information on this dataset can be found in the script 
             % ershovwehrensallfigures
             %
@@ -126,49 +136,52 @@ De filamenteuze morfologie wordt niet vaak in het lab bestudeerd, maar is wel re
 
 \textit{Single cell} experimenten helpen ons ook verschillen tussen individuele bacteriën beter te begrijpen.
 %
-In 1976 lieten Spudich en Koshland in een baanbrekende studie zien dat genetisch identieke bacteriën toch ander gedrag laten zien wanneer zij naar voedsel zoeken \cite{Spudich1976}.
+In 1976 lieten de onderzoekers Spudich en Koshland in een baanbrekende studie zien dat genetisch identieke bacteriën toch ander gedrag laten zien wanneer zij naar voedsel zoeken \cite{Spudich1976}.
 %
 Sommige bacteriën zwommen liever lange rechte stukken, terwijl anderen liever vaker van richting veranderden tijdens het zwemmen, waardoor ze een kronkeliger zoekpad aflegden.
 %
-Dit verschil in gedrag werd toegeschreven aan kans-gebeurtenissen in hun interne processen.
+Dit verschil in gedrag werd toegeschreven aan kansgebeurtenissen in hun interne processen.
 %Dit verschil in gedrag werd toegeschreven aan gebeurtenissen met een willekeurige component in hun interne processen.
 %
 Het is nu duidelijk dat in het algemeen geldt dat biochemische processen die leiden tot het maken van bacteriële beslissingen niet altijd dezelfde uitkomst hebben. 
 %
 Er wordt gedacht dat de bron van deze stochasticiteit ligt in reacties tussen moleculen die slechts in kleine aantallen aanwezig zijn, maar plaatsvinden in relatief grote volumes.
 %
-Omdat de reactanten elkaar moeten vinden door diffusie, introduceert dat een kans component.
+Omdat de reactanten elkaar moeten vinden door diffusie (willekeurige bewegingen), introduceert dat een kanscomponent.
 %
 Deze stochasticiteit beïnvloedt ook de expressie van genen.  
 %
 Zelfs wanneer een gen op een constant, gelijk niveau wordt geactiveerd door regulatiemoleculen, zal de expressie van dat gen fluctueren over de tijd en verschillend zijn tussen individuen \cite{Elowitz2002}. 
 %
-Dit impliceert dat eiwitten concentraties in cellen constant fluctueren, wat alle cellulaire processen zal beïnvloeden.
+Dit impliceert dat eiwitconcentraties in cellen constant fluctueren, wat gevolgen heeft voor alle cellulaire processen. 
 %
-Inderdaad is aangetoond dat zelfs fluctuaties in de concentraties van één enzym kan leiden tot fluctuaties in de groeisnelheid van individuele cellen \cite{Kiviet2014}.
+Inderdaad is aangetoond dat zelfs fluctuaties in de concentraties van één enzym kunnen leiden tot fluctuaties in de groeisnelheid van individuele cellen \cite{Kiviet2014}.
 %
-Hoofdstuk \ref{chapter:literaturereview} is een literatuurstudie naar de consequenties van stochasticiteit voor het bacteriele metabolisme, en daaruit volgende effecten op de groei van individuele cellen en populatiedynamica.
+In hoofdstuk \ref{chapter:literaturereview} diepen we dit onderwerp verder uit met
+een literatuurstudie naar de consequenties van stochasticiteit voor het bacteriele metabolisme, en daaruit volgende effecten op de groei van individuele cellen en populatiedynamica.
 
-\section{Regulatie en stochasticiteit}
+\section*{Regulatie en stochasticiteit}
 
-Een interessante vraag is in hoe verre stochastische fluctuaties cellulaire regulatienetwerken verstoren. 
+Een open vraag is in hoe verre stochastische fluctuaties cellulaire regulatienetwerken verstoren. 
 %
 In hoofdstuk \ref{chapter:CRP} laten we zien dat een belangrijke metabool regulatie-eiwit niet alleen reageert op signalen uit cellulaire omgeving, 
 maar ook reageert op stochastische fluctuaties die vanuit de cel zelf komen.
 %
-Dit doet vermoeden dat een stochastische fluctuatie in een eiwit concentratie die ergens in de cel ontstaat (bijvoorbeeld in de concentratie van een metabool enzym) gevolgd kan worden door een fluctuatie van een specifieke metaboliet, wat op zijn beurt weer leidt tot een regulatoire respons, wat leidt tot de productie van extra eiwitten, wat vervolgens weer leidt tot andere cellulaire responsen, et cetera. 
+Dit doet vermoeden dat een stochastische fluctuatie in een eiwitconcentratie die ergens in de cel ontstaat (bijvoorbeeld in de concentratie van een metabool enzym) gevolgd kan worden door een fluctuatie van een specifieke metaboliet, wat op zijn beurt weer leidt tot een regulatoire respons, wat leidt tot de productie van extra eiwitten, wat vervolgens weer leidt tot andere cellulaire responsen, et cetera. 
 %
-In andere woorden, fluctuaties kunnen via regulatoire interacties wellicht consequenties hebben voor alle processen in de cel.
+In andere woorden: fluctuaties kunnen via regulatoire interacties wellicht consequenties hebben voor alle processen in de cel.
 Dit zou ook een effect kunnen hebben op bijvoorbeeld de groeisnelheid van de cel.
 %
 Op zijn beurt doet dat vermoeden dat cellen niet in een constante staat (chemische samenstelling) verkeren die lijkt op de gemiddelde cel, 
 maar dat zij in plaats daarvan een constant veranderende staat hebben.
 %
-Naar aanleiding van hoofdstuk \ref{chapter:CRP} kan worden getwijfeld aan de relevantie van de vraag in hoe verre stochastische fluctuaties regulatienetwerken verstoren.
+Naar aanleiding van dit hoofdstuk 
+%\ref{chapter:CRP} 
+kan worden getwijfeld aan de relevantie van de vraag in hoe verre stochastische fluctuaties regulatienetwerken verstoren.
 Wellicht is een relevantere vraag in hoe verre stochastische fluctuaties een integraal onderdeel zijn van die regulatie \cite{Wollman2018}.
 
 
-\section{De herkomst van cellulaire individualiteit}
+\section*{De herkomst van cellulaire individualiteit}
 
 In het laatste hoofdstuk van deze thesis, hoofdstuk \ref{chapter:ribosomes}, proberen we cellulaire individualiteit beter te begrijpen.
 %
@@ -177,18 +190,21 @@ Onze focus ligt hierbij op het ribosoom.
 In het algemeen, op een paar uitzonderingen na, zijn alle onderdelen van de cel eiwitten, of geproduceerd door reacties die gekatalyseerd worden door eiwitten. 
 Eiwitten zelf worden ook gemaakt door complexen (samengestelde structuren) van vele eiwitten. Deze worden ribosomen genoemd.
 %
-Ribosomen zijn ook de uitzondering op eerder genoemde regel, aangezien zij ook bestaan uit RNA.
+Ribosomen zijn ook de uitzondering op eerder genoemde regel, aangezien zij naast eiwitten ook bestaan uit RNA.
 %
-Ribosomen zouden een grote bron van cellulaire heterogeniteit kunnen zijn, omdat ze vaak worden genoemd als een cellulaire onderdelen waarvan concentratie fluctuaties effecten in de gehele cel zouden moeten hebben \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
+Ribosomen worden vaak genoemd als bron van cellulaire heterogeniteit \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}. 
+%Ribosomen zouden een grote bron van cellulaire heterogeniteit kunnen zijn, omdat ze vaak worden genoemd als een cellulaire onderdelen waarvan concentratie fluctuaties effecten in de gehele cel zouden moeten hebben \cite{Davidson2008, Raj2008, Chalancon2012, Bruggeman2018}.
 %
 Het idee hierachter is dat als de concentratie ribosomen fluctueert, de productiesnelheden van alle eiwitten die worden geproduceerd in de cel mee fluctueren. 
 %
-Deze cel-brede fluctuaties kunnen in potentie consequenties hebben voor alle cellulaire processen, 
+Deze celbrede fluctuaties kunnen in potentie consequenties hebben voor alle cellulaire processen, 
 inclusief groei en gedrag.
 %
 We hebben deze hypothese onderzocht, maar konden deze noch valideren noch weerleggen.
 %
-Dit zou kunnen komen doordat de ribosomen zo een ingewikkeld complex van eiwitten en RNA zijn, waarvan de onderdelen waarvan we de concentratie experimenteel kunnen volgen elk een eigen dynamiek hebben.
+Dit zou kunnen komen doordat de ribosomen zo een ingewikkeld complex van eiwitten en RNA zijn, 
+dat elk onderdeel ervan dat wij kunnen labelen zijn eigen dynamiek kent en tot andere resultaten leidt. 
+%waarvan de onderdelen waarvan we de concentratie experimenteel kunnen volgen elk een eigen dynamiek hebben.
 %
 Dit laatste hoofdstuk laat dus zien dat het onderwerp cellulaire individualiteit nog vele open vragen kent.
 
