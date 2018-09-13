@@ -9,7 +9,7 @@
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.8\textwidth]{Graphical_Abstract.pdf} %   width=13.97cm
+    \includegraphics[width=0.8\textwidth]{thesis_Graphical_Abstract.png} %   width=13.97cm
     \caption*{ 
         \centering        
         \textbf{Graphical abstract.}
@@ -46,7 +46,7 @@ To investigate divisions in filamented Escherichia coli cells we used a microflu
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{Figure1.pdf}
+    \includegraphics[width=1.0\textwidth]{thesis_Figure1.png}
     \caption{ 
         \textbf{Division site rules in filamentous E. coli.} 
         %        Figure 1. 
@@ -65,7 +65,7 @@ To study the recovery process in time, we quantified cellular lengths along line
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{Figure2.pdf}
+    \includegraphics[width=1.0\textwidth]{thesis_Figure2.png}
     \caption{ 
         \textbf{Time and length changes between divisions.}
         (A) Measured cell lengths over time after switching from stress medium (1 μM tetracycline) to non-stress medium. Grey traces correspond to single cell lengths. Colored lines are lineages following the longest daughter, black line the shortest daughter. Black squares indicate end of measurement. Data is from five 1μM tetracycline recovery experiments (N = 4134 cells). (B) Interdivision time against mother birth size, for recovery from 1μM tetracycline. Black dots are averages, bars are standard deviations (N = 4108 division events). (C) Average interdivision time against mother birth size, for recovery from 1μM tetracycline (blue), 42 °C heat shock (red), and overexpression of the division-inhibitor SulA (green) (N=4108, N=404, and  N=494 division events, respectively). Error bars show SEM. (D) Absolute length added between two divisions against mother birth size. Black dots are averages (N = 4108 division events.), error bars show SEM. See also Figure S\ref{fig:filarecovery:figsupp2}.
@@ -82,7 +82,7 @@ The data revealed that the reductive divisions during recovery occur in concert 
 
 \begin{figure}
     \centering
-    \includegraphics[width=1.0\textwidth]{Figure3.pdf}
+    \includegraphics[width=1.0\textwidth]{thesis_Figure3.png}
     \caption{ 
         \textbf{Dynamic reorganization of division rings.}           
         (A) Fluorescence image of sYFP2-FtsA signal in cells filamented by heat shock at 42 °C. FtsA is an essential component of the division apparatus. Blue lines indicate cell edge determined from phase contrast imaging. (B) Kymograph of sYFP2-FtsA intensity profiles along the long cellular axis, for cells recovering from 1μM tetracycline. Red indicates division events, blue the resulting separation between daughters. See main text for arrow. (C) Similar kymograph for filamentous cells during heat shock at 42 °C. (D) Relative locations of sYFP2-FtsA peaks along the cellular axis, during heat shock at 42 °C and subsequent growth at 37 °C. Colored bars correspond to inferred division site rules (Fig. \ref{fig:filarecovery:fig1}.D-E). Peaks were identified using a Matlab peak finder algorithm (N = 1572 cell images, taken from 400 cell cycles). See also Fig. S\ref{fig:filarecovery:figsupp3}.        
@@ -96,6 +96,16 @@ Thus, the dynamics of the division rings is important to obeying the spatial div
 
 \subsection{Min oscillations can explain division site rules}
 The spatial position rules indicate absolute bounds for the distance between putative sites. Specifically, this distance is on average between 1.5 and 2.5$w$, with $w$ being approximately 3 μm. These observations indicate a mechanism able to measure absolute lengths. We surmised that this function is served in \ecoli by proteins encoded at the min locus: MinC, MinD, and MinE. MinD can bind to the cell membrane, and the MinD and MinE reaction-diffusion system results in pole to pole oscillations of MinD along the cell membrane. In non-filamentous cells, the time-averaged concentration profile of MinD shows a minimum value localized at $S = 1/2$. Because MinC binds MinD, but also inhibits ring formation, non-filamentous cells form division rings mid-cell \cite{Loose2011, Raskin1999}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{thesis_Figure4.png}
+    \caption{ 
+        \textbf{Min oscillations can explain division site rules.}           
+        (A) Computed time-averaged MinD concentration profile along the longitudinal cellular axis for cells of different lengths, using the Meinhardt and De Boer \cite{Meinhardt2001} model. Green corresponds to high MinD concentrations. Grey dots are observed divisions (Fig. \ref{fig:filarecovery:fig1}.D). Simulation results are scaled linearly along x-axis for best correspondence with the experimental data. (B) Experimentally obtained time-averaged intensity profiles of YFP-MinD fusion proteins for cells of different sizes. Top to bottom indicated 1, 3 and 5 minima. Low values at cell poles are artefacts due decreasing cellular width. (C) Division sites in minCDE null strains filamented by 2 μM tetracycline. Each point corresponds to one division (N = 1260). Data is symmetric around S = 1/2. Colored dotted lines denote division rules in wild type cells (Fig. \ref{fig:filarecovery:fig1}.D). Minicells were observed (inset), but were not included in the analysis (grey shaded region).  (D) Cartoon illustrating the observed division site plasticity. Changes in cell length, due to continued cell growth (top) or division events (bottom) produce discontinuous changes in the MinD profile, and corresponding reorganization of the pattern of division rings, and ultimately locations of division events. See also Figure S\ref{fig:filarecovery:figsupp4}, Table S\ref{table:filarecovery:tsupp1} and S\ref{table:filarecovery:tsupp2}.        
+    }
+    \label{fig:filarecovery:fig4}
+\end{figure}
 
 To test whether MinD oscillations could contribute to the division rules in filamentous cells, we extended the reaction-diffusion model of Meinhardt and De Boer \cite{Meinhardt2001} (Materials and Methods). Strikingly, the simulations recapitulated all key features of the spatial position rules (Figs \ref{fig:filarecovery:fig1}.D,G and \ref{fig:filarecovery:fig4}.A): distinct length windows of equal size, discontinuous changes in all minima positions between adjacent windows, and absolute bounds for the distance between minima. A similar MinD pattern was obtained using model of Huang et al. \cite{Huang2003} as implemented by Fange et al. \cite{Hattne2005, Fange2006} (Fig. S\ref{fig:filarecovery:figsupp4}.A). To obtain further support for a role of the Min system in the position rules, we used a YFP-MinD fusion to assess the MinCD distribution. The resulting time-averaged fluorescence profiles validated the simulation results (Fig. \ref{fig:filarecovery:fig4}.B). 
 
@@ -204,17 +214,6 @@ In tetracycline experiments, strain ASC555 (see Key Resource Table) was grown in
 \subsubsection{Imaging and image analysis}
 Cells were imaged with an inverted microscope (Nikon, TE2000), equipped with 100X oil immersion objective (Nikon, Plan Fluor NA 1.3), cooled CMOS camera (Hamamatsu, Orca Flash4.0), xenon lamp with liquid light guide (Sutter, Lambda LS), GFP, mCherry, CFP and YFP filter set (Chroma, 41017, 49008, 49001 and 49003), computer controlled shutters (Sutter, Lambda 10‐3 with SmartShutter), automated stage (Märzhäuser, SCAN IM 120 x 100) and an incubation chamber (Solent) allowing precise 37 °C temperature control. An additional 1.5X lens was used, resulting in images with pixel size of 0.041 $\upmu$m. The microscope was controlled by MetaMorph software. Series of phase contrast images were analyzed with a custom Matlab (Mathworks) program originally based on Schnitzcells software \cite{Young2012}, which allows for automated segmentation of cells growing in a colony. The number of segmented and analyzed colonies was: 5 (1 μM tetracycline), 3 (2 μM tetracycline), 3 (10 μM tetracycline), 5 (SulA), 2 (temperature), 1 (nucleoid), 5 (Min deletion). In the Min deletion experiments, mini-cells were observed (inset Fig. \ref{fig:filarecovery:fig4}.C) but not segmented because of their abnormal size and dynamics. For all experiments, some cell cycles could not be monitored completely because the cells grew outside the field of view or because the experiment stopped, and were hence excluded from the analysis. To follow the cells over time, the images were manually corrected where necessary, and tracked to create a lineage branch-like structure. Each cell’s length (polynomial fitted to a cell’s curved segmentation region, or the segmented region's skeleton length for the temperature and sulA datasets) is computed for each frame. To determine relative division locations S, daughter cell lengths were divided by the maternal cell length (defined as the summed length of the two daughters). Growth rates were determined by fitting an exponential function to recorded cell lengths over multiple frames. For the experiments involving labeled FtsA or nucleoids, the fluorescent intensity along the cellular axis was determined using 1 pixel wide slices perpendicular to the morphologically computed skeleton. Peaks were then identified using the function peakfinder.m written by Nathanael C. Yoder; only peaks with a signal above a threshold level of 400 A.U. were considered (against an estimated background signal of approximately 50-100 A.U.). In Figure \ref{fig:filarecovery:fig3}.A, the signal intensity outside cells was decreased for visualization purposes.
 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\textwidth]{Figure4.pdf}
-    \caption{ 
-        \textbf{Min oscillations can explain division site rules.}           
-        (A) Computed time-averaged MinD concentration profile along the longitudinal cellular axis for cells of different lengths, using the Meinhardt and De Boer \cite{Meinhardt2001} model. Green corresponds to high MinD concentrations. Grey dots are observed divisions (Fig. \ref{fig:filarecovery:fig1}.D). Simulation results are scaled linearly along x-axis for best correspondence with the experimental data. (B) Experimentally obtained time-averaged intensity profiles of YFP-MinD fusion proteins for cells of different sizes. Top to bottom indicated 1, 3 and 5 minima. Low values at cell poles are artefacts due decreasing cellular width. (C) Division sites in minCDE null strains filamented by 2 μM tetracycline. Each point corresponds to one division (N = 1260). Data is symmetric around S = 1/2. Colored dotted lines denote division rules in wild type cells (Fig. \ref{fig:filarecovery:fig1}.D). Minicells were observed (inset), but were not included in the analysis (grey shaded region).  (D) Cartoon illustrating the observed division site plasticity. Changes in cell length, due to continued cell growth (top) or division events (bottom) produce discontinuous changes in the MinD profile, and corresponding reorganization of the pattern of division rings, and ultimately locations of division events. See also Figure S\ref{fig:filarecovery:figsupp4}, Table S\ref{table:filarecovery:tsupp1} and S\ref{table:filarecovery:tsupp2}.        
-    }
-    \label{fig:filarecovery:fig4}
-\end{figure}
-
 \subsubsection{Simulations with the Meinhardt and De Boer model}
 We simulated the Min system behavior using the differential equations and rate constants described in Table S\ref{table:filarecovery:tsupp1}, which were developed by Meinhardt and De Boer \cite{Meinhardt2001}. We extended the range of bacterial lengths simulated. This simulation numerically solves the differential equations, with stochastically fluctuating reaction constants, to calculate the protein numbers in each length element of a cell for multiple reaction species. We ran simulations for bacterial lengths of 15 to 100 a.u. for 106 iterations and recorded the system state every 1000 iterations. We then calculated the time-averaged MinD protein number profiles for each bacterial length. 
 
@@ -232,3 +231,4 @@ Analysis and plotting was performed using custom Matlab scripts, which can be fo
 \texttt{https://github.com/TansLab/Tans\_Schnitzcells}, \\ 
 \texttt{https://github.com/TansLab/Tans\_filamentation}, and \\
 \texttt{https://github.com/TansLab/Common\_libraries}.
+

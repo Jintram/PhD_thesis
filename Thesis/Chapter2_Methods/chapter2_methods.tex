@@ -135,7 +135,7 @@ Typical flow rates are between 0.5 and 1.0 mL/hr.
 % note that this was developed by Daan Kiviet
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{devices.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_devices-01.png}
 	\caption{ 
 		(A) Schematic view of a sample that employs a gel pad to grow cells. Two metal parts (grey) hold the glass slides together using screws. Bacteria are pipetted onto a gel pad (red arrow) which is placed in a chamber build from a glass microscope slide, a glass slide with a hole, and a cover slip. The image is placed upside down in the microscope, the eye indicate the direction from which the microscope will image the sample. Image by Noreen Walker.
 		(B) Cartoon (not on scale) of a microfluidic device used in some experiments in this thesis. 
@@ -157,7 +157,7 @@ Typical flow rates are between 0.5 and 1.0 mL/hr.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{microscope_setup.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_microscope_setup-01.png}
 	\caption{ 
 	(A) Microscopy setup. One syringe pump (see label 1) pumps culture medium into the sample on the microscope stage in the temperature chamber and then to a waste collection Erlenmeyer flask (2), the other pump pumps medium directly to a waste Erlenmeyer. The two pumps in combination with an automated valve (3) that controls which medium goes to the sample and which directly goes to the waste flask allow for quick switching between the two media.
 	(B) The microfluidic device under the microscope. 
@@ -220,7 +220,7 @@ that holds additional files required to run the full analysis.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{guiSchnitzcells.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_guiSchnitzcells-01.png}
 	\caption{ 
 		(A) Screenshot of the GUI introduced to increase the efficiency of the analysis.
 		(B) Screenshot of the Matlab figure with which the user can interact to manually correct the analysis. The segmentation is shown by the colors, and the circles show (corrected and uncorrected) centers of cells from the previous frame.
@@ -254,7 +254,7 @@ More adjustments were made during the tracking of cells, see next section.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{analyses1.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_analyses1-01.png}
 	\caption{ 
 		 (A) The result of the segmentation algorithm, outlines of determined cell areas are shown in color.  (A frame the nucleoid labeled cells time lapse data from chapter \ref{chapter:filarecovery} is shown.) Images are cropped to increase computational efficiency, and also to remove the main channel structure. Note that cells are generally flushed out when they reach the main channel. Growth results in cells moving towards the well exit at the main channel, or towards the edge of the picture labeled top here. Cells that are partially outside the cropped image are ignored in the analysis.
 		 (B) The image in panel A is cropped, this panel shows the full image taken by the microscope. The asterisk indicates the well which is also displayed in other panels.
@@ -334,7 +334,7 @@ by placing lines of equal length tangential to the skeleton, and subsequently pl
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{skeleton_and_straightening.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_skeleton_and_straightening-01.png}
 	\caption{ 
 		(A) Skeleton of an example cell area (gray) calculated by Matlab's \texttt{bwmorph} function, after removal of side branches. 
 		(B) The skeleton is extrapolated towards cell poles (black circles) using the ends of the skeleton (purple and yellow dots). The total cell length is calculated by summation of the lengths of the extrapolated and original skeleton parts.
@@ -466,7 +466,7 @@ Thus, the scatter plots also provide a way to generate a cross-correlation funct
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{delayedscatter.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_delayedscatter-01.png}
 	\caption{ 
 		(A) Two example noisy signals, $f(t)$ and $g(t)$. $f(t)$ shown in blue is a random walk process, while $g(t)$ shows a random walk plus a contribution by $f(t-50)$, i.e. $g(t)=.8\cdot w(t)+.2\cdot f(t-50)^2$, where $w(t)$ represents a random walk like $f(t)$.
 		(B-C) As expected, this imaginary scenario shows that plotting $f(t)$ against $g(t)$ reveals the correlation between $f$ and $g$ poorer compared to plotting $f(t)$ against $g(t-50)$.
@@ -745,7 +745,7 @@ The result of these procedures is shown in Figure \ref{fig:mm:exampleCC}.D.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.9\textwidth]{correlationsExample.pdf}
+	\includegraphics[width=0.9\textwidth]{thesis_correlationsExample-01.png}
 	\caption{ 
 		(A) Example of fluorescence images from a gel pad experiment, where typically a small colony (left) grows into a bigger colony (right).
 		% F:\EXPERIMENTAL_DATA_2014-2015_m1\2015-06-12_CRP_asc852-853_plasmids\pos1crop\configFileMadeLater_2015-06-12_pos1.xlsx
