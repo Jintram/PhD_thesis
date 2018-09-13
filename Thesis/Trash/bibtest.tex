@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage{bibentry}
+\nobibliography*
+
+\begin{document}
+
+\section{Introduction}
+
+Look ma, inline bibtex entries:
+
+\begin{itemize}
+\item \bibentry{wehrens2014}
+\item \bibentry{wehrens2018}
+\end{itemize}
+
+\section{And now for something completely different}
+Lorem ipsum yada yada,
+also see \cite{wehrens2018a}, 
+yada yada, and \cite{wehrens2014} too.
+
+\bibliographystyle{acm}
+\bibliography{../../library}
+
+\end{document}

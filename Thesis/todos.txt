@@ -1,0 +1,35 @@
+
+
+SOME LAST TODOS BEFORE HANDING IN THE THESIS
+
+
+Downsizing of images
+===
+
+Ribosome chapter:
+---
+
+pdf_2012-11-15_pos5_L31-mCherry_summaryPlot
+4x 188kb
+
+riboLabelsGiuliaCombined.png
+3 mb
+
+Warnings regarding citations
+===
+
+Note that citations are refreshed separately (tools -> F8), I have currently activated that this is done automatically when file is built (options > configure tex.. > Build > Configure > Add BibTex).
+
+Warning--missing journal in Stylianidou2016
+* fixed >> had some weird version of the file
+Warning--empty year in Weisstein2018
+* OK n/a
+Warning--empty author and editor in WikipediaMutual2017
+* OK n/a
+Warning--empty year in WikipediaMutual2017
+* OK n/a
+Warning--missing journal in Towbin2017personalcomm
+* OK n/a
+Warning--missing journal in Sinha2009
+* Fixed
+Warning--missing school in Quan2013

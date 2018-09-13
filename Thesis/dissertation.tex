@@ -17,6 +17,11 @@
 							 % also additional commands are defined in Commands/additional_custom_commands, see below
 
 % My aditions:
+
+% To be able to print citations (doesn't seem to work in combination with hyperref according to google?)
+%\usepackage{bibentry}
+%\nobibliography* % needed to create a dummy bibliography apparently
+
 %\usepackage{enumitem } % for lists w/o spacing.
 \usepackage{blindtext} 
 % more list options
@@ -79,6 +84,20 @@
 % For hyphenation of words that already contain a hyphen
 \usepackage[shortcuts]{extdash} % Use Example\=/McExampleface to introduce "uncounted" hyphen
 
+% Just for printing the lengths of latex variables (such as margins)
+% Only needed for editing, package not needed otherwise
+\usepackage{printlen}
+%% The size of the text is:
+%\the\textwidth
+%% 362.77263pt
+%\uselengthunit{cm}\printlength{\textwidth}
+%% 12.74818 cm
+%\uselengthunit{cm}\printlength{\textheight}
+%% 19.19734 cm
+
+% To align images to the right
+\usepackage[export]{adjustbox}
+
 % .tif images cannot be read, but we can automatically have them converted
 % (This also needs \usepackage{epstopdf})
 %\epstopdfDeclareGraphicsRule{.tif}{png}{.png}{convert #1 \OutputFile}
@@ -88,15 +107,21 @@
 
 % Graphic paths
 \graphicspath{{./Figures/}{./ChapterX_Modeling/drawings_png/}{./ChapterX_Ribosomes/eps_files/}{./Chapter2_Methods/Figures/}
-	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}{./ChapterX_CRP/Figures/matlabExport_model/}{./ChapterX_CRP/Figures/matlabExport_platereader/}{./ChapterX_Ribosomes/Figures/MatlabExport/CCs/}{./ChapterX_Ribosomes/Figures/MatlabExport/switchplots_2018revisited/}{./ChapterX_Ribosomes/Figures/}{./ChapterX_Literaturereview/Figures/}{./ChapterX_Filarecovery/Figures/}{./Chapter1_Introduction/}
+	{./ChapterX_CRP/Figures/}{./ChapterX_CRP/Figures/matlabExport/}{./ChapterX_CRP/Figures/matlabExport_pulsing/}{./ChapterX_CRP/Figures/matlabExport_model/}{./ChapterX_CRP/Figures/matlabExport_platereader/}{./ChapterX_Ribosomes/Figures/MatlabExport/CCs/}{./ChapterX_Ribosomes/Figures/MatlabExport/switchplots_2018revisited/}{./ChapterX_Ribosomes/Figures/}{./ChapterX_Literaturereview/Figures/}{./ChapterX_Filarecovery/Figures/}{./Chapter1_Introduction/}{./Cv/Figures/}
     {T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/Figures/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_Modeling/drawings_png/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_Ribosomes/eps_files/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/Chapter2_Methods/Figures/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_CRP/Figures/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_CRP/Figures/matlabExport/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_CRP/Figures/matlabExport_pulsing/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_CRP/Figures/matlabExport_model/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_CRP/Figures/matlabExport_platereader/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_Ribosomes/Figures/MatlabExport/CCs/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_Ribosomes/Figures/MatlabExport/switchplots_2018revisited/}{T:/TRAVELING_DATA/THESIS_TEMP_COPY/Thesis/ChapterX_Ribosomes/Figures/}}
+% log options
+\listfiles % This will log the image files used at time of rendering
 
 % Additional commands
 \include{Commands/additional_custom_commands}
 % Note that also Noreen added additional commands, see above at PackagesNewCommands/packages_newcommands
 
+
+
 \begin{document}
 \selectlanguage{english}
+%\setlength{\footnotesep}{1pt} % Not sure why this doesn't work
+%\setlength{\skip\footins}{1pt}
 
 %%%%%%% TITLE
 
@@ -134,25 +159,25 @@
 \include{Chapter0_Preface_etc/preface_etc}
 \include{Chapter1_Introduction/chapter1_introduction}
 \include{Chapter1_Introduction/chapter1_introductie_NL}
-%\include{Chapter2_Methods/chapter2_methods} % \label{chapter:methods}
+\include{Chapter2_Methods/chapter2_methods} % \label{chapter:methods}
 
 % FILA RECOVERY
-%\include{ChapterX_Filarecovery/ChapterX_Filarecovery} % \label{chapter:filarecovery}
-%\include{ChapterX_Filarecovery/SupplementalData_ThesisVersion}
+\include{ChapterX_Filarecovery/ChapterX_Filarecovery} % \label{chapter:filarecovery}
+\include{ChapterX_Filarecovery/SupplementalData_ThesisVersion}
 
 % LITERATURE REVIEW
-%\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
+\include{ChapterX_Literaturereview/ChapterX_Literaturereview} % \label{chapter:literaturereview}
 
 % CRP chapter
-%\include{ChapterX_CRP/CRP_main} %\label{chapter:CRP}
-%\include{ChapterX_CRP/CRP_SupplementaryNotes1}
-%\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
-%\include{ChapterX_CRP/CRP_SupplementaryNotes3}
-%\include{ChapterX_CRP/CRP_SupplementaryFigures}
-%\include{ChapterX_CRP/CRP_SupplementaryTables}
+\include{ChapterX_CRP/CRP_main} %\label{chapter:CRP}
+\include{ChapterX_CRP/CRP_SupplementaryNotes1}
+\include{ChapterX_Modeling/Nghe_model_cAMP_v5} % This used to be a separate chapter, but is now included as notes to the CRP chapter
+\include{ChapterX_CRP/CRP_SupplementaryNotes3}
+\include{ChapterX_CRP/CRP_SupplementaryFigures}
+\include{ChapterX_CRP/CRP_SupplementaryTables}
 
 % RIBOSOMES
-%\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
+\include{ChapterX_Ribosomes/ChapterX_Ribosomes}
 
 % CONCLUSION
 \include{ChapterX_Conclusion/ChapterX_Conclusion}
@@ -166,20 +191,20 @@
 %% Turn off thumb indices for unnumbered chapters and bibliography
 \thumbfalse
 
-%\include{ChapterZ_Protocols/chapterZ_appendix_methods_and_protocols}
 
 % BIBLIOGRAPHY
 % include bibliography
 \bibliography{../library} 
-% carefully choose the .bib file 
-% [see remarks in Bibliography folder]
 \bibliographystyle{Style/bibstyle_dissertation}
+    % carefully choose the .bib file 
+    % [see remarks in Bibliography folder]
+
+
 
 %******************
 % THanks etc.. (Note: CV is obligatory also!)
-%\include{Acknowledgements/acknowledgements} % ALREADY PARTIALLY WRITTEN!
-%- \include{Publications/publications}
-%- \include{Cv/cv}
+\include{Acknowledgements/acknowledgements} % ALREADY PARTIALLY WRITTEN!
+\include{Cv/cv}
 
 \end{document}
 
