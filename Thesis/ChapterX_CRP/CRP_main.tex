@@ -137,8 +137,9 @@ Thus, single cell metabolite concentrations might fluctuate over time due to sto
 %
 %In other words: though the mean CRP activity might be set by the external environment, single cells might have wholly different CRP activities due to stochastic fluctuations.
 %
-\e2{We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.}
-% how
+We here set out to investigate whether the CRP system indeed experiences and acts on these different stochastic inputs.
+%\e2{We here set out to investigate how the CRP system responds to these stochastic inputs.}
+% the alternative remains to vague.. and the manuscript is now geared towards the discovery that regulatory systems do respond to stochastic fluctuations 
 
 \subsection{The CRP system}
 
@@ -268,7 +269,7 @@ as the cellular state might be constantly changing in a way that is facilitated 
 	\includegraphics[width=1.0\textwidth]{CRP-fig0_v2.pdf}
 	\caption{ 
         \e{
-		(A) This diagram depicts the regulation of metabolic enzyme expression in \ecoli. Metabolic proteins import sugars and convert these large carbohydrate molecules to smaller metabolites, a process in which the cellular energy source ATP is produced. The metabolites are also a cellular resource and are building blocks for other cellular components, and are thus needed for cellular growth. They also inhibit cAMP production, thereby inhibiting CRP activation by cAMP. CRP is a master regulator (hence represented by a small ship's wheel): the concentration of activated CRP sets the metabolic enzyme concentration.
+		(A) This diagram depicts the regulation of metabolic enzyme expression in \textit{E. coli}. Metabolic proteins import sugars and convert these large carbohydrate molecules to smaller metabolites, a process in which the cellular energy source ATP is produced. The metabolites are also a cellular resource and are building blocks for other cellular components, and are thus needed for cellular growth. They also inhibit cAMP production, thereby inhibiting CRP activation by cAMP. CRP is a master regulator (hence represented by a small ship's wheel): the concentration of activated CRP sets the metabolic enzyme concentration.
         (B) This cartoon illustrates the general relationship between enzyme expression (which for metabolic enzymes is controlled by cAMP) and growth rate. 
         In a constant environment, too little expression will limit metabolic fluxes, and too much expression draws cellular resources from other cellular processes.
         Therefore, there is an optimal concentration at which the growth rate is highest, as indicated by the red dot.
@@ -513,6 +514,8 @@ and that the cell responds to cAMP pulses that occur on sub cell-cycle, which in
 %Nevertheless, the observations made in this pulsing experiment show that the CRP system can respond to quickly fluctuating input signals, as also might occur due to stochastic fluctuations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% figure with time evolution of cAMP pulsing experiment
+
+\begingroup % note that this is needed such that captionof not mess up indentation
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{CRP-fig1_v2.pdf}
@@ -521,9 +524,10 @@ and that the cell responds to cAMP pulses that occur on sub cell-cycle, which in
 
 \clearpage
 
+
 \captionof{figure}{    
     \e{
-	\textbf{The CRP system can respond to quickly changing input signals.}
+	\textbf{\ee{The response of the CRP system to external variations.}}
 	(A-B.) The concentration of the metabolic reporter (A) and growth rate (B) over time during the cAMP pulsing experiment. 
    	Blue dots correspond to single cell observations, and the black line is the population average.
     The concentration of cAMP in the growth medium is plotted above the graph on the same time scale,
@@ -545,7 +549,7 @@ and that the cell responds to cAMP pulses that occur on sub cell-cycle, which in
     \label{fig:CRP:fig1}}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\endgroup
 
 %\subsection{Probing CRP dynamics in a constant environment}
 \subsection{The effect of stochastic fluctuations on CRP regulation}
@@ -1207,7 +1211,7 @@ This is consistent with a constitutively expressed fluorescent protein reporter 
 This mode also provided an explanation for the negative slope in the scatter plots that show the single cell relationship 
 between constitutive reporter concentration 
 and growth rate (figure \ref{fig:CRP:fig2}.B): 
-the negative slope could originate from the response of the metabolic reporter to stochastic growth rate fluctuations.}
+the negative slope could originate from the response of the metabolic reporter to stochastic growth rate fluctuations.
 
 
 
@@ -1331,6 +1335,7 @@ and prevent them from having cell-wide effects, such as on the cellular growth r
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup % note that this is needed such that captionof not mess up indentation
 \begin{figure}	
 	\centering	
 	\includegraphics[width=1.0\textwidth]{CRP-fig4_v2.pdf}	
@@ -1358,7 +1363,7 @@ and prevent them from having cell-wide effects, such as on the cellular growth r
 	(F) By adding feedback to the situation in panel E (effectively decreasing the strength of the ${x}\rightarrow{p}$ interaction), these positive correlations can be suppressed, reverting the dynamics to something that is more similar to the dilution mode.
     \label{fig:CRP:fig4}
 }
-
+\endgroup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

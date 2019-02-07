@@ -29,6 +29,7 @@
 %	% remove the ``%'' on the next line:
 %	% \pagestyle{headings}
 	
+\begingroup % note that this is needed such that captionof not mess up indentation
 \noindent 
 \begin{minipage}{\linewidth}
     \centering
@@ -87,15 +88,15 @@
         \textbf{%Table S1.             
             Related to Figure \ref{fig:filarecovery:fig4}.} Reaction rules used in the Meinhardt and De Boer \cite{Meinhardt2001} simulations, see main text for a description.}
 \end{minipage}
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hfill
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 \hfill
 
+\begingroup % note that this is needed to not mess up indentation 
 \noindent 
 \begin{minipage}{\linewidth}
     \centering
@@ -117,13 +118,12 @@
         \textbf{%Table S2.             
             Related to Figure \ref{fig:filarecovery:fig4}.} Reaction rules used in the Huang et al./Fange et al. \cite{Huang2003,Fange2006} stochastic MesoRD model of the Min system, see main text for a description.}
 \end{minipage}
+\endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
+\begingroup % note that this is needed such that captionof not mess up indentation
 %17.4cm
 \begin{figure}
 	\centering
@@ -151,7 +151,11 @@ $((0.74\text{ }\upmu\text{m})^2 - \pi(0.74\text{ }\upmu\text{m}/2)^2)$.
   Colors correspond to different datasets. 
   (Respectively n=4108, n=404 and n=494 division events are shown.) 
 }
+\endgroup
 
+
+
+\begingroup % note that this is needed such that captionof not mess up indentation
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{thesis_S2_figure_v3}
@@ -189,11 +193,12 @@ Fluorescence profiles along the cell axis were averaged within cell length bins 
 (M) Growth rates (db/hr) vs. cell length, color coded for time after removal of stress. Panels indicate recovery from tetracycline, high temperature (42C), SulA overexpression, respectively. Number of cells: N=4134, N=409 and N=499. Number of data points n=129722, n=11049 and n=7304, respectively. 
 (N) Interdivision time vs. birth length for \textit{minCDE} null strains. Orange dots are averages, bars are SEM. Purple points: data from 1996 Donachie and Begg paper \cite{Donachie1996}, showing data sets are consistent.
 (O) Added size between divisions for \textit{minCDE} null strains. Orange dots are averages, bars are SEM. 
-(P) As panel G, but in addition, now also data from the \textit{minCDE} null strains is shown (orange).}
+(P) As panel G, but in addition, now also data from the \textit{minCDE} null strains is shown (orange).
+}
+\endgroup
 
 
-
-
+\begingroup % note that this is needed such that captionof not mess up indentation
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{thesis_S3_figure}
@@ -204,9 +209,10 @@ Fluorescence profiles along the cell axis were averaged within cell length bins 
 	\textbf{%Figure S3. 
         Division ring imaging. Related to Figure \ref{fig:filarecovery:fig3}.}
 (A) Fts ring localization in cells filamentous at 42C. Kymographs of sYFP2-FtsA intensity along the cellular axis over time. Each panel corresponds to an individual cell in between two divisions. The top three panels show cells growing during exposure to 42C, the bottom two panels show cell born small after temperature was lowered to 37C. (B) Intensity of sYFP2-FtsA ring and probability of division at this ring. About $35\%$  of observed divisions occurred at the brightest FtsA ring, showing no clear preference for dividing at the brightest ring. }
-
+\endgroup
 
 \newpage
+
 
 \begin{figure}
 	\centering
@@ -224,9 +230,6 @@ Fluorescence profiles along the cell axis were averaged within cell length bins 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 
 
 %\section*{Supplemental References}
